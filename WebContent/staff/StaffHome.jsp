@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="C:\Users\a\Desktop\水族舘プロジェクト\水族舘プロジェクト1.css">
-    <title>水族舘プロジェクト</title>
+    <title>水族舘プロジェクト1</title>
     <style>
         body {
             display: flex;
