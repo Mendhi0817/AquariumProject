@@ -23,11 +23,33 @@
     </style>
 </head>
 
-<p><img src="file:///C:/work3/pleiades/workspace/AquariumProject/WebContent/picture/お魚さん.jpg" width="500" height="500"></p>
+<p><img src="file:///C:/work3/pleiades/workspace/AquariumProject/WebContent/picture/お魚さん.jpg" width="300" height="300"></p>
 
 <body>
 <div>
 <button name="Login">ログイン</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
