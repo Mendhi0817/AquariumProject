@@ -10,7 +10,7 @@ public class User implements Serializable {
 	 * ユーザー名:String
 	 */
 
-	private String UserName;
+	private String userName;
 
 	/**
 	 * ユーザーメールaddress:String
@@ -24,14 +24,14 @@ public class User implements Serializable {
 	/**
 	 *パスワード:String
 	 */
-	private String Password;
+	private String password;
 
 	/**
 	 *ユーザーID:String
 	 */
 
 
-	private int UserID;
+	private int userID;
 
 	/**
 	 * ゲッター、セッター
@@ -41,13 +41,13 @@ public class User implements Serializable {
 
 	/*ユーザー名のゲッターとセッター*/
 	public String getUserName(){
-		return UserName;
+		return userName;
 
 	}
 
-	public void setUserName(String UserName){
+	public void setUserName(String userName){
 
-		this.UserName = UserName;
+		this.userName = userName;
 	}
 
 
@@ -68,24 +68,24 @@ public class User implements Serializable {
 	/*パスワードのゲッターとセッター*/
 
 	public String getPassword(){
-		return Password;
+		return password;
 
 	}
 
-	public void setPassword(String Password){
+	public void setPassword(String password){
 
-		this.Password = Password;
+		this.password = password;
 	}
 
 
 	public int getUserID(){
-		return UserID;
+		return userID;
 
 	}
 
-	public void setUserID(int UserID){
+	public void setUserID(int userID){
 
-		this.UserID = UserID;
+		this.userID = userID;
 	}
 
 
