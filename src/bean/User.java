@@ -33,6 +33,8 @@ public class User implements Serializable {
 
 	private int userID;
 
+	private String login;
+
 	/**
 	 * ゲッター、セッター
 	 */
@@ -86,6 +88,14 @@ public class User implements Serializable {
 	public void setUserID(int userID){
 
 		this.userID = userID;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 
