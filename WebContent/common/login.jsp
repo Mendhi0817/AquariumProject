@@ -4,7 +4,7 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="C:\Users\a\Desktop\水族舘プロジェクト\水族舘プロジェクト1.css">
-    <title>水族舘プロジェクト</title>
+    <c:param name = "title">水族舘プロジェクト</c:param>
 </head>
 
 <style>
@@ -44,9 +44,11 @@ input {
 </style>
 <center>
 <body>
-<form action="#" method="post">
-	<input type="text" name="mailAddress" placeholder="メールアドレス">
-	<input type="text" name="password" placeholder="パスワード">
+
+<form action="Login.action" method="post"></form>
+
+<p>メールアドレス<input type="text" name="mailAddress" placeholder="メールアドレス"></p>
+<p>パスワード<input type="text" name="password" placeholder="パスワード"></p>
 </form>
 <div class=buttons1>
 	<button name="Enter">Enter</button>
