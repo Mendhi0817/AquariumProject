@@ -78,7 +78,7 @@
     </div>
 
     <footer>
-        <button name="button2" onclick="location.href='ホーム画面_職員.html'">ホーム</button>
+        <button name="button2" onclick="location.href='ホーム画面_職f員.html'">ホーム</button>
         <button name="button2" onclick="location.href='設定画面_職員.html'">設定</button>
     </footer>
 </body>

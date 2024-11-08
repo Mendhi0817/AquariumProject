@@ -45,17 +45,12 @@ input {
 <center>
 <body>
 
-<form action="Login.action" method="post"></form>
-
-<p>メールアドレス<input type="text" name="mailAddress" placeholder="メールアドレス"></p>
+<form action="../manager/Login.action" method="post">
+<p>メールアドレス<input type="text" name="email" placeholder="メールアドレス"></p>
 <p>パスワード<input type="text" name="password" placeholder="パスワード"></p>
+<p><input type = "submit" value = "ログイン"></p>
 </form>
-<div class=buttons1>
-	<button name="Enter">Enter</button>
-	<br>
-	<button name="ResettingPassword">パスワードを忘れた</button>
-	<br>
-</div>
+
 </center>
 <div class="buttons2">
 	<button name="Return">戻る</button>
