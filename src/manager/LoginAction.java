@@ -9,6 +9,7 @@ import bean.User;
 import tool.Action;
 
 public class LoginAction extends Action {
+
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
@@ -25,13 +26,27 @@ public class LoginAction extends Action {
 
 		if(user!= null){
 			session.setAttribute("user", user);
-			request.getRequestDispatcher("../staff/StaffHome.jsp").forward(request, response);
+			if(user.getFlag().equals("2")){
+				request.getRequestDispatcher("../staff/StaffHome.jsp").forward(request, response);
 
-			System.out.print(user);
+			}
+
+
+				else if(user.getFlag().equals("1")){
+					System.out.print("111111");
+
+
+				request.getRequestDispatcher("../suizokutachiproject/home/home J.html").forward(request, response);
+
+				}
+
+			}
+
+			System.out.println(user.getFlag());
 			System.out.print(email);
 			System.out.print(password);
 
 		}
 
+		//login
 	}
-}
