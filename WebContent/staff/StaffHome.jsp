@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="C:\Users\a\Desktop\水族舘プロジェクト\ホーム画面_職員.css">

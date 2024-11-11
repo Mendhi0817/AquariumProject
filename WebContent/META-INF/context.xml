@@ -3,12 +3,12 @@
 <!-- 上記はEclipseの警告を消すための記述です。 -->
 
 <Context reloadable="true">
-	<Resource
+<Resource
 		name="jdbc/aquarium"
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="org.h2.Driver"
-		url="jdbc:h2:~/aquarium"
+		url="jdbc:h2:tcp://localhost/~/aquarium"
 		username="sa"
 		password=""
 	/>

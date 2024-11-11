@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import bean.User;
 public class UserDAO extends DAO {
 
-	public User search(String password, String email)
+	public User search(String email, String password)
 			throws Exception {
 		User user = null;
 
