@@ -10,6 +10,6 @@
 </style>
 <header>
 <div class="picture">
-<img src="<%= request.getContextPath() %>/picture/logo.png" alt = "画像"/>
+<img src="<%= request.getContextPath() %>/picture/logo.png" />
 </div>
 </header>
