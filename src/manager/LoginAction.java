@@ -1,7 +1,12 @@
+package manager;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.UserDAO;
+import org.apache.catalina.User;
+
+import DAO.UserDAO;
 import tool.Action;
 
 public class LoginAction extends Action {
@@ -11,14 +16,18 @@ public class LoginAction extends Action {
 
 		HttpSession session=request.getSession();
 
-		String login=request.getParameter("login");
+		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		UserDAO dao=new UserDAO();
-		User user=dao.search(login, password);
+		User user = (User) dao.search(email, password);
+
 
 		if (user!=null){
 			session.setAttribute("user", user);
-			return"login-out.jsp";
+
+			return"StaffHome.jsp";
+
 		}
+return "news.jsp";
 	}
 }

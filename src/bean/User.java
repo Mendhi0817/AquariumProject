@@ -10,6 +10,8 @@ public class User implements Serializable {
 	 * ユーザー名:String
 	 */
 
+
+
 	private String userName;
 
 	/**
@@ -31,13 +33,14 @@ public class User implements Serializable {
 	 */
 
 
-	private int userID;
 
 	private String login;
 
 	/**
 	 * ゲッター、セッター
+	 *
 	 */
+
 
 
 
@@ -55,7 +58,7 @@ public class User implements Serializable {
 
 
 	/*メールアドレスのゲッターとセッター*/
-	public String eMail(){
+	public String geteMail(){
 		return eMail;
 
 	}
@@ -65,6 +68,8 @@ public class User implements Serializable {
 		this.eMail = eMail;
 
 	}
+
+
 
 
 	/*パスワードのゲッターとセッター*/
@@ -80,15 +85,6 @@ public class User implements Serializable {
 	}
 
 
-	public int getUserID(){
-		return userID;
-
-	}
-
-	public void setUserID(int userID){
-
-		this.userID = userID;
-	}
 
 	public String getLogin() {
 		return login;

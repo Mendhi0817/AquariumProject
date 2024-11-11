@@ -72,7 +72,7 @@
 <body>
     <div class="container">
         <img src="file:///C:/Users/the/git/AquariumProject/WebContent/picture/お魚さん.jpg" alt="ロゴ" class="logo">
-        <div class="next-item">[次の項目]</div>
+        <div class="next-item"><button>次の項目</button></div>
         <div class="main">
             <button>ログアウト</button>
         </div>
