@@ -38,6 +38,16 @@
             height: 50px;
             font-size: 16px;
         }
+
+        /* 戻るボタンのスタイル */
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #78e3fb;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -59,7 +69,6 @@
 
                 <!-- 文字を入力するフィールド -->
                 <div>
-
                     <input type="text" id="textInput" name="textInput">
                 </div>
 
@@ -73,8 +82,15 @@
                 <div>
                     <button type="submit">投稿</button>
                 </div>
+
             </form>
         </div>
+
+        <!-- 戻るボタン -->
+        <div>
+            <button class="back-btn" onclick="location.href='../coupon/coupon.html'">戻る</button>
+        </div>
+
     </div>
 
     <footer>

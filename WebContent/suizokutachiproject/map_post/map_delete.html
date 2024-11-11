@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="../map_post/map post.css">
+    <title>水族舘プロジェクト - マップ削除</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* ビューポートの高さを最小限に設定 */
+            margin: 0; /* デフォルトのマージンをリセット */
+        }
+        header {
+            /* ヘッダーのスタイルを追加する場合はここに */
+        }
+        footer {
+            margin-top: auto; /* フッターを画面の下に固定 */
+            background-color: #78e3fb; /* 背景色を設定（任意） */
+            text-align: center; /* 中央揃え（任意） */
+            padding: 10px; /* 内側の余白（任意） */
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .floor {
+            margin-bottom: 15px;
+        }
+        .floor button {
+            background-color: #f44336; /* 赤色 */
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .floor button:hover {
+            background-color: #d32f2f;
+        }
+        .back-btn {
+            margin-top: 20px;
+            background-color: #8bc34a; /* 緑色 */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-btn:hover {
+            background-color: #7cb342;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="../img/水族舘プロジェクト_右の写真2.png" alt="サイドバー画像" align="right">
+        </aside>
+        <header>
+            <img src="../img/水族舘プロジェクト_タイトル.png" width="400" height="150">
+        </header>
+
+        <div class="content">
+            <h2>削除したい階を選んで下さい</h2>
+
+            <div class="floor">
+                <h3>1階</h3>
+                <button onclick="deleteFloor(1)">削除</button>
+            </div>
+            <div class="floor">
+                <h3>2階</h3>
+                <button onclick="deleteFloor(2)">削除</button>
+            </div>
+            <div class="floor">
+                <h3>3階</h3>
+                <button onclick="deleteFloor(3)">削除</button>
+            </div>
+            <div class="floor">
+                <h3>4階</h3>
+                <button onclick="deleteFloor(4)">削除</button>
+            </div>
+
+            <!-- 戻るボタン -->
+            <button class="back-btn" onclick="location.href='../map_post/map post.html'">戻る</button>
+        </div>
+    </div>
+
+    <footer>
+        <button name="button2" onclick="location.href='../home/home J.html'">ホーム</button>
+        <button name="button2" onclick="location.href='../setting/setting staff.html'">設定</button>
+    </footer>
+
+    <script>
+        // 削除処理の仮関数
+        function deleteFloor(floorNumber) {
+            const confirmation = confirm(floorNumber + '階を削除しますか？');
+            if (confirmation) {
+                alert(floorNumber + '階が削除されました。');
+                // 実際の削除処理をここに追加する
+            } else {
+                alert('削除がキャンセルされました。');
+            }
+        }
+    </script>
+</body>
+</html>
