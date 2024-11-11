@@ -4,26 +4,35 @@ import java.sql.Blob;
 
 public class Map {
 
-	private Blob mapPicture;
+	private Blob MapImage;
 
-	private int floorInfo;
+	private int FloorInfo;
 
-	public Blob getMapPicture() {
-		return mapPicture;
+	private int MapId;
+
+	public Blob getMapImage() {
+		return MapImage;
 	}
 
-	public void setMapPicture(Blob mapPicture) {
-		this.mapPicture = mapPicture;
+	public void setMapImage(Blob mapImage) {
+		this.MapImage = mapImage;
 	}
 
 	public int getFloorInfo() {
-		return floorInfo;
+		return FloorInfo;
 	}
 
 	public void setFloorInfo(int floorInfo) {
-		this.floorInfo = floorInfo;
+		this.FloorInfo = floorInfo;
 	}
 
+	public int getMapId() {
+		return MapId;
+	}
+
+	public void setMapId(int mapId) {
+		this.MapId = mapId;
+	}
 
 
 
