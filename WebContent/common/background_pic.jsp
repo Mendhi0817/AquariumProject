@@ -5,6 +5,8 @@
 	text-align: center;
 }
 	.picture img{
+		display:flex;
+		justify-content: flex-end;
 		width: 50%;
 		margin:10px 0;
 	}
