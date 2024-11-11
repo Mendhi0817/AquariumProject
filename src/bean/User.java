@@ -36,6 +36,8 @@ public class User implements Serializable {
 
 	private String login;
 
+	private String flag;
+
 	/**
 	 * ゲッター、セッター
 	 *
@@ -92,6 +94,14 @@ public class User implements Serializable {
 
 	public void setLogin(String login) {
 		this.login = login;
+	}
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
 	}
 
 
