@@ -16,7 +16,7 @@ public class ContactDAO extends DAO {
 	 * @return 学校クラスのインスタンス 存在しない場合はnull
 	 * @throws Exception
 	 */
-	public Contact get(String ct) throws Exception {
+	public Contact get() throws Exception {
 		// 学校インスタンスを初期化
 		Contact contact = new Contact();
 		// データベースへのコネクションを確率
@@ -28,7 +28,7 @@ public class ContactDAO extends DAO {
 			// プリペアードステートメントにSQL文をセット
 			statement = connection.prepareStatement("select * from contact where ct=?");
 			// プリペアードステートメントに学校コードをバインド
-			statement.setString(1, ct);
+//			statement.setString(1, ct);
 			// プリペアードステートメントを実行
 			ResultSet rSet = statement.executeQuery();
 

@@ -6,23 +6,33 @@
 <meta charset="UTF-8">
 <title>右寄せ画像表示</title>
 <style>
-        body {
-            text-align: center;
-        }
+
         .picture {
+        	background-attachment: fixed;
             display: flex; /* フレックスボックスを使用 */
             justify-content: flex-end; /* 右寄せ */
             margin: 10px; /* 上下マージン */
         }
         .picture img {
-            width: 50%; /* 幅を50%に設定 */
+        background-attachment: fixed;
+            width: 10%; /* 幅を50%に設定 */
             margin: 10px 0;
         }
+        body {
+        background-image:url("../picture/right_photo.png");
+        background-repeat:no-repeat;
+        background-size:100px auto;
+
+        background-attachment: fixed;
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: flex-end; /* 右寄せ */
+        background-position: right;
+		left:100em;
+        margin: 10px 0;
+        background-attachment: fixed;}
 </style>
 </head>
 <body>
-<div class="picture">
-<img src="<%= request.getContextPath() %>/picture/right_photo.png" alt="画像"/>
-</div>
+
 </body>
 </html>
