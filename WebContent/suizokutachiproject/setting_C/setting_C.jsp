@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../setting_C/setting_C.css">
@@ -49,7 +50,7 @@
     </div>
 
     <div>
-        
+
     </div>
 
 </div>
@@ -60,4 +61,3 @@
         <button name="button2">お知らせ</button>
     </footer>
 </body>
-</html>
