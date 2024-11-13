@@ -36,7 +36,7 @@
         </header>
 
         <div class="button-container">
-            <button name="mapPost" onclick="location.href='../map_post/map post.html'">マップ投稿</button>
+            <button name="mapPost" onclick="location.href='../map_post/map post.jsp'">マップ</button>
             <button name="newsPost" onclick="location.href='../news_post/notice post.html'">お知らせ投稿</button>
             <button name="fishCard" onclick="location.href='../fish_card/fish card.html'">魚カード</button>
             <button name="couponCreate" onclick="location.href='../coupon_make/coupon.html'">クーポン作成</button>
