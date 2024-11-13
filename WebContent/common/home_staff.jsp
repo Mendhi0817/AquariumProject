@@ -21,12 +21,15 @@
 <c:import url="/common/base.jsp">
 
 </c:import>
-<div class="button-container">
-            <button name="mapPost" onclick="MapPost.action">マップ</button>
+
+
+<form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ">
+
+            <a href="../manager/MapPost.action">メニュー</a>
             <button name="newsPost" onclick="location.href='../common/post_submission.jsp'">お知らせ投稿</button>
             <button name="fishCard" onclick="location.href='../common/fishcard.jsp'">魚カード</button>
             <button name="couponCreate" onclick="location.href='../coupon_make/coupon.html'">クーポン作成</button>
-        </div>
+        </form>
 </body>
 
 </footer>
