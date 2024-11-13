@@ -33,18 +33,13 @@ public class LoginAction extends Action {
 
 
 				else if(user.getFlag().equals("1")){
-					System.out.print("111111");
 
 
-				request.getRequestDispatcher("../suizokutachiproject/home/home J.html").forward(request, response);
+				request.getRequestDispatcher("../suizokutachiproject/home/home J.jsp").forward(request, response);
 
 				}
 
 			}
-
-			System.out.println(user.getFlag());
-			System.out.print(email);
-			System.out.print(password);
 
 		}
 

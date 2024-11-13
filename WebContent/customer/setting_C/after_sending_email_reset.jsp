@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../setting_C/setting_C.css">
@@ -28,36 +27,19 @@
     <aside class="sidebar"><img src="../img/水族舘プロジェクト_右の写真2.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="../img/水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
-    <div>
-        <button name="log out">ログアウト</button>
-    </div>
-
-    <div>
-        BGM
-    </div>
-
-    <div class="button-container">
-        <button name="ON">ON</button>
-        <button name="OFF">OFF</button>
-    </div>
-
-    <div>
-        <button name="user information change" onclick="location.href='../setting_C/change user information_C.html'">ユーザー情報変更</button>
-    </div>
-
-    <div>
-        <button name="password" onclick="location.href='../setting_C/password_reset.html'">パスワードリセット</button>
-    </div>
-
-    <div>
-
+    <div class="form-container">
+        <label for="email">新パスワードを入力して下さい:</label>
+        <input type="email" id="email" name="email">
+        <button type="submit">変更</button>
     </div>
 
 </div>
     <footer>
-        <button name="button2" onclick="location.href='../home/home J.html'">ホーム</button>
+        <button name="button2" onclick="location.href='../home/home j.html'">ホーム</button>
         <button name="button2" onclick="location.href='../setting/setting staff.html'">設定</button>
         <button name="button2">マップ</button>
         <button name="button2">お知らせ</button>
+
     </footer>
 </body>
+</html>

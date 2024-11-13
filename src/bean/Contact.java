@@ -27,7 +27,7 @@ public class Contact implements Serializable {
 		return ct;
 	}
 
-	public void setContactTitle(String ct) {
+	public void setCt(String ct) {
 		this.ct = ct;
 	}
 
@@ -35,7 +35,7 @@ public class Contact implements Serializable {
 		return cc;
 	}
 
-	public void setContactContent(String cc) {
+	public void setCc(String cc) {
 		this.cc = cc;
 	}
 
@@ -43,7 +43,7 @@ public class Contact implements Serializable {
 		return cd;
 	}
 
-	public void setContactDate(String cd) {
+	public void setCd(String cd) {
 		this.cd = cd;
 	}
 
