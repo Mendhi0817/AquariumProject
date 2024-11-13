@@ -27,7 +27,7 @@ public class LoginAction extends Action {
 		if(user!= null){
 			session.setAttribute("user", user);
 			if(user.getFlag().equals("2")){
-				request.getRequestDispatcher("../staff/StaffHome.jsp").forward(request, response);
+				request.getRequestDispatcher("../common/home_staff.jsp").forward(request, response);
 
 			}
 
