@@ -18,7 +18,7 @@
 </style>
 <div class ="footer">
 <footer>
-        <button name="button2" onclick="location.href='../ホーム画面/home J.html'">ホーム</button>
+        <button name="button2" onclick="location.href='../home_staff.jsp'">ホーム</button>
         <button name="button2" onclick="location.href='../設定/setting staff.html'">設定</button>
 </footer>
 </div>

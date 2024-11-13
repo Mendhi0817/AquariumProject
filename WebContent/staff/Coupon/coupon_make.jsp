@@ -1,6 +1,5 @@
-<%-- メニューJSP --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
@@ -19,16 +18,8 @@
 
 <footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
 <c:import url="/common/base.jsp">
+</c:import>
 
-<body>
-    <div class="container">
-        <aside class="sidebar">
-            <img src="../img/水族舘プロジェクト_右の写真2.png" alt="サイドバー画像" align="right">
-        </aside>
-
-        <header>
-            <img src="../img/水族舘プロジェクト_タイトル.png" width="400" height="150">
-        </header>
 
         <!-- 新しいフォームセクション -->
         <div class="form-container">
@@ -55,10 +46,5 @@
             </form>
         </div>
     </div>
-
-    <footer>
-        <button name="button2" onclick="location.href='../home/home J.html'">ホーム</button>
-        <button name="button2" onclick="location.href='../setting/setting staff.html'">設定</button>
-    </footer>
 </body>
 </html>
