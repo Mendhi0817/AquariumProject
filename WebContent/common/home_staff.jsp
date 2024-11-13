@@ -22,7 +22,7 @@
 
 </c:import>
 <div class="button-container">
-            <button name="mapPost" onclick="location.href='../common/map_submission.jsp'">マップ</button>
+            <button name="mapPost" onclick="location.href='../staff/Map/map_submission.jsp'">マップ</button>
             <button name="newsPost" onclick="location.href='../common/post_submission.jsp'">お知らせ投稿</button>
             <button name="fishCard" onclick="location.href='../common/fishcard.jsp'">魚カード</button>
             <button name="couponCreate" onclick="location.href='../coupon_make/coupon.html'">クーポン作成</button>

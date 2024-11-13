@@ -1,5 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html lang="ja">
+<title>水族舘プロジェクト</title>
 <head>
     <link rel="stylesheet" href="マップ投稿.css">
     <title>水族舘プロジェクト</title>
@@ -46,11 +52,11 @@
         <aside class="sidebar">
             <img src="水族舘プロジェクト_右の写真2.png" alt="サイドバー画像" align="right">
         </aside>
-        
+
         <header>
             <img src="水族舘プロジェクト_タイトル.png" width="400" height="150">
         </header>
-        
+
         <!-- 新しいフォームセクション -->
         <div class="form-container">
             <form>
@@ -62,13 +68,13 @@
                     <label for="textInput">階数を入力：</label>
                     <input type="text" id="textInput" name="textInput" placeholder="階数を入力してください">
                 </div>
-                
+
                 <!-- PDFファイルをアップロードするフィールド -->
                 <div>
                     <label for="pdfUpload">マップの写真をアップロードして下さい：</label>
                     <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf">
                 </div>
-                
+
                 <!-- 送信ボタン -->
                 <div>
                     <button type="submit">投稿</button>
@@ -77,9 +83,7 @@
         </div>
     </div>
 
-    <footer>
-        <button name="button2" onclick="location.href='ホーム画面_職f員.html'">ホーム</button>
-        <button name="button2" onclick="location.href='設定画面_職員.html'">設定</button>
-    </footer>
-</body>
-</html>
+<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
+<c:import url="/common/base.jsp">
+
+</c:import>
