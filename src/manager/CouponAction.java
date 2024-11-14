@@ -2,45 +2,19 @@ package manager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import DAO.CouponDAO;
-import been Coupon
+import tool.Action;
 
-public class LoginAction extends Action {
+
+public class CouponAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
+		request.getRequestDispatcher("../staff/Coupon/coupon_make.jsp").forward(request, response);
 
-		HttpSession session=request.getSession();
-
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
-		UserDAO dao=new UserDAO();
-		User user = dao.search(email, password);
-
-
-
-		if(user!= null){
-			session.setAttribute("user", user);
-			if(user.getFlag().equals("2")){
-				request.getRequestDispatcher("../staff/StaffHome.jsp").forward(request, response);
-
-			}
-
-
-				else if(user.getFlag().equals("1")){
-
-
-				request.getRequestDispatcher("../suizokutachiproject/home/home J.jsp").forward(request, response);
-
-				}
-
-			}
-
-		}
+	}
 
 		//login
 	}
