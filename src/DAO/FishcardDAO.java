@@ -28,8 +28,8 @@ public class FishcardDAO {
         return tests;
     }
 
-    public List<TestListStudent> filter(Student student) throws SQLException {
-        List<TestListStudent> results = new ArrayList<>();
+    public List<FishCard> filter(Student student) throws SQLException {
+        List<FishCard> results = new ArrayList<>();
         try (PreparedStatement stmt = connection.prepareStatement(baseSql)) {
             stmt.setString(1, student.getNo());
             stmt.setString(2, student.getSchool().getCd());
