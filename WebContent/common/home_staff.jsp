@@ -23,16 +23,11 @@
 </c:import>
 <<<<<<< HEAD
 <div class="button-container">
-            <button name="mapPost" onclick="MapPost.action">マップ</button>
-            <button name="newsPost" onclick="NewsPost.action">お知らせ投稿</button>
 =======
 
 
 <form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ"></form>>
 <form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "お知らせ投稿"></form>
-
-
-            <button name="newsPost" onclick="location.href='../common/post_submission.jsp'">お知らせ投稿</button>
             <button name="fishCard" onclick="location.href='../common/fishcard.jsp'">魚カード</button>
             <button name="couponCreate" onclick="location.href='../coupon_make/coupon.html'">クーポン作成</button>
         </form>
