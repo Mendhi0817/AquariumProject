@@ -31,6 +31,8 @@
     <header><img src="水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
 		<form action ="../manager/News_delete.action" method = "post"><input type = "submit" value = "削除"></form>
+		<form action ="../manager/News_edit.action" method = "post"><input type = "submit" value = "編集"></form>
+
 
     <div class="content">
         <h2>タイトルを入力</h2>
