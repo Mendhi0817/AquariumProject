@@ -27,11 +27,15 @@
 
 
 
-<form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ">
+<form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ"></form>>
+<form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "お知らせ投稿"></form>
 
-            <a href="../manager/MapPost.action">メニュー</a>
+
             <button name="newsPost" onclick="location.href='../common/post_submission.jsp'">お知らせ投稿</button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/Mendhi0817/AquariumProject.git
             <button name="fishCard" onclick="location.href='../common/fishcard.jsp'">魚カード</button>
             <button name="couponCreate" onclick="location.href='../coupon_make/coupon.html'">クーポン作成</button>
         </form>
