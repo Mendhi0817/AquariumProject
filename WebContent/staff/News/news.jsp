@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="C:\Users\a\Desktop\水族舘プロジェクト\水族舘プロジェクト1.css">
@@ -29,6 +30,8 @@
     <aside class="sidebar"><img src="水族舘プロジェクト_右の写真2.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
+		<form action ="../manager/News_delete.action" method = "post"><input type = "submit" value = "削除"></form>
+
     <div class="content">
         <h2>タイトルを入力</h2>
         <input type="text" id="title" placeholder="タイトルを入力してください">
@@ -41,8 +44,8 @@
 
 </div>
     <footer>
-        <button name="button2" onclick="location.href='ホーム画面_職員.html'">ホーム</button>
-        <button name="button2" onclick="location.href='設定画面_職員.html'">設定</button>
+        <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
+        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
     </footer>
 </body>
 
