@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import DAO.CouponDAO;
 import been Coupon
 
-public class LoginAction extends Action {
+public class CouponAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
