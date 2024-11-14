@@ -6,13 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 import tool.Action;
 
 
-public class Home_staffAction extends Action {
+public class Change_User_DataAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../suizokutachiproject/setting staff.jsp").forward(request, response);
+		request.getRequestDispatcher("../suizokutachiproject/setting/change user information.jsp").forward(request, response);
 
 	}
 

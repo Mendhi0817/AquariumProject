@@ -44,12 +44,12 @@
     </div>
 
     <div>
-        <button name="user information change" onclick="location.href='../setting/change user information.html'">ユーザー情報変更</button>
+        <form action ="../manager/change_user_data.action" method = "post"><input type = "submit" value = "ユーザー情報変更2"></form>
     </div>
 
 </div>
     <footer>
-        <button name="button2" onclick="location.href='../home/home J.html'">ホーム</button>
-        <button name="button2" onclick="location.href='../setting/setting staff.html'">設定</button>
+        <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
+        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
     </footer>
 </body>

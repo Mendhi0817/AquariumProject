@@ -4,7 +4,7 @@
 
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="../setting/setting staff.css">
+    <link rel="stylesheet" href="../news_post/notice post.css">
     <title>水族舘プロジェクト</title>
     <style>
         body {
@@ -30,26 +30,31 @@
     <aside class="sidebar"><img src="../img/水族舘プロジェクト_右の写真2.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="../img/水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
-    <div>
-        <button name="log out">ログアウト</button>
-    </div>
+    <main>
+        <h2>編集したいお知らせを選んで下さい</h2>
 
-    <div>
-        BGM
-    </div>
-
-    <div class="button-container">
-        <button name="ON">ON</button>
-        <button name="OFF">OFF</button>
-    </div>
-
-    <div>
-        <form action ="../manager/Change_User_Data.action" method = "post"><input type = "submit" value = "ユーザー情報変更2"></form>
-    </div>
+        <div class="notification-list">
+            <!-- 仮のお知らせデータ -->
+            <div class="notification-item">
+                <span>お知らせタイトル1</span>
+                <button onclick="deleteNotification(1)">編集</button>
+            </div>
+            <div class="notification-item">
+                <span>お知らせタイトル2</span>
+                <button onclick="deleteNotification(2)">編集</button>
+            </div>
+            <div class="notification-item">
+                <span>お知らせタイトル3</span>
+                <button onclick="deleteNotification(3)">編集</button>
+            </div>
+            <form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "戻る"></form>
+        </div>
+    </main>
+</div>
 
 </div>
     <footer>
-        <button name="button2" onclick="location.href='../home/home J.html'">ホーム</button>
-        <button name="button2" onclick="location.href='../setting/setting staff.html'">設定</button>
+	        <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
+	        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
     </footer>
 </body>
