@@ -43,7 +43,7 @@
 </div>
     <footer>
         <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
-        <button name="button2" onclick="location.href='設定画面_職員.html'">設定</button>
+        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
     </footer>
 </body>
 
