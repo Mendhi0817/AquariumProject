@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../setting/setting staff.css">
@@ -41,7 +44,7 @@
     </div>
 
     <div>
-        <button name="user information change" onclick="location.href='../設定/change user information.html'">ユーザー情報変更</button>
+        <form action ="../manager/Change_User_Data.action" method = "post"><input type = "submit" value = "ユーザー情報変更2"></form>
     </div>
 
 </div>
@@ -50,4 +53,3 @@
         <button name="button2" onclick="location.href='../setting/setting staff.html'">設定</button>
     </footer>
 </body>
-</html>
