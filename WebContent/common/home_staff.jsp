@@ -22,7 +22,7 @@
 
 </c:import>
 <div class="button-container">
-<form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ"></form>>
+<form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ"></form>
 <form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "お知らせ投稿"></form>
             <button name="fishCard" onclick="location.href='../common/fishcard.jsp'">魚カード</button>
             <button name="couponCreate" onclick="location.href='../coupon_make/coupon.html'">クーポン作成</button>

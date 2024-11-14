@@ -12,7 +12,7 @@ public class SettingAction extends Action {
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../staff/setting staff.jsp").forward(request, response);
+		request.getRequestDispatcher("../suizokutachiproject/setting/setting staff.jsp").forward(request, response);
 
 	}
 
