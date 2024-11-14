@@ -9,6 +9,9 @@
 <head>
     <link rel="stylesheet" href="マップ投稿.css">
     <title>水族舘プロジェクト</title>
+    <c:import url="/common/base.jsp">
+
+</c:import>
     <style>
         body {
             display: flex;
@@ -21,7 +24,6 @@
         }
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
-            background-color: #78e3fb; /* 背景色を設定（任意） */
             text-align: center; /* 中央揃え（任意） */
             padding: 10px; /* 内側の余白（任意） */
         }
@@ -50,11 +52,11 @@
 <body>
     <div class="container">
         <aside class="sidebar">
-            <img src="水族舘プロジェクト_右の写真2.png" alt="サイドバー画像" align="right">
+
         </aside>
 
         <header>
-            <img src="水族舘プロジェクト_タイトル.png" width="400" height="150">
+
         </header>
 
         <!-- 新しいフォームセクション -->
@@ -76,14 +78,11 @@
                 </div>
 
                 <!-- 送信ボタン -->
-                <div>
-                    <button type="submit">投稿</button>
+                <div class="FormActionContainer">
+                	<form action ="../manager/MapPostDone.action" method = "post"><input type = "submit" value = "投稿"></form>
                 </div>
             </form>
         </div>
     </div>
 
 <footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
-<c:import url="/common/base.jsp">
-
-</c:import>

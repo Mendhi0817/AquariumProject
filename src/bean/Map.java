@@ -1,20 +1,18 @@
 package bean;
 
-import java.sql.Blob;
-
 public class Map {
 
-	private Blob MapImage;
+	private String MapImage;
 
 	private int FloorInfo;
 
 	private int MapId;
 
-	public Blob getMapImage() {
+	public String getMapImage() {
 		return MapImage;
 	}
 
-	public void setMapImage(Blob mapImage) {
+	public void setMapImage(String mapImage) {
 		this.MapImage = mapImage;
 	}
 
