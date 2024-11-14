@@ -31,25 +31,26 @@
     <header><img src="../img/水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
     <div>
-        <button name="log out">ログアウト</button>
+        <form action ="../manager/change_user_data.action" method = "post"><input type = "submit" value = "戻る"></form>
+    </div>
+
+    <div class="content">
+        名前の変更
+        <input type="text" id="title">
     </div>
 
     <div>
-        BGM
-    </div>
-
-    <div class="button-container">
-        <button name="ON">ON</button>
-        <button name="OFF">OFF</button>
+        メールアドレスの変更
+        <input type="text" id="title">
     </div>
 
     <div>
-        <form action ="../manager/change_user_data.action" method = "post"><input type = "submit" value = "ユーザー情報変更"></form>
+    <button name="button2">変更</button>
     </div>
 
 </div>
     <footer>
-        <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
-        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
+       <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
+       <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
     </footer>
 </body>
