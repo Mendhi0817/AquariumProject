@@ -28,8 +28,8 @@
 =======
 
 
-<form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ">
-<form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "お知らせ投稿">
+<form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ"></form>>
+<form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "お知らせ投稿"></form>
 
 
             <button name="newsPost" onclick="location.href='../common/post_submission.jsp'">お知らせ投稿</button>
