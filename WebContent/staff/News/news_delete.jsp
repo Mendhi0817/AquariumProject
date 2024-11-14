@@ -47,7 +47,7 @@
                 <span>お知らせタイトル3</span>
                 <button onclick="deleteNotification(3)">削除</button>
             </div>
-            <button name="button2">戻る</button>
+            <form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "お知らせ投稿"></form>
         </div>
     </main>
 </div>
@@ -63,7 +63,7 @@
 
 </div>
     <footer>
-        <button name="button2" onclick="location.href='../home/home J.html'">ホーム</button>
-        <button name="button2" onclick="location.href='../setting/setting staff.html'">設定</button>
+        <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
+        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
     </footer>
 </body>
