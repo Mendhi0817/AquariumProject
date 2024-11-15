@@ -11,20 +11,16 @@ import tool.Action;
 public class MapGetAction extends Action {
 
 	@Override
-	public void execute(
-	HttpServletRequest request, HttpServletResponse response
-	) throws Exception {
-
-
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 
 		// リクエストからimageとfloorのパラメータを取得
-		String image = request.getParameter("image");
-		int floor = Integer.parseInt(request.getParameter("floor"));
+		String image = request.getParameter("map_image");
+		int floor = Integer.parseInt(request.getParameter("floor_info"));
 
         // MapDAOを使ってマップ情報を取得
 		MapDAO mapDAO = new MapDAO();
-		Map map = mapDAO.search(image, floor);
+		Map map = mapDAO.search(floor);
 
 
 

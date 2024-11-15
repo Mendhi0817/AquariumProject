@@ -8,20 +8,20 @@ import java.sql.SQLException;
 import bean.Map;
 public class MapDAO extends DAO {
 
-	public Map search(String image, int floor) throws Exception {
+	public Map search(int floor) throws Exception {
 		Map map = null;
 		Connection con = getConnection();
 		PreparedStatement st;
 
-		st = con.prepareStatement("select * from mapinfo where map_image = ? and floor_info=?");
-		st.setString(1,image);
-		st.setInt(2,floor);
+		st = con.prepareStatement("select * from mapinfo where floor_info=?");
+//		st.setString(1,image);
+		st.setInt(1,floor);
 
 		ResultSet rs = st.executeQuery();
 
 		while (rs.next()) {
 			map = new Map();
-			map.setMapImage(rs.getString("image"));
+			map.setMapImage(rs.getString("map_image"));
 			map.setFloorInfo(rs.getInt("floor"));
 
 		}

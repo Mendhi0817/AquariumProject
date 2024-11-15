@@ -8,6 +8,7 @@ import tool.Action;
 
 public class MapPostAction extends Action {
 
+	@Override
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
@@ -15,6 +16,4 @@ public class MapPostAction extends Action {
 		request.getRequestDispatcher("../staff/Map/map_submission.jsp").forward(request, response);
 
 	}
-
-		//login
-	}
+}
