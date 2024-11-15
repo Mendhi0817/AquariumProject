@@ -50,10 +50,19 @@ input {
 <p>メールアドレス<input type="text" name="email" placeholder="メールアドレス"></p>
 <p>パスワード<input type="text" name="password" placeholder="パスワード"></p>
 <p><input type = "submit" value = "ログイン"></p>
+
+
 </form>
 
+
+
 </center>
-<div class="buttons2">
-	<button name="Return">戻る</button>
+<footer>
+
+<button name="button" onclick="location.href='password_reset.jsp'">パスワードを忘れた方</button>
+
+</footer>
+
+
 </div>
 </body>
