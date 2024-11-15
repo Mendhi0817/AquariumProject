@@ -44,7 +44,7 @@
     </div>
 
     <div>
-        <form action ="../manager/change_user_data.action" method = "post"><input type = "submit" value = "ユーザー情報変更2"></form>
+        <form action ="../manager/Change_User_Data.action" method = "post"><input type = "submit" value = "ユーザー情報変更2"></form>
     </div>
 
 </div>

@@ -31,7 +31,7 @@
     <header><img src="../img/水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
     <div>
-        <form action ="../manager/change_user_data.action" method = "post"><input type = "submit" value = "戻る"></form>
+        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "戻る"></form>
     </div>
 
     <div class="content">
