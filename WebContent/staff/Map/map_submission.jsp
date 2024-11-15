@@ -82,8 +82,8 @@
 
                 </div>
             </form>
-                          	<form action ="../manager/MapPostDone.action" method = "post"><input type = "submit" value = "投稿"></form>
+            <form action ="../manager/MapPostDone.action" method = "post"><input type = "submit" value = "投稿"></form>
         </div>
     </div>
 
-<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
+<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom"></footer>
