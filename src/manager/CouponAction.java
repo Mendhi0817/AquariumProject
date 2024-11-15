@@ -34,7 +34,7 @@ public class CouponAction extends Action {
 				else if(user.getFlag().equals("1")){
 
 
-				request.getRequestDispatcher("../suizokutachiproject/home/home J.jsp").forward(request, response);
+				request.getRequestDispatcher("../suizokutachiproject/home/home_J.jsp").forward(request, response);
 
 				}
 

@@ -12,7 +12,7 @@ public class Change_User_DataAction extends Action {
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../suizokutachiproject/setting/change user information.jsp").forward(request, response);
+		request.getRequestDispatcher("../suizokutachiproject/setting/change_user_information.jsp").forward(request, response);
 
 	}
 

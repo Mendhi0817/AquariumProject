@@ -12,7 +12,7 @@ public class Home_staffAction extends Action {
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../suizokutachiproject/setting staff.jsp").forward(request, response);
+		request.getRequestDispatcher("../common/home_staff.jsp").forward(request, response);
 
 	}
 
