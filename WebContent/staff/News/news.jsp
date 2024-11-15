@@ -4,7 +4,7 @@
 
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="C:\Users\a\Desktop\水族舘プロジェクト\水族舘プロジェクト1.css">
+    <link rel="stylesheet" href="..//News/news.css">
     <title>水族舘プロジェクト</title>
     <style>
         body {
@@ -27,8 +27,8 @@
 
 <body>
     <div class="container">
-    <aside class="sidebar"><img src="水族舘プロジェクト_右の写真2.png" alt="サイドバー画像"align="right"></aside>
-    <header><img src="水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
+    <aside class="sidebar"><img src="../../picture/right_photo.png" alt="サイドバー画像"align="right"></aside>
+    <header><img src="../../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
 		<form action ="../manager/News_delete.action" method = "post"><input type = "submit" value = "削除"></form>
 		<form action ="../manager/News_edit.action" method = "post"><input type = "submit" value = "編集"></form>
