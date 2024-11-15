@@ -8,7 +8,7 @@ import DAO.UserDAO;
 import bean.User;
 import tool.Action;
 
-public class LoginAction extends Action {
+public class PasswordResetAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
@@ -18,28 +18,25 @@ public class LoginAction extends Action {
 		HttpSession session=request.getSession();
 
 		String email=request.getParameter("email");
-		String password=request.getParameter("password");
 		UserDAO dao=new UserDAO();
-		User user = dao.search(email, password);
+		User user = dao.Search(email);
 
 
 
 		if(user!= null){
 			session.setAttribute("user", user);
-			if(user.getFlag().equals("2")){
-				request.getRequestDispatcher("../common/home_staff.jsp").forward(request, response);
+			if(user.geteMail().equals(email)){
+				request.getRequestDispatcher("../common/password_reset_completion.jsp").forward(request, response);
 
-				System.out.print(email);
+
 
 			}
 
 
+				else{
 
 
-				else if(user.getFlag().equals("1")){
-
-
-				request.getRequestDispatcher("../suizokutachiproject/home/home J.jsp").forward(request, response);
+				request.getRequestDispatcher("../common/password_reset_wrong.jsp").forward(request, response);
 
 				}
 
