@@ -22,7 +22,7 @@ public class MapDAO extends DAO {
 		while (rs.next()) {
 			map = new Map();
 			map.setMapImage(rs.getString("map_image"));
-			map.setFloorInfo(rs.getInt("floor"));
+			map.setFloorInfo(rs.getInt("floor_info"));
 
 		}
 		st.close();
@@ -39,7 +39,7 @@ public boolean save(Map map) throws Exception {
 	PreparedStatement st = null;
 
 	String image = null;
-	int floor = 0;
+//  int floor = 0;
 
 	// 実行件数
 	int count = 0;
