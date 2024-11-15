@@ -8,7 +8,7 @@
   body, html {
     height: 100%;
     font-family: 'Arial', sans-serif;
-    background-color: #000000;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@
 
   .error-container {
     text-align: center;
-    color: red;
+    color: rgb(0, 0, 0);
   }
 
   .error-message {
@@ -29,33 +29,13 @@
     text-transform: uppercase;
   }
 
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(5px); }
-  }
-
-  @keyframes glow {
-    0% {
-      text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px darkred;
-    }
-    50% {
-      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px darkred;
-    }
-    100% {
-      text-shadow: 0 0 15px red, 0 0 25px red, 0 0 35px red, 0 0 50px darkred;
-    }
-  }
-
   .back-button {
     display: inline-block;
     padding: 10px 20px;
     font-size: 1.2rem;
-    color: white;
+    color: rgb(0, 0, 0);
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid rgb(0, 0, 0);
     text-decoration: none;
     margin-top: 20px;
     transition: all 0.3s ease;
