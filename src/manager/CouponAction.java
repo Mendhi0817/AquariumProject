@@ -2,18 +2,17 @@ package manager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import DAO.CouponDAO;
-import been Coupon
-
+import tool.Action;
 public class CouponAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
+		request.getRequestDispatcher("../staff/Coupon/coupon_make.jsp").forward(request, response);
 
+<<<<<<< HEAD
 		HttpSession session=request.getSession();
 
 		String email=request.getParameter("email");
@@ -41,6 +40,9 @@ public class CouponAction extends Action {
 			}
 
 		}
+=======
+	}
+>>>>>>> branch 'master' of https://github.com/Mendhi0817/AquariumProject.git
 
 		//login
 	}

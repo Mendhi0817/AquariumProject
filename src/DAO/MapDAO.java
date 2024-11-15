@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import bean.Map;
 public class MapDAO extends DAO {
 
-	public Map search(String image, String floor)
+	public Map search(String image, int floorinfo,int mapid)
 			throws Exception {
 		Map map = null;
 
@@ -16,7 +16,8 @@ public class MapDAO extends DAO {
 		PreparedStatement st;
 		st = con.prepareStatement("select * from userinfo where image = ? and floor=?");
 		st.setString(1,image);
-		st.setString(2,floor);
+		st.setInt(2,floorinfo);
+		st.setInt(3, mapid);
 
 
 		ResultSet rs = st.executeQuery();
@@ -24,7 +25,8 @@ public class MapDAO extends DAO {
 		while (rs.next()) {
 			map = new Map();
 			map.setMapImage(rs.getString("image"));
-			map.setFloorInfo(rs.getString("floor"));
+			map.setFloorInfo(rs.getInt("floorinfo"));
+			map.setMapId(rs.getInt("mapid"));
 		}
 		st.close();
 		con.close();
