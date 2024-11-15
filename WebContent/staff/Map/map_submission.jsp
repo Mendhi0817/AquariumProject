@@ -79,9 +79,10 @@
 
                 <!-- 送信ボタン -->
                 <div class="FormActionContainer">
-                	<form action ="../manager/MapPostDone.action" method = "post"><input type = "submit" value = "投稿"></form>
+
                 </div>
             </form>
+                          	<form action ="../manager/MapPostDone.action" method = "post"><input type = "submit" value = "投稿"></form>
         </div>
     </div>
 
