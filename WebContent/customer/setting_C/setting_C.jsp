@@ -29,7 +29,7 @@
 </c:import>
 
     <div>
-        <button name="log out">ログアウト</button>
+<form action ="../manager/Login.action" method = "post"><input type = "submit" value = "ログアウト"></form>
     </div>
 
     <div>
