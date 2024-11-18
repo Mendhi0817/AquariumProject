@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="ja">
 <head>
@@ -25,7 +25,6 @@
         }
 
         .sidebar {
-
             text-align: center; /* サイドバー内のコンテンツを中央揃え */
         }
 
@@ -49,7 +48,15 @@
             gap: 10px; /* ボタン間の隙間 */
         }
 
-       footer input[type="submit"] {
+        /* 投稿、編集、削除ボタンを小さくするためのスタイル */
+        .button-container form input[type="submit"] {
+            width: 150px; /* ボタンの横幅を小さく設定 */
+            padding: 15px 40px; /* ボタンのパディング */
+            font-size: 1em;
+        }
+
+        /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+        input[type="submit"] {
             padding: 10px 60px; /* ボタンのパディング */
             font-size: 1.2em;
             border: none;
@@ -58,9 +65,11 @@
             color: white; /* 文字色 */
             cursor: pointer;
             width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            margin: 5px 0; /* ボタン間に適切な余白を追加 */
         }
 
-        form input[type="submit"]:hover {
+        /* ホバー時の色変更 */
+        input[type="submit"]:hover {
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
@@ -69,13 +78,6 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
-        footer input[type="submit"] {
-            padding: px 100px;
-            font-size: 1em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
     </style>
 </head>
 
@@ -102,10 +104,9 @@
             <textarea id="content" placeholder="ここに文章を入力してください"></textarea>
         </div>
 
-
-         <form action="../manager/Post_complete.action" method="post">
-                <input type="submit" value="投稿">
-                </form>
+        <form action="../manager/Post_complete.action" method="post">
+            <input type="submit" value="投稿">
+        </form>
     </div>
 
     <footer>
@@ -118,3 +119,5 @@
     </footer>
 </body>
 </html>
+
+
