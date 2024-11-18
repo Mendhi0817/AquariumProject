@@ -18,7 +18,8 @@
 </style>
 <div class ="footer">
 <footer>
-        <button name="button2" onclick="location.href='../home_staff.jsp'">ホーム</button>
-        <button name="button2" onclick="location.href='../設定/setting staff.html'">設定</button>
+        <form action = "home_staff.jsp" method = "post"><input type = "submit" value = "ホーム"></form>
+        <form action = "../staff/Setting/setting_staff.jsp" method = "post"><input type = "submit" value = "設定"></form>
+
 </footer>
 </div>
