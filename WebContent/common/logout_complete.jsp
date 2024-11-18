@@ -35,7 +35,14 @@
     <div class="container">
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-        <p class="logout-message">ログアウトしました</p> <!-- ここにクラスを追加 -->
+        <p class="logout-message">ログアウトしました</p>
+
+         <form action = "../common/login.jsp" method = "post"><input type = "submit" value = "ホーム"></form>
+
+
+
+
+        <!-- ここにクラスを追加 -->
     </div>
     <footer>
         <!-- フッター内容を追加 -->
