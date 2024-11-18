@@ -1,9 +1,12 @@
+<%-- メニューJSP --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="../setting_C/setting_C.css">
+    <link rel="stylesheet" href="C:\Users\a\Desktop\水族舘プロジェクト\水族舘プロジェクト1.css">
     <title>水族舘プロジェクト</title>
     <style>
         body {
@@ -24,28 +27,19 @@
     </style>
 </head>
 
-<c:import url="/common/base.jsp">
+<body>
+    <div class="container">
+    <aside class="sidebar"><img src="水族舘プロジェクト_右の写真2.png" alt="サイドバー画像"align="right"></aside>
+    <header><img src="水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
-</c:import>
+    <div class="content">
+        <h2>タイトルを入力</h2>
+        <input type="text" id="title" placeholder="タイトルを入力してください">
 
-    <div>
-        <button name="log out">ログアウト</button>
+        <h2>文章を入力</h2>
+        <textarea id="content" placeholder="ここに文章を入力してください"></textarea>
     </div>
 
-    <div>
-        BGM
-    </div>
+    <button name="button2">投稿</button>
 
-    <div class="button-container">
-        <button name="ON">ON</button>
-        <button name="OFF">OFF</button>
-    </div>
-
-    <div>
-        <button name="user information change" onclick="location.href='../setting_C/change user information_C.html'">ユーザー情報変更</button>
-    </div>
-
-    <div>
-        <button name="password" onclick="location.href='../setting_C/password_reset.html'">パスワードリセット</button>
-    </div>
-
+</div>
