@@ -58,7 +58,7 @@ public class ContactAction extends Action {
 
 
 
-			System.out.println(contact.getFlag());
+//			System.out.println(contact.getFlag());
 			System.out.print(ct);
 			System.out.print(cc);
 			System.out.print(cd);
