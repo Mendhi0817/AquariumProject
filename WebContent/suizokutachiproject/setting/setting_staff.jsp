@@ -57,6 +57,7 @@
             color: white; /* 文字色 */
             border: none; /* ボーダーを消す */
             cursor: pointer; /* マウスオーバー時にポインターを表示 */
+            width: 250px; /* 横幅を統一（例として250pxを設定） */
         }
 
         .button-container button:hover, .button-group input[type="submit"]:hover {
@@ -76,6 +77,7 @@
             background-color: #ff6347; /* ボタンの背景色 */
             color: white; /* 文字色 */
             cursor: pointer;
+            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
         }
 
         footer input[type="submit"]:hover {
@@ -126,3 +128,4 @@
     </footer>
 </body>
 </html>
+

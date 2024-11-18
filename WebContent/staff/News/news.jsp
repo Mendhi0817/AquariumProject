@@ -49,14 +49,15 @@
             gap: 10px; /* ボタン間の隙間 */
         }
 
-        form input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディングを変更して大きく */
-            font-size: 1.2em; /* フォントサイズを少し大きく */
+       footer input[type="submit"] {
+            padding: 10px 60px; /* ボタンのパディング */
+            font-size: 1.2em;
+            border: none;
             border-radius: 8px; /* 角を丸く */
-            background-color: #ff6347; /* ボタンの背景色を設定 */
-            color: white; /* ボタンの文字色 */
-            cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            border: none; /* ボーダーを消す */
+            background-color: #ff6347; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            cursor: pointer;
+            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
         }
 
         form input[type="submit"]:hover {
