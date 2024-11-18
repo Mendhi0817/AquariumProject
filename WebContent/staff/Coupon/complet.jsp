@@ -19,11 +19,3 @@
     <footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
     <c:import url="../../common/base.jsp">
     </c:import>
-
-	<form action ="../../manager/Coupon.action" method = "post"><input type = "submit" value = "クーポン作成">
-	</form>
-	<form action ="../../manager/CouponDelete.action" method = "delete"><input type = "submit" value = "クーポン削除">
-    </form>
-    </footer>
-</body>
-</html>
