@@ -24,17 +24,5 @@
 
 </c:import>
 
-    <div class="container">
-
-</div>
-
-<div>
-    <form action ="../manager/FishCardMake.action" method = "post"><input type = "submit" value = "作成"></form>
-    <form action ="../manager/FishCardList.action" method = "post"><input type = "submit" value = "一覧"></form>
-</div>
-
-
-</div>
-
-</body>
-</html>
+<form action ="../manager/FishCardEdit.action" method = "post"><input type = "submit" value = "編集"></form>
+<form action ="../manager/FishCardDeleteDone.action" method = "post"><input type = "submit" value = "削除"></form>
