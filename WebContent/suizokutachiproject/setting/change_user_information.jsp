@@ -27,8 +27,8 @@
 
 <body>
     <div class="container">
-    <aside class="sidebar"><img src="../img/水族舘プロジェクト_右の写真2.png" alt="サイドバー画像"align="right"></aside>
-    <header><img src="../img/水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
+    <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像"align="right"></aside>
+    <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
     <div>
         <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "戻る"></form>
