@@ -31,7 +31,7 @@
     <header><img src="../img/水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
     <div>
-        <button name="log out">ログアウト</button>
+<form action ="../../manager/Logout.action" method = "post"><input type = "submit" value = "ログアウト"></form>
     </div>
 
     <div>
