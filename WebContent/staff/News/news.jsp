@@ -28,7 +28,7 @@
             text-align: center; /* サイドバー内のコンテンツを中央揃え */
         }
 
-        .content input, .content textarea {
+        .content input, .content textarea, .content input[type="date"] {
             width: 50%;
             padding: 10px;
             margin: 10px 0;
@@ -98,10 +98,14 @@
 
         <div class="content">
             <h2>タイトルを入力</h2>
-            <input type="text" id="title" placeholder="タイトルを入力してください">
+            <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
 
             <h2>文章を入力</h2>
-            <textarea id="content" placeholder="ここに文章を入力してください"></textarea>
+            <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
+
+            <!-- 日付入力欄の追加 -->
+            <h2>日付を入力</h2>
+            <input type="date" id="date" name="f3">
         </div>
 
         <form action="../manager/Post_complete.action" method="post">
@@ -119,5 +123,6 @@
     </footer>
 </body>
 </html>
+
 
 
