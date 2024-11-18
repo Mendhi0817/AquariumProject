@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="ja">
@@ -22,39 +22,105 @@
             text-align: center; /* 中央揃え（任意） */
             padding: 10px; /* 内側の余白（任意） */
         }
+
+        /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+        input[type="submit"] {
+            padding: 10px 60px; /* ボタンのパディング */
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px; /* 角を丸く */
+            background-color: #ff6347; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            cursor: pointer;
+            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            margin: 5px 0; /* ボタン間に適切な余白を追加 */
+        }
+
+        /* ホバー時の色変更 */
+        input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
+        }
+
+        footer form {
+            display: inline-block;
+            margin: 0 10px; /* フォーム間の余白 */
+        }
+
+        /* 中央寄せ */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 子要素を横方向に中央揃え */
+            justify-content: center; /* 子要素を縦方向に中央揃え */
+            min-height: 60vh; /* 中央に配置する領域の高さを設定 */
+            text-align: center; /* 文章を中央に配置 */
+        }
+
+        .notification-list {
+            width: 100%; /* 画面幅いっぱいに設定 */
+            max-width: 600px; /* 最大幅を設定して適切なサイズに調整 */
+            margin-top: 20px;
+        }
+
+        .notification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc; /* 枠線を追加 */
+            border-radius: 8px; /* 角を丸く */
+        }
+
+        .notification-item button {
+            padding: 5px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .notification-item button:hover {
+            background-color: #ff4500;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-    <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像"align="right"></aside>
-    <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-    <main>
-        <h2>編集したいお知らせを選んで下さい</h2>
+        <main>
+            <h2>編集したいお知らせを選んで下さい</h2>
 
-        <div class="notification-list">
-            <!-- 仮のお知らせデータ -->
-            <div class="notification-item">
-                <span>お知らせタイトル1</span>
-                <button onclick="deleteNotification(1)">編集</button>
+            <div class="notification-list">
+                <!-- 仮のお知らせデータ -->
+                <div class="notification-item">
+                    <span>お知らせタイトル1</span>
+                    <button onclick="deleteNotification(1)">編集</button>
+                </div>
+                <div class="notification-item">
+                    <span>お知らせタイトル2</span>
+                    <button onclick="deleteNotification(2)">編集</button>
+                </div>
+                <div class="notification-item">
+                    <span>お知らせタイトル3</span>
+                    <button onclick="deleteNotification(3)">編集</button>
+                </div>
+                <form action ="../manager/NewsPost.action" method = "post">
+                    <input type="submit" value="戻る">
+                </form>
             </div>
-            <div class="notification-item">
-                <span>お知らせタイトル2</span>
-                <button onclick="deleteNotification(2)">編集</button>
-            </div>
-            <div class="notification-item">
-                <span>お知らせタイトル3</span>
-                <button onclick="deleteNotification(3)">編集</button>
-            </div>
-            <form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "戻る"></form>
-        </div>
-    </main>
-</div>
+        </main>
+    </div>
 
-</div>
     <footer>
-	        <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
-	        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
+        <form action ="../manager/Home_staff.action" method = "post"><input type="submit" value="ホーム"></form>
+        <form action ="../manager/Setting.action" method = "post"><input type="submit" value="設定"></form>
     </footer>
 </body>
+</html>
+
