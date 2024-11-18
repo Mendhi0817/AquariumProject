@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.UserDAO;
-import bean.User;
 import tool.Action;
 
 public class PasswordResetAction extends Action {
@@ -15,22 +14,28 @@ public class PasswordResetAction extends Action {
 	) throws Exception {
 
 
-		HttpSession session=request.getSession();
+		HttpSession session =request.getSession();
+		//メールアドレス存在するか確認するための変数
+		boolean isEmail = true;
 
 		String email=request.getParameter("email");
+		String password = request.getParameter("password");
 		UserDAO dao=new UserDAO();
-		User user = dao.Search(email);
+		//入力されたメールアドレスが存在するか確認
+		System.out.println(email);
+		isEmail = dao.searchEmail(email);
+
+		if(isEmail = true){
+			dao.passwordUpdate(email, password);
+
+
+			request.getRequestDispatcher("../common/password_reset_completion.jsp").forward(request, response);
 
 
 
-		if(user!= null){
-			session.setAttribute("user", user);
-			if(user.geteMail().equals(email)){
-				request.getRequestDispatcher("../common/password_reset_completion.jsp").forward(request, response);
+		}
+//		User user = dao.passwordUpdate(email, password);
 
-
-
-			}
 
 
 				else{
@@ -45,4 +50,3 @@ public class PasswordResetAction extends Action {
 		}
 
 		//login
-	}
