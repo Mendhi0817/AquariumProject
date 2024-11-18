@@ -1,8 +1,6 @@
 package manager;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,7 +25,7 @@ public class ContactCreateAction extends Action {
 
 		int year = todaysDate.getYear();	// 現在の年を取得
 
-		ContactDAO ContactDAO = new ContactDAO();	// クラス番号Daoをインスタンス化
+//		ContactDAO ContactDAO = new ContactDAO();	// クラス番号Daoをインスタンス化
 
 
 		//リクエストパラメータ―の取得 2

@@ -41,7 +41,7 @@ public class ContactCreateExecuteAction extends Action {
 
 		ContactTitle=request.getParameter("f1");
 		ContactContent=request.getParameter("f2");
-		ContactDate=request.getParameter("f3");
+		ContactDate=Date.valueOf(request.getParameter("f3"));
 //		classNum=request.getParameter("f4");
 
 //		System.out.println(entYearStr);
