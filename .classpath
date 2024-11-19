@@ -16,5 +16,9 @@
 	<classpathentry kind="lib" path="C:/Users/mendhi/Downloads/javase-3.5.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mendhi/Downloads/core-3.5.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mendhi/Downloads/opencv/build/java/opencv-4100.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mendhi/Downloads/slf4j-simple-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mendhi/Downloads/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mendhi/Downloads/bridj-0.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mendhi/Downloads/webcam-capture-0.3.10.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
