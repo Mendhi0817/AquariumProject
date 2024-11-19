@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.Contact;
+import bean.Contuct;
 //import bean.Teacher;
 import DAO.ContactDAO;
 import tool.Action;
@@ -18,7 +19,7 @@ public class ContactCreateExecuteAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//TODO 自動生成されたメソッド·スタブ
 		HttpSession session=request.getSession();//セッション
-		Contact Contact=(Contact)session.getAttribute("user");
+		Contuct Contuct=(Contuct)session.getAttribute("user");
 
 //		String entYearStr="";//入力された入学年度
 //		String no="";
@@ -80,7 +81,7 @@ public class ContactCreateExecuteAction extends Action {
 //		        student.setSchool(teacher.getSchool()); // 学校情報をセット
 
 		        // StudentDaoを使って学生情報をデータベースに保存
-		        cDao.save(contact);
+		        cDao.save(Contuct);
 		    request.getRequestDispatcher("complete.jsp").forward(request, response);
 		}
 	}

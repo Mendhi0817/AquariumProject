@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Contact;
+import bean.Contuct;
 import tool.Action;
 
 public class ContactCreateAction extends Action {
@@ -19,7 +19,7 @@ public class ContactCreateAction extends Action {
 
 		HttpSession session = req.getSession(); // セッション情報を取得
 
-		Contact Contact = (Contact)session.getAttribute("contact");
+		Contuct Contact = (Contuct)session.getAttribute("contact");
 
 		LocalDate todaysDate = LocalDate.now();	// LocalDateインスタンスを取得
 
