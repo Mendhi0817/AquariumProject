@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.ContactDAO;
-import bean.Contact;
+import bean.Contuct;
 import tool.Action;
 
 public class ContactUpdateAction extends Action {
@@ -23,7 +23,7 @@ public class ContactUpdateAction extends Action {
 		PreparedStatement statement = null;
 
 
-		Contact contact = (Contact)session.getAttribute("user");
+		Contuct contact = (Contuct)session.getAttribute("user");
 //		String no="";
 //		String entYear="";
 //		LocalDate todaysDate = LocalDate.now();	// LocalDateインスタンスを取得
@@ -51,7 +51,7 @@ public class ContactUpdateAction extends Action {
 //		req.setAttribute("entYear", entYear);//↓↓↓  同じく  ↓↓↓
 //		req.setAttribute("class_num_set", list);//↓↓↓  同じく  ↓↓↓
 
-		Contact contact = cDao.get();
+		Contuct contact = cDao.get();
 
 		req.setAttribute("title", contact.getContactTitle());	// リクエストにデータをセット
 //		req.setAttribute("entYear", entYear);//↓↓↓  同じく  ↓↓↓
