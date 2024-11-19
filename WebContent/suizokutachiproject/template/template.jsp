@@ -4,9 +4,9 @@
 
 <html lang="ja">
 <head>
-<link rel="stylesheet" href="../News/news.css">
-<title>水族舘プロジェクト</title>
-<style>
+    <link rel="stylesheet" href="../News/news.css">
+    <title>水族舘プロジェクト</title>
+    <style>
         body {
             display: flex;
             flex-direction: column;
@@ -19,11 +19,10 @@
         }
 
         footer {
-            margin-bottom: 0px; /* フッターを画面の下に固定 */
+            margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
             text-align: center; /* 中央揃え（任意） */
             padding: 10px; /* 内側の余白（任意） */
-
         }
 
         .sidebar {
@@ -78,33 +77,27 @@
         footer form {
             display: inline-block;
             margin: 0 10px; /* フォーム間の余白 */
-
-        }
-
-        .foooooter{
-        position:absolute;
-        bottom:0px;
         }
 
     </style>
 </head>
 
 <body>
-<div class="container">
-<aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
-<header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+    <div class="container">
+        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
 
     </div>
+
+    <footer>
+        <form action="../manager/Home_staff.action" method="post">
+            <input type="submit" value="ホーム">
+        </form>
+        <form action="../manager/Setting.action" method="post">
+            <input type="submit" value="設定">
+        </form>
+    </footer>
 </body>
-<div class="foooooter">
-<footer>
-	<form action="../manager/Home_staff.action" method="post">
-	<input type="submit" value="ホーム">
-</form>
-	<form action="../manager/Setting.action" method="post">
-	<input type="submit" value="設定">
-</form>
-</footer>
-</div>
 </html>
+

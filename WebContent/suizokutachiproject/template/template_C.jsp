@@ -4,9 +4,9 @@
 
 <html lang="ja">
 <head>
-<link rel="stylesheet" href="../News/news.css">
-<title>水族舘プロジェクト</title>
-<style>
+    <link rel="stylesheet" href="../News/news.css">
+    <title>水族舘プロジェクト</title>
+    <style>
         body {
             display: flex;
             flex-direction: column;
@@ -19,11 +19,10 @@
         }
 
         footer {
-            margin-bottom: 0px; /* フッターを画面の下に固定 */
+            margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
             text-align: center; /* 中央揃え（任意） */
             padding: 10px; /* 内側の余白（任意） */
-
         }
 
         .sidebar {
@@ -66,8 +65,21 @@
             background-color: #ff6347; /* ボタンの背景色 */
             color: white; /* 文字色 */
             cursor: pointer;
-            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
-            margin: 5px 0; /* ボタン間に適切な余白を追加 */
+            width: 200px; /* 横幅を調整 */
+            margin: 5px 10px; /* ボタン間に適切な余白を追加 */
+        }
+
+        /* ボタンを横並びに配置するためのスタイル */
+        footer form {
+            display: inline-block;
+            margin: 0 10px; /* フォーム間の余白 */
+        }
+
+        /* フッターのボタン群を横並びにするためのフレックスボックス */
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* ボタン間の間隔を調整 */
         }
 
         /* ホバー時の色変更 */
@@ -75,36 +87,30 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
-        footer form {
-            display: inline-block;
-            margin: 0 10px; /* フォーム間の余白 */
-
-        }
-
-        .foooooter{
-        position:absolute;
-        bottom:0px;
-        }
-
     </style>
 </head>
 
 <body>
-<div class="container">
-<aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
-<header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-
-
+    <div class="container">
+        <aside class="sidebar"><img src="../../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <header><img src="../../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
     </div>
+
+    <footer>
+        <div class="footer-buttons">
+            <form action="../manager/Home_staff.action" method="post">
+                <input type="submit" value="ホーム">
+            </form>
+            <form action="../manager/Map.action" method="post">
+                <input type="submit" value="マップ">
+            </form>
+            <form action="../manager/News.action" method="post">
+                <input type="submit" value="お知らせ">
+            </form>
+            <form action="../manager/Setting.action" method="post">
+                <input type="submit" value="設定">
+            </form>
+        </div>
+    </footer>
 </body>
-<div class="foooooter">
-<footer>
-	<form action="../manager/Home_staff.action" method="post">
-	<input type="submit" value="ホーム">
-</form>
-	<form action="../manager/Setting.action" method="post">
-	<input type="submit" value="設定">
-</form>
-</footer>
-</div>
 </html>
