@@ -99,8 +99,8 @@
 
 <body>
    <div class="container">
-        <aside class="sidebar"><img src="../../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
-        <header><img src="../../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- BGMの文字を中央揃えで大きく表示 -->
         <div class="bgm-text">
@@ -118,6 +118,10 @@
                 <input type="submit" value="ユーザー情報変更">
             </form>
 
+		            <form action ="../manager/Change_User_Data.action" method="post">
+		           <input type="submit" value="パスワード変更">
+		     </form>
+
             <!-- ログアウトボタン（位置変更） -->
             <form action="../manager/logout.action" method="post">
                 <input type="submit" value="ログアウト">
@@ -128,7 +132,7 @@
 
     <footer>
         <div class="footer-buttons">
-            <form action="../../manager/Home_customer.action" method="post">
+            <form action="../manager/Home_customer.action" method="post">
                 <input type="submit" value="ホーム">
             </form>
             <form action="../manager/Map.action" method="post">
@@ -137,7 +141,7 @@
             <form action="../manager/News.action" method="post">
                 <input type="submit" value="お知らせ">
             </form>
-            <form action="../manager/Setting.action" method="post">
+            <form action="../manager/SettingC.action" method="post">
                 <input type="submit" value="設定">
             </form>
         </div>

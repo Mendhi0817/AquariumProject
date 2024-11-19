@@ -157,8 +157,8 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
-        <header><img src="../../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- 魚カードのセクション -->
         <section class="fish-card-container">
@@ -199,7 +199,7 @@
             <form action="../manager/News.action" method="post">
                 <input type="submit" value="お知らせ">
             </form>
-            <form action="../manager/Setting_C.action" method="post">
+            <form action="../manager/SettingC.action" method="post">
                 <input type="submit" value="設定">
             </form>
         </div>

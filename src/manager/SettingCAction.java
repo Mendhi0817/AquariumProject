@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import tool.Action;
 
 
-public class Setting_CAction extends Action {
+public class SettingCAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
