@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -94,6 +93,32 @@
             color: black; /* 文字色を黒に変更 */
         }
 
+        /* ログアウトボタンをパスワード変更ボタンと同じデザインに変更 */
+        .logout-button-container {
+            display: flex;
+            justify-content: center; /* 中央揃え */
+            gap: 20px; /* ボタン間の隙間 */
+            margin-top: 20px; /* 上部に余白 */
+        }
+
+        /* ログアウトボタンのスタイルをパスワード変更ボタンと同じに */
+        .logout-button-container form input[type="submit"] {
+            padding: 10px 40px; /* パスワード変更ボタンと同じパディング */
+            font-size: 1.2em; /* パスワード変更ボタンと同じ文字サイズ */
+            border-radius: 8px; /* ボタンの角を丸く */
+            background-color: #ff6347; /* パスワード変更ボタンと同じ背景色 */
+            color: white; /* 文字色 */
+            border: none; /* ボーダーを消す */
+            cursor: pointer; /* マウスオーバー時にポインターを表示 */
+            width: 250px; /* 横幅を統一 */
+        }
+
+        .logout-button-container form input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
+        }
+
+
+
     </style>
 </head>
 
@@ -118,16 +143,23 @@
                 <input type="submit" value="ユーザー情報変更">
             </form>
 
-		            <form action ="../manager/Change_User_Data.action" method="post">
-		           <input type="submit" value="パスワード変更">
-		     </form>
-
-            <!-- ログアウトボタン（位置変更） -->
-            <form action="../manager/Logout.action" method="post">
-                <input type="submit" value="ログアウト">
+            <form action ="../manager/password_reset.action" method="post">
+                <input type="submit" value="パスワード変更">
             </form>
 
         </div>
+
+        <!-- ログアウトボタンを中央揃えで配置 -->
+        <div class="logout-button-container">
+            <form action="../manager/Logout.action" method="post">
+                <input type="submit" value="クーポン">
+            </form>
+
+            <form action="../manager/Logout.action" method="post">
+                <input type="submit" value="ログアウト">
+            </form>
+        </div>
+
     </div>
 
     <footer>
@@ -148,3 +180,4 @@
     </footer>
 </body>
 </html>
+
