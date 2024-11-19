@@ -114,7 +114,7 @@
 
         <div class="button-group">
             <!-- ユーザー情報変更ボタン -->
-            <form action ="../manager/Change_User_Data.action" method="post">
+            <form action ="../manager/Change_User_DataC.action" method="post">
                 <input type="submit" value="ユーザー情報変更">
             </form>
 
@@ -123,7 +123,7 @@
 		     </form>
 
             <!-- ログアウトボタン（位置変更） -->
-            <form action="../manager/logout.action" method="post">
+            <form action="../manager/Logout.action" method="post">
                 <input type="submit" value="ログアウト">
             </form>
 
