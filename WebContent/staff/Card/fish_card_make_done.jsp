@@ -6,9 +6,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <title>水族舘プロジェクト</title>
-
-
-
 <head>
 <style>
 .button-container {
@@ -24,17 +21,3 @@
 
 </c:import>
 
-    <div class="container">
-
-</div>
-
-<div>
-    <form action ="../manager/FishCardMake.action" method = "post"><input type = "submit" value = "作成"></form>
-    <form action ="../manager/FishCardList.action" method = "post"><input type = "submit" value = "一覧"></form>
-</div>
-
-
-</div>
-
-</body>
-</html>

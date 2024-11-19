@@ -35,7 +35,6 @@ public class LoginAction extends Action {
 
 
 
-
 				else if(user.getFlag().equals("1")){
 
 

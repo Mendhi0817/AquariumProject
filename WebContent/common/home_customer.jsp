@@ -23,9 +23,9 @@
 </c:import>
 <div class="button-container">
 <form action ="../manager/MapPost.action" method = "post"><input type = "submit" value = "マップ"></form>
-<form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "お知らせ投稿"></form>
+<form action ="../manager/NewsPost.action" method = "post"><input type = "submit" value = "お知らせ"></form>
 <form action ="../manager/FishCard.action" method = "post"><input type = "submit" value = "魚カード"></form>
-<form action ="../manager/Coupon.action" method = "post"><input type = "submit" value = "クーポン作成"></form>
+<form action ="../manager/Coupon.action" method = "post"><input type = "submit" value = "クーポン"></form>
 
 </body>
 

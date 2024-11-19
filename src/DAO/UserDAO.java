@@ -34,9 +34,7 @@ public class UserDAO extends DAO {
 
 	}
 
-	public User Search(String email)
-			throws Exception {
-		User user = null;
+	public boolean searchEmail(String email) throws Exception{
 
 		Connection con = getConnection();
 
@@ -44,49 +42,59 @@ public class UserDAO extends DAO {
 		st = con.prepareStatement("select * from userinfo where email = ?");
 		st.setString(1,email);
 
+		System.out.println(email);
+
+
 
 
 		ResultSet rs = st.executeQuery();
 
-		while (rs.next()) {
-			user = new User();
-			user.seteMail(rs.getString("email"));
+
+		boolean isEmail = true;
+
+		System.out.print(rs.getString("EMAIL"));
+
+
+
+		//合ってなかったらisEmailがfalseになる
+		if (!rs.next()){
+			isEmail = false;
+
+			System.out.print(isEmail);
 		}
 		st.close();
 		con.close();
-		return user;
+		return isEmail;
+
+		}
 
 
 
-	}
 
-	public User search1(String email, int id)
+	public void passwordUpdate(String email, String password)
 			throws Exception {
-		User user = null;
 
 		Connection con = getConnection();
 
 		PreparedStatement st;
-		st = con.prepareStatement("update userinfo set email = ?, where user_id = ?");
+		st = con.prepareStatement("update userinfo set password = ? where email = ?");
 		st.setString(1,email);
-		st.setInt(2,id);
+		st.setString(2,password);
 
 
 
-		ResultSet rs = st.executeQuery();
 
-		while (rs.next()) {
-			user = new User();
-			user.seteMail(rs.getString("email"));
-			user.
-		}
 		st.close();
 		con.close();
-		return user;
+//		return user;
 
 
 
 	}
+
+
+
+
 
 
 
