@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import bean.Contact;
+import bean.Contuct;
 
-public class ContactDAO extends DAO {
+public class ContuctDAO extends DAO {
 	/**
 	 * getメソッド 学校コードを指定して学校インスタンスを１件取得する
 	 *
@@ -17,9 +17,9 @@ public class ContactDAO extends DAO {
 	 * @return 学校クラスのインスタンス 存在しない場合はnull
 	 * @throws Exception
 	 */
-	public Contact get() throws Exception {
+	public Contuct get() throws Exception {
 		// 学校インスタンスを初期化
-		Contact contact = new Contact();
+		Contuct contact = new Contuct();
 		// データベースへのコネクションを確率
 		Connection connection = getConnection();
 		// プリペアードステートメント
@@ -27,7 +27,7 @@ public class ContactDAO extends DAO {
 
 		try {
 			// プリペアードステートメントにSQL文をセット
-			statement = connection.prepareStatement("select * from contact where ct=?");
+			statement = connection.prepareStatement("select * from contact");
 			// プリペアードステートメントに学校コードをバインド
 			String ct = null;
 			String cc = null;
@@ -40,6 +40,7 @@ public class ContactDAO extends DAO {
 			if (rSet.next()) {
 				// リザルトセットが存在する場合
 				// 学校インスタンスに学校コードと学校名をセット
+				contact.setCi(rSet.getString("ci"));
 				contact.setCt(rSet.getString("ct"));
 				contact.setCc(rSet.getString("cc"));
 				contact.setCd(rSet.getString("cd"));
@@ -75,7 +76,7 @@ public class ContactDAO extends DAO {
 
 //------------------------------------------------------------------------------------------------------------------------------
 
-		public boolean save(Contact contact) throws Exception {
+		public boolean save(Contuct contact) throws Exception {
 
 			// コネクションを確立
 
@@ -182,4 +183,111 @@ public class ContactDAO extends DAO {
 
 }
 
+
+
+
+
+//--------------------------------------------------------------------------------------------------------
+
+
+public boolean delete(String ci) throws Exception {
+
+	// コネクションを確立
+
+	Connection connection = getConnection();
+
+	// プリペアードステートメント
+
+	PreparedStatement statement = null;
+
+	// 実行件数
+
+	int count = 0;
+
+
+	try {
+
+		// データベースから学生を取得
+
+//		Contuct old = get(contuct.getContuctId());
+
+		if(ci != null){
+
+		    // 学生が存在した場合
+
+		    // プリペアードステートメントにDELETE文をセット
+
+		    statement = connection
+
+		            .prepareStatement("delete CONTUCT where ContuctID=? ");
+
+		    // プリペアードステートメントに値をバインド
+
+		    statement.setString(1, ci);
+
+		}
+
+		// プリペアードステートメントを実行
+
+		count = statement.executeUpdate();
+
+	} catch (Exception e) {
+
+		throw e;
+
+	} finally {
+
+		// プリペアードステートメントを閉じる
+
+		if (statement != null) {
+
+			try {
+
+				statement.close();
+
+			} catch (SQLException sqle) {
+
+				throw sqle;
+
+			}
+
+		}
+
+		// コネクションを閉じる
+
+		if (connection != null) {
+
+			try {
+
+				connection.close();
+
+			} catch (SQLException sqle) {
+
+				throw sqle;
+
+			}
+
+		}
+
+	}
+
+	if (count > 0) {
+
+		// 実行件数が1件以上ある場合
+
+		return true;
+
+	} else {
+
+		// 実行件数が０件の場合
+
+		return false;
+
+	}
+
 }
+
+}
+
+
+
