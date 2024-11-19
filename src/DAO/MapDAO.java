@@ -8,21 +8,21 @@ import java.sql.SQLException;
 import bean.Map;
 public class MapDAO extends DAO {
 
-	public Map search(int floor) throws Exception {
+	public Map search(String floor) throws Exception {
 		Map map = null;
 		Connection con = getConnection();
 		PreparedStatement st;
 
 		st = con.prepareStatement("select * from mapinfo where floor_info=?");
 //		st.setString(1,image);
-		st.setInt(1,floor);
+		st.setString(1,floor);
 
 		ResultSet rs = st.executeQuery();
 
 		while (rs.next()) {
 			map = new Map();
 			map.setMapImage(rs.getString("map_image"));
-			map.setFloorInfo(rs.getInt("floor_info"));
+			map.setFloorInfo(rs.getString("floor_info"));
 
 		}
 		st.close();
@@ -44,13 +44,16 @@ public boolean save(Map map) throws Exception {
 	// 実行件数
 	int count = 0;
 
+//	System.out.println(map.getFloorInfo());
+//	System.out.println("123");
+
 	try {
 		if (image == null) {
 			// 存在しなかった場合
 			// プリペアードステートメントにINSERT文をセット
-		    st = con.prepareStatement("insert into MAPINFO(MAP_IMAGE, FLOOR_INFO) values(?, ?)");
+		    st = con.prepareStatement("insert into MAP_INFO(MAP_IMAGE, FLOOR_INFO) values(?, ?)");
 			st.setString(1, map.getMapImage());
-			st.setInt(2, map.getFloorInfo());
+			st.setString(2, map.getFloorInfo());
 
 		}
 		// プリペアードステートメントを実行

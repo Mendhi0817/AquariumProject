@@ -4,7 +4,7 @@ public class Map {
 
 	private String MapImage;
 
-	private int FloorInfo;
+	private String FloorInfo;
 
 	public String getMapImage() {
 		return MapImage;
@@ -14,11 +14,11 @@ public class Map {
 		this.MapImage = mapImage;
 	}
 
-	public int getFloorInfo() {
+	public String getFloorInfo() {
 		return FloorInfo;
 	}
 
-	public void setFloorInfo(int floorInfo) {
+	public void setFloorInfo(String floorInfo) {
 		this.FloorInfo = floorInfo;
 	}
 
