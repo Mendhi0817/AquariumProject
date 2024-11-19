@@ -14,9 +14,9 @@ public class test {
     public static void main(String[] args) {
         try {
             QRCodeWriter qw = new QRCodeWriter();
-            BitMatrix bm = qw.encode("タイ", BarcodeFormat.QR_CODE, 200, 200);
+            BitMatrix bm = qw.encode("ZXing QR code", BarcodeFormat.QR_CODE, 200, 200);
             BufferedImage img = MatrixToImageWriter.toBufferedImage(bm);
-            ImageIO.write(img, "png", new File("魚カード1.png"));
+            ImageIO.write(img, "png", new File("zxtest.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
