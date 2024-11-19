@@ -12,7 +12,7 @@
 	background-repeat: no-repeat;
 	}
 	body{
-	background-image:url("../picture/logo.jpg");
+	background-image:url("../picture/suizokutachiproject_titlelogo.png");
 	background-repeat:no-repeat;
 	background-position: center;
 	background-repeat: no-repeat;
