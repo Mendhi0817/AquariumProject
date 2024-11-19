@@ -6,10 +6,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <title>水族舘プロジェクト</title>
-<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
-<c:import url="/common/base.jsp">
-
-</c:import>
 
 
 
@@ -23,20 +19,19 @@
 
 <body>
 
+<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
+<c:import url="/common/base.jsp">
 
+</c:import>
 
-        <!-- 新しいフォームセクション -->
-        <div class="form-container">
-            <form>
-                <!-- 文字を入力するフィールド -->
+<form action ="../manager/FishCardList.action" method = "post"><input type = "submit" value = "【戻る】"></form>
 
-                <div>
-                <h2></h2>
+<div>
+
                 <textarea id="content" name="f1"placeholder="ここにカード名を入力してください"></textarea>
                 </div>
 
-                <form>
-<label for="raritySelect">レア度を選んでください:</label>
+<label for="raritySelect"></label>
 					<select class="form-select" required aria-label="select example" id="rarity" name="f2" style="width: 30%;">
 
         <option value="normal">ノーマル</option>
@@ -44,25 +39,19 @@
         <option value="super_rare">スーパーレア</option>
         <option value="hyper_rare">ハイパーレア</option>
     </select>
-    </form>
 
-                <!-- PDFファイルをアップロードするフィールド -->
+    <!-- PDFファイルをアップロードするフィールド -->
                 <div>
                     <label for="pdfUpload">画像をアップロードして下さい：</label>
-                    <input type="file" id="pdfUpload" name="f2" accept="application/pdf">
+                    <input type="file" id="pdfUpload" name="f3" accept="application/pdf">
                 </div>
 
                 <div>
                 <h2>説明文を入力</h2>
-                <textarea id="content" placeholder="ここに文章を入力してください"></textarea>
+                <textarea id="content" name="f4" placeholder="ここに文章を入力してください"></textarea>
                 </div>
 
                 <!-- 送信ボタン -->
                 <div>
-                    <form action ="../manager/FishCardMakeDone.action" method = "post"><input type = "submit" value = "投稿"></form>
+                    <form action ="../manager/FishCardEditDone.action" method = "post"><input type = "submit" value = "編集"></form>
                 </div>
-            </form>
-        </div>
-    </div>
-</body>
-</html>
