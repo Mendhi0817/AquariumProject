@@ -17,7 +17,6 @@
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
-
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
@@ -29,7 +28,7 @@
             text-align: center; /* サイドバー内のコンテンツを中央揃え */
         }
 
-        .content input, .content textarea, .content input[type="date"] {
+        .content input, .content textarea {
             width: 50%;
             padding: 10px;
             margin: 10px 0;
@@ -42,22 +41,35 @@
             height: 300px; /* テキストエリアの高さ */
         }
 
-        /* 削除と編集ボタンを左に寄せる */
-        .button-container {
-            display: flex; /* フレックスボックスを使って横並び */
-            justify-content: flex-start; /* ボタンを左端に寄せる */
-            gap: 10px; /* ボタン間の隙間 */
+        /* ボタンを中央に寄せ、共通のスタイルを設定 */
+        .button-container, .button-group {
+            display: flex;
+            justify-content: center; /* ボタンを中央揃え */
+            gap: 20px; /* ボタン間の隙間を設定 */
+            margin-top: 20px; /* 上部に余白 */
         }
 
-        /* 投稿、編集、削除ボタンを小さくするためのスタイル */
-        .button-container form input[type="submit"] {
-            width: 150px; /* ボタンの横幅を小さく設定 */
-            padding: 15px 40px; /* ボタンのパディング */
-            font-size: 1em;
+        .button-container button, .button-group input[type="submit"] {
+            padding: 10px 40px; /* ボタンのパディング */
+            font-size: 1.2em; /* ボタンの文字サイズ */
+            border-radius: 8px; /* ボタンの角を丸く */
+            background-color: #ff6347; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            border: none; /* ボーダーを消す */
+            cursor: pointer; /* マウスオーバー時にポインターを表示 */
+            width: 250px; /* 横幅を統一（例として250pxを設定） */
         }
 
-        /* すべてのsubmitボタンに対して共通のスタイルを適用 */
-        input[type="submit"] {
+        .button-container button:hover, .button-group input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
+        }
+
+        footer form {
+            display: inline-block;
+            margin: 0 10px; /* フォーム間の余白 */
+        }
+
+        footer input[type="submit"] {
             padding: 10px 60px; /* ボタンのパディング */
             font-size: 1.2em;
             border: none;
@@ -65,25 +77,43 @@
             background-color: #ff6347; /* ボタンの背景色 */
             color: white; /* 文字色 */
             cursor: pointer;
-            width: 200px; /* 横幅を調整 */
-            margin: 5px 10px; /* ボタン間に適切な余白を追加 */
+            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
         }
 
-        /* ボタンを横並びに配置するためのスタイル */
-        footer form {
-            display: inline-block;
-            margin: 0 10px; /* フォーム間の余白 */
+        footer input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
         }
 
-        /* フッターのボタン群を横並びにするためのフレックスボックス */
-        .footer-buttons {
+        /* BGMの文字を大きくして中央に配置 */
+        .bgm-text {
+            font-size: 3em; /* フォントサイズを大きく */
+            font-weight: bold; /* 太字 */
+            text-align: center; /* 中央揃え */
+            margin-top: 30px; /* 上部に余白 */
+            color: black; /* 文字色を黒に変更 */
+        }
+
+        /* ログアウトボタンをパスワード変更ボタンと同じデザインに変更 */
+        .logout-button-container {
             display: flex;
-            justify-content: center;
-            gap: 20px; /* ボタン間の間隔を調整 */
+            justify-content: center; /* 中央揃え */
+            gap: 20px; /* ボタン間の隙間 */
+            margin-top: 20px; /* 上部に余白 */
         }
 
-        /* ホバー時の色変更 */
-        input[type="submit"]:hover {
+        /* ログアウトボタンのスタイルをパスワード変更ボタンと同じに */
+        .logout-button-container form input[type="submit"] {
+            padding: 10px 40px; /* パスワード変更ボタンと同じパディング */
+            font-size: 1.2em; /* パスワード変更ボタンと同じ文字サイズ */
+            border-radius: 8px; /* ボタンの角を丸く */
+            background-color: #ff6347; /* パスワード変更ボタンと同じ背景色 */
+            color: white; /* 文字色 */
+            border: none; /* ボーダーを消す */
+            cursor: pointer; /* マウスオーバー時にポインターを表示 */
+            width: 250px; /* 横幅を統一 */
+        }
+
+        .logout-button-container form input[type="submit"]:hover {
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
@@ -137,7 +167,7 @@
             width: 300px; /* ボタンの横幅を大きく設定 */
             padding: 20px 80px; /* ボタンのパディング */
             font-size: 1.5em; /* フォントサイズを大きく */
-            background-color: #4CAF50; /* ボタンの背景色（緑） */
+            background-color: #ff6347; /* ボタンの背景色（緑） */
             border-radius: 10px; /* 角を丸く */
             color: white; /* 文字色 */
             border: none; /* 枠線なし */
@@ -149,7 +179,7 @@
 
         /* ホバー時のQRコードボタンの色変更 */
         .qr-code-button:hover {
-            background-color: #45a049; /* ホバー時の背景色 */
+            background-color: #ff4500; /* ホバー時の背景色 */
         }
 
     </style>

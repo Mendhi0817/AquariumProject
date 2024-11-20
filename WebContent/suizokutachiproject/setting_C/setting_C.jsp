@@ -151,7 +151,7 @@
 
         <!-- ログアウトボタンを中央揃えで配置 -->
         <div class="logout-button-container">
-            <form action="../manager/Logout.action" method="post">
+            <form action="../manager/Coupon_C.action" method="post">
                 <input type="submit" value="クーポン">
             </form>
 
