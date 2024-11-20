@@ -38,7 +38,7 @@ public class LoginAction extends Action {
 				else if(user.getFlag().equals("1")){
 
 
-				request.getRequestDispatcher("../suizokutachiproject/home_C/home_C.jsp").forward(request, response);
+				request.getRequestDispatcher("../suizokutachiproject/home/home_J.jsp").forward(request, response);
 
 				}
 

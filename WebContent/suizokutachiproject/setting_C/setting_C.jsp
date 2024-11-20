@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -93,39 +94,13 @@
             color: black; /* 文字色を黒に変更 */
         }
 
-        /* ログアウトボタンをパスワード変更ボタンと同じデザインに変更 */
-        .logout-button-container {
-            display: flex;
-            justify-content: center; /* 中央揃え */
-            gap: 20px; /* ボタン間の隙間 */
-            margin-top: 20px; /* 上部に余白 */
-        }
-
-        /* ログアウトボタンのスタイルをパスワード変更ボタンと同じに */
-        .logout-button-container form input[type="submit"] {
-            padding: 10px 40px; /* パスワード変更ボタンと同じパディング */
-            font-size: 1.2em; /* パスワード変更ボタンと同じ文字サイズ */
-            border-radius: 8px; /* ボタンの角を丸く */
-            background-color: #ff6347; /* パスワード変更ボタンと同じ背景色 */
-            color: white; /* 文字色 */
-            border: none; /* ボーダーを消す */
-            cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            width: 250px; /* 横幅を統一 */
-        }
-
-        .logout-button-container form input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
-        }
-
-
-
     </style>
 </head>
 
 <body>
    <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
-        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+        <aside class="sidebar"><img src="../../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <header><img src="../../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- BGMの文字を中央揃えで大きく表示 -->
         <div class="bgm-text">
@@ -139,10 +114,11 @@
 
         <div class="button-group">
             <!-- ユーザー情報変更ボタン -->
-            <form action ="../manager/Change_User_DataC.action" method="post">
+            <form action ="../manager/Change_User_Data.action" method="post">
                 <input type="submit" value="ユーザー情報変更">
             </form>
 
+<<<<<<< HEAD
             <form action ="../manager/password_reset.action" method="post">
                 <input type="submit" value="パスワード変更">
             </form>
@@ -156,15 +132,19 @@
             </form>
 
             <form action="../manager/Logout.action" method="post">
+=======
+            <!-- ログアウトボタン（位置変更） -->
+            <form action="../manager/logout.action" method="post">
+>>>>>>> branch 'master' of https://github.com/Mendhi0817/AquariumProject.git
                 <input type="submit" value="ログアウト">
             </form>
-        </div>
 
+        </div>
     </div>
 
     <footer>
         <div class="footer-buttons">
-            <form action="../manager/Home_customer.action" method="post">
+            <form action="../../manager/Home_customer.action" method="post">
                 <input type="submit" value="ホーム">
             </form>
             <form action="../manager/Map.action" method="post">
@@ -173,11 +153,10 @@
             <form action="../manager/News.action" method="post">
                 <input type="submit" value="お知らせ">
             </form>
-            <form action="../manager/SettingC.action" method="post">
+            <form action="../manager/Setting.action" method="post">
                 <input type="submit" value="設定">
             </form>
         </div>
     </footer>
 </body>
 </html>
-

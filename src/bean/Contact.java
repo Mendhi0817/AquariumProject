@@ -2,7 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
-public class Contuct implements Serializable {
+public class Contact implements Serializable {
 
 	/**
 	 * 学校コード:String
@@ -19,20 +19,10 @@ public class Contuct implements Serializable {
 	 */
 	private String cd;
 
-	private String ci;
-
 
 	/**
 	 * ゲッター、セッター
 	 */
-	public String getContuctId(){
-		return ci;
-	}
-
-	public void setCi(String ci){
-		this.ci = ci;
-	}
-
 	public String getContactTitle() {
 		return ct;
 	}

@@ -6,17 +6,15 @@ import javax.servlet.http.HttpServletResponse;
 import tool.Action;
 
 
+public class Setting_CAction extends Action {
 
-public class password_resetAction extends Action{
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
+		request.getRequestDispatcher("../suizokutachiproject/setting_C/setting_C.jsp").forward(request, response);
 
+	}
 
-				request.getRequestDispatcher("../suizokutachiproject/setting_C/password_reset.jsp").forward(request, response);
-
-
-		}
-
-}
+		//login
+	}

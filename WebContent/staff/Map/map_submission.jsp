@@ -61,7 +61,7 @@
 
         <!-- 新しいフォームセクション -->
         <div class="form-container">
-            <form>
+            <form action ="../manager/MapPostDone.action" method = "post" enctype="multipart/form-data">
                 <div>
                     <button name="delete">削除</button>
                 </div>
@@ -74,15 +74,15 @@
                 <!-- PDFファイルをアップロードするフィールド -->
                 <div>
                     <label for="pdfUpload">マップの写真をアップロードして下さい：</label>
-                    <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf">
+                    <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf" >
+                    <br><img src="/fileupload/upload/<%= "pdfUpload" %>">
                 </div>
-
                 <!-- 送信ボタン -->
                 <div class="FormActionContainer">
-                	<form action ="../manager/MapPostDone.action" method = "post"><input type = "submit" value = "投稿"></form>
                 </div>
+            <input type = "submit" value = "投稿">
             </form>
         </div>
     </div>
 
-<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
+<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom"></footer>
