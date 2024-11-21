@@ -1,6 +1,5 @@
 package manager;
 
-import java.io.File;
 import java.nio.file.Paths;
 
 import javax.servlet.annotation.MultipartConfig;
@@ -26,6 +25,9 @@ public class MapPostDoneAction extends Action {
         // ファイル名を取得		//name属性がpictのファイルをPartオブジェクトとして取得
 		Part part=req.getPart("pdfUpload");
 
+		// Content-Disposition ヘッダーを取得
+		String contentDisposition = part.getHeader("content-disposition");
+
 //        File file = new File(filePath);
 //        String fileName = file.getName();
 
@@ -35,17 +37,30 @@ public class MapPostDoneAction extends Action {
         // ファイルコピー
 //        Files.copy(Paths.get(filePath), Paths.get(copyPath));
 
-		//ファイル名を取得
+		//ファイル名取得
 		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
-		String filename=Paths.get(part.getSubmittedFileName()).getFileName().toString();
+//		String filename=Paths.get(part.getSubmittedFileName()).getFileName().toString();
+		//ファイル名取得
+		String fileName = null;
+		for (String content : contentDisposition.split(";")) {
+		    if (content.trim().startsWith("filename")) {
+		        fileName = content.substring(content.indexOf("=") + 1).trim().replace("\"", "");
+		        fileName = Paths.get(fileName).getFileName().toString(); // フルパスの場合の対応
+		        break;
+		    }
+		}
+		System.out.println("ファイル名: " + fileName);
+
 		//アップロードするフォルダ
 //		String path=getServletContext().getRealPath("/upload");
-		String path=req.getServletContext().getRealPath("/upload");
+//		String path=req.getServletContext().getRealPath("/upload");
 		//実際にファイルが保存されるパス確認
-		System.out.println(path);
-
+//		System.out.println(path);
 		//書き込み
-		part.write(path+File.separator+filename);
+//		part.write(path+File.separator+filename);
+		//取得したファイルを指定のフォルダに保存
+		String path = "C:/FloorMap/"+fileName;
+		part.write(path);
 
 		// 階数を文字として取得し
 		String floor = req.getParameter("textInput");

@@ -32,6 +32,7 @@ public class MapDAO extends DAO {
 	}
 
 
+
 public boolean save(Map map) throws Exception {
 	// コネクションを確立
 	Connection con = getConnection();
@@ -80,4 +81,56 @@ public boolean save(Map map) throws Exception {
 		return false;
 	}
 	}
+
+
+
+public boolean delete(String ci) throws Exception {
+	// コネクションを確立
+	Connection connection = getConnection();
+	// プリペアードステートメント
+	PreparedStatement statement = null;
+	// 実行件数
+	int count = 0;
+
+	try {
+		// データベースから取得
+//		Contuct old = get(contuct.getContuctId());
+		if(ci != null){
+		    // 学生が存在した場合
+		    // プリペアードステートメントにDELETE文をセット
+		    statement = connection
+		            .prepareStatement("delete MAP_INFO where MAP_ID=? ");
+		    // プリペアードステートメントに値をバインド
+		    statement.setString(1, ci);
+		}
+		// プリペアードステートメントを実行
+		count = statement.executeUpdate();
+	} catch (Exception e) {
+		throw e;
+	} finally {
+		// プリペアードステートメントを閉じる
+		if (statement != null) {
+			try {
+				statement.close();
+			} catch (SQLException sqle) {
+				throw sqle;
+			}
+		}
+		// コネクションを閉じる
+		if (connection != null) {
+			try {
+				connection.close();
+			} catch (SQLException sqle) {
+				throw sqle;
+			}
+		}
+	}
+	if (count > 0) {
+		// 実行件数が1件以上ある場合
+		return true;
+	} else {
+		// 実行件数が０件の場合
+		return false;
+	}
+}
 }
