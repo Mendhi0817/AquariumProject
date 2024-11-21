@@ -30,6 +30,9 @@ public class MapDAO extends DAO {
 		con.close();
 		return listmap;
 	}
+
+
+
 	public Map search(String floor) throws Exception {
 		Map map = null;
 		Connection con = getConnection();
@@ -106,7 +109,7 @@ public boolean save(Map map) throws Exception {
 
 
 
-public boolean delete(String mapId) throws Exception {
+public boolean delete(String floorInfo) throws Exception {
 	// コネクションを確立
 	Connection connection = getConnection();
 	// プリペアードステートメント
@@ -117,13 +120,13 @@ public boolean delete(String mapId) throws Exception {
 	try {
 		// データベースから取得
 //		Contuct old = get(contuct.getContuctId());
-		if(mapId != null){
+		if(floorInfo != null){
 		    // 学生が存在した場合
 		    // プリペアードステートメントにDELETE文をセット
 		    statement = connection
-		            .prepareStatement("delete MAP_INFO where MAP_ID=? ");
+		            .prepareStatement("delete map_info where floor_info=? ");
 		    // プリペアードステートメントに値をバインド
-		    statement.setString(1, mapId);
+		    statement.setString(1, floorInfo);
 		}
 		// プリペアードステートメントを実行
 		count = statement.executeUpdate();

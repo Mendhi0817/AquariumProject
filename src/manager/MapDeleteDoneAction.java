@@ -29,7 +29,7 @@ public class MapDeleteDoneAction extends Action {
         if (isDeleted) {
             // 削除成功時、「削除完了」画面に転送
             req.setAttribute("message", "マップが正常に削除されました。");
-            req.getRequestDispatcher("../staff/Map/map_delete_done.jsp").forward(req, res);
+            req.getRequestDispatcher("../staff/Map/map_post_delete_done.jsp").forward(req, res);
         } else {
             // 削除失敗時、エラーメッセージを設定してエラーページに転送
             req.setAttribute("error", "マップの削除に失敗しました。該当するデータが存在しない可能性があります。");
