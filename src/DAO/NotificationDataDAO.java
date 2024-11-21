@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import bean.Contact;
+import bean.NotificationData;
 
-public class ContactDAO extends DAO {
+public class NotificationDataDAO extends DAO {
 	/**
 	 * getメソッド 学校コードを指定して学校インスタンスを１件取得する
 	 *
@@ -17,9 +17,9 @@ public class ContactDAO extends DAO {
 	 * @return 学校クラスのインスタンス 存在しない場合はnull
 	 * @throws Exception
 	 */
-	public Contact get() throws Exception {
+	public NotificationData get() throws Exception {
 		// 学校インスタンスを初期化
-		Contact contact = new Contact();
+		NotificationData notification = new NotificationData();
 		// データベースへのコネクションを確率
 		Connection connection = getConnection();
 		// プリペアードステートメント
@@ -29,10 +29,11 @@ public class ContactDAO extends DAO {
 			// プリペアードステートメントにSQL文をセット
 			statement = connection.prepareStatement("select * from contact where ct=?");
 			// プリペアードステートメントに学校コードをバインド
-			String ct = null;
-			String cc = null;
-			Date cd = null;
-			statement.setString(1, ct);
+			String nt = null;
+			String nc = null;
+			Date nd = null;
+			String ni = null;
+			statement.setString(1, nt);
 //			statement.setString(1, ct);
 			// プリペアードステートメントを実行
 			ResultSet rSet = statement.executeQuery();
@@ -40,13 +41,13 @@ public class ContactDAO extends DAO {
 			if (rSet.next()) {
 				// リザルトセットが存在する場合
 				// 学校インスタンスに学校コードと学校名をセット
-				contact.setCt(rSet.getString("ct"));
-				contact.setCc(rSet.getString("cc"));
-				contact.setCd(rSet.getString("cd"));
+				notification.setNt(rSet.getString("ct"));
+				notification.setNc(rSet.getString("cc"));
+				notification.setNd(rSet.getDate("cd"));
 			} else {
 				// 存在しない場合
 				// 学校インスタンスにnullをセット
-				contact = null;
+				notification = null;
 			}
 		}catch (Exception e) {
 				throw e;
@@ -68,14 +69,14 @@ public class ContactDAO extends DAO {
 				}
 			}
 		}
-		return contact;
+		return notification;
 	}
 
 
 
 //------------------------------------------------------------------------------------------------------------------------------
 
-		public boolean save(Contact contact) throws Exception {
+		public boolean save(NotificationData notification) throws Exception {
 
 			// コネクションを確立
 
@@ -108,32 +109,12 @@ public class ContactDAO extends DAO {
 
 //				    // プリペアードステートメントに値をバインド
 //
-				    statement.setString(1, contact.getContactTitle());
+				    statement.setString(1, notification.getNotificationDataContent());
 
-				    statement.setString(2, contact.getContactContent());
+				    statement.setString(2, notification.getNotificationDataContent());
 
-				    statement.setString(3,  contact.getContactDate());
+				    statement.setDate(3,  notification.getNotificationDataDay());
 
-//				} else {
-//
-//				    // 学生が存在した場合
-//
-//				    // プリペアードステートメントにUPDATE文をセット
-//
-//				    statement = connection
-//
-//				            .prepareStatement("update SUBJECT set NAME=? where CD=? and SCHOOL_CD=?");
-//
-//				    // プリペアードステートメントに値をバインド
-//
-//				    statement.setString(1,  subject.getName());
-//
-//				    statement.setString(2, subject.getCd());
-//
-//				    statement.setString(3, subject.getSchool().getCd());
-//
-//				}
-//
 				// プリペアードステートメントを実行
 
 				count = statement.executeUpdate();
@@ -179,7 +160,110 @@ public class ContactDAO extends DAO {
 				return false;
 
 			}
+		}
+//----------------------------------------------------------------------------------------------------------
+
+			public boolean Delete(String ni) throws Exception {
+
+				// コネクションを確立
+
+				Connection connection = getConnection();
+
+				// プリペアードステートメント
+
+				PreparedStatement statement = null;
+
+				// 実行件数
+
+				int count = 0;
+
+
+				try {
+
+					// データベースから学生を取得
+
+//					Contuct old = get(contuct.getContuctId());
+
+					if(ni != null){
+
+					    // 学生が存在した場合
+
+					    // プリペアードステートメントにDELETE文をセット
+
+					    statement = connection
+
+					            .prepareStatement("delete CONTUCT where ContuctID=? ");
+
+					    // プリペアードステートメントに値をバインド
+
+					    statement.setString(1, ni);
+
+					}
+
+					// プリペアードステートメントを実行
+
+					count = statement.executeUpdate();
+
+				} catch (Exception e) {
+
+					throw e;
+
+				} finally {
+
+					// プリペアードステートメントを閉じる
+
+					if (statement != null) {
+
+						try {
+
+							statement.close();
+
+						} catch (SQLException sqle) {
+
+							throw sqle;
+
+						}
+
+					}
+
+					// コネクションを閉じる
+
+					if (connection != null) {
+
+						try {
+
+							connection.close();
+
+						} catch (SQLException sqle) {
+
+							throw sqle;
+
+						}
+
+					}
+
+				}
+
+				if (count > 0) {
+
+					// 実行件数が1件以上ある場合
+
+					return true;
+
+				} else {
+
+					// 実行件数が０件の場合
+
+					return false;
+
+				}
+
+			}
+
+
+
 
 }
 
-}
+
+

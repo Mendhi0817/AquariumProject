@@ -13,7 +13,7 @@ import bean.Contuct;
 //import bean.Teacher;
 import DAO.ContuctDAO;
 import tool.Action;
-public class ContactUpdateExecuteAction extends Action {
+public class NotificationDataUpdateExecuteAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
