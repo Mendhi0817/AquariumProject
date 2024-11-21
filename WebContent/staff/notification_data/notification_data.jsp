@@ -95,7 +95,7 @@
                 <input type="submit" value="編集">
             </form>
         </div>
-
+	<form>
         <div class="content">
             <h2>タイトルを入力</h2>
             <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
@@ -107,6 +107,7 @@
             <h2>日付を入力</h2>
             <input type="date" id="date" name="f3">
         </div>
+     </form>
 
         <form action="../manager/NotifiationDataCreateExecute.action" method="post">
             <input type="submit" value="投稿">
