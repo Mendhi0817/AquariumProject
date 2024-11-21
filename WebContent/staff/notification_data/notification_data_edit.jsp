@@ -110,7 +110,7 @@
                     <span>お知らせタイトル3</span>
                     <button onclick="deleteNotification(3)">編集</button>
                 </div>
-                <form action ="../manager/NewsPost.action" method = "post">
+                <form action ="../manager/Notification_data_Post.action" method = "post">
                     <input type="submit" value="戻る">
                 </form>
             </div>
@@ -122,5 +122,6 @@
         <form action ="../manager/Setting.action" method = "post"><input type="submit" value="設定"></form>
     </footer>
 </body>
+
 </html>
 

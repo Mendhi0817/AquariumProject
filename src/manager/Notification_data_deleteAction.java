@@ -6,13 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 import tool.Action;
 
 
-public class News_editAction extends Action {
+public class Notification_data_deleteAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../staff/News/news_edit.jsp").forward(request, response);
+		request.getRequestDispatcher("../staff/notification_data/notification_data_delete.jsp").forward(request, response);
 
 	}
 

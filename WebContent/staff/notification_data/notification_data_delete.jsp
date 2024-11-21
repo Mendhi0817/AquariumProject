@@ -85,6 +85,14 @@
         .notification-item button:hover {
             background-color: #ff4500;
         }
+
+        /* '削除1'ボタンを小さくするスタイル */
+        .delete-btn-1 input[type="submit"] {
+            padding: 5px 10px; /* ボタンのパディングを小さく */
+            font-size: 1em; /* フォントサイズを小さく */
+            width: 60px; /* 横幅を小さく */
+            margin-top: 20px; /* ボタンを少し下に移動 */
+        }
     </style>
 </head>
 
@@ -100,17 +108,14 @@
                 <!-- 仮のお知らせデータ -->
                 <div class="notification-item">
                     <span>お知らせタイトル1</span>
-                    <button onclick="deleteNotification(1)">削除</button>
+                    <!-- '削除1'ボタンにクラスを追加 -->
+                    <form class="delete-btn-1" action ="../manager/Delete_complete.action" method = "post">
+                        <input type="submit" value="削除">
+                    </form>
+
                 </div>
-                <div class="notification-item">
-                    <span>お知らせタイトル2</span>
-                    <button onclick="deleteNotification(2)">削除</button>
-                </div>
-                <div class="notification-item">
-                    <span>お知らせタイトル3</span>
-                    <button onclick="deleteNotification(3)">削除</button>
-                </div>
-                <form action ="../manager/NewsPost.action" method = "post">
+
+                <form action ="../manager/Notification_data_Post.action" method = "post">
                     <input type="submit" value="戻る">
                 </form>
             </div>
