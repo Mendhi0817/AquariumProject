@@ -46,7 +46,6 @@ public class UserDAO extends DAO {
 		st = con.prepareStatement("select * from userinfo where email = ?");
 		st.setString(1,email);
 
-		System.out.println(email);
 
 
 
@@ -56,15 +55,15 @@ public class UserDAO extends DAO {
 
 		boolean isEmail = true;
 
-		System.out.print(rs.getString("EMAIL"));
+
+
+
 
 
 
 		//合ってなかったらisEmailがfalseになる
 		if (!rs.next()){
 			isEmail = false;
-
-			System.out.print(isEmail);
 		}
 		st.close();
 		con.close();
@@ -75,16 +74,17 @@ public class UserDAO extends DAO {
 
 
 
-	public void passwordUpdate(String email, String password)
+	public void passwordUpdate(String password)
 			throws Exception {
 
 		Connection con = getConnection();
 
 		PreparedStatement st;
 		st = con.prepareStatement("update userinfo set password = ? where email = ?");
-		st.setString(1,email);
 		st.setString(2,password);
 
+
+		System.out.print("333333333333");
 
 
 

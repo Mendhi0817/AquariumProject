@@ -29,7 +29,7 @@ public class LoginAction extends Action {
 			if(user.getFlag().equals("2")){
 				request.getRequestDispatcher("../common/home_staff.jsp").forward(request, response);
 
-				System.out.print(email);
+
 
 			}
 
