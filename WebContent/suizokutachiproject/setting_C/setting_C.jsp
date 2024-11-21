@@ -99,8 +99,8 @@
 
 <body>
    <div class="container">
-        <aside class="sidebar"><img src="../../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
-        <header><img src="../../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- BGMの文字を中央揃えで大きく表示 -->
         <div class="bgm-text">
@@ -114,37 +114,30 @@
 
         <div class="button-group">
             <!-- ユーザー情報変更ボタン -->
-            <form action ="../manager/Change_User_Data.action" method="post">
+            <form action ="../manager/Change_User_Data_C.action" method="post">
                 <input type="submit" value="ユーザー情報変更">
             </form>
-
-<<<<<<< HEAD
-            <form action ="../manager/password_reset.action" method="post">
+            <form action ="../manager/Password_reset_C.action" method="post">
                 <input type="submit" value="パスワード変更">
             </form>
 
         </div>
 
-        <!-- ログアウトボタンを中央揃えで配置 -->
-        <div class="logout-button-container">
-            <form action="../manager/Coupon_C.action" method="post">
+
+		<div class="button-group">
+            <!-- ユーザー情報変更ボタン -->
+            <form action ="../manager/Coupon_C.action" method="post">
                 <input type="submit" value="クーポン">
             </form>
-
             <form action="../manager/Logout.action" method="post">
-=======
-            <!-- ログアウトボタン（位置変更） -->
-            <form action="../manager/logout.action" method="post">
->>>>>>> branch 'master' of https://github.com/Mendhi0817/AquariumProject.git
                 <input type="submit" value="ログアウト">
             </form>
-
         </div>
     </div>
 
     <footer>
         <div class="footer-buttons">
-            <form action="../../manager/Home_customer.action" method="post">
+            <form action="../manager/Home_customer.action" method="post">
                 <input type="submit" value="ホーム">
             </form>
             <form action="../manager/Map.action" method="post">
@@ -153,7 +146,7 @@
             <form action="../manager/News.action" method="post">
                 <input type="submit" value="お知らせ">
             </form>
-            <form action="../manager/Setting.action" method="post">
+            <form action="../manager/Setting_C.action" method="post">
                 <input type="submit" value="設定">
             </form>
         </div>

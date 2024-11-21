@@ -1,13 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../News/news.css">
-    <title>水族舘プロジェクト</title>
+    <title>クーポン一覧</title>
     <style>
-              body {
+        body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
@@ -17,6 +16,7 @@
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
+
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
@@ -28,40 +28,56 @@
             text-align: center; /* サイドバー内のコンテンツを中央揃え */
         }
 
-        .content input, .content textarea {
-            width: 50%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+        /* クーポン一覧の幅を狭くして左寄せ */
+        .coupon-list {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 60%; /* クーポン一覧の幅を60%に設定 */
+            margin-left: 0; /* 左寄せ */
+        }
+
+        /* 各クーポンアイテムのサイズを小さく */
+        .coupon-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            padding: 10px; /* パディングを小さく */
             border-radius: 5px;
-            font-size: 1em;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 0.9em; /* フォントサイズを少し小さく */
         }
 
-        .content textarea {
-            height: 300px; /* テキストエリアの高さ */
+        .coupon-item h3 {
+            font-size: 1.2em; /* クーポンタイトルのサイズを小さく */
+            margin-bottom: 10px;
         }
 
-        /* ボタンを中央に寄せ、共通のスタイルを設定 */
-        .button-container, .button-group {
+        .coupon-item p {
+            font-size: 1em; /* 説明文のフォントサイズを少し小さく */
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .button-container {
             display: flex;
-            justify-content: center; /* ボタンを中央揃え */
-            gap: 20px; /* ボタン間の隙間を設定 */
-            margin-top: 20px; /* 上部に余白 */
+            justify-content: center;
         }
 
-        .button-container button, .button-group input[type="submit"] {
-            padding: 10px 40px; /* ボタンのパディング */
-            font-size: 1.2em; /* ボタンの文字サイズ */
-            border-radius: 8px; /* ボタンの角を丸く */
-            background-color: #ff6347; /* ボタンの背景色 */
-            color: white; /* 文字色 */
-            border: none; /* ボーダーを消す */
-            cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            width: 250px; /* 横幅を統一（例として250pxを設定） */
+        .button-container button {
+            padding: 8px 20px; /* ボタンのサイズを小さく */
+            font-size: 1em; /* ボタンの文字サイズを小さく */
+            border-radius: 8px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
 
-        .button-container button:hover, .button-group input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+        .button-container button:hover {
+            background-color: #ff4500;
         }
 
         footer form {
@@ -70,60 +86,100 @@
         }
 
         footer input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
+            padding: 10px 60px;
             font-size: 1.2em;
             border: none;
-            border-radius: 8px; /* 角を丸く */
-            background-color: #ff6347; /* ボタンの背景色 */
-            color: white; /* 文字色 */
+            border-radius: 8px;
+            background-color: #ff6347;
+            color: white;
             cursor: pointer;
-            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            width: 250px;
         }
 
         footer input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
         }
 
-        /* BGMの文字を大きくして中央に配置 */
-        .bgm-text {
-            font-size: 3em; /* フォントサイズを大きく */
-            font-weight: bold; /* 太字 */
-            text-align: center; /* 中央揃え */
-            margin-top: 30px; /* 上部に余白 */
-            color: black; /* 文字色を黒に変更 */
+        /* 使用済みのクーポンのスタイル */
+        .used {
+            background-color: #f1f1f1;
+            color: #aaa;
+            text-decoration: line-through;
         }
 
-        /* ログアウトボタンをパスワード変更ボタンと同じデザインに変更 */
-        .logout-button-container {
-            display: flex;
-            justify-content: center; /* 中央揃え */
-            gap: 20px; /* ボタン間の隙間 */
-            margin-top: 20px; /* 上部に余白 */
+        /* 戻るボタンのスタイル */
+        .back-button {
+            padding: 10px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            background-color: #ccc;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
         }
 
-        /* ログアウトボタンのスタイルをパスワード変更ボタンと同じに */
-        .logout-button-container form input[type="submit"] {
-            padding: 10px 40px; /* パスワード変更ボタンと同じパディング */
-            font-size: 1.2em; /* パスワード変更ボタンと同じ文字サイズ */
-            border-radius: 8px; /* ボタンの角を丸く */
-            background-color: #ff6347; /* パスワード変更ボタンと同じ背景色 */
-            color: white; /* 文字色 */
-            border: none; /* ボーダーを消す */
-            cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            width: 250px; /* 横幅を統一 */
+        .back-button:hover {
+            background-color: #bbb;
         }
-
-        .logout-button-container form input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
-        }
-
     </style>
+
+    <script>
+        function markAsUsed(couponId) {
+            // クーポンが使用された時の処理
+            var couponItem = document.getElementById(couponId);
+            var button = couponItem.querySelector("button");
+
+            // ボタンを無効化
+            button.disabled = true;
+            button.style.backgroundColor = "#ccc";  // 無効化後の色
+
+            // クーポンアイテムを「使用済み」状態に
+            couponItem.classList.add('used');
+
+            // アラートを表示
+            alert(couponId + "が使用されました");
+        }
+
+        function goBack() {
+            window.history.back();  // 戻る操作
+        }
+    </script>
 </head>
 
 <body>
     <div class="container">
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+
+        <div class="coupon-item" id="coupon1">
+            <h3>クーポン1</h3>
+            <p>このクーポンはお得な割引券です。期限は2024年12月31日まで。</p>
+            <div class="button-container">
+                <button onclick="markAsUsed('coupon1')">使用</button>
+            </div>
+        </div>
+
+        <div class="coupon-item" id="coupon2">
+            <h3>クーポン2</h3>
+            <p>このクーポンは特定商品を無料で提供するクーポンです。期限は2024年11月30日まで。</p>
+            <div class="button-container">
+                <button onclick="markAsUsed('coupon2')">使用</button>
+            </div>
+        </div>
+
+        <div class="coupon-item" id="coupon3">
+            <h3>クーポン3</h3>
+            <p>このクーポンは購入金額が一定額以上で使用可能な割引クーポンです。期限は2024年10月31日まで。</p>
+            <div class="button-container">
+                <button onclick="markAsUsed('coupon3')">使用</button>
+            </div>
+        </div>
+
+        <!-- 戻るボタンをここに追加 -->
+        <div class="button-container">
+            <button class="back-button" onclick="goBack()">戻る</button>
+        </div>
     </div>
 
     <footer>
@@ -137,7 +193,7 @@
             <form action="../manager/News.action" method="post">
                 <input type="submit" value="お知らせ">
             </form>
-            <form action="../manager/SettingC.action" method="post">
+            <form action="../manager/Setting_C.action" method="post">
                 <input type="submit" value="設定">
             </form>
         </div>
