@@ -100,7 +100,9 @@
         </div>
 
         <div class="content">
-            <button name="button2" class="back-button">送信</button>
+            <form action="../manager/Email_complete.action" method="post">
+                <input type="submit" value="送信" class="back-button">
+            </form>
         </div>
     </div>
 
