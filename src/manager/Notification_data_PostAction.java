@@ -6,15 +6,17 @@ import javax.servlet.http.HttpServletResponse;
 import tool.Action;
 
 
-public class News_deleteAction extends Action {
 
+public class Notification_data_PostAction extends Action{
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../staff/News/news_delete.jsp").forward(request, response);
 
-	}
 
-		//login
-	}
+				request.getRequestDispatcher("../staff/notification_data/notification_data.jsp").forward(request, response);
+
+
+		}
+
+}
