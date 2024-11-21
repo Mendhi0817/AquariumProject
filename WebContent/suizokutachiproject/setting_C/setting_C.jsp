@@ -117,7 +117,7 @@
             <form action ="../manager/Change_User_Data_C.action" method="post">
                 <input type="submit" value="ユーザー情報変更">
             </form>
-            <form action ="../manager/PasswordReset.action" method="post">
+            <form action ="../manager/Password_reset_C.action" method="post">
                 <input type="submit" value="パスワード変更">
             </form>
 
