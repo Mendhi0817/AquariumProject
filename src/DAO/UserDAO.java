@@ -1,8 +1,12 @@
+
+
+
 package DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import bean.User;
 public class UserDAO extends DAO {
@@ -89,19 +93,99 @@ public class UserDAO extends DAO {
 //		return user;
 
 
-
 	}
 
 
 
 
+	public boolean userAdd(User user) throws Exception{
+
+		Connection connection = getConnection();
+
+		// プリペアードステートメント
+
+		PreparedStatement statement = null;
+
+		// 実行件数
+
+		int count = 0;
+
+
+		try {
+
+			// データベースから学生を取得
+
+//			Contact old = get(contact.getCd(), contact.getSchool());
+//
+//			if (old == null) {
+//
+//			    // 学生が存在しなかった場合
+//
+//			    // プリペアードステートメントにINSERT文をセット
+//
+			    statement = connection.prepareStatement(
+
+			            "insert into userinfo(null, user_name, email, password,flag) values(?, ?, ?,1)");
+
+//			    // プリペアードステートメントに値をバインド
+
+//
+			    statement.setString(1, user.getUserName());
+
+			    statement.setString(2, user.geteMail());
+
+			    statement.setString(3, user.getPassword());
+
+
+//
+			// プリペアードステートメントを実行
+
+			count = statement.executeUpdate();
+
+		} catch (Exception e) {
+
+			throw e;
+
+		} finally {
+
+			// プリペアードステートメントを閉じる
+
+			if (statement != null) {
+
+				try {
+
+					statement.close();
+
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+			// コネクションを閉じる
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+		}
+
+		if (count > 0) {
+
+			// 実行件数が1件以上ある場合
+
+			return true;
+
+		} else {
+
+			// 実行件数が０件の場合
+
+			return false;
+
+		}
+	}
 
 
 
 
-
-
-
-
-
-}
+	}
