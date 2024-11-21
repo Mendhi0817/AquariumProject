@@ -15,7 +15,6 @@
 </head>
 
 <body>
-ed
 <footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
 </footer>
 <c:import url="/common/base.jsp">
@@ -26,8 +25,7 @@ ed
     </header>
     <main>
         <div class="sidebar">
-            <form action="previous.jsp" method="post">
-                <form action ="../../manager/Coupon.action" method = "post"><input type = "submit" value = "戻る">
+                <form action ="../../manager/HomeCoust.action" method = "post"><input type = "submit" value = "戻る">
             </form>
         </div>
         <div class="content">
@@ -36,7 +34,6 @@ ed
             </div>
             <div class="qr-code">
                 <h2>QRコード</h2>
-                <img src="path/to/qrcode.png" alt="QRコード" />
             </div>
         </div>
     </main>

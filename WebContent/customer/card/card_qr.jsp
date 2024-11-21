@@ -21,5 +21,5 @@
 <c:import url="/common/base.jsp">
 </c:import>
 
-<form action ="../../common/home_customer.jsp" method = "post"><input type = "submit" value = "戻る">
+
 </form>
