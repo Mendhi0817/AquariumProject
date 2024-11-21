@@ -88,10 +88,10 @@
 
         <!-- 削除と編集ボタンを左に寄せる -->
         <div class="button-container">
-            <form action="../manager/News_delete.action" method="post">
+            <form action="../manager/Notification_data_delete.action" method="post">
                 <input type="submit" value="削除">
             </form>
-            <form action="../manager/News_edit.action" method="post">
+            <form action="../manager/Notification_data_edit.action" method="post">
                 <input type="submit" value="編集">
             </form>
         </div>
