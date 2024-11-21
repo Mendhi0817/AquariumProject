@@ -60,6 +60,7 @@ input {
 <footer>
 
 <button name="button" onclick="location.href='password_reset.jsp'">パスワードを忘れた方</button>
+<button name="button" onclick="location.href='new_account.jsp'">新規作成</button>
 
 </footer>
 
