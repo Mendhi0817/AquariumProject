@@ -108,7 +108,7 @@
             <input type="date" id="date" name="f3">
         </div>
 
-        <form action="../manager/Post_complete.action" method="post">
+        <form action="../manager/NotifiationDataCreateExecute.action" method="post">
             <input type="submit" value="投稿">
         </form>
     </div>
