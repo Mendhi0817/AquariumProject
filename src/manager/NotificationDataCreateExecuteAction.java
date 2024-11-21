@@ -8,17 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Contact;
+import bean.NotificationData;
 //import bean.Teacher;
-import DAO.ContactDAO;
+import DAO.NotificationDataDAO;
 import tool.Action;
-public class ContactCreateExecuteAction extends Action {
+public class NotificationDataCreateExecuteAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//TODO 自動生成されたメソッド·スタブ
 		HttpSession session=request.getSession();//セッション
-		Contact Contact=(Contact)session.getAttribute("user");
+		NotificationData Contact=(NotificationData)session.getAttribute("user");
 
 //		String entYearStr="";//入力された入学年度
 //		String no="";
@@ -33,56 +33,28 @@ public class ContactCreateExecuteAction extends Action {
 		Date ContactDate = null;
 
 		//List<Student>students=null;//学生リスト
+		
+		
 
 		LocalDate todaysDate=LocalDate.now();//LocolDateインスタンスを取得
 		int year=todaysDate.getYear();//現在の年を取得
-		ContactDAO cDao=new ContactDAO();//学生dao
+		NotificationDataDAO cDao=new NotificationDataDAO();//学生dao
 		Map<String, String>errors=new HashMap<>();//エラーメッセージ
 
 		ContactTitle=request.getParameter("f1");
 		ContactContent=request.getParameter("f2");
 		ContactDate=Date.valueOf(request.getParameter("f3"));
-//		classNum=request.getParameter("f4");
-
-//		System.out.println(entYearStr);
-//		System.out.println(no);
-//		System.out.println(name);
-//		System.out.println(classNum);
-
-//		if (entYearStr.equals("0")){
-//			//入学年度とクラス番号を指定
-//			errors.put("f1", "入学年度を選択してください");
-//			request.setAttribute("no", no);
-//			request.setAttribute("name", name);
-//			request.setAttribute("errors", errors);
-//			request.getRequestDispatcher("StudentCreate.action").forward(request, response);
-//		}else if (sDao.get(no)!=null){
-//			errors.put("f2", "学生番号が重複しています");
-//			request.setAttribute("no", no);
-//			request.setAttribute("name", name);
-//			request.setAttribute("errors", errors);
-//			request.getRequestDispatcher("StudentCreate.action").forward(request, response);
-//		}else if (no==null){
-//			errors.put("f2", "学生番号を入力してください");
-//			request.setAttribute("no", no);
-//			request.setAttribute("name", name);
-//			request.setAttribute("errors", errors);
-//			request.getRequestDispatcher("StudentCreate.action").forward(request, response);
-//		}else{
-//			    isAttend=true;
-//			    entYear=Integer.parseInt(entYearStr);
-//			    Student student = new Student();
-//		        student.setNo(no);
-//		        student.setName(name);
-//		        student.setEntYear(entYear);//ここ？
-//		        student.setClassNum(classNum);
-//		        student.setAttend(isAttend);
-//		        student.setSchool(teacher.getSchool()); // 学校情報をセット
+		
+		NotificationData contact = new NotificationData(); 
+		contact.setCt(ContactTitle);
+		contact.setCc(ContactContent);
+		contact.setCd(ContactDate);
+		
 
 		        // StudentDaoを使って学生情報をデータベースに保存
 		        cDao.save(contact);
 		    request.getRequestDispatcher("complete.jsp").forward(request, response);
-		}
+		
 	}
 
 }
