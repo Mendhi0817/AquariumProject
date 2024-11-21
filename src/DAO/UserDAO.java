@@ -98,7 +98,7 @@ public class UserDAO extends DAO {
 
 
 
-	public boolean userAdd(User user) throws Exception{
+	public boolean userAdd(String username, String email, String password) throws Exception{
 
 		Connection connection = getConnection();
 
@@ -125,16 +125,16 @@ public class UserDAO extends DAO {
 //
 			    statement = connection.prepareStatement(
 
-			            "insert into userinfo(null, user_name, email, password,flag) values(?, ?, ?,1)");
+			            "insert into userinfo(user_id,user_name, email, password,flag) values(null,?, ?, ?,'1')");
 
 //			    // プリペアードステートメントに値をバインド
 
 //
-			    statement.setString(1, user.getUserName());
+			    statement.setString(1, username);
 
-			    statement.setString(2, user.geteMail());
+			    statement.setString(2, email);
 
-			    statement.setString(3, user.getPassword());
+			    statement.setString(3, password);
 
 
 //
