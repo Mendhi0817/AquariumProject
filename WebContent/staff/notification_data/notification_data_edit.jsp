@@ -122,5 +122,6 @@
         <form action ="../manager/Setting.action" method = "post"><input type="submit" value="設定"></form>
     </footer>
 </body>
+
 </html>
 
