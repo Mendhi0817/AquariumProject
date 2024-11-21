@@ -84,7 +84,7 @@ public boolean save(Map map) throws Exception {
 
 
 
-public boolean delete(String ci) throws Exception {
+public boolean delete(String mapId) throws Exception {
 	// コネクションを確立
 	Connection connection = getConnection();
 	// プリペアードステートメント
@@ -95,13 +95,13 @@ public boolean delete(String ci) throws Exception {
 	try {
 		// データベースから取得
 //		Contuct old = get(contuct.getContuctId());
-		if(ci != null){
+		if(mapId != null){
 		    // 学生が存在した場合
 		    // プリペアードステートメントにDELETE文をセット
 		    statement = connection
 		            .prepareStatement("delete MAP_INFO where MAP_ID=? ");
 		    // プリペアードステートメントに値をバインド
-		    statement.setString(1, ci);
+		    statement.setString(1, mapId);
 		}
 		// プリペアードステートメントを実行
 		count = statement.executeUpdate();

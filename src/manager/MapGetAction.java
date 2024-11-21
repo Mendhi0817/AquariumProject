@@ -27,7 +27,7 @@ public class MapGetAction extends Action {
             session.setAttribute("map", map);
 
             // mapinfo.jspに転送して、情報を表示
-            request.getRequestDispatcher("../customer/mapinfo.jsp").forward(request, response);
+            request.getRequestDispatcher("../staff/mapinfo.jsp").forward(request, response);
         } else {
             // マップ情報が見つからない場合、エラーメッセージを設定
             request.setAttribute("error", "指定されたマップ情報が見つかりません。");

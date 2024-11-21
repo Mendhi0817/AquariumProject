@@ -3,47 +3,45 @@ package bean;
 
 
 public class FishCard {
-	private String Card_text;
 
+	private int CardId;
 
+	private String CardText;
 
-	private String Card_title;
+	private String CardTitle;
 
-	private String Card_id;
+	private String CardImage;
 
-	private String Card_image;
-
-
-	public String getCard_text() {
-		return Card_text;
+	public int getCardId() {
+		return CardId;
 	}
 
-	public void setCard_text(String card_text) {
-		Card_text = card_text;
+	public void setCardId(int cardId) {
+		CardId = cardId;
 	}
 
-	public String getCard_title() {
-		return Card_title;
+	public String getCardText() {
+		return CardText;
 	}
 
-	public void setCard_title(String card_title) {
-		Card_title = card_title;
+	public void setCardText(String cardText) {
+		CardText = cardText;
 	}
 
-	public String getCard_id() {
-		return Card_id;
+	public String getCardTitle() {
+		return CardTitle;
 	}
 
-	public void setCard_id(String card_id) {
-		Card_id = card_id;
+	public void setCardTitle(String cardTitle) {
+		CardTitle = cardTitle;
 	}
 
-	public String getCard_image() {
-		return Card_image;
+	public String getCardImage() {
+		return CardImage;
 	}
 
-	public void setCard_image(String card_image) {
-		Card_image = card_image;
+	public void setCardImage(String cardImage) {
+		CardImage = cardImage;
 	}
 
 

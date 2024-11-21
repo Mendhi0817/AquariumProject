@@ -11,23 +11,16 @@ import tool.Action;
 public class MapAction extends Action {
 
 	@Override
-	public void execute(
-	HttpServletRequest request, HttpServletResponse response
-	) throws Exception {
-
-
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 
 		// リクエストからimageとfloorのパラメータを取得
-		String image = request.getParameter("image");
-		int floor = Integer.parseInt(request.getParameter("floor"));
+//		String image = request.getParameter("map_image");
+		String floor = request.getParameter("floor_info");
 
         // MapDAOを使ってマップ情報を取得
 		MapDAO mapDAO = new MapDAO();
-		Map map = mapDAO.search(image, floor);
-
-
-
+		Map map = mapDAO.search(floor);
 
         if (map != null) {
             // マップ情報が見つかった場合、リクエストスコープに設定
