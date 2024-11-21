@@ -97,7 +97,7 @@
         </div>
 
 
-        <form action="../manager/NotifiationDataCreateExecute.action" method="post">
+        <form action="../manager/NotificationDataCreateExecute.action" method="post">
             <input type="submit" value="投稿">
              <div class="content">
             <h2>タイトルを入力</h2>
