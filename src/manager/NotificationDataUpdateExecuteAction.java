@@ -1,6 +1,5 @@
 package manager;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,10 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Contuct;
-//import bean.Contact;
-//import bean.Teacher;
-import DAO.ContuctDAO;
+import DAO.NotificationDataDAO;
+import bean.NotificationData;
 import tool.Action;
 public class NotificationDataUpdateExecuteAction extends Action {
 
@@ -19,19 +16,19 @@ public class NotificationDataUpdateExecuteAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//TODO 自動生成されたメソッド·スタブ
 		HttpSession session=request.getSession();//セッション
-		Contuct Contuct=(Contuct)session.getAttribute("user");
+		NotificationData notificationdata=(NotificationData)session.getAttribute("user");
 
 
-		String ContactTitle = "";
-		String ContactContent = "";
-		Date ContactDate = null;
-		String ci = null;
+		String nt = "";
+		String nc = "";
+		Date nd = null;
+		String ni = null;
 
 		//List<Student>students=null;//学生リスト
 
-		LocalDate todaysDate=LocalDate.now();//LocolDateインスタンスを取得
+//		LocalDate todaysDate=LocalDate.now();//LocolDateインスタンスを取得
 //		int year=todaysDate.getYear();//現在の年を取得
-		ContuctDAO cDao=new ContuctDAO();//学生dao
+		NotificationDataDAO nDao=new NotificationDataDAO();//学生dao
 		Map<String, String>errors=new HashMap<>();//エラーメッセージ
 
 //		ContactTitle=request.getParameter("f1");
@@ -39,18 +36,29 @@ public class NotificationDataUpdateExecuteAction extends Action {
 //		ContactDate=Date.valueOf(request.getParameter("f3"));
 
 
+		        // StudentDaoを使って学生情報をデータベースに削除
+		        nDao.Delete(ni);
+
+
+//		        情報を取得して、セット
+		        nt=request.getParameter("f1");
+				nc=request.getParameter("f2");
+				nd=Date.valueOf(request.getParameter("f3"));
+
+				NotificationData notification = new NotificationData();
+				notification.setNt(nt);
+				notification.setNc(nc);
+				notification.setNd(nd);
+
 		        // StudentDaoを使って学生情報をデータベースに保存
-		        cDao.delete(ci);
-		        
-		        
-		        
-		        
-		        
-		        
-		        
-		    request.getRequestDispatcher("complete.jsp").forward(request, response);
+		        nDao.save(notification);
+
+
+		    request.getRequestDispatcher("edit_complete.jsp").forward(request, response);
+
+
 		}
 	}
 
-}
+
 
