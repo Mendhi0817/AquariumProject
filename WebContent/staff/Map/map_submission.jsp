@@ -61,9 +61,10 @@
 
         <!-- 新しいフォームセクション -->
         <div class="form-container">
-            <form action ="../manager/MapPostDone.action" method = "post" enctype="multipart/form-data">
+
                 <div>
-                    <button name="delete">削除</button>
+                    <form action ="../manager/MapDelete.action" method = "post"><input type = "submit" value = "削除">
+                    </form>
                 </div>
                 <!-- 文字を入力するフィールド -->
                 <div>
@@ -80,7 +81,7 @@
                 <!-- 送信ボタン -->
                 <div class="FormActionContainer">
                 </div>
-            <input type = "submit" value = "投稿">
+            <form action ="../manager/MapPostDone.action" method = "post"><input type = "submit" value = "投稿"></form>
             </form>
         </div>
     </div>

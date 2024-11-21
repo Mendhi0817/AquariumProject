@@ -77,8 +77,22 @@
 
 			</tr>
 			</table>
-	<c:forEach var="item" items="${listmap}">
-								<c:out value="${item}" />
-</c:forEach>
+	<c:forEach var="map" items="${subject}">
+								<tr>
+									<td>${listmap}</td>
+									</tr>
+									</c:forEach>
+    <div class="notification-item">
+                    <span>1F</span>
+                    <button onclick="deleteNotification(1)">削除</button>
+                </div>
+                <div class="notification-item">
+                    <span>2F</span>
+                    <button onclick="deleteNotification(2)">削除</button>
+                </div>
+                <div class="notification-item">
+                    <span>3F</span>
+                    <button onclick="deleteNotification(3)">削除</button>
+                </div>
 
         </body>
