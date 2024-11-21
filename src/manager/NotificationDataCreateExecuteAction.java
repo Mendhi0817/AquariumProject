@@ -1,6 +1,5 @@
 package manager;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.NotificationData;
 //import bean.Teacher;
 import DAO.NotificationDataDAO;
+import bean.NotificationData;
 import tool.Action;
 public class NotificationDataCreateExecuteAction extends Action {
 
@@ -18,43 +17,36 @@ public class NotificationDataCreateExecuteAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//TODO 自動生成されたメソッド·スタブ
 		HttpSession session=request.getSession();//セッション
-		NotificationData Contact=(NotificationData)session.getAttribute("user");
+		NotificationData Notification=(NotificationData)session.getAttribute("user");
 
-//		String entYearStr="";//入力された入学年度
-//		String no="";
-//		String name="";
-//		String classNum="";//入力されたクラス番号
-//		String isAttendStr="";//入力された在学フラグ
-//		int entYear=0;//入学年度
-//		boolean isAttend=false;//在学フラグ
 
-		String ContactTitle = "";
-		String ContactContent = "";
-		Date ContactDate = null;
+		String NotificationDataTitle = "";
+		String NotificationDataContent = "";
+		Date NotificationDataDay = null;
 
 		//List<Student>students=null;//学生リスト
-		
-		
 
-		LocalDate todaysDate=LocalDate.now();//LocolDateインスタンスを取得
-		int year=todaysDate.getYear();//現在の年を取得
-		NotificationDataDAO cDao=new NotificationDataDAO();//学生dao
+
+
+//		LocalDate todaysDate=LocalDate.now();//LocolDateインスタンスを取得
+//		int year=todaysDate.getYear();//現在の年を取得
+		NotificationDataDAO nDao=new NotificationDataDAO();//学生dao
 		Map<String, String>errors=new HashMap<>();//エラーメッセージ
 
-		ContactTitle=request.getParameter("f1");
-		ContactContent=request.getParameter("f2");
-		ContactDate=Date.valueOf(request.getParameter("f3"));
-		
-		NotificationData contact = new NotificationData(); 
-		contact.setCt(ContactTitle);
-		contact.setCc(ContactContent);
-		contact.setCd(ContactDate);
-		
+		NotificationDataTitle=request.getParameter("f1");
+		NotificationDataContent=request.getParameter("f2");
+		NotificationDataDay=Date.valueOf(request.getParameter("f3"));
+
+		NotificationData notification = new NotificationData();
+		notification.setNt(NotificationDataTitle);
+		notification.setNc(NotificationDataContent);
+		notification.setNd(NotificationDataDay);
+
 
 		        // StudentDaoを使って学生情報をデータベースに保存
-		        cDao.save(contact);
+		        nDao.save(notification);
 		    request.getRequestDispatcher("complete.jsp").forward(request, response);
-		
+
 	}
 
 }

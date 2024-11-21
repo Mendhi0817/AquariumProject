@@ -4,10 +4,32 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.Map;
 public class MapDAO extends DAO {
 
+	public List<Map> searchAll() throws Exception {
+		List<Map> listmap = new ArrayList<>();
+		Connection con = getConnection();
+		PreparedStatement st;
+
+		st = con.prepareStatement("select * from mapinfo");
+//		st.setString(1,image);
+
+
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+			Map map = new Map();
+			map.setFloorInfo(rs.getString("floor_info"));
+			listmap.add(map);
+		}
+		st.close();
+		con.close();
+		return listmap;
+	}
 	public Map search(String floor) throws Exception {
 		Map map = null;
 		Connection con = getConnection();
