@@ -109,7 +109,7 @@
                 <div class="notification-item">
                     <span>お知らせタイトル1</span>
                     <!-- '削除1'ボタンにクラスを追加 -->
-                    <form class="delete-btn-1" action ="../manager/Delete_complete.action" method = "post">
+                    <form class="delete-btn-1" action ="../manager/NotificationDataDeleteExecute.action" method = "post">
                         <input type="submit" value="削除">
                     </form>
 
