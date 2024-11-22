@@ -12,7 +12,7 @@ public class Post_completeAction extends Action {
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../staff/notification_data/post_complete.jsp").forward(request, response);
+		request.getRequestDispatcher("../stafft/notification_data/edit_complete.jsp").forward(request, response);
 
 	}
 
