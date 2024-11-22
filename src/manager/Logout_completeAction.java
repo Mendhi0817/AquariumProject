@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import tool.Action;
 
 
-public class logout_completeAction extends Action {
+public class Logout_completeAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response

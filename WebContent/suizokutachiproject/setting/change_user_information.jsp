@@ -91,11 +91,12 @@
             </form>
         </div>
 
+<form action="../../manager/UserinfoChange.action" method="post">
         <!-- 名前の変更 -->
         <div class="content">
             <div>名前の変更</div>
             <div class="input-field">
-                <input type="text" id="name" placeholder="新しい名前を入力">
+                <input type="text" id="username" placeholder="新しい名前を入力">
             </div>
         </div>
 
@@ -111,6 +112,8 @@
             <button name="button2" class="back-button">変更</button>
         </div>
     </div>
+
+</form>
 
     <footer>
         <form action="../manager/Home_staff.action" method="post">
