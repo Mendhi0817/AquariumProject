@@ -116,7 +116,7 @@
             <form action ="../manager/Change_User_Data.action" method = "post">
                 <input type="submit" value="ユーザー情報変更">
             </form>
-            <form action ="../manager/logout_complete.action" method = "post">
+            <form action ="../../manager/Logout.action" method = "post">
                 <input type="submit" value="ログアウト">
             </form>
         </div>
