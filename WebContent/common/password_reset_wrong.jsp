@@ -10,7 +10,7 @@
 
 
 
-<form action="password_reset.jsp" method="post">
+<form action="../common/password_reset.jsp" method="post">
 <h1>違うよーーん</h1>
 <p><input type = "submit" value = "戻る"></p>
 
