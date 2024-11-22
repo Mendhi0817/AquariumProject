@@ -45,7 +45,7 @@ public class NotificationDataCreateExecuteAction extends Action {
 
 		        // StudentDaoを使って学生情報をデータベースに保存
 		        nDao.save(notification);
-		    request.getRequestDispatcher("post_complete.jsp").forward(request, response);
+		    request.getRequestDispatcher("../staff/notification_data/post_complete.jsp").forward(request, response);
 
 	}
 
