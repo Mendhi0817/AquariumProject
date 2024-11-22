@@ -17,7 +17,7 @@ public class NotificationDataCreateExecuteAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//TODO 自動生成されたメソッド·スタブ
 		HttpSession session=request.getSession();//セッション
-		NotificationData Notification=(NotificationData)session.getAttribute("user");
+//		NotificationData Notification=(NotificationData)session.getAttribute("user");
 
 
 		String NotificationDataTitle = "";
