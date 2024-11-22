@@ -38,59 +38,32 @@ public class UserDAO extends DAO {
 
 	}
 
-	public boolean searchEmail(String email) throws Exception{
-
-		Connection con = getConnection();
-
-		PreparedStatement st;
-		st = con.prepareStatement("select * from userinfo where email = ?");
-		st.setString(1,email);
 
 
 
 
-
-		ResultSet rs = st.executeQuery();
-
-
-		boolean isEmail = true;
-
-
-
-
-
-
-
-		//合ってなかったらisEmailがfalseになる
-		if (!rs.next()){
-			isEmail = false;
-		}
-		st.close();
-		con.close();
-		return isEmail;
-
-		}
-
-
-
-
-	public void passwordUpdate(String password)
+	public int passwordUpdate(String password, String email)
 			throws Exception {
 
 		Connection con = getConnection();
 
-		PreparedStatement st;
+		PreparedStatement st = null;
+
+		int result = 0;
+
 		st = con.prepareStatement("update userinfo set password = ? where email = ?");
-		st.setString(2,password);
+		st.setString(1,password);
+		st.setString(2,email);
 
 
-		System.out.print("333333333333");
+		System.out.print("1111111111");
 
+		result = st.executeUpdate();
 
 
 		st.close();
 		con.close();
-//		return user;
+		return result;
 
 
 	}
@@ -140,7 +113,7 @@ public class UserDAO extends DAO {
 //
 			// プリペアードステートメントを実行
 
-			count = statement.executeUpdate();
+			    count = statement.executeUpdate();
 
 		} catch (Exception e) {
 
