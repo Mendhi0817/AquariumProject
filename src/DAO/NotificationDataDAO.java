@@ -105,11 +105,11 @@ public class NotificationDataDAO extends DAO {
 //
 				    statement = connection.prepareStatement(
 
-				            "insert into SUBJECT(SCHOOL_CD, CD, NAME) values(?, ?, ?)");
+				            "insert into NOTIFICATION_DATA(NOTIFICATION_TITLE, NOTIFICATION_CONTENT, NOTIFICATION_DATA) values(?, ?, ?)");
 
 //				    // プリペアードステートメントに値をバインド
 //
-				    statement.setString(1, notification.getNotificationDataContent());
+				    statement.setString(1, notification.getNotificationDataTitle());
 
 				    statement.setString(2, notification.getNotificationDataContent());
 
