@@ -51,7 +51,7 @@ public class NotificationDataCreateExecuteAction extends Action {
 
 }
 
-		//在学フラグが送信されていた場合
+		//在学フラグが送信されていた場合jj
 //		if (isAttendStr!=null){
 //			//在学フラグを立てる
 //			isAttend=true;
