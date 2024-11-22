@@ -32,7 +32,7 @@
 
                 <div>
                 <h2></h2>
-                <textarea id="content" name="f1"placeholder="ここにカード名を入力してください"></textarea>
+                <textarea id="f1" name="f1"placeholder="ここにカード名を入力してください"></textarea>
                 </div>
 
                 <form>
@@ -49,12 +49,12 @@
                 <!-- PDFファイルをアップロードするフィールド -->
                 <div>
                     <label for="pdfUpload">画像をアップロードして下さい：</label>
-                    <input type="file" id="pdfUpload" name="f2" accept="application/pdf">
+                    <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf">
                 </div>
 
                 <div>
                 <h2>説明文を入力</h2>
-                <textarea id="content" placeholder="ここに文章を入力してください"></textarea>
+                <textarea id="f2" name="f2" placeholder="ここに文章を入力してください"></textarea>
                 </div>
 
                 <!-- 送信ボタン -->

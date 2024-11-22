@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.NotificationData;
 
@@ -17,6 +19,77 @@ public class NotificationDataDAO extends DAO {
 	 * @return 学校クラスのインスタンス 存在しない場合はnull
 	 * @throws Exception
 	 */
+
+	public List<NotificationData> searchTitle() throws Exception {
+
+		List<NotificationData> listTitle = new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st;
+
+		st = con.prepareStatement("select * from notification_data");
+
+//		st.setString(1,image);
+
+
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+
+			NotificationData notification = new NotificationData();
+
+			notification.setNt(rs.getString("NOTIFICATION_TITLE"));
+
+			listTitle.add(notification);
+
+		}
+
+		st.close();
+
+		con.close();
+
+		return listTitle;
+
+	}
+
+	public List<NotificationData> searchId() throws Exception {
+
+		List<NotificationData> listId = new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st;
+
+		st = con.prepareStatement("select * from CONTACT_ID");
+
+//		st.setString(1,image);
+
+
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+
+			NotificationData notification = new NotificationData();
+
+			notification.setNt(rs.getString("CONTACT_ID"));
+
+			listId.add(notification);
+
+		}
+
+		st.close();
+
+		con.close();
+
+		return listId;
+
+	}
+
+
+
+
+
 	public NotificationData get() throws Exception {
 		// 学校インスタンスを初期化
 		NotificationData notification = new NotificationData();
