@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<%@ page import="java.util.List" %>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -71,28 +72,22 @@
 </head>
 
 <body>
-	<table class="table table-hover">
+	<h1>階数</h1>
+	<table border=1">
 		<tr>
-			<th>階数</th>
+			<th>Floor Info</th>
+			<th>Action</th>
+		</tr>
 
-			</tr>
-			</table>
-	<c:forEach var="map" items="${subject}">
-								<tr>
-									<td>${listmap}</td>
-									</tr>
-									</c:forEach>
-    <div class="notification-item">
-                    <span>1F</span>
-                    <button onclick="deleteNotification(1)">削除</button>
-                </div>
-                <div class="notification-item">
-                    <span>2F</span>
-                    <button onclick="deleteNotification(2)">削除</button>
-                </div>
-                <div class="notification-item">
-                    <span>3F</span>
-                    <button onclick="deleteNotification(3)">削除</button>
-                </div>
+	<c:forEach var="map" items="${listmap}">
+            <tr>
+                <td>${map.floorInfo}</td>
+                <td><form action ="../manager/MapDeleteDone.action" method = "post">
+                <input type = "submit" value = "削除">
+                </form>
+               </td>
+            </tr>
+        </c:forEach>
+    </table>
 
         </body>
