@@ -138,8 +138,6 @@ public List<String> getAllFloorInfo() throws Exception {
 
 
 
-
-
 public String getMapImage(String floor) throws Exception {
     String mapImage = null;
     Connection con = getConnection();
