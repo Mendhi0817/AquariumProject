@@ -40,7 +40,7 @@ public class NotificationDataDeleteExecuteAction extends Action {
 
 		        // StudentDaoを使って学生情報をデータベースに保存
 		        nDao.Delete(ni);
-		    request.getRequestDispatcher("delete_complete.jsp").forward(request, response);
+		    request.getRequestDispatcher("../staff/notification_data/delete_complete.jsp").forward(request, response);
 		}
 	}
 
