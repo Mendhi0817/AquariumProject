@@ -21,7 +21,7 @@ public class NotificationDataEditDetailAction extends Action {
 
             NotificationDataDAO nDAO = new NotificationDataDAO();
 
-            String ni = request.getParameter(ni);
+            String ni = request.getParameter("ni");
             NotificationData nAll = nDAO.get(ni);
 
 
