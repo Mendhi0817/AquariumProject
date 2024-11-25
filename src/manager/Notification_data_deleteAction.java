@@ -2,6 +2,7 @@ package manager;
 
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,13 +12,13 @@ import tool.Action;
 
 
 public class Notification_data_deleteAction extends Action {
-	
-	
+
+
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
-		
+
 		try {
 
             NotificationDataDAO nDAO = new NotificationDataDAO();
@@ -31,10 +32,24 @@ public class Notification_data_deleteAction extends Action {
             request.setAttribute("listTitle", listTitle);
             request.setAttribute("listId", listId);
 
+            // JSPにフォワード
 
-		request.getRequestDispatcher("../staff/notification_data/notification_data_delete.jsp").forward(request, response);
+			request.getRequestDispatcher("../staff/notification_data/notification_data_delete.jsp").forward(request, response);
 
-	}
+        } catch (Exception e) {
 
-		//login
-	}
+            throw new ServletException(e);
+
+        }
+//		req.getRequestDispatcher("../staff/notification_data/notification_data_edit.jsp").forward(request, response);
+
+    }
+
+}
+
+
+
+//		request.getRequestDispatcher("../staff/notification_data/notification_data_delete.jsp").forward(request, response);
+
+
+

@@ -36,14 +36,6 @@ public class NotificationData implements Serializable {
 
 
 
-	public String getNotificationDataTitle() {
-		return nt;
-	}
-
-	public void setNt(String nt) {
-		this.nt = nt;
-	}
-
 	public String getNotificationDataContent() {
 		return nc;
 	}
@@ -58,6 +50,14 @@ public class NotificationData implements Serializable {
 
 	public void setNd(Date nd) {
 		this.nd = nd;
+	}
+
+	public String getNt() {
+		return nt;
+	}
+
+	public void setNt(String nt) {
+		this.nt = nt;
 	}
 
 }
