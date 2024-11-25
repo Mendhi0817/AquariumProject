@@ -109,6 +109,68 @@ public boolean save(Map map) throws Exception {
 
 
 
+public List<String> getAllFloorInfo() throws Exception {
+    List<String> floorInfoList = new ArrayList<>();
+    Connection con = getConnection();
+    PreparedStatement st = null;
+    ResultSet rs = null;
+
+    try {
+        String query = "SELECT floor_info FROM map_info";
+        st = con.prepareStatement(query);
+        rs = st.executeQuery();
+
+        // 結果をリストに追加
+        while (rs.next()) {
+            floorInfoList.add(rs.getString("floor_info"));
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        throw e; // 呼び出し元に例外を伝える
+    } finally {
+        if (rs != null) rs.close();
+        if (st != null) st.close();
+        if (con != null) con.close();
+    }
+
+    return floorInfoList; // 取得したfloor_infoリストを返す
+}
+
+
+
+
+
+public String getMapImage(String floor) throws Exception {
+    String mapImage = null;
+    Connection con = getConnection();
+    PreparedStatement st = null;
+    ResultSet rs = null;
+
+    try {
+        String q = "SELECT map_image FROM map_info WHERE floor_info=?";
+        st = con.prepareStatement(q);
+        st.setString(1, floor);
+
+        rs = st.executeQuery();
+
+        // 結果があればmap_imageを取得
+        if (rs.next()) {
+            mapImage = rs.getString("map_image");
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        throw e;
+    } finally {
+        if (rs != null) rs.close();
+        if (st != null) st.close();
+        if (con != null) con.close();
+    }
+
+    return mapImage; // map_imageを返す
+}
+
+
+
 public boolean delete(String floorInfo) throws Exception {
 	// コネクションを確立
 	Connection connection = getConnection();
@@ -159,3 +221,7 @@ public boolean delete(String floorInfo) throws Exception {
 	}
 }
 }
+
+
+
+
