@@ -91,6 +91,15 @@
             </form>
         </div>
 
+ 		<!-- 現在のパスワードを入力 -->
+        <div class="content">
+            <div>パスワード</div>
+            <div class="input-field">
+                <input type="text" id="email" placeholder="パスワードを入力">
+            </div>
+        </div>
+
+
         <!-- 名前の変更 -->
         <div class="content">
             <div>名前の変更</div>
