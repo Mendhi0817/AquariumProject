@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="../setting/setting staff.css">
+    <link rel="stylesheet" href="../complete/complete.css">
     <title>水族舘プロジェクト</title>
     <style>
-        body {
+         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
@@ -71,52 +70,24 @@
             border: 1px solid #ccc;
             margin-top: 10px;
         }
-
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar">
-            <img src="../picture/right_photo.png" alt="サイドバー画像" align="right">
-        </aside>
-        <header>
-            <img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150">
-        </header>
+    <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像"align="right"></aside>
+    <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+    入力したメールアドレスが違っています
 
-        <!-- 戻るボタンのフォーム -->
-        <div>
-            <form action="../manager/Setting_C.action" method="post">
+	<div>
+            <form action="Change_User_Data_C.action" method="post">
                 <input type="submit" value="戻る" class="back-button">
             </form>
         </div>
 
 
-            <form action="../manager/Email_complete.action" method="post">
-        <!-- メールアドレスの変更 -->
-        <div class="content">
-            <div>メールアドレスを入力して下さい</div>
-            <div class="input-field">
-                <input type="text" name="email" placeholder="メールアドレスを入力">
-            </div>
-        </div>
-
-        <!-- 新パスワードを入力 -->
-        <div class="content">
-            <div>新パスワードを入力</div>
-            <div class="input-field">
-                <input type="text" name="password" placeholder="新パスワードを入力">
-            </div>
-        </div>
-
-        <div class="content">
-
-                <input type="submit" value="変更" class="back-button">
-            </form>
-        </div>
-    </div>
-
-       <footer>
+</div>
+     <footer>
         <div class="footer-buttons">
             <form action="../manager/Home_customer.action" method="post">
                 <input type="submit" value="ホーム">

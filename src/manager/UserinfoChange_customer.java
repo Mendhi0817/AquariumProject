@@ -57,7 +57,6 @@ public class UserinfoChange_customer {
 				}
 
 			}
-
 			//login
 
 

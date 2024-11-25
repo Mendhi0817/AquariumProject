@@ -91,11 +91,13 @@
             </form>
         </div>
 
+
+            <form action="../manager/Change_complete.action" method="post">
  		<!-- 現在のパスワードを入力 -->
         <div class="content">
             <div>パスワード</div>
             <div class="input-field">
-                <input type="text" id="email" placeholder="パスワードを入力">
+                <input type="text" name="email" placeholder="パスワードを入力">
             </div>
         </div>
 
@@ -104,7 +106,7 @@
         <div class="content">
             <div>名前の変更</div>
             <div class="input-field">
-                <input type="text" id="name" placeholder="新しい名前を入力">
+                <input type="text" name="name" placeholder="新しい名前を入力">
             </div>
         </div>
 
@@ -112,12 +114,12 @@
         <div class="content">
             <div>メールアドレスの変更</div>
             <div class="input-field">
-                <input type="text" id="email" placeholder="新しいメールアドレスを入力">
+                <input type="text" name="email" placeholder="新しいメールアドレスを入力">
             </div>
         </div>
 
         <div class="content">
-            <form action="../manager/Change_complete.action" method="post">
+
                 <input type="submit" value="変更" class="back-button">
             </form>
         </div>

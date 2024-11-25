@@ -73,7 +73,7 @@ public class UserDAO extends DAO {
 
 		int result = 0;
 
-		st = con.prepareStatement("update userinfo set username = ?, email = ?, where email = ?");
+		st = con.prepareStatement("update userinfo set user_name = ? , email = ? where password = ?");
 		st.setString(1,password);
 		st.setString(2,username);
 		st.setString(3, email);
