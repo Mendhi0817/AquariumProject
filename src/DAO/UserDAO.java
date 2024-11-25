@@ -56,8 +56,6 @@ public class UserDAO extends DAO {
 		st.setString(2,email);
 
 
-		System.out.print("1111111111");
-
 		result = st.executeUpdate();
 
 
@@ -67,6 +65,33 @@ public class UserDAO extends DAO {
 
 
 	}
+
+	public int UserinfoChange(String password, String username, String email)throws Exception{
+		Connection con = getConnection();
+
+		PreparedStatement st = null;
+
+		int result = 0;
+
+		st = con.prepareStatement("update userinfo set username = ?, email = ?, where email = ?");
+		st.setString(1,password);
+		st.setString(2,username);
+		st.setString(3, email);
+
+
+		result = st.executeUpdate();
+
+
+		st.close();
+		con.close();
+		return result;
+
+
+
+	}
+
+
+
 
 
 
