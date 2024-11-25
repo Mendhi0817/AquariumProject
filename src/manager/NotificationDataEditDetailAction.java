@@ -1,7 +1,5 @@
 package manager;
 
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,14 +21,17 @@ public class NotificationDataEditDetailAction extends Action {
 
             NotificationDataDAO nDAO = new NotificationDataDAO();
 
-            List<NotificationData> listTitle = nDAO.searchTitle();
-            List<NotificationData> listId = nDAO.searchId();
+            String ni = request.getParameter(ni);
+            NotificationData nAll = nDAO.get(ni);
+
+
 
 
             // 取得したデータをリクエスト属性にセット
 
-            request.setAttribute("listTitle", listTitle);
-            request.setAttribute("listId", listId);
+            request.setAttribute("nAll", nAll);
+
+
 
             // JSPにフォワード
 
