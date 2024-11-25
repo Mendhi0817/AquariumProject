@@ -3,7 +3,6 @@ import java.sql.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import DAO.NotificationDataDAO;
 import bean.NotificationData;
@@ -13,7 +12,7 @@ public class NotificationDataUpdateExecuteAction extends Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//TODO 自動生成されたメソッド·スタブ
-		HttpSession session=request.getSession();//セッション
+//		HttpSession session=request.getSession();//セッション
 //		NotificationData notificationdata=(NotificationData)session.getAttribute("user");
 
 
