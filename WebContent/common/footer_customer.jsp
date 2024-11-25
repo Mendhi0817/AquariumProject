@@ -18,9 +18,9 @@
 </style>
 <div class ="footer">
 <footer>
-        <form action = "home_staff.jsp" method = "post"><input type = "submit" value = "ホーム"></form>
+        <form action = "../common/home_customer.jsp" method = "post"><input type = "submit" value = "ホーム"></form>
         <form action = "../staff/Setting/setting_staff.jsp" method = "post"><input type = "submit" value = "マップ"></form>
-        <form action = "../staff/Setting/setting_staff.jsp" method = "post"><input type = "submit" value = "お知らせ"></form>
+        <form action = "../manager/News_Customer.action" method = "post"><input type = "submit" value = "お知らせ"></form>
         <form action = "../staff/Setting/setting_staff.jsp" method = "post"><input type = "submit" value = "設定"></form>
 
 
