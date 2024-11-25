@@ -43,6 +43,7 @@ public class NotificationDataDAO extends DAO {
 
 			listTitle.add(notification);
 
+
 		}
 
 		st.close();
@@ -90,7 +91,7 @@ public class NotificationDataDAO extends DAO {
 
 
 
-	public NotificationData get() throws Exception {
+	public NotificationData get(String ni) throws Exception {
 		// 学校インスタンスを初期化
 		NotificationData notification = new NotificationData();
 		// データベースへのコネクションを確率
@@ -100,13 +101,13 @@ public class NotificationDataDAO extends DAO {
 
 		try {
 			// プリペアードステートメントにSQL文をセット
-			statement = connection.prepareStatement("select * from contact where ct=?");
+			statement = connection.prepareStatement("select * from contact where CONTACT_ID=?");
 			// プリペアードステートメントに学校コードをバインド
 			String nt = null;
 			String nc = null;
 			Date nd = null;
-			String ni = null;
-			statement.setString(1, nt);
+			String ci = null;
+			statement.setString(1, ci);
 //			statement.setString(1, ct);
 			// プリペアードステートメントを実行
 			ResultSet rSet = statement.executeQuery();
@@ -114,9 +115,9 @@ public class NotificationDataDAO extends DAO {
 			if (rSet.next()) {
 				// リザルトセットが存在する場合
 				// 学校インスタンスに学校コードと学校名をセット
-				notification.setNt(rSet.getString("ct"));
-				notification.setNc(rSet.getString("cc"));
-				notification.setNd(rSet.getDate("cd"));
+				notification.setNt(rSet.getString("nt"));
+				notification.setNc(rSet.getString("nc"));
+				notification.setNd(rSet.getDate("nd"));
 			} else {
 				// 存在しない場合
 				// 学校インスタンスにnullをセット
@@ -182,11 +183,11 @@ public class NotificationDataDAO extends DAO {
 
 //				    // プリペアードステートメントに値をバインド
 //
-				    statement.setString(1, notification.getNotificationDataTitle());
+				    statement.setString(1, notification.getNt());
 
-				    statement.setString(2, notification.getNotificationDataContent());
+				    statement.setString(2, notification.getNc());
 
-				    statement.setDate(3,  notification.getNotificationDataDay());
+				    statement.setDate(3,  notification.getNd());
 
 				// プリペアードステートメントを実行
 

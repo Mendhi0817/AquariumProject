@@ -26,7 +26,7 @@ public class NotificationData implements Serializable {
 	/**
 	 * ゲッター、セッター
 	 */
-	public String getNotificationDataId() {
+	public String getNi() {
 		return ni;
 	}
 
@@ -36,15 +36,7 @@ public class NotificationData implements Serializable {
 
 
 
-	public String getNotificationDataTitle() {
-		return nt;
-	}
-
-	public void setNt(String nt) {
-		this.nt = nt;
-	}
-
-	public String getNotificationDataContent() {
+	public String getNc() {
 		return nc;
 	}
 
@@ -52,12 +44,20 @@ public class NotificationData implements Serializable {
 		this.nc = nc;
 	}
 
-	public Date getNotificationDataDay() {
+	public Date getNd() {
 		return nd;
 	}
 
 	public void setNd(Date nd) {
 		this.nd = nd;
+	}
+
+	public String getNt() {
+		return nt;
+	}
+
+	public void setNt(String nt) {
+		this.nt = nt;
 	}
 
 }

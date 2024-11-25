@@ -86,17 +86,27 @@
 
         <!-- 戻るボタンのフォーム -->
         <div>
-            <form action="../manager/Setting.action" method="post">
+            <form action="../manager/Setting_C.action" method="post">
                 <input type="submit" value="戻る" class="back-button">
             </form>
         </div>
 
-<form action="../../manager/UserinfoChange.action" method="post">
+
+            <form action="../manager/Change_complete.action" method="post">
+ 		<!-- 現在のパスワードを入力 -->
+        <div class="content">
+            <div>パスワード</div>
+            <div class="input-field">
+                <input type="text" name="email" placeholder="パスワードを入力">
+            </div>
+        </div>
+
+
         <!-- 名前の変更 -->
         <div class="content">
             <div>名前の変更</div>
             <div class="input-field">
-                <input type="text" id="username" placeholder="新しい名前を入力">
+                <input type="text" name="name" placeholder="新しい名前を入力">
             </div>
         </div>
 
@@ -104,25 +114,32 @@
         <div class="content">
             <div>メールアドレスの変更</div>
             <div class="input-field">
-                <input type="text" id="email" placeholder="新しいメールアドレスを入力">
+                <input type="text" name="email" placeholder="新しいメールアドレスを入力">
             </div>
         </div>
 
         <div class="content">
-            <button name="button2" class="back-button">変更</button>
+
+                <input type="submit" value="変更" class="back-button">
+            </form>
         </div>
     </div>
 
-</form>
-
-    <footer>
-        <form action="../manager/Home_staff.action" method="post">
-            <input type="submit" value="ホーム">
-        </form>
-        <form action="../manager/Setting.action" method="post">
-            <input type="submit" value="設定">
-        </form>
+       <footer>
+        <div class="footer-buttons">
+            <form action="../manager/Home_customer.action" method="post">
+                <input type="submit" value="ホーム">
+            </form>
+            <form action="../manager/Map.action" method="post">
+                <input type="submit" value="マップ">
+            </form>
+            <form action="../manager/News.action" method="post">
+                <input type="submit" value="お知らせ">
+            </form>
+            <form action="../manager/Setting_C.action" method="post">
+                <input type="submit" value="設定">
+            </form>
+        </div>
     </footer>
 </body>
 </html>
-

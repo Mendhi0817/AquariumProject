@@ -54,7 +54,7 @@ public class NotificationDataUpdateExecuteAction extends Action {
 		        nDao.save(notification);
 
 
-		    request.getRequestDispatcher("edit_complete.jsp").forward(request, response);
+		    request.getRequestDispatcher("NotificationDataEditDetailAction.java").forward(request, response);
 
 
 		}
