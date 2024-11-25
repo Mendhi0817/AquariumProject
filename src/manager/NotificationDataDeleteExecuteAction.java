@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 //import bean.Contact;
 //import bean.Teacher;
 import DAO.NotificationDataDAO;
-import bean.NotificationData;
 import tool.Action;
 public class NotificationDataDeleteExecuteAction extends Action {
 
@@ -18,7 +17,7 @@ public class NotificationDataDeleteExecuteAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//TODO 自動生成されたメソッド·スタブ
 		HttpSession session=request.getSession();//セッション
-		NotificationData notification =(NotificationData)session.getAttribute("user");
+//		NotificationData notification =(NotificationData)session.getAttribute("user");
 
 
 		String nt = "";
