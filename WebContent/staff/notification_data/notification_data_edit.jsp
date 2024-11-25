@@ -105,6 +105,11 @@
             <h2>編集したいお知らせを選んで下さい</h2>
 
             <div class="notification-list">
+            <c:forEach var ="listTitle1" items="${listTitle}">
+												<div>${listTitle1.nt}</div>
+			</c:forEach>
+			</div>
+			<div class="notfication-item">
                 <!-- 仮のお知らせデータ -->
                 <div class="notification-item">
                     <span>お知らせタイトル1</span>
@@ -113,6 +118,8 @@
                     Execute.action" method = "post">
                         <input type="submit" value="編集">
                     </form>
+
+
 
                 </div>
 

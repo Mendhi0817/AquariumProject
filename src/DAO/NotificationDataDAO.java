@@ -43,6 +43,7 @@ public class NotificationDataDAO extends DAO {
 
 			listTitle.add(notification);
 
+
 		}
 
 		st.close();
@@ -182,7 +183,7 @@ public class NotificationDataDAO extends DAO {
 
 //				    // プリペアードステートメントに値をバインド
 //
-				    statement.setString(1, notification.getNotificationDataTitle());
+				    statement.setString(1, notification.getNt());
 
 				    statement.setString(2, notification.getNotificationDataContent());
 
