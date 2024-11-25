@@ -1,15 +1,21 @@
 package manager;
 
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.NotificationDataDAO;
+import bean.NotificationData;
 import tool.Action;
-
 
 public class Notification_data_editAction extends Action {
 
-		public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        try {
 //			// ローカル変数の宣言
 //
 //			HttpSession session = req.getSession(); // セッション情報を取得
@@ -24,10 +30,29 @@ public class Notification_data_editAction extends Action {
 //
 //			req.setAttribute("title", contact.getContactTitle());	// リクエストにデータをセット
 //
+            NotificationDataDAO nDAO = new NotificationDataDAO();
 
-		req.getRequestDispatcher("../staff/notification_data/notification_data_edit.jsp").forward(request, response);
+            List<NotificationData> listTitle = nDAO.searchTitle();
+            List<NotificationData> listId = nDAO.searchId();
 
-	}
 
-		//login
-	}
+            // 取得したデータをリクエスト属性にセット
+
+            request.setAttribute("listTitle", listTitle);
+            request.setAttribute("listId", listId);
+
+
+            // JSPにフォワード
+
+			request.getRequestDispatcher("../staff/notification_data/notification_data_edit.jsp").forward(request, response);
+
+        } catch (Exception e) {
+
+            throw new ServletException(e);
+
+        }
+//		req.getRequestDispatcher("../staff/notification_data/notification_data_edit.jsp").forward(request, response);
+
+    }
+
+}
