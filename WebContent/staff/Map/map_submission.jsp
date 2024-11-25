@@ -61,11 +61,14 @@
 
         <!-- 新しいフォームセクション -->
 <div class="form-container">
-<form action ="../manager/MapPostDone.action" method = "post" enctype="multipart/form-data">
+<form action="MapDelete.action" method="post">
 <div>
 <button name="delete">削除</button>
 </div>
+</form>
 <!-- 文字を入力するフィールド -->
+<form action ="../manager/MapPostDone.action" method = "post" enctype="multipart/form-data">
+
 <div>
 <label for="textInput">階数を入力：</label>
 <input type="text" id="textInput" name="textInput" placeholder="階数を入力してください">
