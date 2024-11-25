@@ -7,12 +7,12 @@
 <html lang="ja">
 <title>水族舘プロジェクト</title>
 <head>
-    <link rel="stylesheet" href="マップ投稿.css">
-    <title>水族舘プロジェクト</title>
-    <c:import url="/common/base.jsp">
+<link rel="stylesheet" href="マップ投稿.css">
+<title>水族舘プロジェクト</title>
+<c:import url="/common/base.jsp">
 
 </c:import>
-    <style>
+<style>
         body {
             display: flex;
             flex-direction: column;
@@ -46,12 +46,12 @@
             height: 50px;
             font-size: 16px;
         }
-    </style>
+</style>
 </head>
 
 <body>
-    <div class="container">
-        <aside class="sidebar">
+<div class="container">
+<aside class="sidebar">
 
         </aside>
 
@@ -60,30 +60,29 @@
         </header>
 
         <!-- 新しいフォームセクション -->
-        <div class="form-container">
-
-                <div>
-                    <form action ="../manager/MapDelete.action" method = "post"><input type = "submit" value = "削除">
-                    </form>
-                </div>
-                <!-- 文字を入力するフィールド -->
-                <div>
-                    <label for="textInput">階数を入力：</label>
-                    <input type="text" id="textInput" name="textInput" placeholder="階数を入力してください">
-                </div>
+<div class="form-container">
+<form action ="../manager/MapPostDone.action" method = "post" enctype="multipart/form-data">
+<div>
+<button name="delete">削除</button>
+</div>
+<!-- 文字を入力するフィールド -->
+<div>
+<label for="textInput">階数を入力：</label>
+<input type="text" id="textInput" name="textInput" placeholder="階数を入力してください">
+</div>
 
                 <!-- PDFファイルをアップロードするフィールド -->
-                <div>
-                    <label for="pdfUpload">マップの写真をアップロードして下さい：</label>
-                    <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf" >
-                    <br><img src="/fileupload/upload/<%= "pdfUpload" %>">
-                </div>
-                <!-- 送信ボタン -->
-                <div class="FormActionContainer">
-                </div>
-            <form action ="../manager/MapPostDone.action" method = "post"><input type = "submit" value = "投稿"></form>
-            </form>
-        </div>
-    </div>
+<div>
+<label for="pdfUpload">マップの写真をアップロードして下さい：</label>
+<input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf" >
+<br><img src="/fileupload/upload/<%= "pdfUpload" %>">
+</div>
+<!-- 送信ボタン -->
+<div class="FormActionContainer">
+</div>
+<input type = "submit" value = "投稿">
+</form>
+</div>
+</div>
 
 <footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom"></footer>
