@@ -28,7 +28,7 @@ public class NotificationDataDAO extends DAO {
 
 		PreparedStatement st;
 
-		st = con.prepareStatement("select * from notification_data");
+		st = con.prepareStatement("select NOTIFICATION_TITLE from NOTIFICATION_DATA");
 
 //		st.setString(1,image);
 
@@ -61,7 +61,7 @@ public class NotificationDataDAO extends DAO {
 
 		PreparedStatement st;
 
-		st = con.prepareStatement("select * from CONTACT_ID");
+		st = con.prepareStatement("select CONTACT_ID from  NOTIFICATION_DATA ");
 
 //		st.setString(1,image);
 
@@ -178,7 +178,7 @@ public class NotificationDataDAO extends DAO {
 //
 				    statement = connection.prepareStatement(
 
-				            "insert into NOTIFICATION_DATA(NOTIFICATION_TITLE, NOTIFICATION_CONTENT, NOTIFICATION_DATA) values(?, ?, ?)");
+				            "insert into NOTIFICATION_DATA(NOTIFICATION_TITLE, NOTIFICATION_CONTENT, NOTIFICATION_DATE) values(?, ?, ?)");
 
 //				    // プリペアードステートメントに値をバインド
 //

@@ -99,9 +99,17 @@
             </div>
         </div>
 
+        <!-- 新パスワードを入力 -->
+        <div class="content">
+            <div>新パスワードを入力</div>
+            <div class="input-field">
+                <input type="text" id="email" placeholder="新パスワードを入力">
+            </div>
+        </div>
+
         <div class="content">
             <form action="../manager/Email_complete.action" method="post">
-                <input type="submit" value="送信" class="back-button">
+                <input type="submit" value="変更" class="back-button">
             </form>
         </div>
     </div>
