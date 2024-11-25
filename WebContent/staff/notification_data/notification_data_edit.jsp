@@ -111,7 +111,7 @@
                         <!-- お知らせタイトルを表示 -->
                         <span>${listTitle1.nt}</span>
                         <!-- '編集'ボタンを設置 -->
-                        <form class="delete-btn-1" action="../manager/NotificationDataUpdateExecute.action" method="post">
+                        <form class="delete-btn-1" action="../manager/NotificationDetail.action" method="post">
                             <input type="submit" value="編集">
                         </form>
                     </div>
