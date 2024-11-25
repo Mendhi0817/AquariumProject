@@ -1,37 +1,44 @@
 package manager;
 
-import java.sql.PreparedStatement;
+import java.io.IOException;
+import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import bean.Contuct;
+import DAO.NotificationDataDAO;
+import bean.NotificationData;
 import tool.Action;
-
 
 public class Notification_data_editAction extends Action {
 
-		public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-			// ローカル変数の宣言
+        try {
 
-			HttpSession session = req.getSession(); // セッション情報を取得
-			PreparedStatement statement = null;
+            NotificationDataDAO nDAO = new NotificationDataDAO();
 
-
-//			NotificationData notification = (NotificationData)session.getAttribute("user");
-
+            List<NotificationData> listTitle = nDAO.searchTitle();
+            List<NotificationData> listId = nDAO.searchId();
 
 
-			Contuct contact = cDao.get();
+            // 取得したデータをリクエスト属性にセット
 
-			req.setAttribute("title", contact.getContactTitle());	// リクエストにデータをセット
+            request.setAttribute("listTitle", listTitle);
+            request.setAttribute("listId", listId);
 
 
-		request.getRequestDispatcher("../staff/notification_data/notification_data_edit.jsp").forward(request, response);
+            // JSPにフォワード
 
-	}
+			request.getRequestDispatcher("../staff/notification_data/notification_data_edit.jsp").forward(request, response);
 
-		//login
-	}
+        } catch (Exception e) {
+
+            throw new ServletException(e);
+
+        }
+
+    }
+
+}
