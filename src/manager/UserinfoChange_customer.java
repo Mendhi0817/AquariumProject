@@ -1,12 +1,12 @@
 package manager;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DAO.UserDAO;
 import tool.Action;
 
-public class UserinfoChangeAction {
+
+public class UserinfoChange_customer {
 
 
 
@@ -19,13 +19,14 @@ public class UserinfoChangeAction {
 
 			String email=request.getParameter("email");
 			String password = request.getParameter("password");
-			String username = request.getParameter("username");
-
 			UserDAO dao=new UserDAO();
 
 			int result = 0;
-			result = dao.UserinfoChange(password,username,email);
+			result = dao.passwordUpdate(password,email);
 			//入力されたメールアドレスが存在するか確認
+			System.out.println(password);
+
+			System.out.println(email);
 
 
 
@@ -56,5 +57,8 @@ public class UserinfoChangeAction {
 				}
 
 			}
+
+			//login
+
 
 }
