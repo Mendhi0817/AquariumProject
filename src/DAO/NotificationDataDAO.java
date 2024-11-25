@@ -266,7 +266,7 @@ public class NotificationDataDAO extends DAO {
 
 					    statement = connection
 
-					            .prepareStatement("delete CONTUCT where ContuctID=? ");
+					            .prepareStatement("delete from  NOTIFICATION_DATA where ContuctID=? ");
 
 					    // プリペアードステートメントに値をバインド
 
