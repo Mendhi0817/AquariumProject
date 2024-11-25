@@ -105,34 +105,29 @@
             <h2>編集したいお知らせを選んで下さい</h2>
 
             <div class="notification-list">
-            <c:forEach var ="listTitle1" items="${listTitle}">
-												<div>${listTitle1.nt}</div>
-			</c:forEach>
-			</div>
-			<div class="notfication-item">
-                <!-- 仮のお知らせデータ -->
-                <div class="notification-item">
-                    <span>お知らせタイトル1</span>
-                    <!-- '削除1'ボタンにクラスを追加 -->
-                    <form class="delete-btn-1" action ="../manager/NotificationDataUpdate
-                    Execute.action" method = "post">
-                        <input type="submit" value="編集">
-                    </form>
-
-
-
-                </div>
-
-                <form action ="../manager/Notification_data_Post.action" method = "post">
-                    <input type="submit" value="戻る">
-                </form>
+                <!-- listTitle からお知らせタイトルをループで表示 -->
+                <c:forEach var="listTitle1" items="${listTitle}">
+                    <div class="notification-item">
+                        <!-- お知らせタイトルを表示 -->
+                        <span>${listTitle1.nt}</span>
+                        <!-- '編集'ボタンを設置 -->
+                        <form class="delete-btn-1" action="../manager/NotificationDataUpdateExecute.action" method="post">
+                            <input type="submit" value="編集">
+                        </form>
+                    </div>
+                </c:forEach>
             </div>
+
+            <form action="../manager/Notification_data_Post.action" method="post">
+                <input type="submit" value="戻る">
+            </form>
         </main>
     </div>
 
     <footer>
-        <form action ="../manager/Home_staff.action" method = "post"><input type="submit" value="ホーム"></form>
-        <form action ="../manager/Setting.action" method = "post"><input type="submit" value="設定"></form>
+        <form action="../manager/Home_staff.action" method="post"><input type="submit" value="ホーム"></form>
+        <form action="../manager/Setting.action" method="post"><input type="submit" value="設定"></form>
     </footer>
 </body>
 </html>
+
