@@ -1,7 +1,5 @@
 package manager;
 import java.sql.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +27,7 @@ public class NotificationDataUpdateExecuteAction extends Action {
 //		LocalDate todaysDate=LocalDate.now();//LocolDateインスタンスを取得
 //		int year=todaysDate.getYear();//現在の年を取得
 		NotificationDataDAO nDao=new NotificationDataDAO();//学生dao
-		Map<String, String>errors=new HashMap<>();//エラーメッセージ
+//		Map<String, String>errors=new HashMap<>();//エラーメッセージ
 
 //		ContactTitle=request.getParameter("f1");
 //		ContactContent=request.getParameter("f2");
