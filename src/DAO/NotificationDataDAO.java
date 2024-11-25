@@ -185,9 +185,9 @@ public class NotificationDataDAO extends DAO {
 //
 				    statement.setString(1, notification.getNt());
 
-				    statement.setString(2, notification.getNotificationDataContent());
+				    statement.setString(2, notification.getNc());
 
-				    statement.setDate(3,  notification.getNotificationDataDay());
+				    statement.setDate(3,  notification.getNd());
 
 				// プリペアードステートメントを実行
 
