@@ -86,28 +86,41 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <!-- 削除と編集ボタンを左に寄せる -->
+        <!-- 戻るボタン -->
         <div class="button-container">
             <form action="../manager/Notification_data_edit.action" method="post">
                 <input type="submit" value="戻る">
             </form>
-		</div>
+        </div>
 
-        <form action="../manager/NotificationDataCreateExecute.action" method="post">
-             <div class="content">
-            <h2>タイトルを編集</h2>
-            <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
+        <!-- 通知リストの表示 -->
+        <div class="notification-list">
+            <c:forEach var="listTitle1" items="${listTitle}">
+                <div class="notification-item">
+                    <!-- アイテムごとのデータを表示 -->
+                    <p><strong>タイトル:</strong> ${listTitle1.nt}</p> <!-- タイトルを表示 -->
+                    <p><strong>文章:</strong> ${listTitle1.nc}</p> <!-- 仮にdescriptionというフィールドがあると仮定 -->
+                    <p><strong>日付:</strong> ${listTitle1.nd}</p> <!-- 日付を表示 -->
+                </div>
+            </c:forEach>
+        </div>
 
-            <h2>文章を編集</h2>
-            <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
+        <!-- 編集フォーム -->
+        <form action="../manager/NotificationDataEditExecute.action" method="post">
+            <div class="content">
+                <h2>タイトルを編集</h2>
+                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }">
 
-            <!-- 日付入力欄の追加 -->
-            <h2>日付を編集</h2>
-           </div>
-            <input type="date" id="date" name="f3">
+                <h2>文章を編集</h2>
+                <textarea id="content" name="f2" placeholder="ここに文章を入力してください" value="${nAll.nc }"></textarea>
+
+                <!-- 日付入力欄の追加 -->
+                <h2>日付を編集</h2>
+                <input type="date" id="date" name="f3">
+            </div>
             <div>
-            <input type="submit" value="編集">
-        	</div>
+                <input type="submit" value="編集">
+            </div>
         </form>
     </div>
 
@@ -121,3 +134,4 @@
     </footer>
 </body>
 </html>
+

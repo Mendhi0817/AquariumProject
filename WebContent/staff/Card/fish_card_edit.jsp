@@ -31,14 +31,6 @@
                 <textarea id="content" name="f1"placeholder="ここにカード名を入力してください"></textarea>
                 </div>
 
-<label for="raritySelect"></label>
-					<select class="form-select" required aria-label="select example" id="rarity" name="f2" style="width: 30%;">
-
-        <option value="normal">ノーマル</option>
-        <option value="rare">レア</option>
-        <option value="super_rare">スーパーレア</option>
-        <option value="hyper_rare">ハイパーレア</option>
-    </select>
 
     <!-- PDFファイルをアップロードするフィールド -->
                 <div>
