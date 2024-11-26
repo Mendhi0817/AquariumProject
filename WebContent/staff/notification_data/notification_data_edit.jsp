@@ -119,7 +119,6 @@
                             <input type="submit" value="編集">
 						</form>
                 </c:forEach>
-
             </div>
 
             <form action="../manager/Notification_data_Post.action" method="post">
