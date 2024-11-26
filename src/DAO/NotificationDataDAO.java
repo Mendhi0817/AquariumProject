@@ -1,7 +1,6 @@
 package DAO;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -103,11 +102,11 @@ public class NotificationDataDAO extends DAO {
 			// プリペアードステートメントにSQL文をセット
 			statement = connection.prepareStatement("select * from contact where CONTACT_ID=?");
 			// プリペアードステートメントに学校コードをバインド
-			String nt = null;
-			String nc = null;
-			Date nd = null;
-			String ci = null;
-			statement.setString(1, ci);
+//			String nt = null;
+//			String nc = null;
+//			Date nd = null;
+//			String ni = null;
+			statement.setString(1, ni);
 //			statement.setString(1, ct);
 			// プリペアードステートメントを実行
 			ResultSet rSet = statement.executeQuery();
