@@ -73,7 +73,7 @@ public class NotificationDataDAO extends DAO {
 
 			NotificationData notification = new NotificationData();
 
-			notification.setNt(rs.getString("CONTACT_ID"));
+			notification.setNi(rs.getString("CONTACT_ID"));
 
 			listId.add(notification);
 
