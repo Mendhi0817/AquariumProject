@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../News/news.css">
     <title>水族舘プロジェクト</title>
     <style>
-        body {
+              body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
@@ -117,71 +117,6 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
-        /* 魚カードのスタイル */
-        .fish-card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-            margin: 20px;
-        }
-
-        .fish-card {
-            width: 250px;
-            height: 350px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            text-align: center;
-            padding: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .fish-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .fish-card h3 {
-            font-size: 1.2em;
-            margin-top: 15px;
-            color: #333;
-        }
-
-        .fish-card p {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        .fish-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        /* QRコード読み取りボタンのスタイル */
-        .qr-code-button {
-            width: 300px; /* ボタンの横幅を大きく設定 */
-            padding: 20px 80px; /* ボタンのパディング */
-            font-size: 1.5em; /* フォントサイズを大きく */
-            background-color: #ff6347; /* ボタンの背景色（緑） */
-            border-radius: 10px; /* 角を丸く */
-            color: white; /* 文字色 */
-            border: none; /* 枠線なし */
-            cursor: pointer; /* カーソルをポインターに */
-            text-align: center; /* テキストを中央に */
-            display: block; /* ブロック要素にして、中央に配置 */
-            margin: 20px auto; /* 上下に余白を追加 */
-        }
-
-        /* ホバー時のQRコードボタンの色変更 */
-        .qr-code-button:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
-        }
-
     </style>
 </head>
 
@@ -189,52 +124,26 @@
     <div class="container">
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-
-        <!-- 魚カードのセクション -->
-        <section class="fish-card-container">
-            <div class="fish-card">
-                <img src="../../picture/fish1.jpg" alt="魚1">
-                <h3>魚の名前1</h3>
-                <p>この魚は美しい色彩を持ち、主に暖かい海域に生息しています。</p>
-            </div>
-
-            <div class="fish-card">
-                <img src="../../picture/fish2.jpg" alt="魚2">
-                <h3>魚の名前2</h3>
-                <p>この魚は夜行性で、サンゴ礁の周りでよく見かけます。</p>
-            </div>
-
-            <div class="fish-card">
-                <img src="../../picture/fish3.jpg" alt="魚3">
-                <h3>魚の名前3</h3>
-                <p>深海に生息するこの魚は、独特の光を発することが知られています。</p>
-            </div>
-
-            <!-- QRコード読み取りボタン -->
-            <form action="../manager/Camera.action" method="post">
-                <input type="submit" value="QRコード" class="qr-code-button">
-            </form>
-        </section>
-
     </div>
+
+
+
 
     <footer>
         <div class="footer-buttons">
-            <form action="../manager/Home_customer.action" method="post">
+            <form action="../manager/Home_staff.action" method="post">
                 <input type="submit" value="ホーム">
             </form>
             <form action="../manager/Map.action" method="post">
                 <input type="submit" value="マップ">
             </form>
-           <form action="../manager/NotificationData_C.action" method="post">
+            <form action="../manager/NotificationData.action" method="post">
                 <input type="submit" value="お知らせ">
             </form>
-            <form action="../manager/Setting_C.action" method="post">
+            <form action="../manager/Setting.action" method="post">
                 <input type="submit" value="設定">
             </form>
         </div>
     </footer>
 </body>
 </html>
-
-
