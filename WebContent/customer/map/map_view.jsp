@@ -13,6 +13,9 @@
     </c:import>
 <body>
     <h2>Map List</h2>
+    <div class="right-panel">
+            <img src="file:///C:/Users/the/git/AquariumProject_1121/WebContent/picture/map%20(1).jpg" alt="魚の写真">
+        </div>
 
     <table border="1">
         <tr>
