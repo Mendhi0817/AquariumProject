@@ -63,14 +63,23 @@
         }
 
         .notification-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc; /* 枠線を追加 */
-            border-radius: 8px; /* 角を丸く */
-        }
+    		display: flex;
+    		justify-content: space-between;
+    		align-items: center;
+    		margin: 10px 0;
+    		padding: 10px;
+    		border: 1px solid #ccc;
+    		border-radius: 8px;
+		}
+
+		.notification-item span {
+    		flex-grow: 1; /* タイトル部分がスペースを埋める */
+		}
+
+		.notification-item form {
+    		margin-left: auto; /* フォームを右寄せにする */
+		}
+
 
         .notification-item button {
             padding: 5px 20px;
