@@ -14,7 +14,7 @@ public class NotificationDataUpdateExecuteAction extends Action {
 		//TODO 自動生成されたメソッド·スタブ
 //		HttpSession session=request.getSession();//セッション
 //		NotificationData notificationdata=(NotificationData)session.getAttribute("user");
-
+//z
 
 //		String nt = "";
 //		String nc = "";
@@ -34,9 +34,6 @@ public class NotificationDataUpdateExecuteAction extends Action {
 		NotificationDataDAO nDao=new NotificationDataDAO();//学生dao
 //		Map<String, String>errors=new HashMap<>();//エラーメッセージ
 
-//		ContactTitle=request.getParameter("f1");
-//		ContactContent=request.getParameter("f2");
-//		ContactDate=Date.valueOf(request.getParameter("f3"));
 
 
 		        // StudentDaoを使って学生情報をデータベースに削除
