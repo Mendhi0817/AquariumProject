@@ -128,7 +128,7 @@
 
     <footer>
         <div class="footer-buttons">
-            <form action="../manager/Home_staff.action" method="post">
+            <form action="../manager/Home_customer.action" method="post">
                 <input type="submit" value="ホーム">
             </form>
             <form action="../manager/Map.action" method="post">
