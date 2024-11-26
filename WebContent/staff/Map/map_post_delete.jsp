@@ -68,11 +68,16 @@
             height: 50px;
             font-size: 16px;
         }
+
+        .position {
+        position:absolute;
+        top:150px;}
     </style>
 </head>
 
 <body>
-	<h1>階数</h1>
+<div class="position">
+<h1>階数</h1>
 	<table border=1">
 		<tr>
 			<th>Floor Info</th>

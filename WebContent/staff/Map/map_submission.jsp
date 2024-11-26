@@ -46,6 +46,10 @@
             height: 50px;
             font-size: 16px;
         }
+
+        .position {
+        position:absolute;
+        top:150px;}
 </style>
 </head>
 
@@ -60,6 +64,7 @@
         </header>
 
         <!-- 新しいフォームセクション -->
+<div class="position">
 <div class="form-container">
 <form action="MapDelete.action" method="post">
 <div>
@@ -89,3 +94,4 @@
 </div>
 
 <footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom"></footer>
+</div>
