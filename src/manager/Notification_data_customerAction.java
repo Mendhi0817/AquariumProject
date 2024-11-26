@@ -18,20 +18,7 @@ public class Notification_data_customerAction extends Action {
 	) throws Exception {
 
 		try {
-//			// ローカル変数の宣言
-//
-//			HttpSession session = req.getSession(); // セッション情報を取得
-//			PreparedStatement statement = null;
-//
-//
-////			NotificationData notification = (NotificationData)session.getAttribute("user");
-//
-//
-//
-//			Contuct contact = cDao.get();
-//
-//			req.setAttribute("title", contact.getContactTitle());	// リクエストにデータをセット
-//
+
             NotificationDataDAO nDAO = new NotificationDataDAO();
 
             List<NotificationData> listTitle = nDAO.searchTitle();
