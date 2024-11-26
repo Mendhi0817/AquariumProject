@@ -125,8 +125,20 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
     </div>
-
-
+             <div class="notification-list">
+                <!-- listTitle からお知らせタイトルをループで表示 -->
+                <c:forEach var="listTitle1" items="${listTitle}">
+                    <div class="notification-item">
+                        <!-- お知らせタイトルを表示 -->
+                        <span>${listTitle1.nt}</span>
+                    </div>
+                </c:forEach>
+                <c:forEach var="listId1" items="${listId}">
+                            <input type="hidden" name="ni" value="${listId1.ni }">
+                            <input type="submit" value="編集">
+						</form>
+                </c:forEach>
+            </div>
 
 
     <footer>
