@@ -63,45 +63,31 @@
         }
 
         .notification-item {
-    		display: flex;
-    		justify-content: space-between;
-    		align-items: center;
-    		margin: 10px 0;
-    		padding: 10px;
-    		border: 1px solid #ccc;
-    		border-radius: 8px;
-		}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
 
-		.notification-item span {
-    		flex-grow: 1; /* タイトル部分がスペースを埋める */
-		}
+.notification-item span {
+    flex-grow: 1;
+}
 
-		.notification-item form {
-    		margin-left: auto; /* フォームを右寄せにする */
-		}
+/* ここでmargin-leftを利用してボタンを右側に配置 */
+.delete-btn-1 {
+    margin-left: auto;
+}
 
+.delete-btn-1 input[type="submit"] {
+    padding: 5px 10px;
+    font-size: 1em;
+    width: 60px;
+    margin-top: 0; /* 上の余白を必要に応じて調整 */
+}
 
-        .notification-item button {
-            padding: 5px 20px;
-            font-size: 1em;
-            border-radius: 5px;
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .notification-item button:hover {
-            background-color: #ff4500;
-        }
-
-        /* '削除1'ボタンを小さくするスタイル */
-        .delete-btn-1 input[type="submit"] {
-            padding: 5px 10px; /* ボタンのパディングを小さく */
-            font-size: 1em; /* フォントサイズを小さく */
-            width: 60px; /* 横幅を小さく */
-            margin-top: 20px; /* ボタンを少し下に移動 */
-        }
     </style>
 </head>
 
