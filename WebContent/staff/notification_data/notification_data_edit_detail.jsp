@@ -86,30 +86,27 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <!-- 戻る -->
+        <!-- 削除と編集ボタンを左に寄せる -->
         <div class="button-container">
-            <form action="../manager/Notification_data_delete.action" method="post">
-                <input type="submit" value="削除">
-            </form>
             <form action="../manager/Notification_data_edit.action" method="post">
-                <input type="submit" value="編集">
+                <input type="submit" value="戻る">
             </form>
-        </div>
+		</div>
 
         <form action="../manager/NotificationDataCreateExecute.action" method="post">
              <div class="content">
-            <h2>タイトルを入力</h2>
+            <h2>タイトルを編集</h2>
             <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
 
-            <h2>文章を入力</h2>
+            <h2>文章を編集</h2>
             <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
 
             <!-- 日付入力欄の追加 -->
-            <h2>日付を入力</h2>
+            <h2>日付を編集</h2>
            </div>
             <input type="date" id="date" name="f3">
             <div>
-            <input type="submit" value="投稿">
+            <input type="submit" value="編集">
         	</div>
         </form>
     </div>
@@ -124,6 +121,3 @@
     </footer>
 </body>
 </html>
-
-
-
