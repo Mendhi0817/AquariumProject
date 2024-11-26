@@ -211,7 +211,7 @@
             </div>
 
             <!-- QRコード読み取りボタン -->
-            <form action="../manager/Home_staff.action" method="post">
+            <form action="../manager/Camera.action" method="post">
                 <input type="submit" value="QRコード" class="qr-code-button">
             </form>
         </section>

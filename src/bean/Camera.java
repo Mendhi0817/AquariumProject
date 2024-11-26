@@ -24,6 +24,8 @@ import com.google.zxing.common.HybridBinarizer;
 public class Camera extends JFrame implements Runnable, ThreadFactory{
 
 
+
+
 	private Executor executor = Executors.newSingleThreadExecutor(this);
 
 	private Webcam webcam = null;
@@ -110,6 +112,7 @@ public class Camera extends JFrame implements Runnable, ThreadFactory{
 	}
 
 
+
 	@Override
 	public Thread newThread(Runnable r) {
 		Thread t = new Thread(r, "example-runner");
@@ -117,9 +120,13 @@ public class Camera extends JFrame implements Runnable, ThreadFactory{
 		return t;
 	}
 
-	public static void main(String[] args) {
 
-		new Camera();
-	}
+
 
 }
+
+
+
+
+
+
