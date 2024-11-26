@@ -101,31 +101,33 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <main>
+			    <main>
             <h2>削除したいお知らせを選んで下さい</h2>
 
             <div class="notification-list">
                 <!-- listTitle からお知らせタイトルをループで表示 -->
                 <c:forEach var="listTitle1" items="${listTitle}">
                     <div class="notification-item">
-                    <c:forEach var="listId1" items="${listId}">
-                        <!-- '編集'ボタンを設置 -->
-                        <form class="delete-btn-1" action="../manager/NotificationDataDeleteExecute.action" method="post">
-                            <input type="hidden" name="ni" value="${listId1.ni }">
-                            <input type="submit" value="削除">
-                               </c:forEach>
-                        </form>
                         <!-- お知らせタイトルを表示 -->
                         <span>${listTitle1.nt}</span>
                     </div>
                 </c:forEach>
+                <c:forEach var="listId1" items="${listId}">
+                        <!-- '編集'ボタンを設置 -->
+                        <form class="delete-btn-1" action="../manager/NotificationDataDeleteExecute.action" method="post">
+                            <input type="hidden" name="ni" value="${listId1.ni }">
+                            <input type="submit" value="削除">
+                        </form>
 
+                </c:forEach>
             </div>
 
             <form action="../manager/Notification_data_Post.action" method="post">
                 <input type="submit" value="戻る">
             </form>
         </main>
+
+
     </div>
 
     <footer>
