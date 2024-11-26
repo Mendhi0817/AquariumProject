@@ -104,17 +104,20 @@
         <main>
             <h2>編集したいお知らせを選んで下さい</h2>
 
-            <div class="notification-list">
+             <div class="notification-list">
                 <!-- listTitle からお知らせタイトルをループで表示 -->
                 <c:forEach var="listTitle1" items="${listTitle}">
                     <div class="notification-item">
                         <!-- お知らせタイトルを表示 -->
                         <span>${listTitle1.nt}</span>
-                        <!-- '編集'ボタンを設置 -->
-                        <form class="delete-btn-1" action="../manager/NotificationDataEditDetail.action" method="post">
-                            <input type="submit" value="編集">
-                        </form>
                     </div>
+                </c:forEach>
+                <c:forEach var="listId1" items="${listId}">
+                        <!-- '編集'ボタンを設置 -->
+                        <form class="delete-btn-1" action="../manager/NotificationDataEditExecute.action" method="post">
+                            <input type="hidden" name="ni" value="${listId1.ni }">
+                            <input type="submit" value="編集">
+						</form>
                 </c:forEach>
             </div>
 
