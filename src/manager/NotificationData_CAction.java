@@ -1,8 +1,11 @@
 package manager;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.NotificationDataDAO;
+import bean.NotificationData;
 import tool.Action;
 
 
@@ -12,9 +15,31 @@ public class NotificationData_CAction extends Action {
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
+		try {
+
+            NotificationDataDAO nDAO = new NotificationDataDAO();
+
+            String ni = request.getParameter("ni");
+            NotificationData nAll = nDAO.get(ni);
+
+
+
+
+            // 取得したデータをリクエスト属性にセット
+
+            request.setAttribute("nAll", nAll);
+            request.setAttribute("ni", ni);
+
+
+
 		request.getRequestDispatcher("../staff/notification_data/notification_data_c.jsp").forward(request, response);
 
-	}
+		  } catch (Exception e) {
 
-		//login
+	            throw new ServletException(e);
+
+	        }
+
+	    }
+
 	}
