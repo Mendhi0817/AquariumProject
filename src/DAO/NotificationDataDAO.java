@@ -264,13 +264,13 @@ public class NotificationDataDAO extends DAO {
 
 					    // プリペアードステートメントにDELETE文をセット
 
-					    statement = connection
-
-					            .prepareStatement("delete from  NOTIFICATION_DATA where ContuctID=? ");
+					    statement = connection.prepareStatement("delete from NOTIFICATION_DATA where CONTACT_ID=? ");
 
 					    // プリペアードステートメントに値をバインド
 
 					    statement.setString(1, ni);
+
+					    System.out.println(ni);
 
 					}
 

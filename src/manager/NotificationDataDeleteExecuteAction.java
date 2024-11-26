@@ -1,6 +1,4 @@
 package manager;
-import java.sql.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -18,10 +16,10 @@ public class NotificationDataDeleteExecuteAction extends Action {
 //		NotificationData notification =(NotificationData)session.getAttribute("user");
 
 
-		String nt = "";
-		String nc = "";
-		Date nd = null;
-		String ni = null;
+//		String nt = "";
+//		String nc = "";
+//		Date nd = null;
+		String ni = request.getParameter("ni");
 
 		//List<Student>students=null;//学生リスト
 
