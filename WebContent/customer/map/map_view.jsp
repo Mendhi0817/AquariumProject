@@ -20,12 +20,15 @@
             <th>Action</th>
         </tr>
 
-        <c:forEach var="map" items="${listmap}">
+<!-- floorInfoListからmapで取り出す -->
+        <c:forEach var="map" items="${floorInfoList}">
             <tr>
-                <td>${map.floorInfo}</td>
-                <td><a href="MapGet.action?no=${map.floorInfo}">View Map</a></td>
+                <td><a href="MapView.action?floor_info=${map}">${map}</a></td>
             </tr>
         </c:forEach>
     </table>
+    <br><a href="${mapImage}"></a>
+    <iframe src="${mapImage}" width="600" height="332"></iframe>
+	<embed src="C:/FloorMap/${mapImage }" type="application/pdf">
 </body>
 </html>

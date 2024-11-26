@@ -68,11 +68,16 @@
             height: 50px;
             font-size: 16px;
         }
+
+        .position {
+        position:absolute;
+        top:150px;}
     </style>
 </head>
 
 <body>
-	<h1>階数</h1>
+<div class="position">
+<h1>階数</h1>
 	<table border=1">
 		<tr>
 			<th>Floor Info</th>
@@ -81,8 +86,11 @@
 
 	<c:forEach var="map" items="${listmap}">
             <tr>
+
                 <td>${map.floorInfo}</td>
-                <td><form action ="../manager/MapDeleteDone.action" method = "post">
+                <td>
+                <form action ="../manager/MapDeleteDone.action" method = "post">
+                <input type = "hidden" name = "mapId" value = "${map.floorInfo }">
                 <input type = "submit" value = "削除">
                 </form>
                </td>

@@ -93,7 +93,7 @@
             </form>
 		</div>
 
-        <form action="../manager/NotificationDataCreateExecute.action" method="post">
+        <form action="../manager/NotificationDataEditExecute.action" method="post">
              <div class="content">
             <h2>タイトルを編集</h2>
             <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
