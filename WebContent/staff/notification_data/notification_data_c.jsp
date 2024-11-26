@@ -135,8 +135,7 @@
                 </c:forEach>
                 <c:forEach var="listId1" items="${listId}">
                             <input type="hidden" name="ni" value="${listId1.ni }">
-                            <input type="submit" value="編集">
-						</form>
+
                 </c:forEach>
             </div>
 

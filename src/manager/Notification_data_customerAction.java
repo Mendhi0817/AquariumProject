@@ -31,7 +31,7 @@ public class Notification_data_customerAction extends Action {
             request.setAttribute("listId", listId);
 
 
-		request.getRequestDispatcher("../staff/notification_data/notification_data_customer.jsp").forward(request, response);
+		request.getRequestDispatcher("../staff/notification_data/notification_data_c.jsp").forward(request, response);
 
 	} catch (Exception e) {
 
