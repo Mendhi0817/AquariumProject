@@ -29,7 +29,7 @@
     </table>
     <br><a href="${mapImage}"></a>
     <iframe src="C:\FloorMap\maptest_sunshine.pdf" width="600" height="332"></iframe>
-	<embed src="C:/FloorMap/${mapImage}" type="application/pdf">
+	<embed src="viewPDF" type="application/pdf">
 	<object type="application/pdf" data="${mapImage}" width="250" height="200"></object>
 </body>
 </html>

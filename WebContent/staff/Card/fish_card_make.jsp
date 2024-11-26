@@ -6,7 +6,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <title>水族舘プロジェクト</title>
-<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
 <c:import url="/common/base.jsp">
 
 </c:import>
@@ -35,7 +34,7 @@
                 <textarea id="f1" name="f1"placeholder="ここにカード名を入力してください"></textarea>
                 </div>
 
-                <form>
+
 
     </form>
 
@@ -54,8 +53,8 @@
                 <div>
                     <form action ="../manager/FishCardMakeDone.action" method = "post"><input type = "submit" value = "投稿"></form>
                 </div>
-            </form>
+
         </div>
-    </div>
 </body>
+<footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom"></footer>
 </html>
