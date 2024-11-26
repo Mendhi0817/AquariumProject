@@ -112,17 +112,21 @@
                 <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }">
 
                 <h2>文章を編集</h2>
-                <textarea id="content" name="f2" placeholder="ここに文章を入力してください" value="${nAll.nc }"></textarea>
+                <textarea id="content" name="f2" placeholder="ここに文章を入力してください">${nAll.nc }</textarea>
 
                 <!-- 日付入力欄の追加 -->
                 <h2>日付を編集</h2>
-                <input type="date" id="date" name="f3">
+                <input type="date" id="date" name="f3" value="${nAll.nd }">
             </div>
             <div>
-                <input type="submit" value="編集">
+             <input type="hidden" name="ni" value="${listId1.ni }">
+             <p><strong>ID:</strong> ${listTitle1.ni}</p> <!-- 日付を表示 -->
+            <input type="submit" value="編集">
             </div>
         </form>
     </div>
+
+
 
     <footer>
         <form action="../manager/Home_staff.action" method="post">

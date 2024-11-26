@@ -82,6 +82,9 @@
 }
 
 .delete-btn-1 input[type="submit"] {
+	position:absolute;
+    right:400px;
+    top:300px;
     padding: 5px 10px;
     font-size: 1em;
     width: 60px;
