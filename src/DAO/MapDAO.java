@@ -38,7 +38,7 @@ public class MapDAO extends DAO {
 		Connection con = getConnection();
 		PreparedStatement st;
 
-		st = con.prepareStatement("select * from mapinfo where floor_info=?");
+		st = con.prepareStatement("select * from map_info where floor_info=?");
 //		st.setString(1,image);
 		st.setString(1,floor);
 

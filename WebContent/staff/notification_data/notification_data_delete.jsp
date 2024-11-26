@@ -63,14 +63,23 @@
         }
 
         .notification-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc; /* 枠線を追加 */
-            border-radius: 8px; /* 角を丸く */
-        }
+    		display: flex;
+    		justify-content: space-between;
+    		align-items: center;
+    		margin: 10px 0;
+    		padding: 10px;
+    		border: 1px solid #ccc;
+    		border-radius: 8px;
+		}
+
+		.notification-item span {
+    		flex-grow: 1; /* タイトル部分がスペースを埋める */
+		}
+
+		.notification-item form {
+    		margin-left: auto; /* フォームを右寄せにする */
+		}
+
 
         .notification-item button {
             padding: 5px 20px;
@@ -101,7 +110,7 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <main>
+			    <main>
             <h2>削除したいお知らせを選んで下さい</h2>
 
             <div class="notification-list">
@@ -110,11 +119,15 @@
                     <div class="notification-item">
                         <!-- お知らせタイトルを表示 -->
                         <span>${listTitle1.nt}</span>
+                    </div>
+                </c:forEach>
+                <c:forEach var="listId1" items="${listId}">
                         <!-- '編集'ボタンを設置 -->
                         <form class="delete-btn-1" action="../manager/NotificationDataDeleteExecute.action" method="post">
+                            <input type="hidden" name="ni" value="${listId1.ni }">
                             <input type="submit" value="削除">
                         </form>
-                    </div>
+
                 </c:forEach>
             </div>
 
@@ -122,6 +135,8 @@
                 <input type="submit" value="戻る">
             </form>
         </main>
+
+
     </div>
 
     <footer>
