@@ -24,13 +24,16 @@ public class MapViewAction extends Action{
             floor = request.getParameter("floor_info");
 
             String mapImage = mapDAO.getMapImage(floor);
-            String fileName = new File(mapImage).getName();
+            String fileName = null;
+            if(floor != null){
+            	fileName = new File(mapImage).getName();
+            }
 
             System.out.print(floor);
             // 取得したデータをリクエスト属性にセット
             request.setAttribute("floorInfoList", floorInfoList);
 
-            request.setAttribute("mapImage", fileName);   //
+            request.setAttribute("mapImage", mapImage);   //
 
             // JSPにフォワード
 

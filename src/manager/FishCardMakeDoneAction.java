@@ -69,5 +69,4 @@ public class FishCardMakeDoneAction extends Action {
 
 	}
 
-		//login
 	}
