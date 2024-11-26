@@ -30,6 +30,7 @@ public class NotificationDataEditDetailAction extends Action {
             // 取得したデータをリクエスト属性にセット
 
             request.setAttribute("nAll", nAll);
+            request.setAttribute("ni", ni);
 
 
 

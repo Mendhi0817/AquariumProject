@@ -14,12 +14,18 @@ public class NotificationDataUpdateExecuteAction extends Action {
 		//TODO 自動生成されたメソッド·スタブ
 //		HttpSession session=request.getSession();//セッション
 //		NotificationData notificationdata=(NotificationData)session.getAttribute("user");
+//z
 
+//		String nt = "";
+//		String nc = "";
+//		Date nd = null;
+//		String ni = null;
+		String NotificationDataTitle = "";
+		String NotificationDataContent = "";
+		Date NotificationDataDay = null;
 
-		String nt = "";
-		String nc = "";
-		Date nd = null;
-		String ni = null;
+		String ni = request.getParameter("ni");
+
 
 		//List<Student>students=null;//学生リスト
 
@@ -28,9 +34,6 @@ public class NotificationDataUpdateExecuteAction extends Action {
 		NotificationDataDAO nDao=new NotificationDataDAO();//学生dao
 //		Map<String, String>errors=new HashMap<>();//エラーメッセージ
 
-//		ContactTitle=request.getParameter("f1");
-//		ContactContent=request.getParameter("f2");
-//		ContactDate=Date.valueOf(request.getParameter("f3"));
 
 
 		        // StudentDaoを使って学生情報をデータベースに削除
@@ -38,14 +41,16 @@ public class NotificationDataUpdateExecuteAction extends Action {
 
 
 //		        情報を取得して、セット
-		        nt=request.getParameter("f1");
-				nc=request.getParameter("f2");
-				nd=Date.valueOf(request.getParameter("f3"));
+		        NotificationDataTitle=request.getParameter("f1");
+				NotificationDataContent=request.getParameter("f2");
+				NotificationDataDay=Date.valueOf(request.getParameter("f3"));
 
 				NotificationData notification = new NotificationData();
-				notification.setNt(nt);
-				notification.setNc(nc);
-				notification.setNd(nd);
+				notification.setNt(NotificationDataTitle);
+				notification.setNc(NotificationDataContent);
+				notification.setNd(NotificationDataDay);
+
+
 
 		        // StudentDaoを使って学生情報をデータベースに保存
 		        nDao.save(notification);
