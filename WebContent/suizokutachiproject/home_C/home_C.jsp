@@ -226,7 +226,7 @@
             <form action="../manager/Map.action" method="post">
                 <input type="submit" value="マップ">
             </form>
-            <form action="../manager/News.action" method="post">
+            <form action="../manager/Notification_data_customer.action" method="post">
                 <input type="submit" value="お知らせ">
             </form>
             <form action="../manager/Setting_C.action" method="post">

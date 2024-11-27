@@ -106,7 +106,7 @@
         </div>
 
         <!-- 編集フォーム -->
-        <form action="../manager/NotificationDataEditExecute.action" method="post">
+        <form action="../manager/NotificationDataUpdateExecute.action" method="get">
             <div class="content">
                 <h2>タイトルを編集</h2>
                 <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }">
@@ -119,8 +119,7 @@
                 <input type="date" id="date" name="f3" value="${nAll.nd }">
             </div>
             <div>
-             <input type="hidden" name="ni" value="${listId1.ni }">
-             <p><strong>ID:</strong> ${listTitle1.ni}</p> <!-- 日付を表示 -->
+            <input type="hidden" name="ni" value="${ni }">
             <input type="submit" value="編集">
             </div>
         </form>

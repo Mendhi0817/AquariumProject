@@ -122,19 +122,33 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
-        <header><img src=../../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
     </div>
+             <div class="notification-list">
+                <!-- listTitle からお知らせタイトルをループで表示 -->
+                <c:forEach var="listTitle1" items="${listTitle}">
+                    <div class="notification-item">
+                        <!-- お知らせタイトルを表示 -->
+                        <span>${listTitle1.nt}</span>
+                    </div>
+                </c:forEach>
+                <c:forEach var="listId1" items="${listId}">
+                            <input type="hidden" name="ni" value="${listId1.ni }">
+
+                </c:forEach>
+            </div>
+
 
     <footer>
         <div class="footer-buttons">
-            <form action="../manager/Home_customer.action" method="post">
+            <form action="../manager/Home_staff.action" method="post">
                 <input type="submit" value="ホーム">
             </form>
             <form action="../manager/Map.action" method="post">
                 <input type="submit" value="マップ">
             </form>
-            <form action="../manager/News.action" method="post">
+            <form action="../manager/NotificationData.action" method="post">
                 <input type="submit" value="お知らせ">
             </form>
             <form action="../manager/Setting.action" method="post">
