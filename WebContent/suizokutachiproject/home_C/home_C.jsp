@@ -223,7 +223,7 @@
             <form action="../manager/Home_customer.action" method="post">
                 <input type="submit" value="ホーム">
             </form>
-            <form action="../manager/Map.action" method="post">
+            <form action="../manager/MapView.action" method="post">
                 <input type="submit" value="マップ">
             </form>
             <form action="../manager/Notification_data_customer.action" method="post">
