@@ -109,14 +109,14 @@
         <form action="../manager/NotificationDataUpdateExecute.action" method="get">
             <div class="content">
 
-                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }">
+                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }" readonly>
 
 
-                <textarea id="content" name="f2" placeholder="ここに文章を入力してください">${nAll.nc }</textarea>
+                <textarea id="content" name="f2" placeholder="ここに文章を入力してください" readonly>${nAll.nc }</textarea>
 
                 <!-- 日付入力欄の追加 -->
 
-                <input type="date" id="date" name="f3" value="${nAll.nd }">
+                <input type="date" id="date" name="f3" value="${nAll.nd }" readonly>
             </div>
             <div>
             <input type="hidden" name="ni" value="${ni }">
