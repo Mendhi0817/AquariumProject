@@ -117,6 +117,93 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
+		/* お知らせリストのスタイル */
+.notification-list {
+    margin-top: 30px; /* 上部に余白 */
+    padding: 20px; /* 内側の余白 */
+    background-color: #f0f8ff; /* 背景色（薄い青） */
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+}
+
+.notification-item {
+    background-color: #ffffff; /* お知らせの背景色 */
+    margin-bottom: 15px; /* お知らせ項目間の余白 */
+    padding: 15px; /* 内側の余白 */
+    border-radius: 8px; /* 角を丸く */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.notification-item:hover {
+    transform: translateY(-5px); /* ホバー時に少し上に移動 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時に影を強く */
+}
+
+.notification-item span {
+    font-size: 1.4em; /* お知らせタイトルの文字サイズ */
+    color: #333; /* 文字色（濃い灰色） */
+    font-weight: bold; /* 太字 */
+    display: block; /* ブロック要素にして横幅いっぱいに表示 */
+    margin-bottom: 10px; /* 下部に余白 */
+}
+
+.notification-item .date {
+    font-size: 0.9em; /* 日付の文字サイズ */
+    color: #888; /* 日付の文字色（薄い灰色） */
+    text-align: right; /* 右寄せ */
+}
+
+/* お知らせリストの最終アイテムには下の余白をなくす */
+.notification-item:last-child {
+    margin-bottom: 0;
+}
+
+.notification-list {
+    margin-top: 30px; /* 上部に余白 */
+    padding: 20px; /* 内側の余白 */
+    background-color: #f0f8ff; /* 背景色（薄い青） */
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+    width: 50%; /* 幅を50%に設定 */
+    margin-left: 0; /* 左寄せ */
+}
+
+.notification-item {
+    background-color: #ffffff; /* お知らせの背景色 */
+    margin-bottom: 15px; /* お知らせ項目間の余白 */
+    padding: 15px; /* 内側の余白 */
+    border-radius: 8px; /* 角を丸く */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+    width: 100%; /* お知らせの横幅を100%に設定 */
+}
+
+.notification-item:hover {
+    transform: translateY(-5px); /* ホバー時に少し上に移動 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時に影を強く */
+}
+
+.notification-item span {
+    font-size: 1.4em; /* お知らせタイトルの文字サイズ */
+    color: #333; /* 文字色（濃い灰色） */
+    font-weight: bold; /* 太字 */
+    display: block; /* ブロック要素にして横幅いっぱいに表示 */
+    margin-bottom: 10px; /* 下部に余白 */
+}
+
+.notification-item .date {
+    font-size: 0.9em; /* 日付の文字サイズ */
+    color: #888; /* 日付の文字色（薄い灰色） */
+    text-align: right; /* 右寄せ */
+}
+
+/* お知らせリストの最終アイテムには下の余白をなくす */
+.notification-item:last-child {
+    margin-bottom: 0;
+}
+
+
     </style>
 </head>
 
@@ -124,7 +211,6 @@
     <div class="container">
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    </div>
              <div class="notification-list">
                 <!-- listTitle からお知らせタイトルをループで表示 -->
                 <c:forEach var="listTitle1" items="${listTitle}">
@@ -137,8 +223,15 @@
                             <input type="hidden" name="ni" value="${listId1.ni }">
 
                 </c:forEach>
+                <c:forEach var="listId1" items="${listId}">
+                        <!-- '編集'ボタンを設置 -->
+                        <form class="delete-btn-1" action="../manager/NotificationDataList_C.action" method="post">
+                            <input type="hidden" name="ni" value="${listId1.ni }">
+                            <input type="submit" value="閲覧">
+						</form>
+                </c:forEach>
             </div>
-
+		</div>
 
     <footer>
         <div class="footer-buttons">
