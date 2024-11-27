@@ -20,7 +20,6 @@
     <table border="1">
         <tr>
             <th>Floor Info</th>
-            <th>Action</th>
         </tr>
 
 <!-- floorInfoListからmapで取り出す -->
