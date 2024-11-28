@@ -2,6 +2,7 @@ package manager;
 
 import java.nio.file.Paths;
 
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -11,14 +12,14 @@ import DAO.FishCardDAO;
 import bean.FishCard;
 import tool.Action;
 
-
+@MultipartConfig
 public class FishCardMakeDoneAction extends Action {
 
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		HttpSession session = req.getSession();
 
         // ファイル名を取得		//name属性がpictのファイルをPartオブジェクトとして取得
-		Part part=req.getPart("f2");
+		Part part=req.getPart("pdfUpload");
 
 		// Content-Disposition ヘッダーを取得
 		String contentDisposition = part.getHeader("content-disposition");
