@@ -117,6 +117,26 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
+		/* フッターのボタン配置調整 */
+        footer .footer-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* ボタン間の垂直スペースを設定 */
+        }
+
+        footer .footer-buttons .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* ボタン間の水平スペースを設定 */
+        }
+
+        /* 新しく追加した中央寄せのスタイル */
+        .footer-buttons .row-center {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* ボタン間の水平スペースを設定 */
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -128,18 +148,25 @@
 
     <footer>
         <div class="footer-buttons">
-            <form action="../manager/Home_staff.action" method="post">
-                <input type="submit" value="ホーム">
-            </form>
-            <form action="../manager/Map.action" method="post">
-                <input type="submit" value="マップ">
-            </form>
-            <form action="../manager/News.action" method="post">
-                <input type="submit" value="お知らせ">
-            </form>
-            <form action="../manager/Setting.action" method="post">
-                <input type="submit" value="設定">
-            </form>
+            <!-- ホーム、マップボタンを中央に配置 -->
+            <div class="row-center">
+                <form action="../manager/Home_customer.action" method="post">
+                    <input type="submit" value="ホーム">
+                </form>
+                <form action="../manager/MapView.action" method="post">
+                    <input type="submit" value="マップ">
+                </form>
+            </div>
+
+            <!-- お知らせ、設定ボタンを中央に配置 -->
+            <div class="row-center">
+                <form action="../manager/Notification_data_customer.action" method="post">
+                    <input type="submit" value="お知らせ">
+                </form>
+                <form action="../manager/Setting_C.action" method="post">
+                    <input type="submit" value="設定">
+                </form>
+            </div>
         </div>
     </footer>
 </body>

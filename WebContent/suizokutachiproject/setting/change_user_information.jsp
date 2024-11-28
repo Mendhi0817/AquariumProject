@@ -86,7 +86,7 @@
 
         <!-- 戻るボタンのフォーム -->
         <div>
-            <form action="../manager/Setting_C.action" method="post">
+            <form action="../manager/Setting.action" method="post">
                 <input type="submit" value="戻る" class="back-button">
             </form>
         </div>

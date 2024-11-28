@@ -10,22 +10,23 @@
         body {
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* ビューポートの高さを最小限に設定 */
-            margin: 0; /* デフォルトのマージンをリセット */
+            min-height: 100vh;
+            margin: 0;
         }
 
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
+
         footer {
-            margin-top: auto; /* フッターを画面の下に固定 */
-            background-color: #78e3fb; /* 背景色を設定（任意） */
-            text-align: center; /* 中央揃え（任意） */
-            padding: 10px; /* 内側の余白（任意） */
+            margin-top: auto;
+            background-color: #78e3fb;
+            text-align: center;
+            padding: 10px;
         }
 
         .sidebar {
-            text-align: center; /* サイドバー内のコンテンツを中央揃え */
+            text-align: center;
         }
 
         .content input, .content textarea {
@@ -38,83 +39,80 @@
         }
 
         .content textarea {
-            height: 300px; /* テキストエリアの高さ */
+            height: 300px;
         }
 
-        /* ボタンを中央に寄せ、共通のスタイルを設定 */
         .button-container, .button-group {
             display: flex;
-            justify-content: center; /* ボタンを中央揃え */
-            gap: 20px; /* ボタン間の隙間を設定 */
-            margin-top: 20px; /* 上部に余白 */
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .button-container button, .button-group input[type="submit"] {
-            padding: 10px 40px; /* ボタンのパディング */
-            font-size: 1.2em; /* ボタンの文字サイズ */
-            border-radius: 8px; /* ボタンの角を丸く */
-            background-color: #ff6347; /* ボタンの背景色 */
-            color: white; /* 文字色 */
-            border: none; /* ボーダーを消す */
-            cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            width: 250px; /* 横幅を統一（例として250pxを設定） */
+            padding: 10px 40px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 250px;
         }
 
         .button-container button:hover, .button-group input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
         }
 
         footer form {
             display: inline-block;
-            margin: 0 10px; /* フォーム間の余白 */
+            margin: 0 10px;
         }
 
         footer input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
+            padding: 10px 60px;
             font-size: 1.2em;
             border: none;
-            border-radius: 8px; /* 角を丸く */
-            background-color: #ff6347; /* ボタンの背景色 */
-            color: white; /* 文字色 */
+            border-radius: 8px;
+            background-color: #ff6347;
+            color: white;
             cursor: pointer;
-            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            width: 250px;
         }
 
         footer input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
         }
 
         /* BGMの文字を大きくして中央に配置 */
         .bgm-text {
-            font-size: 3em; /* フォントサイズを大きく */
-            font-weight: bold; /* 太字 */
-            text-align: center; /* 中央揃え */
-            margin-top: 30px; /* 上部に余白 */
-            color: black; /* 文字色を黒に変更 */
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+            color: black;
         }
 
-        /* ログアウトボタンをパスワード変更ボタンと同じデザインに変更 */
         .logout-button-container {
             display: flex;
-            justify-content: center; /* 中央揃え */
-            gap: 20px; /* ボタン間の隙間 */
-            margin-top: 20px; /* 上部に余白 */
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        /* ログアウトボタンのスタイルをパスワード変更ボタンと同じに */
         .logout-button-container form input[type="submit"] {
-            padding: 10px 40px; /* パスワード変更ボタンと同じパディング */
-            font-size: 1.2em; /* パスワード変更ボタンと同じ文字サイズ */
-            border-radius: 8px; /* ボタンの角を丸く */
-            background-color: #ff6347; /* パスワード変更ボタンと同じ背景色 */
-            color: white; /* 文字色 */
-            border: none; /* ボーダーを消す */
-            cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            width: 250px; /* 横幅を統一 */
+            padding: 10px 40px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 250px;
         }
 
         .logout-button-container form input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
         }
 
         /* 魚カードのスタイル */
@@ -164,24 +162,43 @@
 
         /* QRコード読み取りボタンのスタイル */
         .qr-code-button {
-            width: 300px; /* ボタンの横幅を大きく設定 */
-            padding: 20px 80px; /* ボタンのパディング */
-            font-size: 1.5em; /* フォントサイズを大きく */
-            background-color: #ff6347; /* ボタンの背景色（緑） */
-            border-radius: 10px; /* 角を丸く */
-            color: white; /* 文字色 */
-            border: none; /* 枠線なし */
-            cursor: pointer; /* カーソルをポインターに */
-            text-align: center; /* テキストを中央に */
-            display: block; /* ブロック要素にして、中央に配置 */
-            margin: 20px auto; /* 上下に余白を追加 */
+            width: 300px;
+            padding: 20px 80px;
+            font-size: 1.5em;
+            background-color: #ff6347;
+            border-radius: 10px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            margin: 20px auto;
         }
 
-        /* ホバー時のQRコードボタンの色変更 */
         .qr-code-button:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
         }
 
+        /* フッターのボタン配置調整 */
+        footer .footer-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* ボタン間の垂直スペースを設定 */
+        }
+
+        footer .footer-buttons .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* ボタン間の水平スペースを設定 */
+        }
+
+        /* 新しく追加した中央寄せのスタイル */
+        .footer-buttons .row-center {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* ボタン間の水平スペースを設定 */
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -209,32 +226,37 @@
                 <h3>魚の名前3</h3>
                 <p>深海に生息するこの魚は、独特の光を発することが知られています。</p>
             </div>
-
-            <!-- QRコード読み取りボタン -->
-            <form action="../manager/Camera.action" method="post">
-                <input type="submit" value="QRコード" class="qr-code-button">
-            </form>
         </section>
 
+        <!-- QRコード読み取りボタン -->
+        <form action="../manager/Camera.action" method="post">
+            <input type="submit" value="QRコード" class="qr-code-button">
+        </form>
     </div>
 
     <footer>
         <div class="footer-buttons">
-            <form action="../manager/Home_customer.action" method="post">
-                <input type="submit" value="ホーム">
-            </form>
-            <form action="../manager/MapView.action" method="post">
-                <input type="submit" value="マップ">
-            </form>
-            <form action="../manager/Notification_data_customer.action" method="post">
-                <input type="submit" value="お知らせ">
-            </form>
-            <form action="../manager/Setting_C.action" method="post">
-                <input type="submit" value="設定">
-            </form>
+            <!-- ホーム、マップボタンを中央に配置 -->
+            <div class="row-center">
+                <form action="../manager/Home_customer.action" method="post">
+                    <input type="submit" value="ホーム">
+                </form>
+                <form action="../manager/MapView.action" method="post">
+                    <input type="submit" value="マップ">
+                </form>
+            </div>
+
+            <!-- お知らせ、設定ボタンを中央に配置 -->
+            <div class="row-center">
+                <form action="../manager/Notification_data_customer.action" method="post">
+                    <input type="submit" value="お知らせ">
+                </form>
+                <form action="../manager/Setting_C.action" method="post">
+                    <input type="submit" value="設定">
+                </form>
+            </div>
         </div>
     </footer>
 </body>
 </html>
-
 
