@@ -21,20 +21,20 @@
         color: #333;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; /* 上寄せに変更 */
+        justify-content: flex-start;
         align-items: center;
         min-height: 100vh;
-        padding-top: 40px; /* 上の余白を調整 */
+        padding-top: 40px;
     }
 
     header {
         text-align: center;
-        margin-bottom: 2em; /* ヘッダーの下に余白を追加 */
+        margin-bottom: 2em;
     }
 
     header img {
-        width: 60%;
-        max-width: 500px;
+        width: 80%;
+        max-width: 450px; /* 画面幅に合わせて調整 */
         margin-bottom: 2em;
     }
 
@@ -46,7 +46,6 @@
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
-        margin-top: -50px; /* ログインフォームを上に移動 */
     }
 
     .login-form p {
@@ -85,9 +84,9 @@
         background-color: #78e3fb;
         padding: 15px;
         text-align: center;
-        position: absolute;
-        bottom: 0;
+        position: relative;
         width: 100%;
+        margin-top: 2em;
     }
 
     footer button {
@@ -97,7 +96,7 @@
         padding: 10px 20px;
         font-size: 1rem;
         cursor: pointer;
-        margin: 0 10px;
+        margin: 10px;
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -109,15 +108,34 @@
     /* レスポンシブ対応 */
     @media (max-width: 768px) {
         header img {
-            width: 80%;
+            width: 90%; /* スマホ画面に収まるように調整 */
         }
 
         .login-form {
             padding: 1.5em;
+            margin-top: -30px; /* フォームの位置調整 */
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            font-size: 0.9rem; /* フォントサイズを少し小さく */
+        }
+
+        .login-form input[type="submit"] {
+            font-size: 1rem; /* ボタンのフォントサイズ調整 */
         }
 
         footer button {
-            padding: 8px 18px;
+            width: 100%; /* ボタンを画面幅に合わせて */
+            padding: 12px;
+        }
+    }
+
+    /* さらに小さな画面に対応（例えばスマートフォン） */
+    @media (max-width: 480px) {
+        footer button {
+            padding: 10px 15px;
+            font-size: 0.9rem;
         }
     }
 </style>
