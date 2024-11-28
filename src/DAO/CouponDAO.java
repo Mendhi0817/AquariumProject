@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Coupon;
-import bean.NotificationData;
 //import bean.NotificationData;
 
 public class CouponDAO extends DAO{
@@ -47,9 +46,9 @@ public class CouponDAO extends DAO{
 
 	}
 
-	public List<NotificationData> searchId() throws Exception {
+	public List<Coupon> searchId() throws Exception {
 
-		List<NotificationData> listId = new ArrayList<>();
+		List<Coupon> listId = new ArrayList<>();
 
 		Connection con = getConnection();
 
@@ -64,11 +63,11 @@ public class CouponDAO extends DAO{
 
 		while (rs.next()) {
 
-			NotificationData notification = new NotificationData();
+			Coupon coupon = new Coupon();
 
-			notification.setCOUPON_ID(rs.getString("CONTACT_ID"));
+			coupon.setCOUPON_ID(rs.getString("CONTACT_ID"));
 
-			listId.add(notification);
+			listId.add(coupon);
 
 		}
 
