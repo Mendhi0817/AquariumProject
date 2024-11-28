@@ -1,5 +1,5 @@
 package DAO;
 
-public class CouponDAO {
+public class CouponDAO extends DAO{
 
 }
