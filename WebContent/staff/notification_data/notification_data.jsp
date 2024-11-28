@@ -10,22 +10,23 @@
         body {
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* ビューポートの高さを最小限に設定 */
-            margin: 0; /* デフォルトのマージンをリセット */
+            min-height: 100vh;
+            margin: 0;
         }
 
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
+
         footer {
-            margin-top: auto; /* フッターを画面の下に固定 */
-            background-color: #78e3fb; /* 背景色を設定（任意） */
-            text-align: center; /* 中央揃え（任意） */
-            padding: 10px; /* 内側の余白（任意） */
+            margin-top: auto;
+            background-color: #78e3fb;
+            text-align: center;
+            padding: 10px;
         }
 
         .sidebar {
-            text-align: center; /* サイドバー内のコンテンツを中央揃え */
+            text-align: center;
         }
 
         .content input, .content textarea, .content input[type="date"] {
@@ -38,47 +39,61 @@
         }
 
         .content textarea {
-            height: 300px; /* テキストエリアの高さ */
+            height: 300px;
         }
 
-        /* 削除と編集ボタンを左に寄せる */
         .button-container {
-            display: flex; /* フレックスボックスを使って横並び */
-            justify-content: flex-start; /* ボタンを左端に寄せる */
-            gap: 10px; /* ボタン間の隙間 */
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
         }
 
-        /* 投稿、編集、削除ボタンを小さくするためのスタイル */
         .button-container form input[type="submit"] {
-            width: 150px; /* ボタンの横幅を小さく設定 */
-            padding: 15px 40px; /* ボタンのパディング */
+            width: 150px;
+            padding: 15px 40px;
             font-size: 1em;
         }
 
-        /* すべてのsubmitボタンに対して共通のスタイルを適用 */
         input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
+            padding: 10px 60px;
             font-size: 1.2em;
             border: none;
-            border-radius: 8px; /* 角を丸く */
-            background-color: #ff6347; /* ボタンの背景色 */
-            color: white; /* 文字色 */
+            border-radius: 8px;
+            background-color: #ff6347;
+            color: white;
             cursor: pointer;
-            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
-            margin: 5px 0; /* ボタン間に適切な余白を追加 */
+            width: 250px;
+            margin: 5px 0;
         }
 
-        /* ホバー時の色変更 */
         input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
         }
 
         footer form {
             display: inline-block;
-            margin: 0 10px; /* フォーム間の余白 */
+            margin: 0 10px;
         }
 
     </style>
+    <script>
+        // ページが読み込まれたときに実行される
+        window.onload = function() {
+            // 今日の日付を取得して、"YYYY-MM-DD"形式に整形
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth() + 1; // 月は0から始まるので、1を足す
+            var day = today.getDate();
+
+            if (month < 10) month = '0' + month; // 1桁の月を0埋め
+            if (day < 10) day = '0' + day; // 1桁の日を0埋め
+
+            var todayString = year + '-' + month + '-' + day;
+
+            // 日付入力欄のmin属性に今日の日付を設定
+            document.getElementById('date').setAttribute('min', todayString);
+        };
+    </script>
 </head>
 
 <body>
@@ -86,7 +101,6 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <!-- 戻る -->
         <div class="button-container">
             <form action="../manager/Notification_data_delete.action" method="post">
                 <input type="submit" value="削除">
@@ -97,20 +111,19 @@
         </div>
 
         <form action="../manager/NotificationDataCreateExecute.action" method="post">
-             <div class="content">
-            <h2>タイトルを入力</h2>
-            <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
+            <div class="content">
+                <h2>タイトルを入力</h2>
+                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
 
-            <h2>文章を入力</h2>
-            <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
+                <h2>文章を入力</h2>
+                <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
 
-            <!-- 日付入力欄の追加 -->
-            <h2>日付を入力</h2>
-           </div>
-            <input type="date" id="date" name="f3">
+                <h2>日付を入力</h2>
+                <input type="date" id="date" name="f3">
+            </div>
             <div>
-            <input type="submit" value="投稿">
-        	</div>
+                <input type="submit" value="投稿">
+            </div>
         </form>
     </div>
 
@@ -124,6 +137,3 @@
     </footer>
 </body>
 </html>
-
-
-
