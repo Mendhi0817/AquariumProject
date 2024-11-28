@@ -14,7 +14,7 @@ public class Coupon {
 		return COUPON_ID;
 	}
 
-	public void setCOUPON_ID(int couponId) {
+	public void setCOUPON_ID(String couponId) {
 		COUPON_ID = couponId;
 	}
 
