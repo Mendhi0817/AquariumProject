@@ -22,7 +22,7 @@
 
 	<form action ="coupon_make.jsp" method = "post"><input type = "submit" value = "クーポン作成">
 	</form>
-	<form action ="../manager/CouponDeleteExecute.action" method = "delete"><input type = "submit" value = "クーポン削除">
+	<form action ="../manager/CouponDelete.action" method = "delete"><input type = "submit" value = "クーポン削除">
     </form>
     </footer>
 </body>
