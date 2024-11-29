@@ -99,6 +99,9 @@
 
         <!-- ボタンを横並びにするためのコンテナ -->
         <div class="button-container">
+        <form action ="../manager/FishCard.action" method="post">
+                <input type="submit" value="戻る">
+            </form>
             <form action="../manager/FishCardEdit.action" method="post">
                 <input type="submit" value="編集">
             </form>

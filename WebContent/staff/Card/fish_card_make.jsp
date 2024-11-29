@@ -95,6 +95,10 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
+<form action ="../manager/FishCard.action" method="post">
+                <input type="submit" value="戻る">
+            </form>
+
         <form action="../manager/FishCardMakeDone.action" method="post" enctype="multipart/form-data">
             <!-- 文字を入力するフィールド -->
             <div>

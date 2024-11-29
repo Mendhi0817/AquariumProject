@@ -113,6 +113,9 @@
         <div class="fish-card-title">魚カード</div>
 
         <div class="button-container">
+			<form action="../manager/Home_staff.action" method="post">
+            <input type="submit" value="戻る">
+            </form>
             <form action="../manager/FishCardMake.action" method="post">
                 <input type="submit" value="作成">
             </form>

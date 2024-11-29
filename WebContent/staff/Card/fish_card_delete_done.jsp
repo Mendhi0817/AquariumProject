@@ -79,6 +79,13 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
+        /* 戻るボタンを小さくするためのスタイル */
+        .back-button input[type="submit"] {
+            width: 120px; /* ボタンの横幅を小さく設定 */
+            padding: 8px 20px; /* ボタンのパディングを小さく設定 */
+            font-size: 0.9em; /* フォントサイズを小さく設定 */
+        }
+
     </style>
 </head>
 
@@ -87,7 +94,11 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-
+        <div class="back-button">
+            <form action ="../manager/FishCardList.action" method = "post">
+                <input type = "submit" value = "戻る">
+            </form>
+        </div>
     </div>
 
     <footer>
