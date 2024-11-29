@@ -30,7 +30,7 @@
 
 <div>
     <form action ="../manager/FishCardMake.action" method = "post"><input type = "submit" value = "作成"></form>
-    <form action ="../manager/FishCardList.action" method = "post"><input type = "submit" value = "一覧"></form>
+    <form action ="../manager/FishCardView.action" method = "post"><input type = "submit" value = "一覧"></form>
 </div>
 
 
