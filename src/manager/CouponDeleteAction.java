@@ -20,13 +20,12 @@ public class CouponDeleteAction extends Action {
             CouponDAO cDAO = new CouponDAO();
 
             List<Coupon> listTitle = cDAO.searchTitle();
-            List<Coupon> listId = cDAO.searchId();
+
 
 
             // 取得したデータをリクエスト属性にセット
 
             request.setAttribute("listTitle", listTitle);
-            request.setAttribute("listId", listId);
 
 
 		request.getRequestDispatcher("../staff/Coupon/coupondelete.jsp").forward(request, response);

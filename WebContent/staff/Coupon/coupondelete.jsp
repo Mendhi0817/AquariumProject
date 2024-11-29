@@ -32,10 +32,10 @@
                         <span>${listTitle1.nt}</span>
                     </div>
                 </c:forEach>
-                <c:forEach var="listId1" items="${listId}">
+                <c:forEach var="coupon" items="${listTitle}">
                         <!-- '編集'ボタンを設置 -->
                         <form class="delete-btn-1" action="../manager/CouponDeleteExecoute.action" method="post">
-                            <input type="hidden" name="ni" value="${listId1.ni }">
+                            <input type="hidden" name="COUPON_TITLE" value="${coupon.COUPON_TITLE }">
                             <input type="submit" value="削除">
                         </form>
 
