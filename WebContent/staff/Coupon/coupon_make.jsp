@@ -45,7 +45,7 @@
             <input type="submit" value="戻る">
         </form>
 
-        <form action="CouponMakeExecuteAction" method="post" enctype="multipart/form-data"> <!-- enctypeを追加 -->
+        <form action="../manager/CouponMakeExecute.action" method="post" enctype="multipart/form-data"> <!-- enctypeを追加 -->
 
             <label for="textInput">クーポン内容:</label>
             <div>
