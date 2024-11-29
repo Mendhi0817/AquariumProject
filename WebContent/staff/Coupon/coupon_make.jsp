@@ -14,9 +14,7 @@
             margin: 0; /* デフォルトのマージンをリセット */
         }
 
-        header {
-            /* ヘッダーのスタイルを追加する場合はここに */
-        }
+
 
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
@@ -68,6 +66,24 @@
         footer form {
             display: inline-block;
             margin: 0 10px; /* フォーム間の余白 */
+
+
+        /* 戻るボタンと投稿ボタンの共通スタイル */
+        .button-container button, input[type="submit"] {
+            padding: 8px 30px; /* ボタンのパディング */
+            font-size: 0.9em; /* フォントサイズを小さく設定 */
+            border: none;
+            border-radius: 8px; /* 角を丸く */
+            background-color: #ff6347; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            cursor: pointer;
+            width: 150px; /* 横幅を小さく設定 */
+            margin: 5px 0; /* ボタン間に適切な余白を追加 */
+        }
+
+        /* ホバー時の色変更 */
+        .button-container button:hover, input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
         }
 
     </style>
@@ -81,21 +97,33 @@
             <button type="submit" class="common-button">戻る</button>
         </form>
 
-        <form action="UploadCouponServlet" method="post" enctype="multipart/form-data"> <!-- enctypeを追加 -->
+        <form action="../manager/CouponMakeExecute.action" method="post" enctype="multipart/form-data"> <!-- enctypeを追加 -->
+
             <label for="textInput">クーポン内容:</label>
             <div>
                 <input type="text" id="textInput" name="textInput" required>
             </div>
 
-            <label for="pdfUpload">クーポンの写真をアップロードして下さい：</label>
-            <div>
-                <input type="file" id="pdfUpload" name="pdfUpload" accept="image/*" required> <!-- PDFから画像に変更可能 -->
-            </div>
+
 
             <div class="button-container">
                 <!-- 投稿ボタンも戻るボタンと同じデザインに統一 -->
                 <button type="submit" class="common-button">投稿</button>
             </div>
+
+            <h2>タイトルを入力</h2>
+                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
+
+             <h2>文章を入力</h2>
+             <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
+
+
+           <div>
+                <input type="submit" value="投稿">
+           </div>
+
+
+
         </form>
 
     </div>
