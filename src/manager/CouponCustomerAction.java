@@ -46,5 +46,3 @@ public class CouponCustomerAction extends Action {
 	}
 
 
-
-		//login
