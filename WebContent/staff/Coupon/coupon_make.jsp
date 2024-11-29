@@ -21,19 +21,17 @@
     <div class="form-container">
         <form action="UploadCouponServlet" method="post" enctype="multipart/form-data"> <!-- enctypeを追加 -->
 
-            <label for="textInput">クーポン内容:</label>
-            <div>
-                <input type="text" id="textInput" name="textInput" required>
-            </div>
 
-            <label for="pdfUpload">クーポンの写真をアップロードして下さい：</label>
-            <div>
-                <input type="file" id="pdfUpload" name="pdfUpload" accept="image/*" required> <!-- PDFから画像に変更可能 -->
-            </div>
+            <h2>タイトルを入力</h2>
+                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください">
 
-            <div class="button-container">
-                <button type="submit">投稿</button>
-            </div>
+             <h2>文章を入力</h2>
+             <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
+
+
+           <div>
+                <input type="submit" value="投稿">
+           </div>
         </form>
     </div>
 </footer>
