@@ -58,7 +58,7 @@
 
         /* すべてのsubmitボタンに対して共通のスタイルを適用 */
         input[type="submit"] {
-            padding: 10px 20px; /* ボタンのパディングを小さく */
+            padding: 8px 20px; /* ボタンの縦幅を少し小さくする */
             font-size: 0.9em; /* フォントサイズを小さく */
             border: none;
             border-radius: 8px; /* 角を丸く */
@@ -87,6 +87,20 @@
         textarea[name="f2"] {
             width: 60%; /* 横幅を80%に変更 */
         }
+
+        /* ホームボタンと設定ボタンを大きくするためのスタイル */
+        footer form input[type="submit"].large-btn,
+        .container form input[type="submit"].large-btn {
+            width: 250px; /* ボタンの横幅を大きく設定 */
+            padding: 12px 30px; /* ボタンのパディングを少し小さく */
+            font-size: 1.1em; /* フォントサイズを大きく */
+        }
+
+        /* 戻るボタン、投稿ボタンの縦幅も小さく調整 */
+        .container form input[type="submit"].large-btn {
+            padding: 10px 25px; /* ボタンの縦幅を少し小さく */
+            font-size: 1.1em; /* フォントサイズを調整 */
+        }
     </style>
 </head>
 
@@ -95,9 +109,10 @@
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-<form action ="../manager/FishCard.action" method="post">
-                <input type="submit" value="戻る">
-            </form>
+        <!-- 戻るボタンを少し縦幅を小さくしたい場合 -->
+        <form action="../manager/FishCard.action" method="post">
+            <input type="submit" class="large-btn" value="戻る">
+        </form>
 
         <form action="../manager/FishCardMakeDone.action" method="post" enctype="multipart/form-data">
             <!-- 文字を入力するフィールド -->
@@ -116,17 +131,21 @@
                 <h2>説明文を入力</h2>
                 <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
             </div>
-            <input type="submit" value="投稿">
+
+            <!-- 投稿ボタンを少し縦幅を小さくしたい場合 -->
+            <input type="submit" class="large-btn" value="投稿">
         </form>
     </div>
 
     <footer>
         <form action="../manager/Home_staff.action" method="post">
-            <input type="submit" value="ホーム">
+            <input type="submit" class="large-btn" value="ホーム">
         </form>
         <form action="../manager/Setting.action" method="post">
-            <input type="submit" value="設定">
+            <input type="submit" class="large-btn" value="設定">
         </form>
     </footer>
 </body>
 </html>
+
+
