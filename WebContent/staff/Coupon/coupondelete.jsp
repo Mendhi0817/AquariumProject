@@ -11,7 +11,36 @@
             text-align: center;
             margin: 20px 0;
         }
-
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -20,33 +49,21 @@
 <c:import url="/common/base.jsp"></c:import>
 </footer>
 <body>
+<div class="container">
 
 
-    <h2>削除したいお知らせを選んで下さい</h2>
+    <h2>削除したいクーポンを選んで下さい</h2>
 
-            <div class="notification-list">
-                <!-- listTitle からお知らせタイトルをループで表示 -->
-                <c:forEach var="listTitle1" items="${listTitle}">
-                    <div class="notification-item">
-                        <!-- お知らせタイトルを表示 -->
-                        <span>${listTitle1.nt}</span>
-                    </div>
-                </c:forEach>
-                <c:forEach var="listId1" items="${listId}">
-                        <!-- '編集'ボタンを設置 -->
-                        <form class="delete-btn-1" action="../manager/CouponDeleteExecoute.action" method="post">
-                            <input type="hidden" name="ni" value="${listId1.ni }">
-                            <input type="submit" value="削除">
-                        </form>
+    <form action="DeleteCouponServlet" method="post">
 
-                </c:forEach>
-            </div>
+        <div class="Ybutton-container">
+            <button type="submit">削除</button>
+        </div>
+    </form>
 
-            <form action="../manager/Notification_data_Post.action" method="post">
-                <input type="submit" value="戻る">
-            </form>
-        </main>
-
+    <div class="footer">
+    <form action ="../../manager/Coupon.action" method = "post"><input type = "submit" value = "クーポン">
+    </div>
 </div>
 
 </body>

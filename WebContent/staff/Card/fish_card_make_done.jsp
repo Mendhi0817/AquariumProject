@@ -16,9 +16,7 @@
 
 <body>
 <div class="position">
-削除しました
-
-
+投稿完了しました
             <form action="../manager/MapPost.action" method="post">
                 <input type="submit" value="戻る" class="back-button">
             </form>

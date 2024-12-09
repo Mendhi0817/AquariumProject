@@ -9,8 +9,8 @@ public class CouponAction extends Action {
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
+		
 
-
-		request.getRequestDispatcher("../staff/Coupon/coupon_.jsp").forward(request, response);
+		request.getRequestDispatcher("../staff/Coupon/coupon_make.jsp").forward(request, response);
 }
 }
