@@ -4,13 +4,13 @@ package bean;
 
 public class Coupon {
 
-	private int COUPON_ID;
+	private String COUPON_ID;
 
 	private String COUPON_TITLE;
 
 	private String COUPON_TEXT;
 
-	public int getCOUPON_ID() {
+	public String getCOUPON_ID() {
 		return COUPON_ID;
 	}
 
