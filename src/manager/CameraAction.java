@@ -10,7 +10,12 @@ public class CameraAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		new Camera();
+		Camera camera = new Camera();
+
+		System.out.println("読み取り後");
+		System.out.println(camera.path);
+
+
 
 	}
 

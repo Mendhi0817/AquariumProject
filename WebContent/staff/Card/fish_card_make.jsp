@@ -26,7 +26,7 @@
 
         <!-- 新しいフォームセクション -->
         <div class="form-container">
-       		<!-- 送信ボタン -->>
+       		<!-- 送信ボタン -->
             <form action ="../manager/FishCardMakeDone.action" method = "post" enctype="multipart/form-data"><input type = "submit" value = "投稿">
                 <!-- 文字を入力するフィールド -->
 
