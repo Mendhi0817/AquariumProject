@@ -16,7 +16,7 @@ public class FishCardViewAction extends Action {
         try {
             // FishCardDAOを使ってカード情報を取得
             FishCardDAO fishcardDAO = new FishCardDAO();
-            List<String> FishCardList = fishcardDAO.getAllFloorInfo();
+            List<String> FishCardList = fishcardDAO.getAllCard();
 
             // リクエストパラメータからfishcard_idを取得
             String fishcardId = request.getParameter("fishcard_id");

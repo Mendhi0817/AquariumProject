@@ -81,62 +81,9 @@ public class FishCardDAO extends DAO{
 	}
 
 
-// IDから魚カード取得
-	public FishCard search(int id) throws Exception {
-		FishCard fish = null;
-		Connection con = getConnection();
-		PreparedStatement st;
-		st = con.prepareStatement("select * from fishcard where fishcard_id=?");
-		st.setInt(1,id);
-		ResultSet rs = st.executeQuery();
-		while (rs.next()) {
-			fish = new FishCard();
-			fish.setCardText(rs.getString("card_text"));
-			fish.setCardTitle(rs.getString("card_title"));
-			fish.setCardImage(rs.getString("card_image"));
-//			fish.setCardId(rs.getInt("card_id"));
-		}
-		st.close();
-		con.close();
-		return fish;
-	}
-
-
-
-//// カードIDから画像を取り出す
-//	public String getCardImage(int fish) throws Exception {
-//	    String cardImage = null;
-//	    Connection con = getConnection();
-//	    PreparedStatement st = null;
-//	    ResultSet rs = null;
-//
-//	    try {
-//	        String q = "SELECT fishcard_title, fishcard_image FROM fishcard WHERE fishcard_id=?";
-//	        st = con.prepareStatement(q);
-//	        st.setInt(1, fish);
-//
-//	        rs = st.executeQuery();
-//
-//	        // 結果があればmap_imageを取得
-//	        if (rs.next()) {
-//	            cardImage = rs.getString("fishcard_image");
-//	        }
-//	    } catch (Exception e) {
-//	        e.printStackTrace();
-//	        throw e;
-//	    } finally {
-//	        if (rs != null) rs.close();
-//	        if (st != null) st.close();
-//	        if (con != null) con.close();
-//	    }
-//
-//	    return cardImage; // map_imageを返す
-//	}
-
-
 
 // カード削除一覧 (staff)
-	public List<String> getAllFloorInfo() throws Exception {
+	public List<String> getAllCard() throws Exception {
 	    List<String> FishCardList = new ArrayList<>();
 	    Connection con = getConnection();
 	    PreparedStatement st = null;
@@ -161,8 +108,63 @@ public class FishCardDAO extends DAO{
 	        if (con != null) con.close();
 	    }
 
-	    return FishCardList; // 取得したfloor_infoリストを返す
+	    return FishCardList; // 取得したリストを返す
 	}
+
+
+
+	// IDから魚カード取得
+		public FishCard search(int id) throws Exception {
+			FishCard fish = null;
+			Connection con = getConnection();
+			PreparedStatement st;
+			st = con.prepareStatement("select * from fishcard where fishcard_id=?");
+			st.setInt(1,id);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {
+				fish = new FishCard();
+				fish.setCardText(rs.getString("card_text"));
+				fish.setCardTitle(rs.getString("card_title"));
+				fish.setCardImage(rs.getString("card_image"));
+//				fish.setCardId(rs.getInt("card_id"));
+			}
+			st.close();
+			con.close();
+			return fish;
+		}
+
+
+
+	//// カードIDから画像を取り出す
+//		public String getCardImage(int fish) throws Exception {
+//		    String cardImage = null;
+//		    Connection con = getConnection();
+//		    PreparedStatement st = null;
+//		    ResultSet rs = null;
+	//
+//		    try {
+//		        String q = "SELECT fishcard_title, fishcard_image FROM fishcard WHERE fishcard_id=?";
+//		        st = con.prepareStatement(q);
+//		        st.setInt(1, fish);
+	//
+//		        rs = st.executeQuery();
+	//
+//		        // 結果があればmap_imageを取得
+//		        if (rs.next()) {
+//		            cardImage = rs.getString("fishcard_image");
+//		        }
+//		    } catch (Exception e) {
+//		        e.printStackTrace();
+//		        throw e;
+//		    } finally {
+//		        if (rs != null) rs.close();
+//		        if (st != null) st.close();
+//		        if (con != null) con.close();
+//		    }
+	//
+//		    return cardImage; // map_imageを返す
+//		}
+
 
 
 
