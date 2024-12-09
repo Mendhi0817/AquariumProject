@@ -60,44 +60,27 @@ public class FishCardDAO extends DAO{
 
 
 
-// カード一覧 (cutomer)
-	public List<FishCard> searchAll() throws Exception {
-		List<FishCard> listfish = new ArrayList<>();
-		Connection con = getConnection();
-		PreparedStatement st;
-		st = con.prepareStatement("select * from fishcard");
-//		st.setString(1,image);
-		ResultSet rs = st.executeQuery();
-		while (rs.next()) {
-			FishCard fish = new FishCard();
-			fish.setCardId(rs.getInt("card_id"));
-			fish.setCardId(rs.getInt("card_image"));
-			fish.setCardId(rs.getInt("card_title"));
-			listfish.add(fish);
-		}
-		st.close();
-		con.close();
-		return listfish;
-	}
-
-
-
 // カード削除一覧 (staff)
-	public List<String> getAllCard() throws Exception {
-	    List<String> FishCardList = new ArrayList<>();
+	public List<FishCard> getAllCard() throws Exception {
+	    List<FishCard> FishCardList = new ArrayList<>();
 	    Connection con = getConnection();
 	    PreparedStatement st = null;
 	    ResultSet rs = null;
 
 	    try {
-	        String query = "SELECT fishcard_title, fishcard_image FROM fishcard";
+	        String query = "SELECT fishcard_id, fishcard_title, fishcard_image FROM fishcard";
 	        st = con.prepareStatement(query);
 	        rs = st.executeQuery();
 
-	        // 結果をリストに追加
+
 	        while (rs.next()) {
-	            FishCardList.add(rs.getString("fishcard_title"));
-	            FishCardList.add(rs.getString("fishcard_image"));
+	        	FishCard fish = new FishCard();
+	        	fish.setCardId(rs.getInt("fishcard_id"));       // カードIDをint型で取得
+	            fish.setCardTitle(rs.getString("fishcard_title"));
+	            System.out.println(fish.getCardTitle());
+	            fish.setCardImage(rs.getString("fishcard_image"));
+
+	        	FishCardList.add(fish);
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();
@@ -113,12 +96,12 @@ public class FishCardDAO extends DAO{
 
 
 
-	// IDから魚カード取得
+	// IDから魚カード取得(customer)
 		public FishCard search(int id) throws Exception {
 			FishCard fish = null;
 			Connection con = getConnection();
 			PreparedStatement st;
-			st = con.prepareStatement("select * from fishcard where fishcard_id=?");
+			st = con.prepareStatement("select * from card_collected_log where fishcard_id=?");
 			st.setInt(1,id);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
@@ -133,6 +116,44 @@ public class FishCardDAO extends DAO{
 			return fish;
 		}
 
+
+
+		// カード一覧 (cutomer)
+		public List<FishCard> getCollectedCards(String userId) throws Exception {
+			List<FishCard> collectedCards = new ArrayList<>();
+			Connection con = getConnection();
+			PreparedStatement st;
+			ResultSet rs = null;
+		    try {
+		    	String query = """
+		    		    SELECT f.FISHCARD_TEXT, f.FISHCARD_IMAGE, f.FISHCARD_TITLE
+		    		    FROM FISHCARD f
+		    		    INNER JOIN CARD_COLLECTED_LOG ccl
+		    		    ON f.FISHCARD_ID = ccl.FISHCARD_ID
+		    		    WHERE ccl.USER_ID = ?
+		    		""";
+		        st = con.prepareStatement(query);
+		        st.setInt(1, userId);
+		        rs = st.executeQuery();
+
+		        while (rs.next()) {
+		            FishCard fishCard = new FishCard();
+		            fishCard.setCardText(rs.getString("FISHCARD_TEXT"));
+		            fishCard.setCardImage(rs.getString("FISHCARD_IMAGE"));
+		            fishCard.setCardTitle(rs.getString("FISHCARD_TITLE"));
+		            collectedCards.add(fishCard);
+		        }
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        throw e;
+		    } finally {
+		        if (rs != null) rs.close();
+		        if (st != null) st.close();
+		        if (con != null) con.close();
+		    }
+
+		    return collectedCards;
+		}
 
 
 	//// カードIDから画像を取り出す
