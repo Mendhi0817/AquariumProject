@@ -31,8 +31,8 @@ public class FishCardDAO extends DAO{
 				// プリペアードステートメントにINSERT文をセット
 			    st = con.prepareStatement("insert into fishcard(fishcard_text, fishcard_image, fishcard_title) values(?, ?, ?)");
 				st.setString(1, fish.getCardText());
-				st.setString(2, fish.getCardTitle());
-				st.setString(3, fish.getCardImage());
+				st.setString(2, fish.getCardImage());
+				st.setString(3, fish.getCardTitle());
 //					st.setInt(4, fish.getCardId());
 			}
 			// プリペアードステートメントを実行
