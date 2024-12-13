@@ -121,6 +121,12 @@
                 <textarea id="f1" name="f1" placeholder="ここにカード名を入力してください"></textarea>
             </div>
 
+            <!-- PDFファイルをアップロードするフィールド -->
+            <div>
+                <label for="imageUpload">画像をアップロードして下さい：</label>
+                <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
+            </div>
+
         <!-- 新しいフォームセクション -->
         <div class="form-container">
        		<!-- 送信ボタン -->
