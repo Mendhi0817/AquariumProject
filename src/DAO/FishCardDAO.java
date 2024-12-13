@@ -141,19 +141,13 @@ public class FishCardDAO extends DAO{
 
 
 		// カード一覧 (cutomer)
-		public List<FishCard> getCollectedCards(String userId) throws Exception {
+		public List<FishCard> getCollectedCards(int userId) throws Exception {
 			List<FishCard> collectedCards = new ArrayList<>();
 			Connection con = getConnection();
-			PreparedStatement st;
+			PreparedStatement st = null;
 			ResultSet rs = null;
 		    try {
-		    	String query = """
-		    		    SELECT f.FISHCARD_TEXT, f.FISHCARD_IMAGE, f.FISHCARD_TITLE
-		    		    FROM FISHCARD f
-		    		    INNER JOIN CARD_COLLECTED_LOG ccl
-		    		    ON f.FISHCARD_ID = ccl.FISHCARD_ID
-		    		    WHERE ccl.USER_ID = ?
-		    		""";
+		    	String query = "SELECT f.FISHCARD_TEXT, f.FISHCARD_IMAGE, f.FISHCARD_TITLE FROM FISHCARD f INNER JOIN CARD_COLLECTED_LOG ccl ON f.FISHCARD_ID = ccl.FISHCARD_ID WHERE ccl.USER_ID = ?";
 		        st = con.prepareStatement(query);
 		        st.setInt(1, userId);
 		        rs = st.executeQuery();
