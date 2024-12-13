@@ -104,12 +104,15 @@
                 <c:forEach var="listTitle1" items="${FishCardList}">
                     <div class="fishcard-item">
                         <!-- お知らせタイトルを表示 -->
+
                         <span>${listTitle1.cardTitle}</span><br>
                         <img src="viewImage?imagePath=${listTitle1.cardImage}" width="250" height="200">
             <form action="../manager/FishCardEdit.action" method="post">
+            <input type="hidden" name="cardId" value="${listTitle1.cardId }">
                 <input type="submit" value="編集">
             </form>
             <form action="../manager/FishCardDeleteDone.action" method="post">
+            <input type="hidden" name="cardId" value="${listTitle1.cardId }">
                 <input type="submit" value="削除">
             </form>
                     </div>

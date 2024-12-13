@@ -105,28 +105,29 @@
             </form>
         </div>
 
+            <form action="../manager/FishCardEditDone.action" method="post" enctype="multipart/form-data">
         <div>
-            <textarea id="content" name="f1" placeholder="ここにカード名を入力してください"></textarea>
+            <textarea id="content" name="title" placeholder="ここにカード名を入力してください" >${FishCard.cardTitle}</textarea>
         </div>
 
         <!-- PDFファイルをアップロードするフィールド -->
         <div>
-            <label for="pdfUpload">画像をアップロードして下さい：</label>
-            <input type="file" id="pdfUpload" name="f3" accept="application/pdf">
+            <label for="imageUpload">画像をアップロードして下さい：</label>
+            <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
+            <img src="viewImage?imagePath=${FishCard.cardImage}" width="250" height="200">
         </div>
 
         <div>
             <h2>説明文を入力</h2>
-            <textarea id="content" name="f4" placeholder="ここに文章を入力してください"></textarea>
+            <textarea id="content" name="text" placeholder="ここに文章を入力してください">${FishCard.cardText}</textarea>
         </div>
 
         <!-- 編集ボタン -->
         <div>
-            <form action="../manager/FishCardEditDone.action" method="post">
+            <input type="hidden" name="cardId" value="${FishCard.cardId }">
                 <input class="edit-button" type="submit" value="編集">
             </form>
         </div>
-
     </div>
 
     <footer>
