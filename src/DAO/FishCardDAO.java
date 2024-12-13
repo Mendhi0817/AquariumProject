@@ -71,8 +71,8 @@ public class FishCardDAO extends DAO{
 		while (rs.next()) {
 			FishCard fish = new FishCard();
 			fish.setCardId(rs.getInt("card_id"));
-			fish.setCardId(rs.getInt("card_image"));
-			fish.setCardId(rs.getInt("card_title"));
+			fish.setCardImage(rs.getString("card_image"));
+			fish.setCardTitle(rs.getString("card_title"));
 			listfish.add(fish);
 		}
 		st.close();
