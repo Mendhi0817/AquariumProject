@@ -83,7 +83,7 @@ public class CouponDAO extends DAO{
 
 
 
-	public Coupon get(String ci) throws Exception {
+	public Coupon get(int couponId) throws Exception {
 		// 学校インスタンスを初期化
 		Coupon coupon = new Coupon();
 		// データベースへのコネクションを確率
@@ -99,7 +99,7 @@ public class CouponDAO extends DAO{
 //			String nc = null;
 //			Date nd = null;
 //			String ni = null;
-			statement.setString(1, ci);
+			statement.setInt(1, couponId);
 //			statement.setString(1, ct);
 			// プリペアードステートメントを実行
 			ResultSet rSet = statement.executeQuery();

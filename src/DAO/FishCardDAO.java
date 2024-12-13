@@ -156,35 +156,39 @@ public class FishCardDAO extends DAO{
 		}
 
 
-	//// カードIDから画像を取り出す
-//		public String getCardImage(int fish) throws Exception {
-//		    String cardImage = null;
-//		    Connection con = getConnection();
-//		    PreparedStatement st = null;
-//		    ResultSet rs = null;
-	//
-//		    try {
-//		        String q = "SELECT fishcard_title, fishcard_image FROM fishcard WHERE fishcard_id=?";
-//		        st = con.prepareStatement(q);
-//		        st.setInt(1, fish);
-	//
-//		        rs = st.executeQuery();
-	//
-//		        // 結果があればmap_imageを取得
-//		        if (rs.next()) {
-//		            cardImage = rs.getString("fishcard_image");
-//		        }
-//		    } catch (Exception e) {
-//		        e.printStackTrace();
-//		        throw e;
-//		    } finally {
-//		        if (rs != null) rs.close();
-//		        if (st != null) st.close();
-//		        if (con != null) con.close();
-//		    }
-	//
-//		    return cardImage; // map_imageを返す
-//		}
+	// カードIDからカード情報を取り出す
+		public FishCard getCardInfo(int id) throws Exception {
+			FishCard fishcard = new FishCard();
+		    Connection con = getConnection();
+		    PreparedStatement st = null;
+		    ResultSet rs = null;
+
+		    try {
+		        String q = "SELECT fishcard_id, fishcard_title, fishcard_image, fishcard_text FROM fishcard WHERE fishcard_id=?";
+		        st = con.prepareStatement(q);
+		        st.setInt(1, id);
+
+		        rs = st.executeQuery();
+
+		        // 結果があればmap_imageを取得
+		        if (rs.next()) {
+		        	fishcard.setCardImage(rs.getString("fishcard_image"));
+		        	fishcard.setCardTitle(rs.getString("fishcard_title"));
+		        	fishcard.setCardText(rs.getString("fishcard_text"));
+		        	fishcard.setCardId(rs.getInt("fishcard_id"));
+
+		        }
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        throw e;
+		    } finally {
+		        if (rs != null) rs.close();
+		        if (st != null) st.close();
+		        if (con != null) con.close();
+		    }
+
+		    return fishcard; // map_imageを返す
+		}
 
 
 

@@ -14,7 +14,7 @@ public class MapAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 
-		// リクエストからimageとfloorのパラメータを取得
+		// リクエストからfloorのパラメータを取得
 //		String image = request.getParameter("map_image");
 		String floor = request.getParameter("floor_info");
 

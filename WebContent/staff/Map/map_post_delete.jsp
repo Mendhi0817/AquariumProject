@@ -115,7 +115,7 @@
                 <td>${map.floorInfo}</td>
                 <td>
                 <form action ="../manager/MapDeleteDone.action" method = "post">
-                <input type = "hidden" name = "mapId" value = "${map.floorInfo }">
+                <input type = "hidden" name = "mapId" value = "${map.floorInfo}">
                 <input type = "submit" value = "削除">
                 </form>
                </td>

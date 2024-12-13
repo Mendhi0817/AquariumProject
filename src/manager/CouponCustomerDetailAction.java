@@ -1,7 +1,5 @@
 package manager;
 
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,7 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.CouponDAO;
 import bean.Coupon;
 import tool.Action;
-public class CouponDeleteAction extends Action {
+
+
+public class CouponCustomerDetailAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
@@ -19,20 +19,27 @@ public class CouponDeleteAction extends Action {
 
             CouponDAO cDAO = new CouponDAO();
 
-            List<Coupon> listTitle = cDAO.searchTitle();
+            String ci = request.getParameter("ci");
+            Coupon cAll = cDAO.get(ci);
+
 
 
 
             // 取得したデータをリクエスト属性にセット
 
-            request.setAttribute("listTitle", listTitle);
+            request.setAttribute("cAll", cAll);
+            request.setAttribute("ci", ci);
 
 
-		request.getRequestDispatcher("../staff/Coupon/coupondelete.jsp").forward(request, response);
-        } catch (Exception e) {
 
-            throw new ServletException(e);
+		request.getRequestDispatcher("../staff/notification_data/notification_data_c.jsp").forward(request, response);
 
-        }
+		  } catch (Exception e) {
+
+	            throw new ServletException(e);
+
+	        }
+
+	    }
+
 	}
-}

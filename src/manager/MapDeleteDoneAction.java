@@ -12,10 +12,8 @@ public class MapDeleteDoneAction extends Action {
     public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 //        HttpSession session=req.getSession();
 
-        // 削除対象のマップ ID を取得
+        // 削除対象のマップIDを取得
         String floorInfo = req.getParameter("mapId");
-
-
 
         // MapDAO を使用してデータベースから削除
         MapDAO mapDAO = new MapDAO();

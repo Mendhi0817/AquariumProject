@@ -42,24 +42,28 @@
 </head>
 
 <body>
-    <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
-        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+<h1>クーポン一覧</h1>
+	<table border=1">
+		<tr>
+			<th>クーポン</th>
+
+		</tr>
+
+	<c:forEach var="coupon" items="${listTitle}">
+            <tr>
+
+                <td>${coupon.COUPON_TITLE}</td>
+                <td>
+                <form action ="../manager/Coupon_C_Detail.action" method = "post">
+                <input type = "hidden" name = "COUPON_TITLE" value = "${coupon.COUPON_TITLE }">
+                <input type = "submit" value = "詳細">
+                </form>
+               </td>
+            </tr>
+        </c:forEach>
+    </table>
 
 
-
-        <% List<String>  COUPON_DATA  = (List<String>)request.getAttribute(" COUPON_DATA "); %>
-	<h1>クーポン</h1>
-	<br>
-		<% for(String title: COUPON_DATA ) { %>
-        	<%= title %><br>
-    		<% } %>
-
-        <!-- 戻るボタンをここに追加 -->
-        <div class="button-container">
-            <button class="back-button" onclick="goBack()">戻る</button>
-        </div>
-    </div>
 
 
 </body>
