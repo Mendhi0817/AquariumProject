@@ -121,11 +121,11 @@
                 <textarea id="f1" name="f1" placeholder="ここにカード名を入力してください"></textarea>
             </div>
 
-            <!-- PDFファイルをアップロードするフィールド -->
-            <div>
-                <label for="imageUpload">画像をアップロードして下さい：</label>
-                <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
-            </div>
+        <!-- 新しいフォームセクション -->
+        <div class="form-container">
+       		<!-- 送信ボタン -->
+            <form action ="../manager/FishCardMakeDone.action" method = "post" enctype="multipart/form-data"><input type = "submit" value = "投稿">
+                <!-- 文字を入力するフィールド -->
 
             <div>
                 <h2>説明文を入力</h2>

@@ -56,7 +56,29 @@ public class FishCardDAO extends DAO{
 			//実行件数が0件の場合
 			return false;
 		}
+	}
+
+
+
+// カード一覧 (cutomer)
+	public List<FishCard> searchAll() throws Exception {
+		List<FishCard> listfish = new ArrayList<>();
+		Connection con = getConnection();
+		PreparedStatement st;
+		st = con.prepareStatement("select * from fishcard");
+//		st.setString(1,image);
+		ResultSet rs = st.executeQuery();
+		while (rs.next()) {
+			FishCard fish = new FishCard();
+			fish.setCardId(rs.getInt("card_id"));
+			fish.setCardImage(rs.getString("card_image"));
+			fish.setCardTitle(rs.getString("card_title"));
+			listfish.add(fish);
 		}
+		st.close();
+		con.close();
+		return listfish;
+	}
 
 
 
@@ -106,9 +128,9 @@ public class FishCardDAO extends DAO{
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				fish = new FishCard();
-				fish.setCardText(rs.getString("card_text"));
-				fish.setCardTitle(rs.getString("card_title"));
-				fish.setCardImage(rs.getString("card_image"));
+				fish.setCardText(rs.getString("fishcard_text"));
+				fish.setCardTitle(rs.getString("fishcard_title"));
+				fish.setCardImage(rs.getString("fishcard_image"));
 //				fish.setCardId(rs.getInt("card_id"));
 			}
 			st.close();
