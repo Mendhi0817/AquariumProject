@@ -21,7 +21,16 @@ public class CameraAction extends Action {
 
 		HttpSession session=request.getSession();
 		FishCardDAO fishcarddao=new FishCardDAO();
+		int id = Integer.parseInt(camera.path);
 		FishCard fishcard = fishcarddao.search(id);
+
+
+		System.out.println("DB経由");
+		System.out.println(id);
+
+		System.out.println(id);
+
+
 
 
 
