@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -75,13 +77,17 @@
     String fishName = "金魚";
     String fishImageUrl = "https://example.com/images/goldfish.jpg";  // 実際の画像URLに置き換えてください
 %>
-
 <div class="card-container bounce">
     <img src="<%= fishImageUrl %>" alt="<%= fishName %>" class="card-image">
     <div class="card-title"><%= fishName %>カード</div>
     <div class="card-description">素晴らしい魚がゲットできました！</div>
     <div class="message">おめでとうございます！</div>
+                    <form action="../manager/Home_customer.action" method="post">
+                    <input type="submit" value="ホーム">
+                </form>
 </div>
+
+
 
 </body>
 </html>
