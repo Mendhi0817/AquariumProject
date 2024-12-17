@@ -100,7 +100,7 @@
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <div>
-            <form action ="../manager/FishCardList.action" method="post">
+            <form action ="../manager/FishCard.action" method="post">
                 <input class="back-button" type="submit" value="戻る">
             </form>
         </div>
@@ -115,6 +115,7 @@
             <label for="imageUpload">画像をアップロードして下さい：</label>
             <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
             <img src="viewImage?imagePath=${FishCard.cardImage}" width="250" height="200">
+            <input type="hidden" name="cardImage" value="${FishCard.cardImage}">
         </div>
 
         <div>

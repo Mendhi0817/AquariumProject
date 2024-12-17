@@ -26,37 +26,42 @@ public class FishCardEditDoneAction extends Action {
 
         // name属性がpictのファイルをPartオブジェクトとして取得
         Part part = req.getPart("imageUpload");
+        String path = "";
 
-        // Content-Disposition ヘッダーを取得してファイル名を抽出
-        String contentDisposition = part.getHeader("content-disposition");
-        String fileName = null;
-        for (String content : contentDisposition.split(";")) {
-            if (content.trim().startsWith("filename")) {
-                fileName = content.substring(content.indexOf("=") + 1).trim().replace("\"", "");
-                fileName = Paths.get(fileName).getFileName().toString(); // フルパスの場合の対応
-                break;
+        // imageUpload
+
+        	// Content-Disposition ヘッダーを取得してファイル名を抽出
+            String contentDisposition = part.getHeader("content-disposition");
+            String fileName = null;
+            for (String content : contentDisposition.split(";")) {
+                if (content.trim().startsWith("filename")) {
+                    fileName = content.substring(content.indexOf("=") + 1).trim().replace("\"", "");
+                    fileName = Paths.get(fileName).getFileName().toString(); // フルパスの場合の対応
+                    break;
+                }
             }
+          // fileName = null || (fileName.isEmpty()
+          if(fileName != null && !(fileName.isEmpty())){
+
+            // JPG形式のみ許可するバリデーション
+            if (!fileName.toLowerCase().endsWith(".jpg") && !fileName.toLowerCase().endsWith(".jpeg")) {
+                req.setAttribute("error", "JPGまたはJPEG形式の画像をアップロードしてください。");
+                req.getRequestDispatcher("/common/error.jsp").forward(req, res);
+                return;
+            }
+
+            System.out.println("ファイル名: " + fileName);
+
+            // 取得したファイルを指定のフォルダに保存
+            path = "C:/FishCard/" + fileName;
+            part.write(path);
+
+        // cardImage
+        }else{
+        	path = req.getParameter("cardImage");
         }
 
-        // ファイル名が取得できない場合エラーをスロー
-        if (fileName == null || fileName.isEmpty()) {
-            req.setAttribute("error", "アップロードされたファイルが無効です。");
-            req.getRequestDispatcher("/common/error.jsp").forward(req, res);
-            return;
-        }
 
-        // JPG形式のみ許可するバリデーション
-        if (!fileName.toLowerCase().endsWith(".jpg") && !fileName.toLowerCase().endsWith(".jpeg")) {
-            req.setAttribute("error", "JPGまたはJPEG形式の画像をアップロードしてください。");
-            req.getRequestDispatcher("/common/error.jsp").forward(req, res);
-            return;
-        }
-
-        System.out.println("ファイル名: " + fileName);
-
-        // 取得したファイルを指定のフォルダに保存
-        String path = "C:/FishCard/" + fileName;
-        part.write(path);
 
         // text、titleを取得
         String title = req.getParameter("title");

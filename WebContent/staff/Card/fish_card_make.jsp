@@ -128,9 +128,7 @@
             </div>
 
         <!-- 新しいフォームセクション -->
-        <div class="form-container">
-       		<!-- 送信ボタン -->
-            <form action ="../manager/FishCardMakeDone.action" method = "post" enctype="multipart/form-data"><input type = "submit" value = "投稿">
+        <div class="form-container"></div>
                 <!-- 文字を入力するフィールド -->
 
             <div>
@@ -141,7 +139,7 @@
             <!-- 投稿ボタンを少し縦幅を小さくしたい場合 -->
             <input type="submit" class="large-btn" value="投稿">
         </form>
-    </div>
+    		</div>
 
     <footer>
         <form action="../manager/Home_staff.action" method="post">

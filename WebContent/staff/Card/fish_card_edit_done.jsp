@@ -15,8 +15,14 @@
 </head>
 
 <body>
-
+<div class="position">
+編集完了しました
+            <form action="../manager/FishCard.action" method="post">
+                <input type="submit" value="戻る" class="back-button">
+            </form>
+        </div>
 <footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
 <c:import url="/common/base.jsp">
 
 </c:import>
+
