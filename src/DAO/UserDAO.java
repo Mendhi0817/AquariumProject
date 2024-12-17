@@ -29,6 +29,7 @@ public class UserDAO extends DAO {
 			user = new User();
 			user.seteMail(rs.getString("email"));
 			user.setFlag(rs.getString("flag"));
+			user.setUserId(rs.getInt("user_id"));
 		}
 		st.close();
 		con.close();

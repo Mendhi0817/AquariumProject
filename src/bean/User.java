@@ -9,7 +9,7 @@ public class User implements Serializable {
 	/**
 	 * ユーザー名:String
 	 */
-
+	private int userId;
 
 
 	private String userName;
@@ -102,6 +102,14 @@ public class User implements Serializable {
 
 	public void setFlag(String flag) {
 		this.flag = flag;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 

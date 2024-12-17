@@ -6,48 +6,35 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import DAO.FishCardDAO;
+import bean.FishCard;
+import bean.User;
 import tool.Action;
 
 // 魚カード一覧(customer)
 public class FishCardListAction extends Action{
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+		// ユーザーID取得
+		HttpSession session = req.getSession();
+		User user = (User)session.getAttribute("user");
+		System.out.println(user.getUserId());
 
         try {
             // FishCardDAOを使ってカード情報を取得
             FishCardDAO fishcardDAO = new FishCardDAO();
-            List<String> FishCardList = fishcardDAO.etCollectedCards();
-
-            // リクエストパラメータからfishcard_idを取得
-            String fishcardId = request.getParameter("fishcard_id");
-
-            String cardTitle = null;
-            String cardImage = null;
-
-            // FishCardListから指定されたカード情報を検索
-            for (int i = 0; i < FishCardList.size(); i += 2) {
-                if (FishCardList.get(i).equals(fishcardId)) {
-                    cardTitle = FishCardList.get(i);          // タイトル
-                    cardImage = FishCardList.get(i + 1);      // 画像パス
-                    break;
-                }
-            }
-
-            if (cardTitle == null || cardImage == null) {
-                throw new Exception("指定されたカード情報が見つかりません");
-            }
+            List<FishCard> FishCardList = fishcardDAO.getCollectedCards(user.getUserId());
 
             // 取得したデータをリクエスト属性にセット
-            request.setAttribute("FishCardList", FishCardList);
-            request.setAttribute("cardTitle", cardTitle);     // タイトルをセット
-            request.setAttribute("cardImage", cardImage);     // 画像パスをセット
+            req.setAttribute("FishCardList", FishCardList);
 
             // JSPにフォワード
-            request.getRequestDispatcher("../staff/Card/fish_card_list.jsp").forward(request, response);
+            req.getRequestDispatcher("../customer/card/card_browsing.jsp").forward(req, res);
 
         } catch (Exception e) {
             throw new ServletException(e);
         }
-		}
-    }
+	}
+}
