@@ -28,15 +28,22 @@ public class CameraAction extends Action {
 		System.out.println("DB経由");
 		System.out.println(id);
 
-		System.out.println(id);
+
+		if(id != 0){
+
+				request.getRequestDispatcher("../common/login.jsp").forward(request, response);
 
 
 
+			}
 
 
 
+		else{
+				request.getRequestDispatcher("../suizokutachiproject/home_C/home_C.jsp").forward(request, response);
 
 
+			}
 
 	}
 
