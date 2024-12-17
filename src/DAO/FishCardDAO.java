@@ -80,7 +80,9 @@ public class FishCardDAO extends DAO{
 		return listfish;
 	}
 
-	public boolean userAdd(int user_id, int fishcard_id) throws Exception{
+
+
+	public boolean cardLog(int user_id, int fishcard_id) throws Exception{
 
 		Connection connection = getConnection();
 
@@ -101,7 +103,7 @@ public class FishCardDAO extends DAO{
 //
 			    statement = connection.prepareStatement(
 
-			            "insert into userinfo(user_id,fishcard_id) values(?,?)");
+			            "insert into card_collected_log(user_id,fishcard_id) values(?,?)");
 
 //			    // プリペアードステートメントに値をバインド
 

@@ -79,9 +79,10 @@
 %>
 <div class="card-container bounce">
     <img src="<%= fishImageUrl %>" alt="<%= fishName %>" class="card-image">
-    <div class="card-title"><%= fishName %>カード</div>
+    <div class="card-title">${fishcard.cardTitle}</div>
     <div class="card-description">素晴らしい魚がゲットできました！</div>
     <div class="message">おめでとうございます！</div>
+
                     <form action="../manager/Home_customer.action" method="post">
                     <input type="submit" value="ホーム">
                 </form>

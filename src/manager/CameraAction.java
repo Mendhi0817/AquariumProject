@@ -4,8 +4,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DAO.FishCardDAO;
 import bean.Camera;
+import bean.FishCard;
 import tool.Action;
+
 
 public class CameraAction extends Action {
 
@@ -16,15 +19,22 @@ public class CameraAction extends Action {
 
 		System.out.println("読み取り後");
 		System.out.println(camera.path);
-		
-		System.out.println(user_id);
 
+
+		FishCard fishcard = new FishCard();
+
+		FishCardDAO  fishcarddao = new FishCardDAO();
 
 		HttpSession session=request.getSession();
 
 
 
+
 		int id = Integer.parseInt(camera.path);
+
+		FishCard getCardInfo = fishcarddao.getCardInfo(id);
+
+
 
 
 
@@ -34,10 +44,13 @@ public class CameraAction extends Action {
 		System.out.println(id);
 
 
+
 		if(id != 0){
 
 
 
+
+				request.setAttribute("fishcard",getCardInfo);
 				request.getRequestDispatcher("../staff/Card/fish_card_get.jsp").forward(request, response);
 
 
