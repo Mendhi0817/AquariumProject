@@ -81,6 +81,88 @@ public class FishCardDAO extends DAO{
 	}
 
 
+	public boolean cardLog(int user_id, int fishcard_id) throws Exception{
+
+		Connection connection = getConnection();
+
+		// プリペアードステートメント
+
+		PreparedStatement statement = null;
+
+		// 実行件数
+
+		int count = 0;
+
+
+		try {
+
+
+//
+//			    // プリペアードステートメントにINSERT文をセット
+//
+			    statement = connection.prepareStatement(
+
+			            "insert into card_collected_log(user_id,fishcard_id) values(?,?)");
+
+//			    // プリペアードステートメントに値をバインド
+
+//
+			    statement.setInt(1, user_id);
+
+			    statement.setInt(2, fishcard_id);
+
+
+
+//
+			// プリペアードステートメントを実行
+
+			    count = statement.executeUpdate();
+
+		} catch (Exception e) {
+
+			throw e;
+
+		} finally {
+
+			// プリペアードステートメントを閉じる
+
+			if (statement != null) {
+
+				try {
+
+					statement.close();
+
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+			// コネクションを閉じる
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+		}
+
+		if (count > 0) {
+
+			// 実行件数が1件以上ある場合
+
+			return true;
+
+		} else {
+
+			// 実行件数が０件の場合
+
+			return false;
+
+		}
+	}
+
+
+
 
 // カード削除一覧 (staff)
 	public List<FishCard> getAllCard() throws Exception {

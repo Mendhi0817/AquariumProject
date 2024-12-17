@@ -110,6 +110,9 @@
             <form action ="../manager/Coupon.action" method="post">
                 <input type="submit" value="クーポン作成">
             </form>
+            
+            
+            
         </div>
     </div>
 
