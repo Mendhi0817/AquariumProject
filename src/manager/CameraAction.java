@@ -33,6 +33,8 @@ public class CameraAction extends Action {
 		int id = Integer.parseInt(camera.path);
 
 		FishCard getCardInfo = fishcarddao.getCardInfo(id);
+		
+		boolean log = fishcarddao.cardLog(user_id,id)
 
 
 
@@ -46,12 +48,17 @@ public class CameraAction extends Action {
 
 
 		if(id != 0){
+			
+				
 
 
 
 
+			
 				request.setAttribute("fishcard",getCardInfo);
 				request.getRequestDispatcher("../staff/Card/fish_card_get.jsp").forward(request, response);
+				
+				
 
 
 
