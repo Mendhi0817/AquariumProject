@@ -83,7 +83,7 @@
     <div class="card-description">素晴らしい魚がゲットできました！</div>
     <div class="message">おめでとうございます！</div>
 
-                    <form action="../manager/Home_customer.action" method="post">
+                    <form action="../manager/FishCardList.action" method="post">
                     <input type="submit" value="ホーム">
                 </form>
 </div>

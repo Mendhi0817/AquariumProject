@@ -38,7 +38,10 @@
 
             </div>
             <div class="qr-code">
-                <h2>QRコード</h2>
+                <!-- QRコード読み取りボタン -->
+        <form action="../manager/Camera.action" method="post">
+            <input type="submit" value="QRコード" class="qr-code-button">
+        </form>
             </div>
         </div>
     </main>

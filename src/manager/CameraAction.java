@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import DAO.FishCardDAO;
 import bean.Camera;
 import bean.FishCard;
+import bean.User;
 import tool.Action;
 
 
@@ -25,16 +26,19 @@ public class CameraAction extends Action {
 
 		FishCardDAO  fishcarddao = new FishCardDAO();
 
-		HttpSession session=request.getSession();
+		// ユーザーID取得
+		HttpSession session = request.getSession();
+		User user = (User)session.getAttribute("user");
+		System.out.println(user.getUserId());
 
 
 
 
 		int id = Integer.parseInt(camera.path);
 
-		FishCard getCardInfo = fishcarddao.getCardInfo(id);
-		
-		boolean log = fishcarddao.cardLog(user_id,id)
+		fishcard = fishcarddao.getCardInfo(id);
+
+		boolean log = fishcarddao.cardLog(user.getUserId(),id);
 
 
 
@@ -47,18 +51,18 @@ public class CameraAction extends Action {
 
 
 
-		if(id != 0){
-			
-				
+		if(id != 0 && log){
 
 
 
 
-			
-				request.setAttribute("fishcard",getCardInfo);
+
+
+
+				request.setAttribute("fishcard",fishcard);
 				request.getRequestDispatcher("../staff/Card/fish_card_get.jsp").forward(request, response);
-				
-				
+
+
 
 
 
