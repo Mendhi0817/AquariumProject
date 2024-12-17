@@ -80,86 +80,6 @@ public class FishCardDAO extends DAO{
 		return listfish;
 	}
 
-	public boolean userAdd(int user_id, int fishcard_id) throws Exception{
-
-		Connection connection = getConnection();
-
-		// プリペアードステートメント
-
-		PreparedStatement statement = null;
-
-		// 実行件数
-
-		int count = 0;
-
-
-		try {
-
-
-//
-//			    // プリペアードステートメントにINSERT文をセット
-//
-			    statement = connection.prepareStatement(
-
-			            "insert into userinfo(user_id,fishcard_id) values(?,?)");
-
-//			    // プリペアードステートメントに値をバインド
-
-//
-			    statement.setInt(1, user_id);
-
-			    statement.setInt(2, fishcard_id);
-
-
-
-//
-			// プリペアードステートメントを実行
-
-			    count = statement.executeUpdate();
-
-		} catch (Exception e) {
-
-			throw e;
-
-		} finally {
-
-			// プリペアードステートメントを閉じる
-
-			if (statement != null) {
-
-				try {
-
-					statement.close();
-
-				} catch (SQLException sqle) {
-					throw sqle;
-				}
-			}
-			// コネクションを閉じる
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException sqle) {
-					throw sqle;
-				}
-			}
-		}
-
-		if (count > 0) {
-
-			// 実行件数が1件以上ある場合
-
-			return true;
-
-		} else {
-
-			// 実行件数が０件の場合
-
-			return false;
-
-		}
-	}
-
 
 
 // カード削除一覧 (staff)
@@ -220,8 +140,56 @@ public class FishCardDAO extends DAO{
 
 
 
+	// カード保存(customer)
+		public boolean CardAdd(int user_id, int fishcard_id) throws Exception{
+			Connection connection = getConnection();
+			// プリペアードステートメント
+			PreparedStatement statement = null;
+			// 実行件数
+			int count = 0;
+			try {
+//				    // プリペアードステートメントにINSERT文をセット
+				    statement = connection.prepareStatement(
+				            "insert into userinfo(user_id,fishcard_id) values(?,?)");
+//				    // プリペアードステートメントに値をバインド
+				    statement.setInt(1, user_id);
+				    statement.setInt(2, fishcard_id);
+
+				// プリペアードステートメントを実行
+				    count = statement.executeUpdate();
+			} catch (Exception e) {
+				throw e;
+			} finally {
+				// プリペアードステートメントを閉じる
+				if (statement != null) {
+					try {
+						statement.close();
+					} catch (SQLException sqle) {
+						throw sqle;
+					}
+				}
+				// コネクションを閉じる
+				if (connection != null) {
+					try {
+						connection.close();
+					} catch (SQLException sqle) {
+						throw sqle;
+					}
+				}
+			}
+			if (count > 0) {
+				// 実行件数が1件以上ある場合
+				return true;
+			} else {
+				// 実行件数が０件の場合
+				return false;
+			}
+		}
+
+
+
 		// カード一覧 (cutomer)
-		public List<FishCard> getCollectedCards(int userId) throws Exception {
+		public List<FishCard> getCollectedCards(int user_id) throws Exception {
 			List<FishCard> collectedCards = new ArrayList<>();
 			Connection con = getConnection();
 			PreparedStatement st = null;
@@ -229,7 +197,7 @@ public class FishCardDAO extends DAO{
 		    try {
 		    	String query = "SELECT f.FISHCARD_TEXT, f.FISHCARD_IMAGE, f.FISHCARD_TITLE FROM FISHCARD f INNER JOIN CARD_COLLECTED_LOG ccl ON f.FISHCARD_ID = ccl.FISHCARD_ID WHERE ccl.USER_ID = ?";
 		        st = con.prepareStatement(query);
-		        st.setInt(1, userId);
+		        st.setInt(1, user_id);
 		        rs = st.executeQuery();
 
 		        while (rs.next()) {
@@ -238,6 +206,7 @@ public class FishCardDAO extends DAO{
 		            fishCard.setCardImage(rs.getString("FISHCARD_IMAGE"));
 		            fishCard.setCardTitle(rs.getString("FISHCARD_TITLE"));
 		            collectedCards.add(fishCard);
+		            System.out.println("kkk");
 		        }
 		    } catch (Exception e) {
 		        e.printStackTrace();

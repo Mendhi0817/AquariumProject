@@ -38,7 +38,8 @@ public class LoginAction extends Action {
 				else if(user.getFlag().equals("1")){
 
 
-				request.getRequestDispatcher("../suizokutachiproject/home_C/home_C.jsp").forward(request, response);
+				String url = "FishCardList.action";
+				response.sendRedirect(url);
 
 				}
 
