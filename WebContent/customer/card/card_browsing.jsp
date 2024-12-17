@@ -19,10 +19,6 @@
     <header>
         <h1>魚の写真</h1>
     </header>
-        <div class="sidebar">
-                <form action ="../../manager/HomeCoust.action" method = "post"><input type = "submit" value = "戻る">
-            </form>
-        </div>
         <div class="content">
             <div class= "fish-photo">
                 <!-- listTitle からお知らせタイトルをループで表示 -->
