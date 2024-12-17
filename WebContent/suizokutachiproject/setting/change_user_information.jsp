@@ -93,13 +93,6 @@
 
 
             <form action="../manager/Change_complete.action" method="post">
- 		<!-- 現在のパスワードを入力 -->
-        <div class="content">
-            <div>パスワード</div>
-            <div class="input-field">
-                <input type="text" name="email" placeholder="パスワードを入力">
-            </div>
-        </div>
 
 
         <!-- 名前の変更 -->
@@ -126,20 +119,8 @@
     </div>
 
        <footer>
-        <div class="footer-buttons">
-            <form action="../manager/Home_customer.action" method="post">
-                <input type="submit" value="ホーム">
-            </form>
-            <form action="../manager/Map.action" method="post">
-                <input type="submit" value="マップ">
-            </form>
-            <form action="../manager/News.action" method="post">
-                <input type="submit" value="お知らせ">
-            </form>
-            <form action="../manager/Setting_C.action" method="post">
-                <input type="submit" value="設定">
-            </form>
-        </div>
+        <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
+        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
     </footer>
 </body>
 </html>

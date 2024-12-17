@@ -1,14 +1,13 @@
-<!-------------------------------------------------------------------------------------->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="../setting/setting staff.css">
+    <link rel="stylesheet" href="../News/news.css">
     <title>水族舘プロジェクト</title>
     <style>
-       body {
+        body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
@@ -18,6 +17,7 @@
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
+
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
@@ -29,7 +29,7 @@
             text-align: center; /* サイドバー内のコンテンツを中央揃え */
         }
 
-        .content input, .content textarea {
+        .content input, .content textarea, .content input[type="date"] {
             width: 50%;
             padding: 10px;
             margin: 10px 0;
@@ -42,35 +42,22 @@
             height: 300px; /* テキストエリアの高さ */
         }
 
-        /* ボタンを中央に寄せ、共通のスタイルを設定 */
-        .button-container, .button-group {
-            display: flex;
-            justify-content: center; /* ボタンを中央揃え */
-            gap: 20px; /* ボタン間の隙間を設定 */
-            margin-top: 20px; /* 上部に余白 */
+        /* 削除と編集ボタンを左に寄せる */
+        .button-container {
+            display: flex; /* フレックスボックスを使って横並び */
+            justify-content: flex-start; /* ボタンを左端に寄せる */
+            gap: 10px; /* ボタン間の隙間 */
         }
 
-        .button-container button, .button-group input[type="submit"] {
-            padding: 10px 40px; /* ボタンのパディング */
-            font-size: 1.2em; /* ボタンの文字サイズ */
-            border-radius: 8px; /* ボタンの角を丸く */
-            background-color: #ff6347; /* ボタンの背景色 */
-            color: white; /* 文字色 */
-            border: none; /* ボーダーを消す */
-            cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            width: 250px; /* 横幅を統一（例として250pxを設定） */
+        /* 投稿、編集、削除ボタンを小さくするためのスタイル */
+        .button-container form input[type="submit"] {
+            width: 150px; /* ボタンの横幅を小さく設定 */
+            padding: 15px 40px; /* ボタンのパディング */
+            font-size: 1em;
         }
 
-        .button-container button:hover, .button-group input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
-        }
-
-        footer form {
-            display: inline-block;
-            margin: 0 10px; /* フォーム間の余白 */
-        }
-
-        footer input[type="submit"] {
+        /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+        input[type="submit"] {
             padding: 10px 60px; /* ボタンのパディング */
             font-size: 1.2em;
             border: none;
@@ -79,20 +66,62 @@
             color: white; /* 文字色 */
             cursor: pointer;
             width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            margin: 5px 0; /* ボタン間に適切な余白を追加 */
         }
 
-        footer input[type="submit"]:hover {
+        /* ホバー時の色変更 */
+        input[type="submit"]:hover {
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
-        /* BGMの文字を大きくして中央に配置 */
-        .bgm-text {
-            font-size: 3em; /* フォントサイズを大きく */
-            font-weight: bold; /* 太字 */
-            text-align: center; /* 中央揃え */
-            margin-top: 30px; /* 上部に余白 */
-            color: black; /* 文字色を黒に変更 */
+        footer form {
+            display: inline-block;
+            margin: 0 10px; /* フォーム間の余白 */
         }
+
+        /* 追加: 削除ボタンのスタイル */
+        .delete-button {
+            padding: 10px 60px; /* ホームボタンと同じパディング */
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff6347; /* ホームボタンと同じ背景色 */
+            color: white;
+            cursor: pointer;
+            width: 250px; /* ホームボタンと同じ横幅 */
+            margin: 5px 0; /* ボタン間の余白 */
+        }
+
+        /* ホバー時の色変更 (削除ボタン) */
+        .delete-button:hover {
+            background-color: #ff4500; /* ホームボタンと同じホバー時の色 */
+        }
+
+        /* 追加: 削除ボタンのスタイル */
+.delete-button {
+    padding: 8px 20px; /* ボタンのパディングを小さく設定 */
+    font-size: 1em; /* フォントサイズを少し小さく設定 */
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6347; /* ホームボタンと同じ背景色 */
+    color: white;
+    cursor: pointer;
+    width: 150px; /* 横幅を小さく設定 */
+    margin: 5px 0; /* ボタン間の余白 */
+}
+
+/* ホバー時の色変更 (削除ボタン) */
+.delete-button:hover {
+    background-color: #ff4500; /* ホームボタンと同じホバー時の色 */
+}
+
+/* 1F と 2Fの文字を大きくする */
+.floor-info-large {
+    font-size: 1.5em; /* フォントサイズを1.5倍に */
+    font-weight: bold; /* フォントを太字にする */
+    color: #333; /* 文字色（任意） */
+}
+
 
     </style>
 </head>
@@ -101,33 +130,38 @@
     <div class="container">
         <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    <div class="position">
-<h1>階数</h1>
-	<table border=1">
-		<tr>
-			<th>Floor Info</th>
-			<th>Action</th>
-		</tr>
 
-	<c:forEach var="map" items="${listmap}">
+        <h1>削除したいマップを選んで下さい</h1>
+        <table>
+    <thead>
+    </thead>
+    <tbody>
+        <c:forEach var="map" items="${listmap}">
             <tr>
-
-                <td>${map.floorInfo}</td>
+                <!-- floorInfoが1Fまたは2Fの場合、特定のクラスを追加 -->
+                <td class="${map.floorInfo == '1F' || map.floorInfo == '2F' ? 'floor-info-large' : ''}">
+                    ${map.floorInfo}
+                </td>
                 <td>
-                <form action ="../manager/MapDeleteDone.action" method = "post">
-                <input type = "hidden" name = "mapId" value = "${map.floorInfo }">
-                <input type = "submit" value = "削除">
-                </form>
-               </td>
+                    <form action="../manager/MapDeleteDone.action" method="post">
+                        <input type="hidden" name="mapId" value="${map.floorInfo}">
+                        <button type="submit" class="delete-button">削除</button>
+                    </form>
+                </td>
             </tr>
         </c:forEach>
-    </table>
+    </tbody>
+</table>
     </div>
-   </div>
 
     <footer>
-        <form action ="../manager/Home_staff.action" method = "post"><input type = "submit" value = "ホーム"></form>
-        <form action ="../manager/Setting.action" method = "post"><input type = "submit" value = "設定"></form>
+        <form action="../manager/Home_staff.action" method="post">
+            <input type="submit" value="ホーム">
+        </form>
+        <form action="../manager/Setting.action" method="post">
+            <input type="submit" value="設定">
+        </form>
     </footer>
 </body>
 </html>
+

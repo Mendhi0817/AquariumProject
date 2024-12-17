@@ -1,3 +1,4 @@
+
 package manager;
 
 import java.util.List;
@@ -19,7 +20,6 @@ public class CouponCustomerAction extends Action {
 			CouponDAO couponDAO = new CouponDAO();
 			List<Coupon> listTitle = couponDAO.searchTitle();
 
-			// 取得したデータをリクエスト属性にセット
 
             request.setAttribute("listTitle", listTitle);
 

@@ -15,6 +15,7 @@ public class CameraAction extends Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		Camera camera = new Camera();
 
+
 		System.out.println("読み取り後");
 		System.out.println(camera.path);
 
@@ -41,6 +42,7 @@ public class CameraAction extends Action {
 
 		else{
 				request.getRequestDispatcher("../suizokutachiproject/home_C/home_C.jsp").forward(request, response);
+
 
 
 			}
