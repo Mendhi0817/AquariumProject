@@ -106,7 +106,7 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- 戻るボタンを少し縦幅を小さくしたい場合 -->
@@ -123,9 +123,13 @@
 
             <!-- PDFファイルをアップロードするフィールド -->
             <div>
-                <label for="pdfUpload">画像をアップロードして下さい：</label>
-                <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf">
+                <label for="imageUpload">画像をアップロードして下さい：</label>
+                <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
             </div>
+
+        <!-- 新しいフォームセクション -->
+        <div class="form-container"></div>
+                <!-- 文字を入力するフィールド -->
 
             <div>
                 <h2>説明文を入力</h2>
@@ -135,7 +139,7 @@
             <!-- 投稿ボタンを少し縦幅を小さくしたい場合 -->
             <input type="submit" class="large-btn" value="投稿">
         </form>
-    </div>
+    		</div>
 
     <footer>
         <form action="../manager/Home_staff.action" method="post">

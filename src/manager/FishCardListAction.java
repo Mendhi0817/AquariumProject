@@ -1,43 +1,40 @@
 package manager;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import DAO.FishCardDAO;
+import bean.FishCard;
+import bean.User;
 import tool.Action;
 
+// 魚カード一覧(customer)
 public class FishCardListAction extends Action{
+	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// ユーザーID取得
+		HttpSession session = req.getSession();
+		User user = (User)session.getAttribute("user");
+		System.out.println(user.getUserId());
 
         try {
-            // FishCardDAOを使ってマップ情報を取得
-    		FishCardDAO FishCardDAO = new FishCardDAO();
-            List<String> floorInfoList = FishCardDAO.getAllCardId();
+            // FishCardDAOを使ってカード情報を取得
+            FishCardDAO fishcardDAO = new FishCardDAO();
+            List<FishCard> FishCardList = fishcardDAO.getCollectedCards(user.getUserId());
 
-            String floor = floorInfoList.get(0);
-            floor = request.getParameter("floor_info");
-
-            String FishCardImage = FishCardDAO.getFishCardImage(floor);
-            String fileName = null;
-            if(floor != null){
-            	fileName = new File(FishCardImage).getName();
-            }
-
-            System.out.print(floor);
             // 取得したデータをリクエスト属性にセット
-            request.setAttribute("floorInfoList", floorInfoList);
+            req.setAttribute("FishCardList", FishCardList);
 
-            request.setAttribute("FishCardImage", FishCardImage);   //
+            // JSPにフォワード
+            req.getRequestDispatcher("../customer/card/card_browsing.jsp").forward(req, res);
 
-		request.getRequestDispatcher("../staff/Card/fish_card_list.jsp").forward(request, response);
-
-	}}
-}
-		//login
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
 	}
+}

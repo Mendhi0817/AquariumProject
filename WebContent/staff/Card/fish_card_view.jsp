@@ -94,21 +94,37 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
+            <h2>削除したいカードを選んでください</h2>
+
+            <div class="fishcard-list">
+                <!-- listTitle からお知らせタイトルをループで表示 -->
+                <c:forEach var="listTitle1" items="${FishCardList}">
+                    <div class="fishcard-item">
+                        <!-- お知らせタイトルを表示 -->
+
+                        <span>${listTitle1.cardTitle}</span><br>
+                        <img src="viewImage?imagePath=${listTitle1.cardImage}" width="250" height="200">
+            <form action="../manager/FishCardEdit.action" method="post">
+            <input type="hidden" name="cardId" value="${listTitle1.cardId }">
+                <input type="submit" value="編集">
+            </form>
+            <form action="../manager/FishCardDeleteDone.action" method="post">
+            <input type="hidden" name="cardId" value="${listTitle1.cardId }">
+                <input type="submit" value="削除">
+            </form>
+                    </div>
+                </c:forEach>
+        <c:forEach var="cardId1" items="${cardId}">
         <!-- ボタンを横並びにするためのコンテナ -->
         <div class="button-container">
         <form action ="../manager/FishCard.action" method="post">
                 <input type="submit" value="戻る">
             </form>
-            <form action="../manager/FishCardEdit.action" method="post">
-                <input type="submit" value="編集">
-            </form>
-            <form action="../manager/FishCardDeleteDone.action" method="post">
-                <input type="submit" value="削除">
-            </form>
         </div>
+        </c:forEach>
 
     </div>
 

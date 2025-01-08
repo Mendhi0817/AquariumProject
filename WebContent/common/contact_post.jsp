@@ -29,7 +29,7 @@
 
 <body>
     <div class="container">
-    <aside class="sidebar"><img src="水族舘プロジェクト_右の写真2.png" alt="サイドバー画像"align="right"></aside>
+    <aside class="sidebar"><img src="fish_right_new.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="水族舘プロジェクト_タイトル.png" width="400" height="150"></header>
 
     <div class="content">

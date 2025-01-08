@@ -107,16 +107,17 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <div class="fish-card-title">魚カード</div>
+
 
         <div class="button-container">
             <form action="../manager/FishCardMake.action" method="post">
                 <input type="submit" value="作成">
             </form>
-            <form action="../manager/FishCardList.action" method="post">
+            <form action="../manager/FishCardView.action" method="post">
                 <input type="submit" value="一覧">
             </form>
         </div>

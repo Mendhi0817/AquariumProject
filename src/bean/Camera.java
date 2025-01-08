@@ -2,11 +2,13 @@ package bean;
 
 import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
+import java.net.URI;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
 import com.github.sarxos.webcam.Webcam;
@@ -25,12 +27,14 @@ public class Camera extends JFrame implements Runnable, ThreadFactory{
 
 
 
-
 	private Executor executor = Executors.newSingleThreadExecutor(this);
 
 	private Webcam webcam = null;
 	private WebcamPanel panel = null;
 	private JTextArea textarea = null;
+	private JLabel label = null;
+
+	public String path;
 
 	public Camera() {
 		super();
@@ -49,22 +53,31 @@ public class Camera extends JFrame implements Runnable, ThreadFactory{
 		panel.setPreferredSize(size);
 		panel.setFPSDisplayed(true);
 
-		//QRコード結果表示テキストエリア
-		textarea = new JTextArea();
-		textarea.setEditable(false);
-		textarea.setPreferredSize(size);
+//		//QRコード結果表示テキストエリア
+//		textarea = new JTextArea();
+//		textarea.setEditable(false);
+//		textarea.setPreferredSize(size);
+//
+//		//コンテナ追加
+//		add(panel);
+//		add(textarea);
 
-		//コンテナ追加
+
+
+		// QRコード結果表示ラベル
+		label = new JLabel();
+		label.setPreferredSize(size);
+		// コンテナ追加
 		add(panel);
-		add(textarea);
+		add(label);
 
 		//windowsサイズ変更
 		pack();
-
 		//画面表示
 		setVisible(true);
 
-		executor.execute(this);
+
+		run();
 	}
 
 	@Override
@@ -101,16 +114,39 @@ public class Camera extends JFrame implements Runnable, ThreadFactory{
 				}
 			}
 
+//			//データがある場合
+//			if (result != null) {
+//
+//				//テキストエリアに表示させる
+//				textarea.setText(result.getText());
+//			}
 			//データがある場合
 			if (result != null) {
-				//テキストエリアに表示させる
-				textarea.setText(result.getText());
-			}
+                String qrText = result.getText();
+                // テキストをリンクとして表
+                label.setText("<html><a href=''>" + qrText + "</a></html>");
+                label.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
+
+                // クリックイベントを追加
+                label.addMouseListener(new java.awt.event.MouseAdapter() {
+                    @Override
+                    public void mouseClicked(java.awt.event.MouseEvent e) {
+                        try {
+                            java.awt.Desktop.getDesktop().browse(new URI(qrText));
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                });
+
+                setPath(qrText);
+                System.out.println(qrText);
+                break;
+            }
 
 
 		} while (true);
 	}
-
 
 
 	@Override
@@ -120,13 +156,11 @@ public class Camera extends JFrame implements Runnable, ThreadFactory{
 		return t;
 	}
 
+	public void setPath(String path){
+		this.path = path;
+	}
+
 
 
 
 }
-
-
-
-
-
-

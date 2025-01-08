@@ -46,86 +46,98 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
-        /* 中央寄せ */
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* 子要素を横方向に中央揃え */
-            justify-content: center; /* 子要素を縦方向に中央揃え */
-            min-height: 60vh; /* 中央に配置する領域の高さを設定 */
-            text-align: center; /* 文章を中央に配置 */
-        }
+
 
         .notification-list {
-            width: 100%; /* 画面幅いっぱいに設定 */
-            max-width: 600px; /* 最大幅を設定して適切なサイズに調整 */
+            display: flex;
+            flex-direction: row; /* 横並びにする */
+            justify-content: space-between; /* タイトルとボタンを左右に配置 */
+            align-items: center; /* 垂直方向に中央揃え */
             margin-top: 20px;
+            flex-wrap: wrap; /* 横並びがはみ出さないようにラップ */
         }
 
         .notification-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
+            display: flex;
+            justify-content: space-between; /* タイトルとボタンを横並びにする */
+            align-items: center;
+            margin: 15px 0; /* マージンを大きくしてアイテムの間隔を広げる */
+            padding: 15px; /* パディングを大きくしてスペースを広げる */
+            border: 1px solid #ccc; /* 枠線を追加 */
+            border-radius: 8px; /* 角を丸く */
+            font-size: 1.3em; /* フォントサイズを大きく */
+            background-color: #f9f9f9; /* 背景色を淡い色に変更 */
+            width: 900%; /* アイテムの幅を100%にしてラップさせる */
+            max-width: 550px; /* 最大幅を900pxに変更 */
+        }
 
-.notification-item span {
-    flex-grow: 1;
-}
+        /* '編集'ボタンのスタイル */
+        .notification-item button {
+            padding: 8px 25px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-/* ここでmargin-leftを利用してボタンを右側に配置 */
-.delete-btn-1 {
-    margin-left: auto;
-}
+        .notification-item button:hover {
+            background-color: #ff4500;
+        }
 
-.delete-btn-1 input[type="submit"] {
-	position:absolute;
-    right:400px;
-    top:300px;
-    padding: 5px 10px;
-    font-size: 1em;
-    width: 60px;
-    margin-top: 0; /* 上の余白を必要に応じて調整 */
-}
+        /* '編集'ボタンをお知らせタイトルの横に配置 */
+        .notification-item span {
+            flex-grow: 1; /* タイトルがボタンを圧迫しないように横幅を調整 */
+            text-align: left; /* タイトルを左寄せ */
+            padding-right: 20px; /* タイトルとボタンの間にスペースを追加 */
+        }
+
+        /* '削除1'ボタンを小さくするスタイル */
+        .delete-btn-1 input[type="submit"] {
+            padding: 5px 10px; /* ボタンのパディングを小さく */
+            font-size: 1em; /* フォントサイズを小さく */
+            width: 60px; /* 横幅を小さく */
+            margin-top: 20px; /* ボタンを少し下に移動 */
+        }
+
 
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-			    <main>
+        <main>
             <h2>削除したいお知らせを選んで下さい</h2>
 
             <div class="notification-list">
                 <!-- listTitle からお知らせタイトルをループで表示 -->
+                <div class="title-list">
                 <c:forEach var="listTitle1" items="${listTitle}">
                     <div class="notification-item">
                         <!-- お知らせタイトルを表示 -->
                         <span>${listTitle1.nt}</span>
                     </div>
                 </c:forEach>
+               </div>
+               <div class="button-list">
                 <c:forEach var="listId1" items="${listId}">
                         <!-- '編集'ボタンを設置 -->
                         <form class="delete-btn-1" action="../manager/NotificationDataDeleteExecute.action" method="post">
                             <input type="hidden" name="ni" value="${listId1.ni }">
                             <input type="submit" value="削除">
                         </form>
-
                 </c:forEach>
+                </div>
             </div>
 
             <form action="../manager/Notification_data_Post.action" method="post">
                 <input type="submit" value="戻る">
             </form>
         </main>
-
-
     </div>
 
     <footer>

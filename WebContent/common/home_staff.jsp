@@ -90,7 +90,7 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- ボタンを横並びにするためにdivでグループ化 -->
@@ -110,6 +110,9 @@
             <form action ="../manager/Coupon.action" method="post">
                 <input type="submit" value="クーポン作成">
             </form>
+
+
+
         </div>
     </div>
 

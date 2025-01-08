@@ -43,7 +43,7 @@
 
 <body>
 <h1>クーポン一覧</h1>
-	<table border=1">
+	<table border=1>
 		<tr>
 			<th>クーポン</th>
 
@@ -54,7 +54,7 @@
 
                 <td>${coupon.COUPON_TITLE}</td>
                 <td>
-                <form action ="../manager/Coupon_C_Detail.action" method = "post">
+                <form action ="../manager/CouponCustomerDetail.action" method = "post">
                 <input type = "hidden" name = "COUPON_TITLE" value = "${coupon.COUPON_TITLE }">
                 <input type = "submit" value = "詳細">
                 </form>

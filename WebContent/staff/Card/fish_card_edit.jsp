@@ -96,37 +96,39 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <div>
-            <form action ="../manager/FishCardList.action" method="post">
+            <form action ="../manager/FishCard.action" method="post">
                 <input class="back-button" type="submit" value="戻る">
             </form>
         </div>
 
+            <form action="../manager/FishCardEditDone.action" method="post" enctype="multipart/form-data">
         <div>
-            <textarea id="content" name="f1" placeholder="ここにカード名を入力してください"></textarea>
+            <textarea id="content" name="title" placeholder="ここにカード名を入力してください" >${FishCard.cardTitle}</textarea>
         </div>
 
         <!-- PDFファイルをアップロードするフィールド -->
         <div>
-            <label for="pdfUpload">画像をアップロードして下さい：</label>
-            <input type="file" id="pdfUpload" name="f3" accept="application/pdf">
+            <label for="imageUpload">画像をアップロードして下さい：</label>
+            <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
+            <img src="viewImage?imagePath=${FishCard.cardImage}" width="250" height="200">
+            <input type="hidden" name="cardImage" value="${FishCard.cardImage}">
         </div>
 
         <div>
             <h2>説明文を入力</h2>
-            <textarea id="content" name="f4" placeholder="ここに文章を入力してください"></textarea>
+            <textarea id="content" name="text" placeholder="ここに文章を入力してください">${FishCard.cardText}</textarea>
         </div>
 
         <!-- 編集ボタン -->
         <div>
-            <form action="../manager/FishCardEditDone.action" method="post">
+            <input type="hidden" name="cardId" value="${FishCard.cardId }">
                 <input class="edit-button" type="submit" value="編集">
             </form>
         </div>
-
     </div>
 
     <footer>

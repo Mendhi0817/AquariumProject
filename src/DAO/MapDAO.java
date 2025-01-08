@@ -10,54 +10,7 @@ import java.util.List;
 import bean.Map;
 public class MapDAO extends DAO {
 
-	public List<Map> searchAll() throws Exception {
-		List<Map> listmap = new ArrayList<>();
-		Connection con = getConnection();
-		PreparedStatement st;
-
-		st = con.prepareStatement("select * from map_info");
-//		st.setString(1,image);
-
-
-		ResultSet rs = st.executeQuery();
-
-		while (rs.next()) {
-			Map map = new Map();
-			map.setFloorInfo(rs.getString("floor_info"));
-			listmap.add(map);
-		}
-		st.close();
-		con.close();
-		return listmap;
-	}
-
-
-
-	public Map search(String floor) throws Exception {
-		Map map = null;
-		Connection con = getConnection();
-		PreparedStatement st;
-
-		st = con.prepareStatement("select * from map_info where floor_info=?");
-//		st.setString(1,image);
-		st.setString(1,floor);
-
-		ResultSet rs = st.executeQuery();
-
-		while (rs.next()) {
-			map = new Map();
-			map.setMapImage(rs.getString("map_image"));
-			map.setFloorInfo(rs.getString("floor_info"));
-
-		}
-		st.close();
-		con.close();
-		return map;
-
-	}
-
-
-
+// Map情報を保存
 public boolean save(Map map) throws Exception {
 	// コネクションを確立
 	Connection con = getConnection();
@@ -109,6 +62,7 @@ public boolean save(Map map) throws Exception {
 
 
 
+// Map一覧 (customer)
 public List<String> getAllFloorInfo() throws Exception {
     List<String> floorInfoList = new ArrayList<>();
     Connection con = getConnection();
@@ -138,6 +92,33 @@ public List<String> getAllFloorInfo() throws Exception {
 
 
 
+//階数情報からMapを取得
+	public Map search(String floor) throws Exception {
+		Map map = null;
+		Connection con = getConnection();
+		PreparedStatement st;
+
+		st = con.prepareStatement("select * from map_info where floor_info=?");
+//		st.setString(1,image);
+		st.setString(1,floor);
+
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+			map = new Map();
+			map.setMapImage(rs.getString("map_image"));
+//			map.setFloorInfo(rs.getString("floor_info"));
+
+		}
+		st.close();
+		con.close();
+		return map;
+
+	}
+
+
+
+// 階数情報からMapを取り出す
 public String getMapImage(String floor) throws Exception {
     String mapImage = null;
     Connection con = getConnection();
@@ -169,6 +150,31 @@ public String getMapImage(String floor) throws Exception {
 
 
 
+//Map削除一覧 (staff)
+	public List<Map> searchAll() throws Exception {
+		List<Map> listmap = new ArrayList<>();
+		Connection con = getConnection();
+		PreparedStatement st;
+
+		st = con.prepareStatement("select * from map_info");
+//		st.setString(1,image);
+
+
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+			Map map = new Map();
+			map.setFloorInfo(rs.getString("floor_info"));
+			listmap.add(map);
+		}
+		st.close();
+		con.close();
+		return listmap;
+	}
+
+
+
+// Map削除
 public boolean delete(String floorInfo) throws Exception {
 	// コネクションを確立
 	Connection connection = getConnection();
@@ -219,7 +225,3 @@ public boolean delete(String floorInfo) throws Exception {
 	}
 }
 }
-
-
-
-

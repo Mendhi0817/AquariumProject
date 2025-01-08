@@ -204,25 +204,25 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- 魚カードのセクション -->
         <section class="fish-card-container">
             <div class="fish-card">
-                <img src="../../picture/fish1.jpg" alt="魚1">
+                <img src="" alt="魚1">
                 <h3>魚の名前1</h3>
                 <p>この魚は美しい色彩を持ち、主に暖かい海域に生息しています。</p>
             </div>
 
             <div class="fish-card">
-                <img src="../../picture/fish2.jpg" alt="魚2">
+                <img src="" alt="魚2">
                 <h3>魚の名前2</h3>
                 <p>この魚は夜行性で、サンゴ礁の周りでよく見かけます。</p>
             </div>
 
             <div class="fish-card">
-                <img src="../../picture/fish3.jpg" alt="魚3">
+                <img src="" alt="魚3">
                 <h3>魚の名前3</h3>
                 <p>深海に生息するこの魚は、独特の光を発することが知られています。</p>
             </div>
