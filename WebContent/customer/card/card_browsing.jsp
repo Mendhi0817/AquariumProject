@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -169,6 +170,54 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
+        /* 魚のカードのスタイル変更 */
+        .fish-photo .fishcard-item {
+            display: flex; /* フレックスボックスで並べる */
+            align-items: center; /* 垂直方向に中央揃え */
+            gap: 20px; /* 画像とテキストの間に隙間 */
+            margin-bottom: 20px; /* カード間の余白 */
+        }
+
+        .fish-photo .fishcard-item img {
+            max-width: 250px; /* 画像の最大幅 */
+            max-height: 200px; /* 画像の最大高さ */
+            object-fit: cover; /* 画像を切り取って表示 */
+        }
+
+        .fish-photo .fishcard-item span {
+            font-size: 1.2em; /* テキストのフォントサイズ */
+            text-align: left; /* テキストを左寄せ */
+            max-width: 500px; /* テキストの最大幅 */
+        }
+
+
+    .fish-photo .fishcard-item {
+        display: flex; /* フレックスボックスで並べる */
+        align-items: flex-start; /* 上揃えにする */
+        gap: 20px; /* 画像とテキストの間に隙間 */
+        margin-bottom: 20px; /* カード間の余白 */
+        flex-wrap: wrap; /* アイテムが折り返せるように設定 */
+    }
+
+    .fish-photo .fishcard-item img {
+        max-width: 250px; /* 画像の最大幅 */
+        max-height: 200px; /* 画像の最大高さ */
+        object-fit: cover; /* 画像を切り取って表示 */
+    }
+
+    .fish-photo .fishcard-item div {
+        flex: 1; /* テキスト部分が残りのスペースを占める */
+        min-width: 200px; /* 最小幅を設定 */
+    }
+
+    .fish-photo .fishcard-item span {
+        font-size: 1.2em; /* テキストのフォントサイズ */
+        text-align: left; /* テキストを左寄せ */
+        max-width: 100%; /* 最大幅を100%に設定し、親の幅に合わせる */
+        word-wrap: break-word; /* 単語の途中で折り返しを可能に */
+    }
+</style>
+
     </style>
 </head>
 
@@ -181,18 +230,17 @@
             <h1>魚の写真</h1> <!-- h1 タグを中央に配置 -->
         </header>
 
-
-
         <div class="content">
             <div class="fish-photo">
                 <!-- listTitle からお知らせタイトルをループで表示 -->
                 <c:forEach var="listTitle1" items="${FishCardList}">
                     <div class="fishcard-item">
-                        <!-- お知らせタイトルを表示 -->
-
-                        <span>${listTitle1.cardTitle}</span><br>
-                        <img src="viewImage?imagePath=${listTitle1.cardImage}" width="250" height="200">
-                        <span>${listTitle1.cardText}</span>
+                        <!-- 画像を左に、テキストを右に表示 -->
+                        <img src="viewImage?imagePath=${listTitle1.cardImage}" alt="${listTitle1.cardTitle}">
+                        <div>
+                            【<span>${listTitle1.cardTitle}</span>】<br>
+                            <span>${listTitle1.cardText}</span>
+                        </div>
                     </div>
                 </c:forEach>
             </div>
@@ -231,4 +279,3 @@
     </footer>
 </body>
 </html>
-
