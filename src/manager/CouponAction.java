@@ -11,6 +11,6 @@ public class CouponAction extends Action {
 	) throws Exception {
 
 
-		request.getRequestDispatcher("../staff/Coupon/couponmain.jsp").forward(request, response);
+		request.getRequestDispatcher("../staff/Coupon/coupon.jsp").forward(request, response);
 }
 }

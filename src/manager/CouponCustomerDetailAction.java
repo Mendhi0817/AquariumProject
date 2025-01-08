@@ -32,7 +32,7 @@ public class CouponCustomerDetailAction extends Action {
 
 
 
-		request.getRequestDispatcher("../staff/notification_data/notification_data_c.jsp").forward(request, response);
+		request.getRequestDispatcher("../customer/coupon_C/coupon_C_detail.jsp").forward(request, response);
 
 		  } catch (Exception e) {
 
