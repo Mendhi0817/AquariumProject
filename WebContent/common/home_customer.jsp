@@ -18,7 +18,7 @@
 <body>
 
 <footer class="py-2 my-4 bg-dark bg-opacity-10 border-top border-3 align-bottom">
-<c:import url="/common/base.jsp">
+<c:import url="/common/base_customer.jsp">
 
 </c:import>
 <div class="button-container">
