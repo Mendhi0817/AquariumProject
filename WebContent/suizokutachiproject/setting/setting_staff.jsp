@@ -101,16 +101,6 @@
         <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <!-- BGMの文字を中央揃えで大きく表示 -->
-        <div class="bgm-text">
-            BGM
-        </div>
-
-        <div class="button-container">
-            <button name="ON">ON</button>
-            <button name="OFF">OFF</button>
-        </div>
-
         <div class="button-group">
             <!-- ユーザー情報変更ボタンとログアウトボタンを中央揃えで配置 -->
             <form action ="../manager/Change_User_Data.action" method = "post">
