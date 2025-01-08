@@ -38,16 +38,11 @@
                             <input type="hidden" name="COUPON_TITLE" value="${coupon.COUPON_TITLE }">
                             <input type="submit" value="削除">
                         </form>
-
                 </c:forEach>
+                <form action ="../manager/Coupon.action" method = "post"><input type = "submit" value = "戻る">
+						</form>
             </div>
 
-            <form action="../manager/Notification_data_Post.action" method="post">
-                <input type="submit" value="戻る">
-            </form>
-        </main>
-
-</div>
 
 </body>
 </html>

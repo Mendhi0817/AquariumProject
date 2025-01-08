@@ -35,7 +35,7 @@ public class CouponDeleteExecuteAction extends Action {
 
 		        // StudentDaoを使って学生情報をデータベースに保存
 		        cDao.Delete(ci);
-		    request.getRequestDispatcher("../staff/coupon/delete_complete.jsp").forward(request, response);
+		    request.getRequestDispatcher("../staff/coupon/.jsp").forward(request, response);
 		}
 	}
 
