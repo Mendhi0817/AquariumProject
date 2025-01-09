@@ -28,7 +28,7 @@ public class CouponDeleteAction extends Action {
             request.setAttribute("listTitle", listTitle);
 
 
-		request.getRequestDispatcher("../staff/Coupon/coupondelete.jsp").forward(request, response);
+		request.getRequestDispatcher("../staff/Coupon/coupon_delete.jsp").forward(request, response);
         } catch (Exception e) {
 
             throw new ServletException(e);
