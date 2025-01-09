@@ -132,6 +132,8 @@
             <form action="../common/password_reset.jsp" method="post">
 				<h1>メールアドレスが格納されたことが確認されました!</h1>
 			</form>
+
+			<form action = "../common/login.jsp" method = "post"><input type = "submit" value = "ホーム"></form>
     </div>
 </body>
 </html>
