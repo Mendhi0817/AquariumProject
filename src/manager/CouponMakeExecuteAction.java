@@ -1,10 +1,6 @@
 package manager;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import DAO.CouponDAO;
 import bean.Coupon;
@@ -14,7 +10,7 @@ public class CouponMakeExecuteAction extends Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//TODO 自動生成されたメソッド·スタブ
-		HttpSession session=request.getSession();//セッション
+//		HttpSession session=request.getSession();//セッション
 //		NotificationData Notification=(NotificationData)session.getAttribute("user");
 //a
 
@@ -29,7 +25,7 @@ public class CouponMakeExecuteAction extends Action {
 //		LocalDate todaysDate=LocalDate.now();//LocolDateインスタンスを取得
 //		int year=todaysDate.getYear();//現在の年を取得
 		CouponDAO cDao=new CouponDAO();//学生dao
-		Map<String, String>errors=new HashMap<>();//エラーメッセージ
+//		Map<String, String>errors=new HashMap<>();//エラーメッセージ
 
 		cTitle=request.getParameter("f1");
 		cText=request.getParameter("f2");
