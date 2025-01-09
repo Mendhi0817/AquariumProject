@@ -39,7 +39,7 @@ public class CouponMakeExecuteAction extends Action {
 
 		        // StudentDaoを使って学生情報をデータベースに保存
 		        cDao.save(coupon);
-		    request.getRequestDispatcher("../staff/Coupon/complet.jsp").forward(request, response);
+		    request.getRequestDispatcher("../staff/Coupon/Coupon_Complet.jsp").forward(request, response);
 
 	}
 
