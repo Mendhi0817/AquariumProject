@@ -310,7 +310,7 @@
 
 		<div class="button-group">
             <!-- ユーザー情報変更ボタン -->
-            <form action ="../manager/Coupon_C.action" method="post">
+            <form action ="../manager/CouponCustomer.action" method="post">
                 <input type="submit" value="クーポン">
             </form>
             <form action="../manager/Logout.action" method="post">
