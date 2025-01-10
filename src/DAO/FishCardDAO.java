@@ -59,6 +59,36 @@ public class FishCardDAO extends DAO{
 	}
 
 
+		public FishCard search_card(int user_id, int fishcard_id)
+				throws Exception {
+
+			FishCard fishcard = null;
+
+			Connection con = getConnection();
+
+			PreparedStatement st;
+			st = con.prepareStatement("select * from card_collected_log where user_id = ? and fishcard_id=?");
+			st.setInt(1,user_id);
+			st.setInt(2,fishcard_id);
+
+
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+				fishcard = new FishCard();
+				fishcard.setUserId(rs.getInt("user_id"));
+				fishcard.setCardId(rs.getInt("fishcard_id"));
+
+			}
+			st.close();
+			con.close();
+			return fishcard;
+
+
+
+		}
+
+
 
 // カード一覧 (cutomer)
 	public List<FishCard> searchAll() throws Exception {

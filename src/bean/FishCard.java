@@ -12,6 +12,8 @@ public class FishCard {
 
 	private String CardImage;
 
+	private int userId;
+
 	public int getCardId() {
 		return CardId;
 	}
@@ -42,6 +44,14 @@ public class FishCard {
 
 	public void setCardImage(String cardImage) {
 		CardImage = cardImage;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 
