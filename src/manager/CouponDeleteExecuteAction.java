@@ -19,7 +19,7 @@ public class CouponDeleteExecuteAction extends Action {
 //		String nt = "";
 //		String nc = "";
 //		Date nd = null;
-		String ci = request.getParameter("ci");
+		String ci = request.getParameter("COUPON_ID");
 
 		//List<Student>students=null;//学生リスト
 

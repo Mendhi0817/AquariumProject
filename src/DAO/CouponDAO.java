@@ -54,7 +54,7 @@ public class CouponDAO extends DAO{
 
 		PreparedStatement st;
 
-		st = con.prepareStatement("select CONTACT_ID from  NOTIFICATION_DATA ");
+		st = con.prepareStatement("select COUPON_ID from  COUPON ");
 
 //		st.setString(1,image);
 
@@ -65,7 +65,7 @@ public class CouponDAO extends DAO{
 
 			Coupon coupon = new Coupon();
 
-			coupon.setCOUPON_ID(rs.getString("CONTACT_ID"));
+			coupon.setCOUPON_ID(rs.getString("COUPON_ID"));
 
 			listId.add(coupon);
 
@@ -256,7 +256,7 @@ public class CouponDAO extends DAO{
 
 					    // プリペアードステートメントにDELETE文をセット
 
-					    statement = connection.prepareStatement("delete from NOTIFICATION_DATA where CONTACT_ID=? ");
+					    statement = connection.prepareStatement("delete from COUPON where COUPON_ID=? ");
 
 					    // プリペアードステートメントに値をバインド
 
