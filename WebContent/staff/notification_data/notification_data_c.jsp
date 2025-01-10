@@ -107,7 +107,7 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <main>
@@ -134,7 +134,7 @@
                 </div>
             </div>
 
-            <form action="../manager/Home_customer.action" method="post">
+            <form action="../manager/FishCardList.action" method="post">
                 <input type="submit" value="戻る">
             </form>
         </main>
@@ -144,7 +144,7 @@
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->
             <div class="row-center">
-                <form action="../manager/Home_customer.action" method="post">
+                <form action="../manager/FishCardList.action" method="post">
                     <input type="submit" value="ホーム">
                 </form>
                 <form action="../manager/MapView.action" method="post">

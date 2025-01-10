@@ -56,6 +56,7 @@
                 <td>
                 <form action ="../manager/CouponCustomerDetail.action" method = "post">
                 <input type = "hidden" name = "COUPON_TITLE" value = "${coupon.COUPON_TITLE }">
+                <input type = "hidden" name = "COUPON_ID" value = "${coupon.COUPON_ID }">
                 <input type = "submit" value = "詳細">
                 </form>
                </td>

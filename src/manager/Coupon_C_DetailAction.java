@@ -22,7 +22,7 @@ public class Coupon_C_DetailAction extends Action {
 
             request.setAttribute("coupon", coupon);
 
-		request.getRequestDispatcher("../customer/coupon_C/coupon_C.jsp").forward(request, response);
+		request.getRequestDispatcher("../customer/coupon_C/coupon_C_detail.jsp").forward(request, response);
 		 } catch (Exception e) {
 
 	            throw new ServletException(e);

@@ -292,18 +292,9 @@
 
 <body>
    <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <!-- BGMの文字を中央揃えで大きく表示 -->
-        <div class="bgm-text">
-            BGM
-        </div>
-
-        <div class="button-container">
-            <button name="ON">ON</button>
-            <button name="OFF">OFF</button>
-        </div>
 
         <div class="button-group">
             <!-- ユーザー情報変更ボタン -->
@@ -319,7 +310,7 @@
 
 		<div class="button-group">
             <!-- ユーザー情報変更ボタン -->
-            <form action ="../manager/Coupon_C.action" method="post">
+            <form action ="../manager/CouponCustomer.action" method="post">
                 <input type="submit" value="クーポン">
             </form>
             <form action="../manager/Logout.action" method="post">
@@ -332,7 +323,7 @@
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->
             <div class="row-center">
-                <form action="../manager/Home_customer.action" method="post">
+                <form action="../manager/FishCardList.action" method="post">
                     <input type="submit" value="ホーム">
                 </form>
                 <form action="../manager/MapView.action" method="post">

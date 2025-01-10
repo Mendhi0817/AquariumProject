@@ -19,7 +19,7 @@ public class CouponDeleteExecuteAction extends Action {
 //		String nt = "";
 //		String nc = "";
 //		Date nd = null;
-		String ci = request.getParameter("ci");
+		String ci = request.getParameter("COUPON_ID");
 
 		//List<Student>students=null;//学生リスト
 
@@ -35,7 +35,7 @@ public class CouponDeleteExecuteAction extends Action {
 
 		        // StudentDaoを使って学生情報をデータベースに保存
 		        cDao.Delete(ci);
-		    request.getRequestDispatcher("../staff/coupon/delete_complete.jsp").forward(request, response);
+		    request.getRequestDispatcher("../staff/Coupon/Delete_Complet.jsp").forward(request, response);
 		}
 	}
 
