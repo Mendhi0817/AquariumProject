@@ -29,7 +29,7 @@
 <c:forEach var="listTitle1" items="${listTitle}">
 <div class="notification-item">
 <!-- お知らせタイトルを表示 -->
-<span>${listTitle1.nt}</span>
+<span>${listTitle1}</span>
 </div>
 </c:forEach>
 <c:forEach var="coupon" items="${listTitle}">
