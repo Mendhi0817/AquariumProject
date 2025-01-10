@@ -25,7 +25,7 @@
 <form action ="../manager/MapViews.action" method = "post"><input type = "submit" value = "マップ"></form>
 <form action ="../manager/Notification_data_customer.action" method = "post"><input type = "submit" value = "お知らせ2"></form>
 <form action ="../manager/FishCard.action" method = "post"><input type = "submit" value = "魚カード"></form>
-<form action ="../manager/Coupon.action" method = "post"><input type = "submit" value = "クーポン"></form>
+<form action ="../manager/CouponCustomer.action" method = "post"><input type = "submit" value = "クーポン"></form>
 
 </body>
 

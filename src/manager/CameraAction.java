@@ -19,7 +19,8 @@ public class CameraAction extends Action {
 
 
 		System.out.println("読み取り後");
-		System.out.println(camera.path);
+
+
 
 
 		FishCard fishcard = new FishCard();
@@ -29,7 +30,6 @@ public class CameraAction extends Action {
 		// ユーザーID取得
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("user");
-		System.out.println(user.getUserId());
 
 
 
@@ -38,29 +38,33 @@ public class CameraAction extends Action {
 
 		fishcard = fishcarddao.getCardInfo(id);
 
-		boolean log = fishcarddao.cardLog(user.getUserId(),id);
+		FishCard check = fishcarddao.search_card(user.getUserId(),id);
+
+
+
+		if (check != null){
+			System.out.println("登録済み");
+			String url = "FishCardList.action";
+			response.sendRedirect(url);
+		}
+
+
+
+		else if(id != 0){
 
 
 
 
+			boolean log = fishcarddao.cardLog(user.getUserId(),id);
 
-
-
-		System.out.println("DB経由");
-		System.out.println(id);
-
-
-
-		if(id != 0 && log){
-
-
-
-
-
-
+			if(log){
 
 				request.setAttribute("fishcard",fishcard);
 				request.getRequestDispatcher("../staff/Card/fish_card_get.jsp").forward(request, response);
+
+
+			}
+
 
 
 
@@ -70,9 +74,10 @@ public class CameraAction extends Action {
 
 
 
-		else{
-				request.getRequestDispatcher("../suizokutachiproject/home_C/home_C.jsp").forward(request, response);
 
+		else{
+			String url = "FishCardList.action";
+			response.sendRedirect(url);
 
 
 			}
