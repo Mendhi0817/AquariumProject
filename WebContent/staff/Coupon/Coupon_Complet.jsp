@@ -89,7 +89,7 @@
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 <div class="position">
 作成しました
-            <form action="../manager/coupon_main.action" method="post">
+            <form action="../manager/Coupon.action" method="post">
                 <input type="submit" value="戻る" class="back-button">
             </form>
         </div>
