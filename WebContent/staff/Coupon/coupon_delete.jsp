@@ -27,19 +27,25 @@
             <div class="notification-list">
 <!-- listTitle からお知らせタイトルをループで表示 -->
 <c:forEach var="listTitle1" items="${listTitle}">
+<c:forEach var="listId1" items="${listId}">
 <div class="notification-item">
 <!-- お知らせタイトルを表示 -->
-<span>${listTitle1.nt}</span>
+<span>${listTitle1.COUPON_TITLE}</span>
+<span>${listId1.COUPON_ID}</span>
 </div>
 </c:forEach>
 <c:forEach var="coupon" items="${listTitle}">
+<c:forEach var="coupon" items="${listId }">
 <!-- '編集'ボタンを設置 -->
-<form class="delete-btn-1" action="../manager/CouponDeleteExecoute.action" method="post">
+<form class="delete-btn-1" action="../manager/CouponDeleteExecute.action" method="post">
 <input type="hidden" name="COUPON_TITLE" value="${coupon.COUPON_TITLE }">
+<input type="hidden" name="COUPON_ID" value="${coupon.COUPON_ID }">
 <input type="submit" value="削除">
 </form>
 
                 </c:forEach>
+               </c:forEach>
+               </c:forEach>
 </div>
 
             <form action="../manager/Notification_data_Post.action" method="post">
@@ -50,4 +56,4 @@
 </div>
 
 </body>
-</html
+

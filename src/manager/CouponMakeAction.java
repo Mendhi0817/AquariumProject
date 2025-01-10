@@ -12,7 +12,7 @@ public class CouponMakeAction extends Action {
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../staff/Coupon/coupon_make.jsp").forward(request, response);
+		request.getRequestDispatcher("../staff/Coupon/couponmake.jsp").forward(request, response);
 
 	}
 
