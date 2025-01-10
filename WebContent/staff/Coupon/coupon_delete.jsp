@@ -29,13 +29,13 @@
 <c:forEach var="listTitle1" items="${listTitle}">
 <div class="notification-item">
 <!-- お知らせタイトルを表示 -->
-<span>${listTitle1.coupon_title}</span>
+<span>${listTitle1.COUPON_TITLE}</span>
 </div>
 </c:forEach>
 <c:forEach var="coupon" items="${listTitle}">
 <!-- '編集'ボタンを設置 -->
 <form class="delete-btn-1" action="../manager/CouponDeleteExecoute.action" method="post">
-<input type="hidden" name="COUPON_TITLE" value="${coupon.coupon_title }">
+<input type="hidden" name="COUPON_TITLE" value="${coupon.COUPON_TITLE }">
 <input type="submit" value="削除">
 </form>
 
