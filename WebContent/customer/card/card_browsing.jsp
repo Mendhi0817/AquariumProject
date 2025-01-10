@@ -218,7 +218,6 @@
     }
 </style>
 
-    </style>
 </head>
 
 <body>
