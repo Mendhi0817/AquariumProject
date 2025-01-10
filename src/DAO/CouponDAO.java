@@ -171,7 +171,7 @@ public class CouponDAO extends DAO{
 //
 				    statement = connection.prepareStatement(
 
-				            "insert into NOTIFICATION_DATA(NOTIFICATION_TITLE, NOTIFICATION_CONTENT) values(?, ?)");
+				            "insert into COUPON(COUPON_TITLE, COUPON_CONTENT) values(?, ?)");
 
 //				    // プリペアードステートメントに値をバインド
 //
