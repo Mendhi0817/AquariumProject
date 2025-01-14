@@ -62,7 +62,6 @@ public class FishCardDAO extends DAO{
 		public FishCard search_card(int user_id, int fishcard_id)
 				throws Exception {
 
-			System.out.println("gggg");
 			FishCard fishcard = null;
 
 			Connection con = getConnection();
@@ -114,8 +113,6 @@ public class FishCardDAO extends DAO{
 
 	public boolean cardLog(int user_id, int fishcard_id) throws Exception{
 
-
-		System.out.println("rrrr");
 		Connection connection = getConnection();
 
 		// プリペアードステートメント
