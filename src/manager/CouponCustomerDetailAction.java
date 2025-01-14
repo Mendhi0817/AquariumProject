@@ -19,7 +19,7 @@ public class CouponCustomerDetailAction extends Action {
 
             CouponDAO cDAO = new CouponDAO();
 
-            String CI = request.getParameter("ci");
+            String CI = request.getParameter("COUPON_ID");
         	int ci = Integer.parseInt(CI);
             Coupon cAll = cDAO.get(ci);
 
