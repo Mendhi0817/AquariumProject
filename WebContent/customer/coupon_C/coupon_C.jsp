@@ -156,15 +156,22 @@
             <tr>
 
                 <td>${coupon.COUPON_TITLE}</td>
-                <td>
+
+            </tr>
+        </c:forEach>
+        <c:forEach var="coupon" items="${listId}">
+        <tr>
+
+                <td>${coupon.COUPON_ID}</td>
+
+            </tr>
+                        <td>
                 <form action ="../manager/CouponCustomerDetail.action" method = "post">
-                <input type = "hidden" name = "COUPON_TITLE" value = "${coupon.COUPON_TITLE }">
                 <input type = "hidden" name = "COUPON_ID" value = "${coupon.COUPON_ID }">
                 <input type = "submit" value = "詳細">
                 </form>
                </td>
-            </tr>
-        </c:forEach>
+               </c:forEach>
     </table>
     </div>
 
