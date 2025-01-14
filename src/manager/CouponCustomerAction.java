@@ -19,9 +19,11 @@ public class CouponCustomerAction extends Action {
 		try{
 			CouponDAO couponDAO = new CouponDAO();
 			List<Coupon> listTitle = couponDAO.searchTitle();
+			List<Coupon> listId = couponDAO.searchId();
 
 
             request.setAttribute("listTitle", listTitle);
+            request.setAttribute("listId", listId);
 
             // JSPにフォワード
 
