@@ -364,6 +364,7 @@ public class FishCardDAO extends DAO{
 		        if (con != null) con.close();
 		    }
 
+		    System.out.println("99999");
 		    return fishcard; // map_imageを返す
 		}
 
