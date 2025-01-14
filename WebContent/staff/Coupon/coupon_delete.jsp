@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -80,6 +79,18 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
+        /* 各お知らせアイテムのフレックス設定 */
+        .notification-item {
+            display: flex;
+            justify-content: space-between; /* アイテムとボタンを横並びに */
+            align-items: center; /* 垂直方向で中央揃え */
+            margin-bottom: 10px;
+        }
+
+        /* 削除ボタンフォームを右端に配置 */
+        .notification-item form {
+            margin-left: 10px; /* ボタンとタイトルの間に隙間を追加 */
+        }
     </style>
 </head>
 
@@ -98,18 +109,16 @@
 <!-- お知らせタイトルを表示 -->
 <span>${listTitle1.COUPON_TITLE }</span>
 <span>${listId1.COUPON_ID }</span>
-</div>
-</c:forEach>
-<c:forEach var="coupon" items="${listTitle}">
 
-<!-- '編集'ボタンを設置 -->
+<!-- 削除ボタンフォームをお知らせアイテムの横に表示 -->
 <form class="delete-btn-1" action="../manager/CouponDeleteExecute.action" method="post">
-<input type="hidden" name="COUPON_TEXT" value="${coupon.COUPON_TEXT }">
-<input type="hidden" name="COUPON_ID" value="${coupon.COUPON_ID }">
-<input type="submit" value="削除">
+    <input type="hidden" name="COUPON_TEXT" value="${listTitle1.COUPON_TEXT }">
+    <input type="hidden" name="COUPON_ID" value="${listTitle1.COUPON_ID }">
+    <input type="submit" value="削除">
 </form>
+</div>
 
-                </c:forEach>
+</c:forEach>
 
 </div>
 

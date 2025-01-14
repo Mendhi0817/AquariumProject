@@ -100,7 +100,7 @@
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <div>
-            <form action ="../manager/FishCard.action" method="post">
+            <form action ="../manager/FishCardView.action" method="post">
                 <input class="back-button" type="submit" value="戻る">
             </form>
         </div>
