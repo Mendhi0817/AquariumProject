@@ -211,7 +211,7 @@ public class FishCardDAO extends DAO{
 	        	FishCard fish = new FishCard();
 	        	fish.setCardId(rs.getInt("fishcard_id"));       // カードIDをint型で取得
 	            fish.setCardTitle(rs.getString("fishcard_title"));
-	            System.out.println(fish.getCardTitle());
+
 	            fish.setCardImage(rs.getString("fishcard_image"));
 
 	        	FishCardList.add(fish);
@@ -318,7 +318,7 @@ public class FishCardDAO extends DAO{
 		            fishCard.setCardImage(rs.getString("FISHCARD_IMAGE"));
 		            fishCard.setCardTitle(rs.getString("FISHCARD_TITLE"));
 		            collectedCards.add(fishCard);
-		            System.out.println("kkk");
+
 		        }
 		    } catch (Exception e) {
 		        e.printStackTrace();
@@ -364,7 +364,7 @@ public class FishCardDAO extends DAO{
 		        if (con != null) con.close();
 		    }
 
-		    System.out.println("99999");
+
 		    return fishcard; // map_imageを返す
 		}
 

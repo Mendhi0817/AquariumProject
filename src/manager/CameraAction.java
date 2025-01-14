@@ -47,8 +47,7 @@ public class CameraAction extends Action {
 
 		if (check != null){
 			System.out.println("登録済み");
-			String url = "../staff/Card/fish_card_get_already.jsp";
-			response.sendRedirect(url);
+			request.getRequestDispatcher("../staff/Card/fish_card_get_already.jsp").forward(request, response);
 		}
 
 
