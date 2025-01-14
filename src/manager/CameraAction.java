@@ -36,15 +36,18 @@ public class CameraAction extends Action {
 
 		int id = Integer.parseInt(camera.path);
 
+
 		fishcard = fishcarddao.getCardInfo(id);
 
 		FishCard check = fishcarddao.search_card(user.getUserId(),id);
 
 
 
+		System.out.println(id);
+
 		if (check != null){
 			System.out.println("登録済み");
-			String url = "FishCardList.action";
+			String url = "../staff/Card/fish_card_get_already.jsp";
 			response.sendRedirect(url);
 		}
 
@@ -58,6 +61,7 @@ public class CameraAction extends Action {
 			boolean log = fishcarddao.cardLog(user.getUserId(),id);
 
 			if(log){
+
 
 				request.setAttribute("fishcard",fishcard);
 				request.getRequestDispatcher("../staff/Card/fish_card_get.jsp").forward(request, response);
