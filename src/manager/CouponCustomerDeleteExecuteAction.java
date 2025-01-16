@@ -1,7 +1,6 @@
 package manager;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 //import bean.Contact;
 //import bean.Teacher;
@@ -11,15 +10,14 @@ public class CouponCustomerDeleteExecuteAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//TODO 自動生成されたメソッド·スタブ
-		HttpSession session=request.getSession();//セッション
 //		NotificationData notification =(NotificationData)session.getAttribute("user");
+
 
 
 //		String nt = "";
 //		String nc = "";
 //		Date nd = null;
-		String ci = request.getParameter("COUPON_ID");
+		String ci = request.getParameter("COUPON_TITLE");
 
 		//List<Student>students=null;//学生リスト
 

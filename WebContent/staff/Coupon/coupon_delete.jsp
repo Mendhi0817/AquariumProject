@@ -99,7 +99,7 @@
         <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-    <h2>削除したいお知らせを選んで下さい</h2>
+    <h2>削除したいクーポンを選んで下さい</h2>
 
             <div class="notification-list">
 <!-- listTitle からお知らせタイトルをループで表示 -->
@@ -111,9 +111,8 @@
 <span>${listId1.COUPON_ID }</span>
 
 <!-- 削除ボタンフォームをお知らせアイテムの横に表示 -->
-<form class="delete-btn-1" action="../manager/CouponDeleteExecute.action" method="post">
-    <input type="hidden" name="COUPON_TEXT" value="${listTitle1.COUPON_TEXT }">
-    <input type="hidden" name="COUPON_ID" value="${listTitle1.COUPON_ID }">
+<form class="delete-btn-1" action="../manager/CouponCustomerDeleteExecute.action" method="post">
+    <input type="hidden" name="COUPON_TITLE" value="${listTitle1.COUPON_TITLE }">
     <input type="submit" value="削除">
 </form>
 </div>

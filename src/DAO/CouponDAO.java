@@ -256,13 +256,12 @@ public class CouponDAO extends DAO{
 
 					    // プリペアードステートメントにDELETE文をセット
 
-					    statement = connection.prepareStatement("delete from COUPON where COUPON_ID=? ");
+					    statement = connection.prepareStatement("delete COUPON where COUPON_TITLE = ? ");
 
 					    // プリペアードステートメントに値をバインド
 
 					    statement.setString(1, ci);
 
-					    System.out.println(ci);
 
 					}
 
