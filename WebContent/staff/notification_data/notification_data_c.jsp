@@ -110,7 +110,6 @@
         <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <main>
             <h2>閲覧したいお知らせを選んで下さい</h2>
 
             <div class="notification-list">
@@ -137,7 +136,7 @@
             <form action="../manager/FishCardList.action" method="post">
                 <input type="submit" value="戻る">
             </form>
-        </main>
+
     </div>
 
     <footer>

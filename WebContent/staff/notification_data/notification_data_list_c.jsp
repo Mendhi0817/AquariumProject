@@ -298,7 +298,7 @@ body {
         </div>
 
         <!-- 編集フォーム -->
-        <form action="../manager/NotificationDataUpdateExecute.action" method="get">
+
             <div class="content">
 
                 <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }" readonly>
@@ -314,7 +314,7 @@ body {
             <input type="hidden" name="ni" value="${ni }">
 
             </div>
-        </form>
+
     </div>
 
 

@@ -137,6 +137,58 @@
             gap: 20px; /* ボタン間の水平スペースを設定 */
             width: 100%;
         }
+
+                .coupon-list {
+            display: flex;
+            flex-direction: row; /* 横並びにする */
+            justify-content: space-between; /* タイトルとボタンを左右に配置 */
+            align-items: center; /* 垂直方向に中央揃え */
+            margin-top: 20px;
+            flex-wrap: wrap; /* 横並びがはみ出さないようにラップ */
+        }
+
+                .coupon-item {
+            display: flex;
+            justify-content: space-between; /* タイトルとボタンを横並びにする */
+            align-items: center;
+            margin: 15px 0; /* マージンを大きくしてアイテムの間隔を広げる */
+            padding: 15px; /* パディングを大きくしてスペースを広げる */
+            border: 1px solid #ccc; /* 枠線を追加 */
+            border-radius: 8px; /* 角を丸く */
+            font-size: 1.3em; /* フォントサイズを大きく */
+            background-color: #f9f9f9; /* 背景色を淡い色に変更 */
+            width: 900%; /* アイテムの幅を100%にしてラップさせる */
+            max-width: 550px; /* 最大幅を900pxに変更 */
+        }
+
+                .notification-item button {
+            padding: 8px 25px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .coupon-item button:hover {
+            background-color: #ff4500;
+        }
+
+        /* '編集'ボタンをお知らせタイトルの横に配置 */
+        .coupon-item span {
+            flex-grow: 1; /* タイトルがボタンを圧迫しないように横幅を調整 */
+            text-align: left; /* タイトルを左寄せ */
+            padding-right: 20px; /* タイトルとボタンの間にスペースを追加 */
+        }
+
+        /* '削除1'ボタンを小さくするスタイル */
+        .delete-btn-1 input[type="submit"] {
+            padding: 5px 10px; /* ボタンのパディングを小さく */
+            font-size: 1em; /* フォントサイズを小さく */
+            width: 60px; /* 横幅を小さく */
+            margin-top: 20px; /* ボタンを少し下に移動 */
+        }
     </style>
 </head>
 
@@ -146,33 +198,40 @@
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
    <h1>クーポン一覧</h1>
-	<table border=1>
-		<tr>
-			<th>クーポン</th>
 
-		</tr>
 
-	<c:forEach var="coupon" items="${listTitle}">
-            <tr>
+	<div class ="coupon-list">
 
-                <td>${coupon.COUPON_TITLE}</td>
+	<div class="title-list">
+		<c:forEach var="coupon" items="${listTitle}">
 
-            </tr>
+		<div class="coupon-item">
+
+
+                <span>${coupon.COUPON_TITLE}</span>
+
+                </div>
+
+
         </c:forEach>
+
+        </div>
+
+        <div class = "button-list">
+
         <c:forEach var="coupon" items="${listId}">
-        <tr>
 
-                <td>${coupon.COUPON_ID}</td>
 
-            </tr>
-                        <td>
-                <form action ="../manager/CouponCustomerDetail.action" method = "post">
+
+                <form class = "delete-btn-1" action="../manager/CouponCustomerDetail.action" method = "post">
                 <input type = "hidden" name = "COUPON_ID" value = "${coupon.COUPON_ID }">
                 <input type = "submit" value = "詳細">
                 </form>
-               </td>
+
                </c:forEach>
-    </table>
+    	</div>
+    </div>
+
     </div>
 
     <footer>

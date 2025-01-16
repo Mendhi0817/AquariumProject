@@ -93,7 +93,7 @@ public class CouponDAO extends DAO{
 
 		try {
 			// プリペアードステートメントにSQL文をセット
-			statement = connection.prepareStatement("select NOTIFICATION_CONTENT,NOTIFICATION_TITLE from NOTIFICATION_DATA where CONTACT_ID=?;");
+			statement = connection.prepareStatement("select COUPON_CONTENT,COUPON_TITLE from COUPON where COUPON_ID=?;");
 			// プリペアードステートメントに学校コードをバインド
 //			String nt = null;
 //			String nc = null;
@@ -107,8 +107,8 @@ public class CouponDAO extends DAO{
 			if (rSet.next()) {
 				// リザルトセットが存在する場合
 				// 学校インスタンスに学校コードと学校名をセット
-				coupon.setCOUPON_TITLE(rSet.getString("NOTIFICATION_TITLE"));
-				coupon.setCOUPON_TEXT(rSet.getString("NOTIFICATION_CONTENT"));
+				coupon.setCOUPON_TITLE(rSet.getString("COUPON_TITLE"));
+				coupon.setCOUPON_TEXT(rSet.getString("COUPON_CONTENT"));
 //				coupon.setNd(rSet.getDate("NOTIFICATION_DATE"));
 			} else {
 				// 存在しない場合

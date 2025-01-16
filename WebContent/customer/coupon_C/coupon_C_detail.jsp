@@ -148,40 +148,41 @@
 
 <!-- 戻るボタン -->
         <div class="button-container">
-            <form action="../manager/Notification_data_customer.action" method="post">
+            <form action="../manager/CouponCustomer.action" method="post">
                 <input type="submit" value="戻る">
             </form>
         </div>
 
         <!-- 通知リストの表示 -->
-        <div class="coupon">
-            <c:forEach var="listTitle1" items="${listTitle}">
+        <div class="coupon-list">
+            <c:forEach var="coupon" items="${listTitle}">
                 <div class="coupon">
                     <!-- アイテムごとのデータを表示 -->
                     <p><strong>タイトル:</strong> ${coupon.COUPON_TITLE}</p> <!-- タイトルを表示 -->
-                    <p><strong>内容:</strong> ${listTitle1.nc}</p> <!-- 仮にdescriptionというフィールドがあると仮定 -->
+                    <p><strong>内容:</strong> ${coupon.COUPON_CONTEXT}</p> <!-- 仮にdescriptionというフィールドがあると仮定 -->
                 </div>
             </c:forEach>
         </div>
+        
+        <script></script>
 
         <!-- 編集フォーム -->
-        <form action="../manager/NotificationDataUpdateExecute.action" method="get">
+
             <div class="content">
 
-                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }" readonly>
+                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${cAll.COUPON_TITLE }" readonly>
 
 
-                <textarea id="content" name="f2" placeholder="ここに文章を入力してください" readonly>${nAll.nc }</textarea>
+                <textarea id="content" name="f2" placeholder="ここに文章を入力してください" readonly>${cAll.COUPON_TEXT}</textarea>
             </div>
             <div>
-            <input type="hidden" name="ni" value="${ni }">
+            <input type="hidden" name="ni" value="${ci}">
 
             </div>
-        </form>
+
     </div>
 
 <!------------------------------------------------------------------------------------->
-    </div>
 
     <footer>
         <div class="footer-buttons">
