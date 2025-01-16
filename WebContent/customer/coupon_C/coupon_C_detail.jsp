@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="ja">
@@ -7,7 +6,7 @@
     <link rel="stylesheet" href="../News/news.css">
     <title>水族舘プロジェクト</title>
     <style>
-              body {
+        body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
@@ -17,6 +16,7 @@
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
+
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
@@ -117,7 +117,7 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
-		/* フッターのボタン配置調整 */
+        /* フッターのボタン配置調整 */
         footer .footer-buttons {
             display: flex;
             flex-direction: column;
@@ -137,6 +137,25 @@
             gap: 20px; /* ボタン間の水平スペースを設定 */
             width: 100%;
         }
+
+        .button-container input[type="submit"] {
+            padding: 8px 25px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;  /* 上部の余白を追加 */
+            margin-bottom: 10px;  /* 下部の余白を追加 */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-start; /* 左端に寄せる */
+            margin-top: 20px; /* 上部に余白 */
+        }
+
     </style>
 </head>
 
@@ -163,32 +182,64 @@
                 </div>
             </c:forEach>
         </div>
-        
+
         <script></script>
 
         <!-- 編集フォーム -->
-
-            <div class="content">
-
-                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${cAll.COUPON_TITLE }" readonly>
-
-
-                <textarea id="content" name="f2" placeholder="ここに文章を入力してください" readonly>${cAll.COUPON_TEXT}</textarea>
-            </div>
-            <div>
+        <div class="content">
+            <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${cAll.COUPON_TITLE }" readonly>
+            <textarea id="content" name="f2" placeholder="ここに文章を入力してください" readonly>${cAll.COUPON_TEXT}</textarea>
+        </div>
+        <div>
             <input type="hidden" name="ni" value="${ci}">
 
-            </div>
+<!------------------------------------------------------------------------------------->
+<script>
+        // 使用ボタンが押されたときに「使用済み」の状態に変更する関数
+        function markAsUsed() {
+            // ボタンを取得
+            var button = document.getElementById('useButton');
+            // ボタンのテキストを「使用済み」に変更
+            button.value = "使用済み";
+            // ボタンを無効化
+            button.disabled = true;
+
+            // 他の要素があれば状態を更新することもできます
+            // 例： 使用済みの通知を表示する
+            alert("このクーポンは使用済みです。");
+        }
+    </script>
+</head>
+
+<div>
+        <!-- 通知リストの表示 -->
+        <div class="coupon-list">
+            <c:forEach var="coupon" items="${listTitle}">
+                <div class="coupon">
+                    <p><strong>タイトル:</strong> ${coupon.COUPON_TITLE}</p>
+                    <p><strong>内容:</strong> ${coupon.COUPON_CONTEXT}</p>
+                </div>
+            </c:forEach>
+        </div>
+
+        <!-- 使用ボタン -->
+        <div class="button-container">
+            <!-- 使用ボタンにidを付けて、JavaScriptで操作できるように -->
+            <input type="submit" id="useButton" value="使用" onclick="markAsUsed()">
+        </div>
 
     </div>
+    </div>
 
+
+
+    </div>
 <!------------------------------------------------------------------------------------->
-
     <footer>
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->
             <div class="row-center">
-                <form action="../manager/Home_customer.action" method="post">
+                <form action="../manager/FishCardList.action" method="post">
                     <input type="submit" value="ホーム">
                 </form>
                 <form action="../manager/MapView.action" method="post">

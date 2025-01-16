@@ -182,13 +182,18 @@
             padding-right: 20px; /* タイトルとボタンの間にスペースを追加 */
         }
 
-        /* '削除1'ボタンを小さくするスタイル */
         .delete-btn-1 input[type="submit"] {
-            padding: 5px 10px; /* ボタンのパディングを小さく */
-            font-size: 1em; /* フォントサイズを小さく */
-            width: 60px; /* 横幅を小さく */
-            margin-top: 20px; /* ボタンを少し下に移動 */
-        }
+   padding: 8px 25px;
+   font-size: 1.1em;
+   border-radius: 5px;
+   background-color: #ff6347;
+   color: white;
+   border: none;
+   cursor: pointer;
+   margin-top: 10px;  /* 上部の余白を追加 */
+   margin-bottom: 10px;  /* 下部の余白を追加 */
+}
+
     </style>
 </head>
 
@@ -238,7 +243,7 @@
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->
             <div class="row-center">
-                <form action="../manager/Home_customer.action" method="post">
+                <form action="../manager/FishCardList.action" method="post">
                     <input type="submit" value="ホーム">
                 </form>
                 <form action="../manager/MapView.action" method="post">
