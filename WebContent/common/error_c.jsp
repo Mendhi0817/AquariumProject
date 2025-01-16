@@ -144,6 +144,7 @@
     <div class="container">
         <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+    エラーが発生しました
     </div>
 
     <footer>

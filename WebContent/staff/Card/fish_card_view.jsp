@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <html lang="ja">
 <head>
@@ -94,10 +94,12 @@
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
+        <aside class="sidebar">
+            <img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right">
+        </aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-<div class="button-group">
+        <div class="button-group">
             <form action ="../manager/FishCard.action" method="post">
                 <input type="submit" value="戻る">
             </form>
@@ -109,30 +111,29 @@
                 <c:forEach var="listTitle1" items="${FishCardList}">
                     <div class="fishcard-item">
                         <!-- お知らせタイトルを表示 -->
-
                         <span>${listTitle1.cardTitle}</span><br>
                         <img src="viewImage?imagePath=${listTitle1.cardImage}" width="250" height="200">
-            <form action="../manager/FishCardEdit.action" method="post">
-            <input type="hidden" name="cardId" value="${listTitle1.cardId }">
-                <input type="submit" value="編集">
-            </form>
-            <form action="../manager/FishCardDeleteDone.action" method="post">
-            <input type="hidden" name="cardId" value="${listTitle1.cardId }">
-                <input type="submit" value="削除">
-            </form>
+                        <form action="../manager/FishCardEdit.action" method="post">
+                            <input type="hidden" name="cardId" value="${listTitle1.cardId}">
+                            <input type="submit" value="編集">
+                        </form>
+                        <form action="../manager/FishCardDeleteDone.action" method="post">
+                            <input type="hidden" name="cardId" value="${listTitle1.cardId}">
+                            <input type="submit" value="削除">
+                        </form>
                     </div>
                 </c:forEach>
-        <c:forEach var="cardId1" items="${cardId}">
-        <!-- ボタンを横並びにするためのコンテナ -->
-        <div class="button-container">
-        <form action ="../manager/FishCard.action" method="post">
-                <input type="submit" value="戻る">
-            </form>
+
+                <!-- 4の倍数のカード数がある場合、追加画像を表示 -->
+                <c:if test="${fn:length(FishCardList) % 4 == 0}">
+                    <aside class="sidebar">
+                        <img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right">
+                    </aside>
+                </c:if>
+            </div>
         </div>
-        </c:forEach>
-		</div>
     </div>
-</div>
+
     <footer>
         <form action="../manager/Home_staff.action" method="post">
             <input type="submit" value="ホーム">
@@ -143,3 +144,4 @@
     </footer>
 </body>
 </html>
+
