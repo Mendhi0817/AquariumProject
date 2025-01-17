@@ -61,11 +61,26 @@
     tmp_ctx.drawImage(prev,x1,y1,m,m,0,0,m,m);
     let imageData = tmp_ctx.getImageData(0,0,m,m);
     let scanResult = jsQR(imageData.data,m,m);
+
+
     if(scanResult){
+    	console.log("読み取り後のしょっり");
+
+      var form = qr_form.form;
       //QRコードをスキャンした結果を出力
-      qr.value=qr.value+scanResult.data+'\n';
-      qr.scrollTop = qr.scrollHeight;
+      qr.value =scanResult.data;
+
+      console.log(qr.value);
+
+
+    //form.submit();
+      //qr.scrollTop = qr.scrollHeight;
     }
+
+    //let inputButton = document.getElementById("qr");
+    //inputButton.click();
+
+
     setTimeout(Scan,200);
   }
 </script>
@@ -73,6 +88,13 @@
 <body>
   <p>ピントを合わせて、QRコードをカメラ映像の赤枠内にあわせると読み取ります</p>
   <div><canvas id="preview"></canvas></div>
-  <textarea id="qr" rows="8" cols="40"></textarea>
+  <form id = "qr_form" action = "../manager/CameraExecute.action" method = "post">
+
+
+    <input id="qr"  name = "qr" value = "" type = "submit"></input>
+
+
+
+  </form>
 </body>
 </html>

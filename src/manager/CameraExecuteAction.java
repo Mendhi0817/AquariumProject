@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.FishCardDAO;
-import bean.Camera;
 import bean.FishCard;
 import bean.User;
 import tool.Action;
@@ -15,7 +14,6 @@ public class CameraExecuteAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		Camera camera = new Camera();
 
 
 		System.out.println("読み取り後");
@@ -34,7 +32,7 @@ public class CameraExecuteAction extends Action {
 
 
 
-		int id = Integer.parseInt(camera.path);
+		int id = Integer.parseInt(request.getParameter("qr"));
 
 
 		fishcard = fishcarddao.getCardInfo(id);
