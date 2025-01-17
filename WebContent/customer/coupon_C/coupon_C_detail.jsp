@@ -194,21 +194,6 @@
             <input type="hidden" name="ni" value="${ci}">
 
 <!------------------------------------------------------------------------------------->
-<script>
-        // 使用ボタンが押されたときに「使用済み」の状態に変更する関数
-        function markAsUsed() {
-            // ボタンを取得
-            var button = document.getElementById('useButton');
-            // ボタンのテキストを「使用済み」に変更
-            button.value = "使用済み";
-            // ボタンを無効化
-            button.disabled = true;
-
-            // 他の要素があれば状態を更新することもできます
-            // 例： 使用済みの通知を表示する
-            alert("このクーポンは使用済みです。");
-        }
-    </script>
 </head>
 
 <div>
