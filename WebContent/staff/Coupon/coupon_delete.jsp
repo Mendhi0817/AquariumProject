@@ -113,6 +113,7 @@
 <!-- 削除ボタンフォームをお知らせアイテムの横に表示 -->
 <form class="delete-btn-1" action="../manager/CouponCustomerDeleteExecute.action" method="post">
     <input type="hidden" name="COUPON_TITLE" value="${listTitle1.COUPON_TITLE }">
+    
     <input type="submit" value="削除">
 </form>
 </div>
