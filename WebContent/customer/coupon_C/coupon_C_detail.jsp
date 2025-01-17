@@ -173,57 +173,30 @@
         </div>
 
         <!-- 通知リストの表示 -->
-        <div class="coupon-list">
-            <c:forEach var="coupon" items="${listTitle}">
-                <div class="coupon">
-                    <!-- アイテムごとのデータを表示 -->
-                    <p><strong>タイトル:</strong> ${coupon.COUPON_TITLE}</p> <!-- タイトルを表示 -->
-                    <p><strong>内容:</strong> ${coupon.COUPON_CONTEXT}</p> <!-- 仮にdescriptionというフィールドがあると仮定 -->
-                </div>
-            </c:forEach>
-        </div>
-
-        <script></script>
-
-        <!-- 編集フォーム -->
-        <div class="content">
-            <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${cAll.COUPON_TITLE }" readonly>
-            <textarea id="content" name="f2" placeholder="ここに文章を入力してください" readonly>${cAll.COUPON_TEXT}</textarea>
-        </div>
-        <div>
-            <input type="hidden" name="ni" value="${ci}">
 
 <!------------------------------------------------------------------------------------->
-</head>
+
 
 <div>
-        <!-- 通知リストの表示 -->
+
+        <!-- 使用ボタン -->
+
         <div class="coupon-list">
-            <c:forEach var="coupon" items="${listTitle}">
-                <div class="coupon">
+                <div class="button-container">
                 <form class="used-btn-1" action="../manager/CouponCustomerDeleteExecute.action" method="post">
-                    <p><strong>タイトル:</strong> ${coupon.COUPON_TITLE}</p>
-                    <p><strong>内容:</strong> ${coupon.COUPON_CONTEXT}</p>
+                    <p><strong>タイトル:</strong> ${cAll.COUPON_TITLE}</p>
+                    <p><strong>内容:</strong> ${cAll.COUPON_TEXT}</p>
                     <input type="submit" id="useButton" value="使用" onclick="markAsUsed()">
-                    <input type="hidden" name="COUPON_TITLE" value="${coupon.COUPON_TITLE }">
+                    <input type="hidden" name="COUPON_TITLE" value="${cAll.COUPON_TITLE }">
             	</form>
 
                 </div>
-            </c:forEach>
         </div>
 
-        <!-- 使用ボタン -->
-        <div class="button-container">
-
-            <!-- 使用ボタンにidを付けて、JavaScriptで操作できるように -->
-            	        </div>
-
     </div>
     </div>
 
 
-
-    </div>
 <!------------------------------------------------------------------------------------->
     <footer>
         <div class="footer-buttons">
