@@ -209,8 +209,10 @@
 
         <!-- 使用ボタン -->
         <div class="button-container">
+        	<form class="used-btn-1" action="../manager/CouponCustomerDeleteExecute.action" method="post">
             <!-- 使用ボタンにidを付けて、JavaScriptで操作できるように -->
-            <input type="submit" id="useButton" value="使用" onclick="markAsUsed()">
+            	<input type="submit" id="useButton" value="使用" onclick="markAsUsed()">
+            </form>
         </div>
 
     </div>
