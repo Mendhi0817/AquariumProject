@@ -201,19 +201,22 @@
         <div class="coupon-list">
             <c:forEach var="coupon" items="${listTitle}">
                 <div class="coupon">
+                <form class="used-btn-1" action="../manager/CouponCustomerDeleteExecute.action" method="post">
                     <p><strong>タイトル:</strong> ${coupon.COUPON_TITLE}</p>
                     <p><strong>内容:</strong> ${coupon.COUPON_CONTEXT}</p>
+                    <input type="submit" id="useButton" value="使用" onclick="markAsUsed()">
+                    <input type="hidden" name="COUPON_TITLE" value="${coupon.COUPON_TITLE }">
+            	</form>
+
                 </div>
             </c:forEach>
         </div>
 
         <!-- 使用ボタン -->
         <div class="button-container">
-        	<form class="used-btn-1" action="../manager/CouponCustomerDeleteExecute.action" method="post">
+
             <!-- 使用ボタンにidを付けて、JavaScriptで操作できるように -->
-            	<input type="submit" id="useButton" value="使用" onclick="markAsUsed()">
-            </form>
-        </div>
+            	        </div>
 
     </div>
     </div>
