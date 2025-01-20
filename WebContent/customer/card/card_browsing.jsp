@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -216,6 +215,26 @@
         max-width: 100%; /* 最大幅を100%に設定し、親の幅に合わせる */
         word-wrap: break-word; /* 単語の途中で折り返しを可能に */
     }
+
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ビューポートの高さを最小限に設定 */
+    margin: 0; /* デフォルトのマージンをリセット */
+    background-image: url('../picture/sea.png'); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をビューポート全体にフィット */
+    background-position: center; /* 背景画像を中央に配置 */
+    background-attachment: fixed; /* スクロールしても背景が動かないように設定 */
+}
+
+footer {
+    margin-top: auto; /* フッターを画面の下に固定 */
+    background-color: #78e3fb; /* 背景色を設定（任意） */
+    text-align: center; /* 中央揃え（任意） */
+    padding: 10px; /* 内側の余白（任意） */
+    z-index: 1; /* 背景画像の上にフッターが重ならないように */
+}
+
 </style>
 
 </head>
