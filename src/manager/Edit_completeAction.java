@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import tool.Action;
 
 
-public class Post_completeAction extends Action {
+public class Edit_completeAction extends Action {
 
 	public void execute(
 	HttpServletRequest request, HttpServletResponse response
