@@ -105,6 +105,26 @@
             color: black;
         }
 
+/* ボタンを大きくするためのスタイル */
+.button-container button, .button-container input[type="submit"], .button-container form button {
+    padding: 20px 50px;  /* ボタンのパディングを大きく */
+    font-size: 1.5em;  /* フォントサイズを大きく */
+    border-radius: 8px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: auto;  /* ボタンの横幅を自動調整 */
+    max-width: 100%;
+}
+
+/* ボタンホバー時の背景色 */
+.button-container button:hover, .button-container input[type="submit"]:hover,
+.button-container form button:hover {
+    background-color: #ff4500;
+}
+
+
     </style>
 </head>
 

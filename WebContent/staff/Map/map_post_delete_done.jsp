@@ -1,4 +1,3 @@
-<!-- -------------------------------------------------------------------------- -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -80,6 +79,32 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
+        /* 「削除しました」の文字を大きくし、左寄せにする */
+        .message {
+            font-size: 2em; /* フォントサイズを大きく */
+            font-weight: bold; /* 太字 */
+            text-align: left; /* 左揃え */
+            margin-top: 20px; /* 上部に余白 */
+            margin-left: 20px; /* 左に余白を追加 */
+        }
+
+        /* 戻るボタンを大きくする */
+        .back-button {
+            padding: 15px 60px; /* ボタンのパディングを調整 */
+            font-size: 1.5em; /* フォントサイズを大きく */
+            border-radius: 8px;
+            background-color: #4CAF50; /* ボタンの背景色 */
+            color: white;
+            width: 300px; /* ボタンの横幅 */
+            margin: 20px auto; /* ボタンを中央に配置 */
+            display: block;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #45a049; /* ホバー時の背景色 */
+        }
+
     </style>
 </head>
 
@@ -87,16 +112,15 @@
     <div class="container">
         <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-削除しました
 
+        <div class="message">
+            削除しました
+        </div>
 
-            <form action="../manager/MapPost.action" method="post">
-                <input type="submit" value="戻る" class="back-button">
-            </form>
-
+        <form action="../manager/MapPost.action" method="post">
+            <input type="submit" value="戻る" class="back-button">
+        </form>
 
     </div>
-
-
 </body>
 </html>

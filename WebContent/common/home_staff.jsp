@@ -85,6 +85,22 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
+        .button-group input[type="submit"] {
+    padding: 20px 60px; /* ボタンのパディングを大きく */
+    font-size: 1.5em; /* ボタンの文字サイズを大きく */
+    border-radius: 10px; /* 角を少し大きく丸く */
+    background-color: #ff6347; /* ボタンの背景色 */
+    color: white; /* 文字色 */
+    border: none; /* ボーダーを消す */
+    cursor: pointer; /* マウスオーバー時にポインターを表示 */
+    width: 300px; /* 横幅を大きく統一 */
+}
+
+.button-group input[type="submit"]:hover {
+    background-color: #ff4500; /* ホバー時の背景色 */
+}
+
+
     </style>
 </head>
 

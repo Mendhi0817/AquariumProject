@@ -122,6 +122,37 @@
     color: #333; /* 文字色（任意） */
 }
 
+/* 追加: 削除ボタンのスタイル */
+.delete-button {
+    padding: 15px 40px; /* ボタンのパディングを大きく設定 */
+    font-size: 1.5em; /* フォントサイズを大きく設定 */
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6347; /* ホームボタンと同じ背景色 */
+    color: white;
+    cursor: pointer;
+    width: 300px; /* 横幅を広く設定 */
+    margin: 10px 0; /* ボタン間の余白 */
+}
+
+/* ホバー時の色変更 (削除ボタン) */
+.delete-button:hover {
+    background-color: #ff4500; /* ホームボタンと同じホバー時の色 */
+}
+
+/* floorInfoに大きな文字サイズを適用 */
+td.floor-info-large {
+    font-size: 1.5em; /* フォントサイズを1.5倍に */
+    font-weight: bold; /* フォントを太字にする */
+    color: #333; /* 文字色（任意） */
+}
+/* floorInfoの文字を大きくする */
+td {
+    font-size: 1.5em; /* フォントサイズを大きく設定 */
+    font-weight: bold; /* フォントを太字にする */
+    color: #333; /* 文字色（任意） */
+}
+
 
     </style>
 </head>
