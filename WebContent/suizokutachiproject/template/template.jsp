@@ -79,12 +79,60 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
+ /* ホームと設定ボタンを大きくするためのスタイル */
+    footer form input[type="submit"] {
+        width: 300px; /* ボタンの横幅を大きく設定 */
+        padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+        font-size: 1.5em; /* フォントサイズを大きく設定 */
+    }
+
+    /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+    input[type="submit"] {
+        padding: 10px 60px; /* ボタンのパディング */
+        font-size: 1.2em;
+        border: none;
+        border-radius: 8px; /* 角を丸く */
+        background-color: #ff6347; /* ボタンの背景色 */
+        color: white; /* 文字色 */
+        cursor: pointer;
+        width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+        margin: 5px 0; /* ボタン間に適切な余白を追加 */
+    }
+
+    /* ホバー時の色変更 */
+    input[type="submit"]:hover {
+        background-color: #ff4500; /* ホバー時の背景色 */
+    }
+
+    /* ホームと設定ボタンを大きくするためのスタイル */
+    footer form input[type="submit"] {
+        width: 300px; /* ボタンの横幅を大きく設定 */
+        padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+        font-size: 2em; /* フォントサイズを大きく設定（文字も大きく） */
+    }
+
+    /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+    input[type="submit"] {
+        padding: 60px 60px; /* ボタンのパディング */
+        font-size: 1.2em;
+        border: none;
+        border-radius: 8px; /* 角を丸く */
+        background-color: #ff6347; /* ボタンの背景色 */
+        color: white; /* 文字色 */
+        cursor: pointer;
+        width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+        margin: 5px 0; /* ボタン間に適切な余白を追加 */
+    }
+
+    /* ホバー時の色変更 */
+    input[type="submit"]:hover {
+        background-color: #ff4500; /* ホバー時の背景色 */
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
 
