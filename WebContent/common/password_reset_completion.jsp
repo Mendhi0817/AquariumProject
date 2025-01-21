@@ -17,7 +17,7 @@
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
             <form action="../common/password_reset.jsp" method="post">
-				<h1>メールアドレスが格納されたことが確認されました!</h1>
+				<h1>パスワードの変更が完了しました!</h1>
 			</form>
 
 			<form action = "../common/login.jsp" method = "post"><input type = "submit" value = "ホーム"></form>
