@@ -12,6 +12,7 @@
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
             margin: 0; /* デフォルトのマージンをリセット */
+            font-size: 1.2em; /* 文字を大きくする（すべての文字サイズに影響） */
         }
 
         header {
@@ -79,109 +80,70 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
-        /* 追加: 削除ボタンのスタイル */
-        .delete-button {
-            padding: 10px 60px; /* ホームボタンと同じパディング */
+        /* ホームと設定ボタンを大きくするためのスタイル */
+        footer form input[type="submit"] {
+            width: 300px; /* ボタンの横幅を大きく設定 */
+            padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+            font-size: 1.5em; /* フォントサイズを大きく設定 */
+        }
+
+        /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+        input[type="submit"] {
+            padding: 60px 60px; /* ボタンのパディング */
             font-size: 1.2em;
             border: none;
-            border-radius: 8px;
-            background-color: #ff6347; /* ホームボタンと同じ背景色 */
-            color: white;
+            border-radius: 8px; /* 角を丸く */
+            background-color: #ff6347; /* ボタンの背景色 */
+            color: white; /* 文字色 */
             cursor: pointer;
-            width: 250px; /* ホームボタンと同じ横幅 */
-            margin: 5px 0; /* ボタン間の余白 */
+            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            margin: 5px 0; /* ボタン間に適切な余白を追加 */
         }
 
-        /* ホバー時の色変更 (削除ボタン) */
-        .delete-button:hover {
-            background-color: #ff4500; /* ホームボタンと同じホバー時の色 */
+        /* ホバー時の色変更 */
+        input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
         }
 
-        /* 追加: 削除ボタンのスタイル */
-.delete-button {
-    padding: 8px 20px; /* ボタンのパディングを小さく設定 */
-    font-size: 1em; /* フォントサイズを少し小さく設定 */
-    border: none;
-    border-radius: 8px;
-    background-color: #ff6347; /* ホームボタンと同じ背景色 */
-    color: white;
-    cursor: pointer;
-    width: 150px; /* 横幅を小さく設定 */
-    margin: 5px 0; /* ボタン間の余白 */
-}
+        /* 文字サイズの変更 */
+        .floor-info-large {
+            font-size: 1.5em; /* floorInfoの文字を大きくする */
+        }
 
-/* ホバー時の色変更 (削除ボタン) */
-.delete-button:hover {
-    background-color: #ff4500; /* ホームボタンと同じホバー時の色 */
+    .floor-info-large {
+    font-size: 2.5em; /* 文字サイズをさらに大きく設定 */
+    font-weight: bold; /* 文字を太字に設定 */
+    color: #333; /* 必要に応じて文字色を調整 */
 }
-
-/* 1F と 2Fの文字を大きくする */
-.floor-info-large {
-    font-size: 1.5em; /* フォントサイズを1.5倍に */
-    font-weight: bold; /* フォントを太字にする */
-    color: #333; /* 文字色（任意） */
-}
-
-/* 追加: 削除ボタンのスタイル */
-.delete-button {
-    padding: 15px 40px; /* ボタンのパディングを大きく設定 */
-    font-size: 1.5em; /* フォントサイズを大きく設定 */
-    border: none;
-    border-radius: 8px;
-    background-color: #ff6347; /* ホームボタンと同じ背景色 */
-    color: white;
-    cursor: pointer;
-    width: 300px; /* 横幅を広く設定 */
-    margin: 10px 0; /* ボタン間の余白 */
-}
-
-/* ホバー時の色変更 (削除ボタン) */
-.delete-button:hover {
-    background-color: #ff4500; /* ホームボタンと同じホバー時の色 */
-}
-
-/* floorInfoに大きな文字サイズを適用 */
-td.floor-info-large {
-    font-size: 1.5em; /* フォントサイズを1.5倍に */
-    font-weight: bold; /* フォントを太字にする */
-    color: #333; /* 文字色（任意） */
-}
-/* floorInfoの文字を大きくする */
-td {
-    font-size: 1.5em; /* フォントサイズを大きく設定 */
-    font-weight: bold; /* フォントを太字にする */
-    color: #333; /* 文字色（任意） */
-}
-
 
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <h1>削除したいマップを選んで下さい</h1>
+<h1>削除したいマップを選んで下さい</h1>
         <table>
     <thead>
     </thead>
     <tbody>
-        <c:forEach var="map" items="${listmap}">
-            <tr>
-                <!-- floorInfoが1Fまたは2Fの場合、特定のクラスを追加 -->
-                <td class="${map.floorInfo == '1F' || map.floorInfo == '2F' ? 'floor-info-large' : ''}">
-                    ${map.floorInfo}
-                </td>
-                <td>
-                    <form action="../manager/MapDeleteDone.action" method="post">
-                        <input type="hidden" name="mapId" value="${map.floorInfo}">
-                        <button type="submit" class="delete-button">削除</button>
-                    </form>
-                </td>
-            </tr>
-        </c:forEach>
-    </tbody>
+    <c:forEach var="map" items="${listmap}">
+        <tr>
+            <!-- floorInfoが1Fまたは2Fの場合、特定のクラスを追加 -->
+            <td class="${map.floorInfo == '1F' || map.floorInfo == '2F' ? 'floor-info-large' : ''}">
+                ${map.floorInfo}
+            </td>
+            <td>
+                <!-- 削除ボタンをホームと同じデザインに変更 -->
+                <form action="../manager/MapDeleteDone.action" method="post">
+                    <input type="hidden" name="mapId" value="${map.floorInfo}">
+                    <input type="submit" value="削除" class="delete-button"> <!-- ボタンをinputに変更 -->
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+</tbody>
 </table>
     </div>
 
