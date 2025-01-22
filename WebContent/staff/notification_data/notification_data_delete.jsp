@@ -25,8 +25,8 @@
 
         /* すべてのsubmitボタンに対して共通のスタイルを適用 */
         input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
-            font-size: 1.2em;
+            padding: 40px 200px; /* ボタンのパディング */
+            font-size: 2.0em;
             border: none;
             border-radius: 8px; /* 角を丸く */
             background-color: #ff6347; /* ボタンの背景色 */
@@ -46,7 +46,20 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
-
+        .notification-item {
+            display: flex;
+            justify-content: space-between; /* タイトルとボタンを横並びにする */
+            align-items: flex-start; /* ボタンを上寄せして左に配置 */
+            margin: 15px 0; /* マージンを大きくしてアイテムの間隔を広げる */
+            padding: 50px; /* パディングを大きくしてスペースを広げる */
+            border: 1px solid #ccc; /* 枠線を追加 */
+            border-radius: 8px; /* 角を丸く */
+            font-size: 1.5em; /* フォントサイズを大きく */
+            background-color: #f9f9f9; /* 背景色を淡い色に変更 */
+            */
+            max-width: 750px; /* 最大幅を750pxに変更 */
+            box-sizing: border-box; /* パディングやボーダーを含めた幅にする */
+        }
 
         .notification-list {
             display: flex;
@@ -55,59 +68,34 @@
             align-items: center; /* 垂直方向に中央揃え */
             margin-top: 20px;
             flex-wrap: wrap; /* 横並びがはみ出さないようにラップ */
-        }
-
-        .notification-item {
-            display: flex;
-            justify-content: space-between; /* タイトルとボタンを横並びにする */
-            align-items: center;
-            margin: 15px 0; /* マージンを大きくしてアイテムの間隔を広げる */
-            padding: 15px; /* パディングを大きくしてスペースを広げる */
-            border: 1px solid #ccc; /* 枠線を追加 */
-            border-radius: 8px; /* 角を丸く */
-            font-size: 1.3em; /* フォントサイズを大きく */
-            background-color: #f9f9f9; /* 背景色を淡い色に変更 */
-            width: 900%; /* アイテムの幅を100%にしてラップさせる */
-            max-width: 550px; /* 最大幅を900pxに変更 */
-        }
-
-        /* '編集'ボタンのスタイル */
-        .notification-item button {
-            padding: 8px 25px;
-            font-size: 1.1em;
-            border-radius: 5px;
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .notification-item button:hover {
-            background-color: #ff4500;
-        }
-
-        /* '編集'ボタンをお知らせタイトルの横に配置 */
-        .notification-item span {
-            flex-grow: 1; /* タイトルがボタンを圧迫しないように横幅を調整 */
-            text-align: left; /* タイトルを左寄せ */
-            padding-right: 20px; /* タイトルとボタンの間にスペースを追加 */
+            gap: 20px; /* アイテム間に隙間を追加 */
+            margin-right: 0; /* 右の余白を消す */
+            padding-right: 0; /* 右のパディングを消す */
         }
 
         /* '削除1'ボタンを小さくするスタイル */
         .delete-btn-1 input[type="submit"] {
-            padding: 5px 10px; /* ボタンのパディングを小さく */
-            font-size: 1em; /* フォントサイズを小さく */
-            width: 60px; /* 横幅を小さく */
+            padding: 30px 100px; /* ボタンの縦幅を大きくするためにパディングを増やす */
+            font-size: 2.0em; /* フォントサイズを少し大きくする */
+            width: 100px; /* 横幅はそのまま */
             margin-top: 20px; /* ボタンを少し下に移動 */
         }
 
+        .title-list {
+    width: 75%; /* 幅を80%に設定 */
+    margin-right: 0%; /* 右側に余白を設定 */
+}
 
+ footer form input[type="submit"] {
+        width: 300px; /* ボタンの横幅を大きく設定 */
+        padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+        font-size: 2em; /* フォントサイズを大きく設定 */
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <main>
