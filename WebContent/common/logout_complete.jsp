@@ -108,7 +108,7 @@
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
         <p class="logout-message">ログアウトしました</p>
 
-         <form action = "../common/login.jsp" method = "post"><input type = "submit" value = "ホーム"></form>
+         <form action = "../common/login.jsp" method = "post"><input type = "submit" value = "ログイン画面"></form>
 
 
 
