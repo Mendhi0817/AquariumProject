@@ -50,15 +50,15 @@
 
         /* 投稿、編集、削除ボタンを小さくするためのスタイル */
         .button-container form input[type="submit"] {
-            width: 150px; /* ボタンの横幅を小さく設定 */
-            padding: 15px 40px; /* ボタンのパディング */
-            font-size: 1em;
+            width: 10px; /* ボタンの横幅を小さく設定 */
+            padding: 30px 120px; /* ボタンのパディング */
+            font-size: 2em;
         }
 
         /* すべてのsubmitボタンに対して共通のスタイルを適用 */
         input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
-            font-size: 1.2em;
+            padding: 20px 489px; /* ボタンのパディング */
+            font-size: 2.0em;
             border: none;
             border-radius: 8px; /* 角を丸く */
             background-color: #ff6347; /* ボタンの背景色 */
@@ -78,12 +78,16 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
+		footer form input[type="submit"] {
+        width: 300px; /* ボタンの横幅を大きく設定 */
+        padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+        font-size: 2em; /* フォントサイズを大きく設定 */
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- 戻るボタン -->
@@ -109,14 +113,14 @@
         <form action="../manager/NotificationDataUpdateExecute.action" method="get">
             <div class="content">
                 <h2>タイトルを編集</h2>
-                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }">
+                <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" value="${nAll.nt }"style="width: 100%; padding: 15px; font-size: 1.5em;">
 
                 <h2>文章を編集</h2>
-                <textarea id="content" name="f2" placeholder="ここに文章を入力してください">${nAll.nc }</textarea>
+                <textarea id="content" name="f2" placeholder="ここに文章を入力してください"style="width: 100%; height: 400px; padding: 15px; font-size: 1em;">${nAll.nc }</textarea>
 
                 <!-- 日付入力欄の追加 -->
                 <h2>日付を編集</h2>
-                <input type="date" id="date" name="f3" value="${nAll.nd }">
+                <input type="date" id="date" name="f3"style="width: 100%; padding: 15px; font-size: 1.5em;" value="${nAll.nd }">
             </div>
             <div>
             <input type="hidden" name="ni" value="${ni }">

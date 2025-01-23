@@ -22,14 +22,14 @@
             padding: 10px; /* 内側の余白（任意） */
         }
         footer input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
-            font-size: 1.2em;
+            padding: 15px 80px; /* ボタンのパディングを大きく */
+            font-size: 1.5em; /* フォントサイズを大きく */
             border: none;
             border-radius: 8px; /* 角を丸く */
             background-color: #ff6347; /* ボタンの背景色 */
             color: white; /* 文字色 */
             cursor: pointer;
-            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            width: 300px; /* 横幅を広げて統一 */
         }
 
         footer form {
@@ -39,11 +39,11 @@
 
         /* 戻るボタンのカスタムスタイル */
         .back-button {
-            padding: 15px 40px; /* ボタンのパディング */
-            font-size: 1.2em; /* フォントサイズ */
+            padding: 60px 100px; /* ボタンのパディングを大きく */
+            font-size: 1.5em; /* フォントサイズを大きく */
             border: none;
             border-radius: 8px; /* 角を丸く */
-            background-color: #ff4500; /* 背景色（青色） */
+            background-color: #ff4500; /* 背景色（オレンジ） */
             color: white; /* 文字色 */
             cursor: pointer;
             transition: background-color 0.3s ease; /* 背景色のトランジション */
@@ -51,6 +51,15 @@
 
         .back-button:hover {
             background-color: #ff4500; /* ホバー時の背景色 */
+        }
+
+        /* 「編集しました」のスタイル */
+        .edit-message {
+            font-size: 3em; /* フォントサイズを大きく */
+            font-weight: bold; /* 文字を太字に */
+            text-align: left; /* 左寄せ */
+            margin-left: 20px; /* 左に余白を追加 */
+            margin-top: 10px; /* 上の余白 */
         }
 
         /* 名前変更とメールアドレス変更を中央揃え */
@@ -76,21 +85,20 @@
 
 <body>
     <div class="container">
-    <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    編集しました
+
+    <div class="edit-message">
+        編集しました
+    </div>
 
 	<div>
-            <form action="../manager/Notification_data_edit.action" method="post">
-                <input type="submit" value="戻る" class="back-button">
-            </form>
-        </div>
-
+        <form action="../manager/Notification_data_edit.action" method="post">
+            <input type="submit" value="戻る" class="back-button">
+        </form>
+    </div>
 
 </div>
-     <footer>
-        <form action ="../manager/Home_staff.action" method = "post"><input type="submit" value="ホーム"></form>
-        <form action ="../manager/Setting.action" method = "post"><input type="submit" value="設定"></form>
-    </footer>
+
 </body>
 </html>
+

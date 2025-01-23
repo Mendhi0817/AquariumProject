@@ -39,8 +39,8 @@
 
         /* 戻るボタンのカスタムスタイル */
         .back-button {
-            padding: 15px 40px; /* ボタンのパディング */
-            font-size: 1.2em; /* フォントサイズ */
+            padding: 20px 60px; /* ボタンのパディングを大きく */
+            font-size: 1.5em; /* フォントサイズを大きく */
             border: none;
             border-radius: 8px; /* 角を丸く */
             background-color: #ff4500; /* 背景色（青色） */
@@ -71,6 +71,15 @@
             border: 1px solid #ccc;
             margin-top: 10px;
         }
+
+        /* 「投稿が完了しました」のスタイル */
+        .completion-message {
+            font-size: 2.5em; /* フォントサイズを大きく */
+            font-weight: bold; /* 太字 */
+            text-align: left; /* 左寄せ */
+            margin-top: 50px; /* 上部に余白 */
+            padding-left: 20px; /* 左に余白を追加 */
+        }
     </style>
 </head>
 
@@ -78,13 +87,16 @@
     <div class="container">
     <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    投稿が完了しました
+
+    <div class="completion-message">
+        投稿が完了しました
+    </div>
 
     <div>
-            <form action="../manager/Notification_data_Post.action" method="post">
-                <input type="submit" value="戻る" class="back-button">
-            </form>
-        </div>
+        <form action="../manager/Notification_data_Post.action" method="post">
+            <input type="submit" value="戻る" class="back-button">
+        </form>
+    </div>
 
 </div>
     <footer>
