@@ -49,6 +49,19 @@ public class MapPostDoneAction extends Action {
 		        break;
 		    }
 		}
+
+        if (fileName == null || fileName.isEmpty()) {
+            req.setAttribute("error", "アップロードされたファイルが無効です。");
+            req.getRequestDispatcher("/common/error.jsp").forward(req, res);
+            return;
+        }
+
+        // JPG形式のみ許可するバリデーション
+        if (!fileName.toLowerCase().endsWith(".jpg") && !fileName.toLowerCase().endsWith(".jpeg")) {
+            req.setAttribute("error", "JPGまたはJPEG形式の画像をアップロードしてください。");
+            req.getRequestDispatcher("/common/error.jsp").forward(req, res);
+            return;
+        }
 		System.out.println("ファイル名: " + fileName);
 
 		//アップロードするフォルダ

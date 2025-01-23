@@ -141,7 +141,7 @@
 
         /* Canvasのサイズを固定 */
         #pdfCanvas {
-            width: 600px;  /* 固定幅 */
+            width: 800px;  /* 固定幅 */
             height: 800px; /* 固定高さ */
             margin-left: 40px; /* 左側に20pxのスペースを追加 */
 			margin-top: 40px;  /* 上に20pxのスペースを追加 */
