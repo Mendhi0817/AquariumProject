@@ -51,9 +51,9 @@
 
         /* 投稿、編集、削除ボタンを小さくするためのスタイル */
         .button-container form input[type="submit"] {
-            width: 120px; /* ボタンの横幅を小さく設定 */
-            padding: 8px 20px; /* ボタンのパディング */
-            font-size: 0.9em; /* フォントサイズを小さく */
+            width: 150px; /* ボタンの横幅を小さく設定 */
+            padding: 15px 40px; /* ボタンのパディング */
+            font-size: 1em;
         }
 
         /* すべてのsubmitボタンに対して共通のスタイルを適用 */
@@ -79,27 +79,62 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
-        /* f2のテキストエリアの横幅を大きくする */
-        textarea[name="f4"] {
-            width: 60%; /* 横幅を80%に変更 */
-            height: 500px;
-        }
+ /* ホームと設定ボタンを大きくするためのスタイル */
+    footer form input[type="submit"] {
+        width: 300px; /* ボタンの横幅を大きく設定 */
+        padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+        font-size: 1.5em; /* フォントサイズを大きく設定 */
+    }
 
-        /* 戻るボタンと編集ボタンのスタイルを小さく設定 */
-        .back-button, .edit-button {
-            width: 120px; /* ボタンの横幅を小さく設定 */
-            padding: 8px 20px; /* ボタンのパディング */
-            font-size: 0.9em; /* フォントサイズを小さく */
-        }
+    /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+    input[type="submit"] {
+        padding: 10px 60px; /* ボタンのパディング */
+        font-size: 1.2em;
+        border: none;
+        border-radius: 8px; /* 角を丸く */
+        background-color: #ff6347; /* ボタンの背景色 */
+        color: white; /* 文字色 */
+        cursor: pointer;
+        width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+        margin: 5px 0; /* ボタン間に適切な余白を追加 */
+    }
+
+    /* ホバー時の色変更 */
+    input[type="submit"]:hover {
+        background-color: #ff4500; /* ホバー時の背景色 */
+    }
+
+    /* ホームと設定ボタンを大きくするためのスタイル */
+    footer form input[type="submit"] {
+        width: 300px; /* ボタンの横幅を大きく設定 */
+        padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+        font-size: 2em; /* フォントサイズを大きく設定（文字も大きく） */
+    }
+
+    /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+    input[type="submit"] {
+        padding: 30px 60px; /* ボタンのパディング */
+        font-size: 2em;
+        border: none;
+        border-radius: 8px; /* 角を丸く */
+        background-color: #ff6347; /* ボタンの背景色 */
+        color: white; /* 文字色 */
+        cursor: pointer;
+        width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+        margin: 5px 0; /* ボタン間に適切な余白を追加 */
+    }
+
+    /* ホバー時の色変更 */
+    input[type="submit"]:hover {
+        background-color: #ff4500; /* ホバー時の背景色 */
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-
-        <div>
+<div>
             <form action ="../manager/FishCardView.action" method="post">
                 <input class="back-button" type="submit" value="戻る">
             </form>
@@ -107,28 +142,30 @@
 
             <form action="../manager/FishCardEditDone.action" method="post" enctype="multipart/form-data">
         <div>
-            <textarea id="content" name="title" placeholder="ここにカード名を入力してください" >${FishCard.cardTitle}</textarea>
-        </div>
+    <textarea id="content" name="title" placeholder="ここにカード名を入力してください" style="width: 100%; height: 150px;">${FishCard.cardTitle}</textarea>
+</div>
 
         <!-- PDFファイルをアップロードするフィールド -->
         <div>
-            <label for="imageUpload">画像をアップロードして下さい：</label>
-            <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
-            <img src="viewImage?imagePath=${FishCard.cardImage}" width="250" height="200">
-            <input type="hidden" name="cardImage" value="${FishCard.cardImage}">
-        </div>
+    <label for="imageUpload" style="font-size: 2.5em; font-weight: bold;">画像をアップロードして下さい：</label>
+    <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
+    <img src="viewImage?imagePath=${FishCard.cardImage}" width="1000" height="600">
+    <input type="hidden" name="cardImage" value="${FishCard.cardImage}">
+</div>
+
 
         <div>
-            <h2>説明文を入力</h2>
-            <textarea id="content" name="text" placeholder="ここに文章を入力してください">${FishCard.cardText}</textarea>
-        </div>
-
+    <h2>説明文を入力</h2>
+    <textarea id="content" name="text" placeholder="ここに文章を入力してください" style="width: 100%; height: 300px;">${FishCard.cardText}</textarea>
+</div>
         <!-- 編集ボタン -->
         <div>
             <input type="hidden" name="cardId" value="${FishCard.cardId }">
                 <input class="edit-button" type="submit" value="編集">
             </form>
         </div>
+    </div>
+
     </div>
 
     <footer>
@@ -141,3 +178,4 @@
     </footer>
 </body>
 </html>
+

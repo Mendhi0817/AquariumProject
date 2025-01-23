@@ -1,4 +1,3 @@
-<!-- -------------------- -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -80,16 +79,49 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
+        /* ホームと設定ボタンを大きくするためのスタイル */
+        footer form input[type="submit"] {
+            width: 300px; /* ボタンの横幅を大きく設定 */
+            padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+            font-size: 1.5em; /* フォントサイズを大きく設定 */
+        }
+
+        /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+        input[type="submit"] {
+            padding: 30px 60px; /* ボタンのパディング */
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px; /* 角を丸く */
+            background-color: #ff6347; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            cursor: pointer;
+            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            margin: 5px 0; /* ボタン間に適切な余白を追加 */
+        }
+
+        /* ホバー時の色変更 */
+        input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
+        }
+
+        /* 投稿完了メッセージの文字サイズ変更 */
+        .completion-message {
+            font-size: 3em; /* 文字サイズを変更 */
+            text-align: center; /* テキストを中央揃え */
+            margin-top: 20px; /* 上部にマージンを追加 */
+            font-weight: bold; /* 太字にする */
+            text-align: left;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-
+<div class="completion-message">
 編集完了しました
-            <form action="../manager/FishCard.action" method="post">
+</div>
+            <form action="../manager/FishCardView.action" method="post">
                 <input type="submit" value="戻る" class="back-button">
             </form>
     </div>

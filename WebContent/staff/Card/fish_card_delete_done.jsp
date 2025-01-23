@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -79,37 +80,55 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
-        /* 戻るボタンを小さくするためのスタイル */
-        .back-button input[type="submit"] {
-            width: 120px; /* ボタンの横幅を小さく設定 */
-            padding: 8px 20px; /* ボタンのパディングを小さく設定 */
-            font-size: 0.9em; /* フォントサイズを小さく設定 */
+        /* ホームと設定ボタンを大きくするためのスタイル */
+        footer form input[type="submit"] {
+            width: 300px; /* ボタンの横幅を大きく設定 */
+            padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+            font-size: 1.5em; /* フォントサイズを大きく設定 */
         }
+
+        /* すべてのsubmitボタンに対して共通のスタイルを適用 */
+        input[type="submit"] {
+            padding: 30px 60px; /* ボタンのパディング */
+            font-size: 2em;
+            border: none;
+            border-radius: 8px; /* 角を丸く */
+            background-color: #ff6347; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            cursor: pointer;
+            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            margin: 5px 0; /* ボタン間に適切な余白を追加 */
+        }
+
+        /* ホバー時の色変更 */
+        input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
+        }
+
+        .message {
+    font-size: 3em; /* フォントサイズを大きく設定 */
+    font-weight: bold; /* 太字にする */
+    color: black; /* 文字色を黒に変更 */
+    text-align: left; /* 左揃え */
+    margin-top: 20px; /* 上部に余白を追加 */
+}
+
 
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-
-		削除しました
-
-        <div class="back-button">
-            <form action ="../manager/FishCard.action" method = "post">
-                <input type = "submit" value = "戻る">
-            </form>
+        <div class="message">
+            削除しました
         </div>
+
+        <form action="../manager/FishCardView.action" method="post">
+            <input type="submit" value="戻る" class="back-button">
+        </form>
     </div>
 
-    <footer>
-        <form action="../manager/Home_staff.action" method="post">
-            <input type="submit" value="ホーム">
-        </form>
-        <form action="../manager/Setting.action" method="post">
-            <input type="submit" value="設定">
-        </form>
-    </footer>
+
 </body>
 </html>

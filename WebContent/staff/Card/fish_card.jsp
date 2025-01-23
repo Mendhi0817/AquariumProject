@@ -30,7 +30,7 @@
         }
 
         .content input, .content textarea, .content input[type="date"] {
-            width: 50%;
+
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -52,21 +52,19 @@
 
         /* 投稿、編集、削除ボタンを小さくするためのスタイル */
         .button-container form input[type="submit"] {
-            width: 150px; /* ボタンの横幅を小さく設定 */
-            padding: 15px 40px; /* ボタンのパディング */
+
             font-size: 1em;
         }
 
         /* すべてのsubmitボタンに対して共通のスタイルを適用 */
         input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
+
             font-size: 1.2em;
             border: none;
             border-radius: 8px; /* 角を丸く */
             background-color: #ff6347; /* ボタンの背景色 */
             color: white; /* 文字色 */
             cursor: pointer;
-            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
             margin: 5px 0; /* ボタン間に適切な余白を追加 */
         }
 
@@ -82,7 +80,7 @@
 
         /* 魚カードの文字を大きくする */
         .fish-card-title {
-            font-size: 2em; /* 魚カードの文字を大きく */
+            font-size: 4em; /* 魚カードの文字を大きく */
             font-weight: bold;
             margin-bottom: 20px; /* 上部に余白 */
         }
@@ -92,22 +90,34 @@
             display: flex;
             gap: 10px;
             justify-content: flex-start; /* ボタンを左寄せ */
-            margin-bottom: 20px; /* ボタン間の余白 */
+
         }
 
-        /* ボタンのサイズを小さく設定 */
-        .button-container input[type="submit"] {
-            padding: 8px 20px; /* ボタンのパディングを小さく */
-            font-size: 1em; /* フォントサイズ */
-            width: auto; /* ボタンの横幅は自動調整 */
-        }
 
+
+		 footer form input[type="submit"] {
+        width: 300px; /* ボタンの横幅を大きく設定 */
+        padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+        font-size: 2em; /* フォントサイズを大きく設定 */
+    }
+
+    .button-container {
+        display: flex;
+        gap: 20px; /* ボタン間の隙間を広げる */
+        justify-content: flex-start;
+        margin-bottom: 30px; /* ボタン下部の余白を広げる */
+    }
+
+    /* ボタンのサイズを大きくする */
+    .button-container form input[type="submit"] {
+        font-size: 2.5em; /* フォントサイズを大きくする */
+        padding: 60px 60px; /* パディングを広げてボタンを大きくする */
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <div class="fish-card-title">魚カード</div>

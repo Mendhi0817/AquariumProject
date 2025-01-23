@@ -30,16 +30,16 @@
         }
 
         .content input, .content textarea, .content input[type="date"] {
-            width: 50%;
-            padding: 10px;
-            margin: 10px 0;
+            width: 60%; /* 入力フィールドの幅を60%に設定 */
+            padding: 15px; /* パディングを大きく */
+            margin: 15px 0; /* 余白を大きく */
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
+            border-radius: 8px;
+            font-size: 1.5em; /* フォントサイズを大きく */
         }
 
         .content textarea {
-            height: 300px; /* テキストエリアの高さ */
+            height: 400px; /* テキストエリアの高さを400pxに変更 */
         }
 
         /* 削除と編集ボタンを左に寄せる */
@@ -52,20 +52,20 @@
         /* 投稿、編集、削除ボタンを小さくするためのスタイル */
         .button-container form input[type="submit"] {
             width: 150px; /* ボタンの横幅を小さく設定 */
-            padding: 10px 20px; /* ボタンのパディング */
-            font-size: 0.9em; /* フォントサイズを小さく */
+            padding: 15px 40px; /* ボタンのパディング */
+            font-size: 1em;
         }
 
         /* すべてのsubmitボタンに対して共通のスタイルを適用 */
         input[type="submit"] {
-            padding: 8px 20px; /* ボタンの縦幅を少し小さくする */
-            font-size: 0.9em; /* フォントサイズを小さく */
+            padding: 10px 60px; /* ボタンのパディング */
+            font-size: 1.2em;
             border: none;
             border-radius: 8px; /* 角を丸く */
             background-color: #ff6347; /* ボタンの背景色 */
             color: white; /* 文字色 */
             cursor: pointer;
-            width: 150px; /* 横幅を小さく設定 */
+            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
             margin: 5px 0; /* ボタン間に適切な余白を追加 */
         }
 
@@ -79,77 +79,64 @@
             margin: 0 10px; /* フォーム間の余白 */
         }
 
-        #content {
-            height: 500px; /* 説明文のテキストエリアの高さを500pxに変更 */
+        /* ホームと設定ボタンを大きくするためのスタイル */
+        footer form input[type="submit"] {
+            width: 300px; /* ボタンの横幅を大きく設定 */
+            padding: 60px 60px; /* ボタンのパディングを大きく設定 */
+            font-size: 2em; /* フォントサイズを大きく設定 */
         }
-
-        /* f2のテキストエリアの横幅を大きくする */
-        textarea[name="f2"] {
-            width: 60%; /* 横幅を80%に変更 */
+        h2{
+        	font-size: 2em;
         }
-
-        /* ホームボタンと設定ボタンを大きくするためのスタイル */
-        footer form input[type="submit"].large-btn,
-        .container form input[type="submit"].large-btn {
-            width: 250px; /* ボタンの横幅を大きく設定 */
-            padding: 12px 30px; /* ボタンのパディングを少し小さく */
-            font-size: 1.1em; /* フォントサイズを大きく */
-        }
-
-        /* 戻るボタン、投稿ボタンの縦幅も小さく調整 */
-        .container form input[type="submit"].large-btn {
-            padding: 10px 25px; /* ボタンの縦幅を少し小さく */
-            font-size: 1.1em; /* フォントサイズを調整 */
-        }
+		label{
+			font-size: 1.5em;
+		}
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <!-- 戻るボタンを少し縦幅を小さくしたい場合 -->
         <form action="../manager/FishCard.action" method="post">
-            <input type="submit" class="large-btn" value="戻る">
+            <input type="submit" class="large-btn" value="戻る" style="padding: 20px 80px; font-size: 2em;">
         </form>
 
         <form action="../manager/FishCardMakeDone.action" method="post" enctype="multipart/form-data">
             <!-- 文字を入力するフィールド -->
             <div>
                 <h2>カード名を入力</h2>
-                <textarea id="f1" name="f1" placeholder="ここにカード名を入力してください"></textarea>
+                <textarea id="f1" name="f1" placeholder="ここにカード名を入力してください" style="width: 100%; height: 80px; font-size: 1.5em; padding: 20px;"></textarea>
             </div>
 
             <!-- PDFファイルをアップロードするフィールド -->
             <div>
                 <label for="imageUpload">画像をアップロードして下さい：</label>
-                <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg">
+                <input type="file" id="imageUpload" name="imageUpload" accept="application/jpg" style="width: 60%; padding: 20px; font-size: 1.5em;">
             </div>
 
-        <!-- 新しいフォームセクション -->
-        <div class="form-container"></div>
-                <!-- 文字を入力するフィールド -->
+            <!-- 新しいフォームセクション -->
+            <div class="form-container"></div>
 
+            <!-- 文字を入力するフィールド -->
             <div>
                 <h2>説明文を入力</h2>
-                <textarea id="content" name="f2" placeholder="ここに文章を入力してください"></textarea>
+                <textarea id="content" name="f2" placeholder="ここに文章を入力してください" style="width: 100%; height: 400px; font-size: 1.5em; padding: 20px;"></textarea>
             </div>
 
             <!-- 投稿ボタンを少し縦幅を小さくしたい場合 -->
-            <input type="submit" class="large-btn" value="投稿">
+            <input type="submit" class="large-btn" value="投稿" style="padding: 20px 80px; font-size: 2em;">
         </form>
-    		</div>
+    </div>
 
     <footer>
         <form action="../manager/Home_staff.action" method="post">
-            <input type="submit" class="large-btn" value="ホーム">
+            <input type="submit" value="ホーム">
         </form>
         <form action="../manager/Setting.action" method="post">
-            <input type="submit" class="large-btn" value="設定">
+            <input type="submit" value="設定">
         </form>
     </footer>
 </body>
 </html>
-
-
