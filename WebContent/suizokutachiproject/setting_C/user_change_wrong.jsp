@@ -77,7 +77,7 @@
     <div class="container">
     <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    入力したメールアドレスが違っています
+    未入力または入力した内容が違っています
 
 	<div>
             <form action="Change_User_Data_C.action" method="post">
