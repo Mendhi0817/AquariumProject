@@ -215,7 +215,9 @@
         max-width: 100%; /* 最大幅を100%に設定し、親の幅に合わせる */
         word-wrap: break-word; /* 単語の途中で折り返しを可能に */
     }
-
+header {
+		    background-color: white; /* 背景色を黒に設定 */
+		}
     body {
     display: flex;
     flex-direction: column;
@@ -234,8 +236,95 @@ footer {
     padding: 10px; /* 内側の余白（任意） */
     z-index: 1; /* 背景画像の上にフッターが重ならないように */
 }
+footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+    padding: 20px 80px; /* ボタンの縦横の余白を増加 */
+    font-size: 1.5em; /* フォントサイズを大きく */
+    width: 300px; /* 横幅も少し広げる */
+}
+footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+        padding: 40px 80px; /* ボタンの縦横の余白を増加 */
+        font-size: 2em; /* フォントサイズを大きく */
+        width: 300px; /* 横幅も少し広げる */
+    }
+
+    footer .footer-buttons .row-center {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+        width: 100%;
+    }
+
+    footer .footer-buttons .row {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+    }
+
+.card-title {
+    font-size: 5em; /* cardTitle のフォントサイズ */
+    font-weight: bold; /* 太字にする */
+}
+
+.card-text {
+    font-size: 2em; /* cardText のフォントサイズ */
+    line-height: 1.5; /* 行間の設定 */
+}
+
+<!------------------------------->
+    /* .fishcard-item の大きさを変更できるようにする */
+    .fish-photo .fishcard-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        max-width: 800px; /* カード全体の最大幅 */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 画像の大きさ変更 */
+    .fish-photo .fishcard-item img {
+        max-width: 500px; /* 画像の最大幅を設定 */
+        max-height: 30px; /* 画像の最大高さを設定 */
+        object-fit: cover;
+        transition: all 0.3s ease; /* サイズ変更時のスムーズなトランジション */
+    }
+
+    /* テキストの大きさとレイアウト調整 */
+    .fish-photo .fishcard-item div {
+        flex: 1;
+        min-width: 250px; /* 最小幅を設定 */
+    }
+
+    .fish-photo .fishcard-item span {
+        font-size: 2.3em; /* テキストのフォントサイズ */
+        text-align: left;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    /* オプション: 画像とテキストの大きさを変えるために調整用のクラスを追加 */
+    .fishcard-item.small img {
+        max-width: 500px;
+        max-height: 350px;
+    }
+
+    .fishcard-item.large img {
+        max-width: 450px;
+        max-height: 350px;
+    }
+
+.fishcard-item.small {
+    background-color: white;
+}
+
+.fishcard-item.small {
+    background-color: lightblue; /* 水色の背景 */
+}
 
 </style>
+
 
 </head>
 
@@ -243,31 +332,33 @@ footer {
     <div class="container">
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
-        <header>
-            <h1>魚の写真</h1> <!-- h1 タグを中央に配置 -->
-        </header>
 
-        <div class="content">
-            <div class="fish-photo">
-                <!-- listTitle からお知らせタイトルをループで表示 -->
-                <c:forEach var="listTitle1" items="${FishCardList}">
-                    <div class="fishcard-item">
-                        <!-- 画像を左に、テキストを右に表示 -->
-                        <img src="viewImage?imagePath=${listTitle1.cardImage}" alt="${listTitle1.cardTitle}">
-                        <div>
-                            【<span>${listTitle1.cardTitle}</span>】<br>
-                            <span>${listTitle1.cardText}</span>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-            <div class="qr-code">
+
+
+<div class="qr-code">
                 <!-- QRコード読み取りボタン -->
                 <form action="../manager/Camera.action" method="post">
                     <input type="submit" value="QRコード" class="qr-code-button">
                 </form>
             </div>
-        </div>
+
+<h1>ゲットした魚カード</h1> <!-- h1 タグを中央に配置 -->
+        <div class="content">
+    <div class="fish-photo">
+        <!-- listTitle からお知らせタイトルをループで表示 -->
+        <c:forEach var="listTitle1" items="${FishCardList}">
+            <div class="fishcard-item small"> <!-- "small", "large" などのクラスでサイズ変更 -->
+                <!-- 画像を左に、テキストを右に表示 -->
+                <img src="viewImage?imagePath=${listTitle1.cardImage}" alt="${listTitle1.cardTitle}">
+                <div>
+                    <span>【${listTitle1.cardTitle}】</span><br>
+                    <span>${listTitle1.cardText}</span>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</div>
+
 
     </div>
 

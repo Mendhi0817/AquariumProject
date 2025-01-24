@@ -74,12 +74,8 @@
 
 <%-- 魚カードがゲットされたことを表示 --%>
 <%
-    String fishName = "金魚";
-    String fishImageUrl = "https://example.com/images/goldfish.jpg";  // 実際の画像URLに置き換えてください
 %>
 <div class="card-container bounce">
-    <img src="<%= fishImageUrl %>" alt="<%= fishName %>" class="card-image">
-    <div class="card-title">${fishcard.cardTitle}</div>
     <div class="card-description">素晴らしい魚がゲットできました！</div>
     <div class="message">おめでとうございます！</div>
 

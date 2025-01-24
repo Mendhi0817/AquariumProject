@@ -137,13 +137,50 @@
             gap: 20px; /* ボタン間の水平スペースを設定 */
             width: 100%;
         }
+
+
+		header {
+		    background-color: white; /* 背景色を黒に設定 */
+		}
+ body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ビューポートの高さを最小限に設定 */
+    margin: 0; /* デフォルトのマージンをリセット */
+    background-image: url('../../picture/sea.png'); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をビューポート全体にフィット */
+    background-position: center; /* 背景画像を中央に配置 */
+    background-attachment: fixed; /* スクロールしても背景が動かないように設定 */
+
+    footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+    padding: 20px 80px; /* ボタンの縦横の余白を増加 */
+    font-size: 1.5em; /* フォントサイズを大きく */
+    width: 300px; /* 横幅も少し広げる */
+}
+footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+        padding: 40px 80px; /* ボタンの縦横の余白を増加 */
+        font-size: 2em; /* フォントサイズを大きく */
+        width: 300px; /* 横幅も少し広げる */
+    }
+
+    footer .footer-buttons .row-center {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+        width: 100%;
+    }
+
+    footer .footer-buttons .row {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
-        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+        <header><img src="../../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
     </div>
 
     <footer>
