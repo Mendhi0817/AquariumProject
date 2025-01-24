@@ -185,7 +185,7 @@ input[type="text"], input[type="file"] {
                     <!-- PDFファイルをアップロードするフィールド -->
                     <div>
                         <label for="pdfUpload">マップの写真をアップロードして下さい</label>
-                        <input type="file" id="pdfUpload" name="pdfUpload" accept="application/pdf">
+                        <input type="file" id="pdfUpload" name="pdfUpload" accept="application/jpg">
                     </div>
 
                     <!-- 投稿ボタン -->

@@ -229,48 +229,21 @@
     <!-- floorInfoListからmapで取り出す -->
     <c:forEach var="map" items="${floorInfoList}">
         <div class="map-item">
+
             <a href="MapView.action?floor_info=${map}" class="map-button">${map}</a>
         </div>
     </c:forEach>
 </div>
-        <table border="1">
+
 
 
             <!-- floorInfoListからmapで取り出す -->
-            <c:forEach var="map" items="${floorInfoList}">
 
-            </c:forEach>
-        </table>
+                    <img src="viewImage?imagePath=${mapImage}" width="1000" height="600">
 
-        <!-- PDF.jsを使うための必要なスクリプトを追加 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 
-        <canvas id="pdfCanvas"></canvas>
 
-        <script>
-          var url = 'viewPDF?pdfPath=${mapImage}';
 
-          // PDF.jsを使ってPDFを読み込む
-          pdfjsLib.getDocument(url).promise.then(function(pdf) {
-            pdf.getPage(1).then(function(page) {
-              var canvas = document.getElementById('pdfCanvas');
-              var context = canvas.getContext('2d');
-
-              // 固定サイズのキャンバスに合わせてスケーリング
-              var scale = Math.min(canvas.width / page.getViewport({ scale: 1 }).width, canvas.height / page.getViewport({ scale: 1 }).height);
-
-              var viewport = page.getViewport({ scale: scale });
-
-              canvas.height = viewport.height;
-              canvas.width = viewport.width;
-
-              page.render({
-                canvasContext: context,
-                viewport: viewport
-              });
-            });
-          });
-        </script>
 
     </div>
 
