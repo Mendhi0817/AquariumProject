@@ -44,16 +44,21 @@
 
         /* 削除と編集ボタンを左に寄せる */
         .button-container {
+        position: relative;
             display: flex; /* フレックスボックスを使って横並び */
             justify-content: flex-start; /* ボタンを左端に寄せる */
             gap: 10px; /* ボタン間の隙間 */
             margin-bottom: 20px; /* ボタンと下部の余白 */
+                        bottom: -500px;
+
         }
 
         /* 投稿、編集、削除ボタンを小さくするためのスタイル */
         .button-container form input[type="submit"] {
 
             font-size: 1em;
+
+
         }
 
         /* すべてのsubmitボタンに対して共通のスタイルを適用 */
@@ -71,6 +76,10 @@
         /* ホバー時の色変更 */
         input[type="submit"]:hover {
             background-color: #ff4500; /* ホバー時の背景色 */
+                        text-align: center;
+            justify-content:center;
+
+
         }
 
         footer form {
@@ -91,6 +100,7 @@
             gap: 10px;
             justify-content: flex-start; /* ボタンを左寄せ */
 
+
         }
 
 
@@ -99,6 +109,7 @@
         width: 300px; /* ボタンの横幅を大きく設定 */
         padding: 60px 60px; /* ボタンのパディングを大きく設定 */
         font-size: 2em; /* フォントサイズを大きく設定 */
+
     }
 
     .button-container {
@@ -106,6 +117,9 @@
         gap: 20px; /* ボタン間の隙間を広げる */
         justify-content: flex-start;
         margin-bottom: 30px; /* ボタン下部の余白を広げる */
+                    text-align: center;
+            justify-content:center;
+
     }
 
     /* ボタンのサイズを大きくする */
