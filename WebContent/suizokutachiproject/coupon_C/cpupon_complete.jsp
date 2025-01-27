@@ -175,98 +175,15 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
         justify-content: center;
         gap: 20px; /* ボタン間の水平スペースを設定 */
     }
-
-    /* 既存の入力欄のスタイルに対する変更 */
-.content input {
-    width: 100%; /* 幅を広げる */
-    padding: 5px; /* 内側の余白を増加 */
-    margin: 20px 0; /* マージンを増加 */
-    border: 1px solid #ccc;
-    border-radius: 10px; /* 角を丸く */
-    font-size: 2em; /* フォントサイズを大きく */
-    height: 75px; /* 高さを大きく */
-}
-
-/* 変更ボタン */
-.content input[type="submit"] {
-    font-size: 2em; /* フォントサイズを大きく */
-    background-color: #ff6347; /* ホームボタンと同じ色に */
-    color: white; /* 文字色 */
-    border-radius: 8px; /* 角を丸く */
-    cursor: pointer; /* ポインターを表示 */
-}
-
-.content input[type="submit"]:hover {
-    background-color: #ff4500; /* ホームボタンと同じホバー色 */
-}
-
-.content div {
-    font-size: 2em; /* フォントサイズを大きく設定 */
-    font-weight: bold; /* 太字に設定（任意） */
-    margin-bottom: 10px; /* 下に少し余白を追加 */
-}
-
-.back-button {
-    padding: 20px 60px; /* ボタンの縦横の余白を増加 */
-    font-size: 1.5em; /* フォントサイズを大きく */
-    border-radius: 8px; /* 角を丸く */
-    background-color: #ff6347; /* ボタンの背景色 */
-    color: white; /* 文字色 */
-    border: none; /* ボーダーを消す */
-    cursor: pointer; /* マウスオーバー時にポインターを表示 */
-    width: 300px; /* 横幅を広げる */
-}
-
-.back-button:hover {
-    background-color: #ff4500; /* ホバー時の背景色 */
-}
-
     </style>
 </head>
 
 <body>
     <div class="container">
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    	<!-- 戻るボタンのフォーム -->
-        <div>
-            <form action="../manager/Setting_C.action" method="post">
-                <input type="submit" value="戻る" class="back-button">
-            </form>
-        </div>
-
-
-            <form action="../manager/Change_complete.action" method="post">
-        <!-- 現在のパスワードを入力 -->
-<div class="content">
-    <div>パスワード</div>
-    <div class="input-field">
-        <input type="text" name="email" placeholder="パスワードを入力">
+    クーポンを使用しました
     </div>
-</div>
 
-<!-- 名前の変更 -->
-<div class="content">
-    <div>名前の変更</div>
-    <div class="input-field">
-        <input type="text" name="name" placeholder="新しい名前を入力">
-    </div>
-</div>
-
-<!-- メールアドレスの変更 -->
-<div class="content">
-    <div>メールアドレスの変更</div>
-    <div class="input-field">
-        <input type="text" name="email" placeholder="新しいメールアドレスを入力">
-    </div>
-</div>
-
-
-        <div class="content">
-
-                <input type="submit" value="変更" class="back-button">
-            </form>
-        </div>
-    </div>
     <footer>
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->
