@@ -33,7 +33,7 @@ public class CouponCustomerDeleteExecuteAction extends Action {
 
 		        // StudentDaoを使って学生情報をデータベースに保存
 		        cDao.Delete(ci);
-		    request.getRequestDispatcher("../customer/coupon_C/coupon_C.jsp").forward(request, response);
+		    request.getRequestDispatcher("../suizokutachiproject/coupon_C/coupon_complete.jsp").forward(request, response);
 		}
 	}
 
