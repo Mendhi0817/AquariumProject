@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DAO.UserDAO;
+import bean.User;
 import tool.Action;
 
 
@@ -14,26 +15,34 @@ public class Change_completeAction extends Action {
 	) throws Exception {
 
 
-		String email=request.getParameter("email");
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		UserDAO dao=new UserDAO();
-
-		int result = 0;
-		result = dao.UserinfoChange(password,username,email);
-		//入力されたメールアドレスが存在するか確認
+		String email="";
+		String username = "";
+		String password = "";
 
 
+		UserDAO userdao=new UserDAO();
+
+		userdao.UserinfoChange(email,username,password);
+
+		email = request.getParameter("email");
+		username = request.getParameter("username");
+		password = request.getParameter("password");
+
+		User userdata = new User();
+		userdata.seteMail(email);
+		userdata.setUserName(username);
+		userdata.setPassword(password);
+
+		userdao.save(userdata);
 
 
 
 
 
-		if(result != 0){
 
-			System.out.println("oooooooooooooooooo");
 
-			request.getRequestDispatcher("../suizokutachiproject/complete/user_change_completion.jsp").forward(request, response);
+
+			request.getRequestDispatcher("../suizokutachiproject/coupon_C/complete/user_change_completion.jsp").forward(request, response);
 
 
 
@@ -41,15 +50,4 @@ public class Change_completeAction extends Action {
 //		User user = dao.passwordUpdate(email, password);
 
 
-
-		else{
-
-
-				request.getRequestDispatcher("../suizokutachiproject/setting_C/user_change_wrong.jsp").forward(request, response);
-
-				}
-
-			}
-
-		//login
-	}
+}
