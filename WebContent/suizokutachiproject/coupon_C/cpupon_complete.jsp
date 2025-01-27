@@ -182,6 +182,11 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
     <div class="container">
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
     クーポンを使用しました
+    <div class="button-group">
+            <!-- ユーザー情報変更ボタン -->
+            <form action ="../manager/CouponCustomer.action" method="post">
+                <input type="submit" value="戻る">
+            </form>
     </div>
 
     <footer>
