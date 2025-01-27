@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../News/news.css">
     <title>水族舘プロジェクト</title>
     <style>
-        body {
+              body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
@@ -17,7 +17,6 @@
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
-
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
@@ -118,7 +117,7 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
-        /* フッターのボタン配置調整 */
+		/* フッターのボタン配置調整 */
         footer .footer-buttons {
             display: flex;
             flex-direction: column;
@@ -139,16 +138,46 @@
             width: 100%;
         }
 
-        /* Canvasのサイズを固定 */
-        #pdfCanvas {
-            width: 800px;  /* 固定幅 */
-            height: 800px; /* 固定高さ */
-            margin-left: 40px; /* 左側に20pxのスペースを追加 */
-			margin-top: 40px;  /* 上に20pxのスペースを追加 */
 
-        }
+		header {
+		    background-color: white; /* 背景色を黒に設定 */
+		}
+ body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ビューポートの高さを最小限に設定 */
+    margin: 0; /* デフォルトのマージンをリセット */
+    background-image: url('../picture/sea.png'); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をビューポート全体にフィット */
+    background-position: center; /* 背景画像を中央に配置 */
+    background-attachment: fixed; /* スクロールしても背景が動かないように設定 */
 
-        /* マップ一覧のスタイル */
+    footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+    padding: 20px 80px; /* ボタンの縦横の余白を増加 */
+    font-size: 1.5em; /* フォントサイズを大きく */
+    width: 300px; /* 横幅も少し広げる */
+}
+footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+        padding: 40px 80px; /* ボタンの縦横の余白を増加 */
+        font-size: 2em; /* フォントサイズを大きく */
+        width: 300px; /* 横幅も少し広げる */
+    }
+
+    footer .footer-buttons .row-center {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+        width: 100%;
+
+    }
+
+    footer .footer-buttons .row {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+    }
+
+            /* マップ一覧のスタイル */
 .map-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自動でカラム数を調整 */
@@ -182,7 +211,7 @@
     padding: 10px;  /* ボタンのパディングを小さく */
     background-color: #ff6347; /* 明るい水色 */
     color: black;
-    font-size: 1em; /* フォントサイズを小さく */
+    font-size: 2em; /* フォントサイズを小さく */
     text-decoration: none;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -199,7 +228,7 @@
     padding: 10px;  /* ボタンのパディングを小さく */
     background-color: ff6347; /* 明るい水色 */
     color: white;
-    font-size: 1em; /* フォントサイズを小さく */
+    font-size: 2em; /* フォントサイズを小さく */
     text-decoration: none;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -212,17 +241,27 @@
     background-color: #ff4500; /* ホバー時に色を変える */
     transform: scale(1.05); /* 少し拡大させて目立たせる */
 }
+h3{
+font-size: 2em; /* フォントサイズを小さく */
+}
 
+
+header{
+width: 1000px;
+}
+footer {
+    width: 980px;
+    height: 300px;
+    margin-top: 450px; /* フッターを少し下にずらす */
+}
 
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-
-		<h2 style="text-align: center;">マップ一覧</h2>
+    <h2 style="text-align: center;">マップ一覧</h2>
 
 
 <div class="map-list">
@@ -234,17 +273,9 @@
         </div>
     </c:forEach>
 </div>
-
-
-
             <!-- floorInfoListからmapで取り出す -->
-
+<h3>　</h3>
                     <img src="viewImage?imagePath=${mapImage}" width="1000" height="600">
-
-
-
-
-
     </div>
 
     <footer>
@@ -272,5 +303,3 @@
     </footer>
 </body>
 </html>
-
-
