@@ -138,7 +138,61 @@
             width: 100%;
         }
 
-                .coupon-list {
+
+		header {
+		    background-color: white; /* 背景色を黒に設定 */
+		}
+ body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ビューポートの高さを最小限に設定 */
+    margin: 0; /* デフォルトのマージンをリセット */
+    background-image: url('../picture/sea.png'); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をビューポート全体にフィット */
+    background-position: center; /* 背景画像を中央に配置 */
+    background-attachment: fixed; /* スクロールしても背景が動かないように設定 */
+
+    footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+    padding: 20px 80px; /* ボタンの縦横の余白を増加 */
+    font-size: 1.5em; /* フォントサイズを大きく */
+    width: 300px; /* 横幅も少し広げる */
+}
+footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+        padding: 40px 80px; /* ボタンの縦横の余白を増加 */
+        font-size: 2em; /* フォントサイズを大きく */
+        width: 300px; /* 横幅も少し広げる */
+    }
+
+    footer .footer-buttons .row-center {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+        width: 100%;
+    }
+
+    footer .footer-buttons .row {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+    }
+
+    		/* 詳細ボタンのスタイルをホームボタンと同じに */
+.button-list form input[type="submit"] {
+    padding: 10px 40px; /* ボタンのパディング */
+    font-size: 2em; /* ボタンの文字サイズ */
+    border-radius: 8px; /* ボタンの角を丸く */
+    background-color: #ff6347; /* ホームボタンと同じ背景色 */
+    color: white; /* 文字色 */
+    border: none; /* ボーダーを消す */
+    cursor: pointer; /* マウスオーバー時にポインターを表示 */
+    width: 250px; /* 横幅を統一 */
+}
+
+.coupon-item form input[type="submit"]:hover {
+    background-color: #ff4500; /* ホバー時の背景色 */
+}
+
+.coupon-list {
             display: flex;
             flex-direction: row; /* 横並びにする */
             justify-content: space-between; /* タイトルとボタンを左右に配置 */
@@ -155,54 +209,21 @@
             padding: 15px; /* パディングを大きくしてスペースを広げる */
             border: 1px solid #ccc; /* 枠線を追加 */
             border-radius: 8px; /* 角を丸く */
-            font-size: 1.3em; /* フォントサイズを大きく */
+            font-size: 2em; /* フォントサイズを大きく */
             background-color: #f9f9f9; /* 背景色を淡い色に変更 */
-            width: 900%; /* アイテムの幅を100%にしてラップさせる */
-            max-width: 550px; /* 最大幅を900pxに変更 */
-        }
-
-                .notification-item button {
-            padding: 8px 25px;
-            font-size: 1.1em;
-            border-radius: 5px;
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            cursor: pointer;
+            width: 550%; /* アイテムの幅を100%にしてラップさせる */
         }
 
         .coupon-item button:hover {
             background-color: #ff4500;
         }
-
-        /* '編集'ボタンをお知らせタイトルの横に配置 */
-        .coupon-item span {
-            flex-grow: 1; /* タイトルがボタンを圧迫しないように横幅を調整 */
-            text-align: left; /* タイトルを左寄せ */
-            padding-right: 20px; /* タイトルとボタンの間にスペースを追加 */
-        }
-
-        .delete-btn-1 input[type="submit"] {
-   padding: 8px 25px;
-   font-size: 1.1em;
-   border-radius: 5px;
-   background-color: #ff6347;
-   color: white;
-   border: none;
-   cursor: pointer;
-   margin-top: 10px;  /* 上部の余白を追加 */
-   margin-bottom: 10px;  /* 下部の余白を追加 */
-}
-
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-
-   <h1>クーポン一覧</h1>
+    <h1>クーポン一覧</h1>
 
 
 	<div class ="coupon-list">
@@ -234,9 +255,9 @@
                 </form>
 
                </c:forEach>
-    	</div>
+               </div>
+         </div>
     </div>
-
     </div>
 
     <footer>
