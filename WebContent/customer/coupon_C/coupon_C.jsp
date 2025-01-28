@@ -211,7 +211,7 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
             border-radius: 8px; /* 角を丸く */
             font-size: 2em; /* フォントサイズを大きく */
             background-color: #f9f9f9; /* 背景色を淡い色に変更 */
-            width: 550%; /* アイテムの幅を100%にしてラップさせる */
+            width: 750%; /* アイテムの幅を100%にしてラップさせる */
         }
 
         .coupon-item button:hover {
