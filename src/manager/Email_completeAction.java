@@ -34,7 +34,7 @@ public class Email_completeAction extends Action{
 
 			System.out.println("客のやつ");
 
-			request.getRequestDispatcher("../suizokutachiproject/complete/mail_complete.jsp").forward(request, response);
+			request.getRequestDispatcher("../suizokutachiproject/coupon_C/complete/mail_complete.jsp").forward(request, response);
 
 
 
