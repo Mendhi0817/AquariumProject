@@ -229,7 +229,7 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
         <div class="content">
             <div>メールアドレスを入力して下さい</div>
             <div class="input-field">
-                <input type="text" name="email" placeholder="メールアドレスを入力">
+                <input type="text" name="email" placeholder="メールアドレスを入力"required>
             </div>
         </div>
 
@@ -237,7 +237,7 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
         <div class="content">
             <div>新パスワードを入力</div>
             <div class="input-field">
-                <input type="text" name="password" placeholder="新パスワードを入力">
+                <input type="text" name="password" placeholder="新パスワードを入力"required>
             </div>
         </div>
 
