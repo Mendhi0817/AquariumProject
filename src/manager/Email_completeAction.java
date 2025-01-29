@@ -43,12 +43,7 @@ public class Email_completeAction extends Action{
 
 
 
-		else{
 
-
-				request.getRequestDispatcher("../suizokutachiproject/setting_C/password_wrong.jsp").forward(request, response);
-
-				}
 
 			}
 

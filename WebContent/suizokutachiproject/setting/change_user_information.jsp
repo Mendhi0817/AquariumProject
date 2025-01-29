@@ -137,7 +137,7 @@
             <div class="content">
                 <div class="label">名前の変更</div>
                 <div class="input-field">
-                    <input type="text" name="name" placeholder="新しい名前を入力" class="large-input">
+                    <input type="text" name="name" placeholder="新しい名前を入力" class="large-input"required>
                 </div>
             </div>
 
@@ -145,7 +145,7 @@
             <div class="content">
                 <div class="label">メールアドレスの変更</div>
                 <div class="input-field">
-                    <input type="text" name="email" placeholder="新しいメールアドレスを入力" class="large-input">
+                    <input type="text" name="email" placeholder="新しいメールアドレスを入力" class="large-input"required>
                 </div>
             </div>
 

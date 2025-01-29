@@ -88,18 +88,11 @@
 <body>
   <p>ピントを合わせて、QRコードをカメラ映像の赤枠内にあわせると読み取ります</p>
   <div><canvas id="preview"></canvas></div>
-  <form id = "qr_form" action = "../manager/CameraExecute.action" method = "post">
-  </form>
-
   <form action="../manager/FishCardList.action" method="post">
                     <input type="submit" value="戻る">
                 </form>
-
-
-    <input id="qr"  name = "qr" value = "" type = "submit"></input>
-
-
-
+  <form id = "qr_form" action = "../manager/CameraExecute.action" method = "post">
+   <input id="qr"  name = "qr" value = "" type = "submit"></input>
   </form>
 </body>
 </html>
