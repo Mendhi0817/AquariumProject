@@ -120,13 +120,39 @@
         .logout-button-container form input[type="submit"]:hover {
             background-color: #ff4500;
         }
+		input[type="text"], input[type="password"] {
+    width: 95%;  /* 入力欄の幅を80%に変更 */
+    padding: 20px; /* パディングを大きくする */
+    margin: 15px 0; /* 上下の余白 */
+    font-size: 2em; /* フォントサイズを大きくする */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="submit"] {
+    padding: 20px 80px; /* ボタンのパディングを増やす */
+    font-size: 2em; /* フォントサイズを大きく */
+    border-radius: 10px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 300px; /* ボタンの幅を広くする */
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff4500;
+}
+p{
+ font-size: 2em; /* フォントサイズを大きく */
+}
 
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <form action="../manager/PasswordReset.action" method="post">
@@ -134,6 +160,11 @@
             <p><input type="text" name="email" placeholder="メールアドレス"></p>
             <p><input type="password" name="password" placeholder="新しいパスワード"></p>
             <p><input type="submit" value="確認"></p>
+
+        </form>
+
+                    <form action="login.jsp" method="post">
+            <p><input type="submit" value="ホーム"></p>
         </form>
     </div>
 </body>

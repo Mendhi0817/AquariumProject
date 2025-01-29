@@ -120,13 +120,25 @@
         .logout-button-container form input[type="submit"]:hover {
             background-color: #ff4500;
         }
+/* ユーザー名、メールアドレス、パスワードの入力欄 */
+input[type="text"], input[type="password"] {
+    width: 95%;  /* 幅を広げる */
+    padding: 20px;  /* パディングを増やす */
+    margin: 15px 0;  /* 上下の余白 */
+    font-size: 2em;  /* フォントサイズを大きく */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+p{
+font-size: 2em;  /* フォントサイズを大きく */
+}
 
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
         <form action="../manager/NewAccount.action" method="post">
@@ -138,7 +150,12 @@
 <p><input type = "submit" value = "新規作成"></p>
 
 
+
 </form>
+
+<form action="login.jsp" method="post">
+            <p><input type="submit" value="ホーム"></p>
+        </form>
 
     </div>
 </body>

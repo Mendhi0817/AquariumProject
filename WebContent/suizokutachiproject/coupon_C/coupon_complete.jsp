@@ -175,13 +175,45 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
         justify-content: center;
         gap: 20px; /* ボタン間の水平スペースを設定 */
     }
-    </style>
+    h2{
+    font-size: 2em; /* フォントサイズを大きく
+    }
+.button-group {
+    display: flex;
+    justify-content: flex-start; /* ボタンを左寄せ */
+    gap: 20px; /* ボタン間の隙間 */
+    margin-top: 20px; /* 上部に余白 */
+}
+    .button-group {
+        display: flex;
+        justify-content: flex-start; /* 左寄せに変更 */
+        gap: 20px; /* ボタン間の隙間 */
+        margin-top: 20px; /* 上部に余白 */
+    }
+.button-group input[type="submit"] {
+    padding: 40px 100px; /* 上下の余白を20px、左右の余白を60pxに設定 */
+    font-size: 2em; /* 文字サイズを大きく */
+    border-radius: 8px; /* ボタンの角を丸く */
+    background-color: #ff6347; /* 背景色 */
+    color: white; /* 文字色 */
+    border: none; /* ボーダーなし */
+    cursor: pointer; /* ホバー時にポインターを表示 */
+    width: auto; /* 幅は自動調整 */
+}
+
+.button-group input[type="submit"]:hover {
+    background-color: #ff4500; /* ホバー時の背景色 */
+}
+
+</style>
+
+
 </head>
 
 <body>
     <div class="container">
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    クーポンを使用しました
+    <h2>クーポンを使用しました</h2>
     <div class="button-group">
             <!-- ユーザー情報変更ボタン -->
             <form action ="../manager/CouponCustomer.action" method="post">
@@ -189,28 +221,7 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
             </form>
     </div>
 
-    <footer>
-        <div class="footer-buttons">
-            <!-- ホーム、マップボタンを中央に配置 -->
-            <div class="row-center">
-                <form action="../manager/FishCardList.action" method="post">
-                    <input type="submit" value="ホーム">
-                </form>
-                <form action="../manager/MapView.action" method="post">
-                    <input type="submit" value="マップ">
-                </form>
-            </div>
 
-            <!-- お知らせ、設定ボタンを中央に配置 -->
-            <div class="row-center">
-                <form action="../manager/Notification_data_customer.action" method="post">
-                    <input type="submit" value="お知らせ">
-                </form>
-                <form action="../manager/Setting_C.action" method="post">
-                    <input type="submit" value="設定">
-                </form>
-            </div>
         </div>
-    </footer>
 </body>
 </html>

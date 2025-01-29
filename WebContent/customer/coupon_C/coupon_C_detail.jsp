@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="ja">
@@ -6,7 +7,7 @@
     <link rel="stylesheet" href="../News/news.css">
     <title>水族舘プロジェクト</title>
     <style>
-        body {
+              body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
@@ -16,7 +17,6 @@
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
-
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
@@ -117,7 +117,7 @@
             background-color: #ff4500; /* ホバー時の背景色 */
         }
 
-        /* フッターのボタン配置調整 */
+		/* フッターのボタン配置調整 */
         footer .footer-buttons {
             display: flex;
             flex-direction: column;
@@ -138,34 +138,92 @@
             width: 100%;
         }
 
-        .button-container input[type="submit"] {
-            padding: 8px 25px;
-            font-size: 1.1em;
-            border-radius: 5px;
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;  /* 上部の余白を追加 */
-            margin-bottom: 10px;  /* 下部の余白を追加 */
-        }
 
-        .button-container {
-            display: flex;
-            justify-content: flex-start; /* 左端に寄せる */
-            margin-top: 20px; /* 上部に余白 */
-        }
+		header {
+		    background-color: white; /* 背景色を黒に設定 */
+		}
+ body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ビューポートの高さを最小限に設定 */
+    margin: 0; /* デフォルトのマージンをリセット */
+    background-image: url('../picture/sea.png'); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をビューポート全体にフィット */
+    background-position: center; /* 背景画像を中央に配置 */
+    background-attachment: fixed; /* スクロールしても背景が動かないように設定 */
+
+    footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+    padding: 20px 80px; /* ボタンの縦横の余白を増加 */
+    font-size: 1.5em; /* フォントサイズを大きく */
+    width: 300px; /* 横幅も少し広げる */
+}
+footer input[type="submit"], footer .footer-buttons input[type="submit"] {
+        padding: 40px 80px; /* ボタンの縦横の余白を増加 */
+        font-size: 2em; /* フォントサイズを大きく */
+        width: 300px; /* 横幅も少し広げる */
+    }
+
+    footer .footer-buttons .row-center {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+        width: 100%;
+    }
+
+    footer .footer-buttons .row {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* ボタン間の水平スペースを設定 */
+    }
+
+    .button-container form input[type="submit"] {
+        padding: 15px 60px; /* ボタンの縦横の余白を増加 */
+        font-size: 1.5em; /* フォントサイズを大きく */
+        border-radius: 8px; /* ボタンの角を丸く */
+        background-color: #ff6347; /* 背景色を設定 */
+        color: white; /* 文字色 */
+        border: none; /* ボーダーを消す */
+        cursor: pointer; /* マウスオーバー時にポインターを表示 */
+        width: 250px; /* 横幅を統一 */
+    }
+
+    .button-container form input[type="submit"]:hover {
+        background-color: #ff4500; /* ホバー時の背景色 */
+    }
+
+    /* 使用するボタン */
+    .coupon-list .button-container form input[type="submit"] {
+        padding: 15px 60px; /* ボタンの縦横の余白を増加 */
+        font-size: 1.5em; /* フォントサイズを大きく */
+        border-radius: 8px; /* ボタンの角を丸く */
+        background-color: #ff6347; /* 緑色の背景色 */
+        color: white; /* 文字色 */
+        border: none; /* ボーダーを消す */
+        cursor: pointer; /* マウスオーバー時にポインターを表示 */
+        width: 250px; /* 横幅を統一 */
+    }
+
+    .coupon-list .button-container form input[type="submit"]:hover {
+        background-color: #ff4500; /* ホバー時の背景色 */
+    }
+
+    p{
+    font-size: 2em; /* フォントサイズを大きく */
+    }
+
+    .coupon-list {
+    background-color: #add8e6; /* 水色に変更 */
+    padding: 20px; /* 内側に余白を追加（任意） */
+    border-radius: 8px; /* 角を丸く（任意） */
+}
 
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-<!------------------------------------------------------------------------------------->
-
-<!-- 戻るボタン -->
+		<!-- 戻るボタン -->
         <div class="button-container">
             <form action="../manager/CouponCustomer.action" method="post">
                 <input type="submit" value="戻る">
@@ -195,9 +253,8 @@
 
     </div>
     </div>
+    </div>
 
-
-<!------------------------------------------------------------------------------------->
     <footer>
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->

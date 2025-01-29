@@ -5,30 +5,41 @@
     <link rel="stylesheet" href="../complete/complete.css">
     <title>水族舘プロジェクト</title>
     <style>
+    header {
+		    background-color: white; /* 背景色を黒に設定 */
+		}
          body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
             margin: 0; /* デフォルトのマージンをリセット */
+            background-image: url('../picture/sea.png'); /* ここで背景画像を指定 */
+            background-size: cover; /* 画像が画面全体に収まるようにする */
+            background-position: center; /* 背景画像を中央に配置 */
         }
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
-            background-color: #78e3fb; /* 背景色を設定（任意） */
+            background-color: rgba(120, 227, 251, 0.8); /* 半透明の背景色 */
             text-align: center; /* 中央揃え（任意） */
             padding: 10px; /* 内側の余白（任意） */
         }
         footer input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
-            font-size: 1.2em;
+            padding: 15px 100px; /* ボタンのパディングを大きく */
+            font-size: 1.5em; /* フォントサイズを大きく */
             border: none;
             border-radius: 8px; /* 角を丸く */
             background-color: #ff6347; /* ボタンの背景色 */
             color: white; /* 文字色 */
             cursor: pointer;
-            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            width: auto; /* 幅を自動に変更 */
+            transition: background-color 0.3s ease; /* 背景色のトランジション */
+        }
+
+        footer input[type="submit"]:hover {
+            background-color: #ff4500; /* ホバー時の背景色 */
         }
 
         footer form {
@@ -38,14 +49,15 @@
 
         /* 戻るボタンのカスタムスタイル */
         .back-button {
-            padding: 15px 40px; /* ボタンのパディング */
-            font-size: 1.2em; /* フォントサイズ */
+            padding: 20px 60px; /* ボタンのパディングを大きく */
+            font-size: 1.5em; /* フォントサイズを大きく */
             border: none;
-            border-radius: 8px; /* 角を丸く */
-            background-color: #ff4500; /* 背景色（青色） */
+            border-radius: 10px; /* 角を丸く */
+            background-color: #ff6347; /* 背景色（オレンジ） */
             color: white; /* 文字色 */
             cursor: pointer;
             transition: background-color 0.3s ease; /* 背景色のトランジション */
+            width: 300px; /* ボタンの横幅を統一 */
         }
 
         .back-button:hover {
@@ -70,38 +82,43 @@
             border: 1px solid #ccc;
             margin-top: 10px;
         }
+        h2{
+        font-size: 2em;
+        }
+	/* 戻るボタンのカスタムスタイル */
+.back-button {
+    padding: 20px 70px; /* ボタンのパディングをさらに大きく */
+    font-size: 2em; /* フォントサイズをさらに大きく */
+    border: none;
+    border-radius: 10px; /* 角を丸く */
+    background-color: #ff6347; /* 背景色（オレンジ） */
+    color: white; /* 文字色 */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 背景色のトランジション */
+    width: 100%; /* 幅を画面幅に合わせる */
+    max-width: 400px; /* 最大幅を設定 */
+    margin: 20px auto; /* 上下に余白を追加して中央揃え */
+}
+
+.back-button:hover {
+    background-color: #ff4500; /* ホバー時の背景色 */
+}
+
     </style>
 </head>
 
 <body>
     <div class="container">
-    <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    パスワードを変更しました
+    <h2>パスワードを変更しました</h2>
 
-	<div>
-            <form action="../manager/Home_customer.action" method="post">
-                <input type="submit" value="戻る" class="back-button">
-            </form>
-        </div>
+    <div>
+        <form action ="../manager/Password_reset_C.action" method="post">
+    <input type="submit" value="戻る" class="back-button">
+</form>
 
-
+    </div>
 </div>
-     <footer>
-        <div class="footer-buttons">
-            <form action="../manager/Home_customer.action" method="post">
-                <input type="submit" value="ホーム">
-            </form>
-            <form action="../manager/Map.action" method="post">
-                <input type="submit" value="マップ">
-            </form>
-            <form action="../manager/News.action" method="post">
-                <input type="submit" value="お知らせ">
-            </form>
-            <form action="../manager/Setting_C.action" method="post">
-                <input type="submit" value="設定">
-            </form>
-        </div>
-    </footer>
 </body>
 </html>
+

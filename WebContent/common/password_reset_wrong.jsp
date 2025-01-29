@@ -120,13 +120,33 @@
         .logout-button-container form input[type="submit"]:hover {
             background-color: #ff4500;
         }
+h1 {
+            font-size: 50px; /* 見出しの文字サイズ */
+        }
 
+        input[type="submit"] {
+            font-size: 25px; /* ボタンの文字サイズ */
+            padding: 30px 80px; /* ボタンの大きさ */
+            background-color: #ff6347; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            border: none; /* ボーダーをなくす */
+            border-radius: 5px; /* ボタンの角を丸くする */
+            cursor: pointer; /* ポインターが表示されるようにする */
+            transition: background-color 0.3s ease; /* ホバー時の色変更をスムーズにする */
+        }
+
+        input[type="submit"]:hover {
+            background-color:#ff4500; /* ホバー時の背景色 */
+        }
+
+        body {
+            font-size: 18px; /* ページ全体の文字サイズ */
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/right_photo.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
             <form action="../common/password_reset.jsp" method="post">

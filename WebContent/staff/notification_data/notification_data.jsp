@@ -188,13 +188,13 @@ footer form input[type="submit"] {
         <form action="../manager/NotificationDataCreateExecute.action" method="post">
     <div class="content">
         <h2 style="font-size: 2em;">タイトルを入力</h2>
-        <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" style="width: 100%; padding: 15px; font-size: 1.5em;">
+        <input type="text" id="title" name="f1" placeholder="タイトルを入力してください" style="width: 100%; padding: 15px; font-size: 1.5em;"required>
 
         <h2 style="font-size: 2em;">文章を入力</h2>
-        <textarea id="content" name="f2" placeholder="ここに文章を入力してください" style="width: 100%; height: 400px; padding: 15px; font-size: 1em;"></textarea>
+        <textarea id="content" name="f2" placeholder="ここに文章を入力してください" style="width: 100%; height: 400px; padding: 15px; font-size: 1em;"required></textarea>
 
         <h2 style="font-size: 2em;">日付を入力</h2>
-        <input type="date" id="date" name="f3" style="width: 100%; padding: 15px; font-size: 1.5em;">
+        <input type="date" id="date" name="f3" style="width: 100%; padding: 15px; font-size: 1.5em;"required>
     </div>
     <div>
         <input type="submit" value="投稿" class="submit-button" style="padding: 20px 80px; font-size: 2em; width: 100%;">

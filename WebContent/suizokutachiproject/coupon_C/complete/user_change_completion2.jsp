@@ -5,18 +5,24 @@
     <link rel="stylesheet" href="../complete/complete.css">
     <title>水族舘プロジェクト</title>
     <style>
+    header {
+		    background-color: white; /* 背景色を黒に設定 */
+		}
          body {
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
             margin: 0; /* デフォルトのマージンをリセット */
+            background-image: url('../picture/sea.png'); /* ここで背景画像を指定 */
+            background-size: cover; /* 画像が画面全体に収まるようにする */
+            background-position: center; /* 背景画像を中央に配置 */
         }
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
-            background-color: #78e3fb; /* 背景色を設定（任意） */
+            background-color: rgba(120, 227, 251, 0.8); /* 半透明の背景色 */
             text-align: center; /* 中央揃え（任意） */
             padding: 10px; /* 内側の余白（任意） */
         }
@@ -79,6 +85,25 @@
         h2{
         font-size: 2em;
         }
+	/* 戻るボタンのカスタムスタイル */
+.back-button {
+    padding: 20px 70px; /* ボタンのパディングをさらに大きく */
+    font-size: 2em; /* フォントサイズをさらに大きく */
+    border: none;
+    border-radius: 10px; /* 角を丸く */
+    background-color: #ff6347; /* 背景色（オレンジ） */
+    color: white; /* 文字色 */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 背景色のトランジション */
+    width: 100%; /* 幅を画面幅に合わせる */
+    max-width: 400px; /* 最大幅を設定 */
+    margin: 20px auto; /* 上下に余白を追加して中央揃え */
+}
+
+.back-button:hover {
+    background-color: #ff4500; /* ホバー時の背景色 */
+}
+
     </style>
 </head>
 
@@ -88,10 +113,12 @@
     <h2>ユーザー情報を変更しました</h2>
 
     <div>
-        <form action ="../manager/Change_User_Data.action" method="post">
-            <input type="submit" value="戻る" class="back-button">
-        </form>
+        <form action ="../manager/Change_User_Data_C.action" method="post">
+    <input type="submit" value="戻る" class="back-button">
+</form>
+
     </div>
 </div>
 </body>
 </html>
+

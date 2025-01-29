@@ -179,13 +179,13 @@ input[type="text"], input[type="file"] {
                 <form action ="../manager/MapPostDone.action" method = "post" enctype="multipart/form-data">
                     <div>
                         <label for="textInput">階数を入力</label>
-                        <input type="text" id="textInput" name="textInput" placeholder="階数を入力してください">
+                        <input type="text" id="textInput" name="textInput" placeholder="階数を入力してください"required>
                     </div>
 
                     <!-- PDFファイルをアップロードするフィールド -->
                     <div>
                         <label for="pdfUpload">マップの写真をアップロードして下さい</label>
-                        <input type="file" id="pdfUpload" name="pdfUpload" accept="application/jpg">
+                        <input type="file" id="pdfUpload" name="pdfUpload" accept="application/jpg"required>
                     </div>
 
                     <!-- 投稿ボタン -->

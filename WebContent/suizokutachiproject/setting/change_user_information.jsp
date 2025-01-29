@@ -30,12 +30,12 @@
         }
 
         .content input, .content textarea, .content input[type="date"] {
-            width: 80%; /* 入力フィールドの幅を大きく設定 */
+            width: 95%; /* 入力フィールドの幅を大きく設定 */
             padding: 15px; /* 内側の余白を大きく */
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 1.2em; /* フォントサイズを少し大きく */
+            font-size: 2em; /* フォントサイズを少し大きく */
         }
 
         .content textarea {

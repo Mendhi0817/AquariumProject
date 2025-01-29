@@ -235,7 +235,7 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
         </div>
 
 
-            <form action="../manager/Change_complete.action" method="post">
+            <form action="../manager/Change_User_Data_Complete.action" method="post">
         <!-- 現在のパスワードを入力 -->
 <div class="content">
     <div>パスワード</div>
