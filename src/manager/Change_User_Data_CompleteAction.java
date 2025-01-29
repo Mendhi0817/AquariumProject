@@ -12,7 +12,7 @@ public class Change_User_Data_CompleteAction extends Action {
 	HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		request.getRequestDispatcher("../suizokutachiproject/coupon_C/user_change_completion.jsp").forward(request, response);
+		request.getRequestDispatcher("../suizokutachiproject/coupon_C/complete/user_change_completion2.jsp").forward(request, response);
 
 	}
 
