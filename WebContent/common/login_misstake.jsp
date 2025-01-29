@@ -15,17 +15,12 @@
         header {
             /* ヘッダーのスタイルを追加する場合はここに */
         }
-        footer {
-            margin-top: auto; /* フッターを画面の下に固定 */
-            background-color: #78e3fb; /* 背景色を設定（任意） */
-            text-align: center; /* 中央揃え（任意） */
-            padding: 10px; /* 内側の余白（任意） */
-        }
+
 
         /* すべてのsubmitボタンに対して共通のスタイルを適用 */
         input[type="submit"] {
-            padding: 10px 60px; /* ボタンのパディング */
-            font-size: 1.2em;
+            padding: 30px 80px; /* ボタンのパディング */
+            font-size: 2em;
             border: none;
             border-radius: 8px; /* 角を丸く */
             background-color: #ff6347; /* ボタンの背景色 */
@@ -72,7 +67,7 @@
 
         /* '編集'ボタンのスタイル */
         .notification-item button {
-            padding: 8px 25px;
+            padding: 100px 25px;
             font-size: 1.1em;
             border-radius: 5px;
             background-color: #ff6347;
@@ -99,12 +94,14 @@
             width: 60px; /* 横幅を小さく */
             margin-top: 20px; /* ボタンを少し下に移動 */
         }
+        p{
+         font-size: 2em; /* フォントサイズを小さく */
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
         <p class="logout-message">メールアドレス、またはパスワードが違います</p>
 
