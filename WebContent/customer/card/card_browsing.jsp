@@ -156,7 +156,7 @@
 
         .qr-code form input[type="submit"] {
             font-size: 1.5em; /* フォントサイズを大きく */
-            padding: 15px 50px; /* ボタンのパディング */
+            padding: 80px 100px; /* ボタンのパディング */
             background-color: #ff6347; /* 背景色 */
             color: white; /* 文字色 */
             border: none; /* ボーダーを消す */
