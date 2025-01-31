@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>魚カードゲット</title>
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             background-color: #f0f8ff;
             display: flex;
@@ -67,6 +67,23 @@
         .card-container.bounce {
             animation: bounce 1s ease infinite;
         }
+
+        /* ホームボタンのスタイル */
+        input[type="submit"] {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
 
     </style>
 </head>

@@ -68,6 +68,22 @@
             animation: bounce 1s ease infinite;
         }
 
+        /* ホームボタンのスタイル */
+        input[type="submit"] {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
     </style>
 </head>
 <body>
@@ -79,12 +95,11 @@
     <div class="card-description">素晴らしい魚がゲットできました！</div>
     <div class="message">おめでとうございます！</div>
 
-                    <form action="../manager/FishCardList.action" method="post">
-                    <input type="submit" value="ホーム">
-                </form>
+    <form action="../manager/FishCardList.action" method="post">
+        <input type="submit" value="ホーム">
+    </form>
 </div>
-
-
 
 </body>
 </html>
+
