@@ -142,6 +142,7 @@
         </div>
 
     </div>
+    </body>
 
     <footer>
         <form action="../manager/Home_staff.action" method="post">
@@ -151,5 +152,5 @@
             <input type="submit" value="設定">
         </form>
     </footer>
-</body>
+
 </html>

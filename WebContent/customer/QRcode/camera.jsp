@@ -85,14 +85,45 @@
   }
 </script>
 </head>
+
+<style>
+
+
+
+.Button form input[type="submit"] {
+        padding: 40px 80px; /* ボタンの縦横の余白を増加 */
+        font-size: 2em; /* フォントサイズを大きく */
+        width: 370px; /* 横幅も少し広げる */
+
+        background-color: #ff4500;
+
+    }
+
+
+
+
+
+
+
+</style>
 <body>
   <p>ピントを合わせて、QRコードをカメラ映像の赤枠内にあわせると読み取ります</p>
+
+
   <div><canvas id="preview"></canvas></div>
+
+	<div class = "Button">
   <form action="../manager/FishCardList.action" method="post">
-                    <input type="submit" value="戻る">
+                    <input type="submit" class="submit"value="戻る">
                 </form>
   <form id = "qr_form" action = "../manager/CameraExecute.action" method = "post">
    <input id="qr"  name = "qr" value = "" type = "submit"></input>
+
+   </div>
+
+
   </form>
+
+
 </body>
 </html>
