@@ -85,7 +85,6 @@
 
 <body>
     <div class="container">
-    <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像"align="right"></aside>
     <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
 
     <div class="completion-message">
@@ -99,13 +98,6 @@
     </div>
 
 </div>
-    <footer>
-        <form action="../manager/Home_staff.action" method="post">
-            <input type="submit" value="ホーム">
-        </form>
-        <form action="../manager/Setting.action" method="post">
-            <input type="submit" value="設定">
-        </form>
-    </footer>
+
 </body>
 </html>
