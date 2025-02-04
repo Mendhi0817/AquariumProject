@@ -264,6 +264,7 @@ footer {
     <h2 style="text-align: center;">マップ一覧</h2>
 
 
+
 <div class="map-list">
     <!-- floorInfoListからmapで取り出す -->
     <c:forEach var="map" items="${floorInfoList}">
@@ -272,12 +273,16 @@ footer {
             <a href="MapView_Already.action?floor_info=${map}" class="map-button">${map}</a>
         </div>
     </c:forEach>
-</div>
+
+
+
+    </div>
             <!-- floorInfoListからmapで取り出す -->
 <h3>　</h3>
 
-    <h2 style="text-align: center;">表示したいマップのボタンを押してください</h2>
+    <img src="viewImage?imagePath=${mapImage}" width="1000" height="600">
     </div>
+
 
     <footer>
         <div class="footer-buttons">

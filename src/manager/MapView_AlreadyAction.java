@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.MapDAO;
 import tool.Action;
 
-public class MapViewAction extends Action{
+public class MapView_AlreadyAction extends Action{
 
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -33,11 +33,11 @@ public class MapViewAction extends Action{
             // 取得したデータをリクエスト属性にセット
             request.setAttribute("floorInfoList", floorInfoList);
 
-
+            request.setAttribute("mapImage", mapImage);   //
 
             // JSPにフォワード
 
-            request.getRequestDispatcher("../customer/map/map_view.jsp").forward(request, response);
+            request.getRequestDispatcher("../customer/map/map_view_already.jsp").forward(request, response);
 
         } catch (Exception e) {
 
@@ -45,3 +45,4 @@ public class MapViewAction extends Action{
 
         }}
     }
+
