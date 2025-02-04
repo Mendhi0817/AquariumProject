@@ -49,7 +49,7 @@
             justify-content: flex-start; /* ボタンを左端に寄せる */
             gap: 10px; /* ボタン間の隙間 */
             margin-bottom: 20px; /* ボタンと下部の余白 */
-                        bottom: -500px;
+
 
         }
 
