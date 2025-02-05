@@ -43,7 +43,7 @@
         }
 
         /* パスワード入力欄のサイズを大きく */
-        input[type="text"], input[type="password"] {
+        input[type="text"], input[type="password"],input[type="email"] {
             width: 60%;  /* 入力欄を広くする */
             padding: 15px; /* パディングを増やす */
             margin: 15px 0; /* 上下の余白 */
@@ -154,7 +154,7 @@ font-size: 2em;  /* フォントサイズを大きく */
 </form>
 
 <form action="login.jsp" method="post">
-            <p><input type="submit" value="ホーム"></p>
+            <p><input type="submit" value="戻る"></p>
         </form>
 
     </div>
