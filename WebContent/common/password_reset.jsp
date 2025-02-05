@@ -157,7 +157,7 @@ p{
 
         <form action="../manager/PasswordReset.action" method="post">
             <p>登録しているメールアドレスと新しく変えたいパスワードを入力して下さい。</p>
-            <p><input type="text" name="email" placeholder="メールアドレス"></p>
+            <p><input type="email" name="email" placeholder="メールアドレス"></p>
             <p><input type="password" name="password" placeholder="新しいパスワード"></p>
             <p><input type="submit" value="確認"></p>
 

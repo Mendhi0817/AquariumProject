@@ -144,7 +144,7 @@ font-size: 2em;  /* フォントサイズを大きく */
         <form action="../manager/NewAccount.action" method="post">
 <p>新規作成したいユーザー名、メールアドレス、パスワードを入力して下さい。</p>
 <p><input type="text" name = "username" placeholder="ユーザー名" required></p>
-<p><input type="text" name="email" placeholder="メールアドレス" required></p>
+<p><input type="email" name="email" placeholder="メールアドレス" required></p>
 
 <p><input type="text" name="password" placeholder="パスワード"required></p>
 <p><input type = "submit" value = "新規作成"></p>

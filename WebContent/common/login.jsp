@@ -148,7 +148,7 @@
     <div class="login-form">
         <form action="../manager/Login.action" method="post">
             <p><label for="email">メールアドレス</label><br>
-            <input type="text" id="email" name="email" placeholder="メールアドレス" required></p>
+            <input type="email" id="email" name="email" placeholder="メールアドレス" required></p>
 
             <p><label for="password">パスワード</label><br>
             <input type="password" id="password" name="password" placeholder="パスワード" required></p>
