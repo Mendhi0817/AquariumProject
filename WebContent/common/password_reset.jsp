@@ -120,7 +120,7 @@
         .logout-button-container form input[type="submit"]:hover {
             background-color: #ff4500;
         }
-		input[type="text"], input[type="password"] {
+		input[type="text"], input[type="password"],input[type="email"] {
     width: 95%;  /* 入力欄の幅を80%に変更 */
     padding: 20px; /* パディングを大きくする */
     margin: 15px 0; /* 上下の余白 */
@@ -164,7 +164,7 @@ p{
         </form>
 
                     <form action="login.jsp" method="post">
-            <p><input type="submit" value="ホーム"></p>
+            <p><input type="submit" value="戻る"></p>
         </form>
     </div>
 </body>
