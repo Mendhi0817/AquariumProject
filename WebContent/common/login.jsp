@@ -54,7 +54,7 @@
         font-weight: 500;
     }
 
-    .login-form input[type="text"],
+    .login-form input[type="email"],
     .login-form input[type="password"] {
         width: 100%;
         padding: 12px;

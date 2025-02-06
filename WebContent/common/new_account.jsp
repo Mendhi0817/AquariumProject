@@ -121,7 +121,7 @@
             background-color: #ff4500;
         }
 /* ユーザー名、メールアドレス、パスワードの入力欄 */
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"],input[type="email"] {
     width: 95%;  /* 幅を広げる */
     padding: 20px;  /* パディングを増やす */
     margin: 15px 0;  /* 上下の余白 */

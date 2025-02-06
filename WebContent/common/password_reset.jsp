@@ -43,7 +43,7 @@
         }
 
         /* パスワード入力欄のサイズを大きく */
-        input[type="text"], input[type="password"] {
+        input[type="email"], input[type="password"] {
             width: 60%;  /* 入力欄を広くする */
             padding: 15px; /* パディングを増やす */
             margin: 15px 0; /* 上下の余白 */
