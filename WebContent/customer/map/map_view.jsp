@@ -252,8 +252,9 @@ width: 1000px;
 footer {
     width: 980px;
     height: 300px;
-    margin-top: 450px; /* フッターを少し下にずらす */
+    margin-top: 1000px; /* フッターを少し下にずらす */
 }
+
 
     </style>
 </head>
@@ -278,7 +279,6 @@ footer {
 
     <h2 style="text-align: center;">表示したいマップのボタンを押してください</h2>
     </div>
-
     <footer>
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->
