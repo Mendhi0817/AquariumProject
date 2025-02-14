@@ -180,8 +180,24 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
 
 <body>
     <div class="container">
-        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
-    	<div class="button-group">
+<header>
+        <a href="../manager/FishCardList.action" class="title-logo-link">
+                <img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150">
+            </a>
+            </header>
+
+
+		<div class="button-group">
+            <!-- ユーザー情報変更ボタン -->
+
+            <form action="../manager/Logout.action" method="post">
+                <input type="submit" value="ログアウト">
+            </form>
+
+            </div>
+    </div>
+
+            <div class="button-group">
             <!-- ユーザー情報変更ボタン -->
             <form action ="../manager/Change_User_Data_C.action" method="post">
                 <input type="submit" value="ユーザー情報変更">
@@ -193,23 +209,12 @@ footer input[type="submit"], footer .footer-buttons input[type="submit"] {
         </div>
 
 
-		<div class="button-group">
-            <!-- ユーザー情報変更ボタン -->
-            <form action ="../manager/CouponCustomer.action" method="post">
-                <input type="submit" value="クーポン">
-            </form>
-            <form action="../manager/Logout.action" method="post">
-                <input type="submit" value="ログアウト">
-            </form>
-        </div>
-    </div>
-
     <footer>
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->
             <div class="row-center">
-                <form action="../manager/FishCardList.action" method="post">
-                    <input type="submit" value="ホーム">
+                <form action="../manager/CouponCustomer.action" method="post">
+                    <input type="submit" value="クーポン">
                 </form>
                 <form action="../manager/MapView.action" method="post">
                     <input type="submit" value="マップ">

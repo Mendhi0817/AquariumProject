@@ -109,7 +109,11 @@
 
 <body>
     <div class="container">
-    <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+ <header>
+        <a href="../manager/FishCardList.action" class="title-logo-link">
+                <img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150">
+            </a>
+            </header>
     <h2>パスワードを変更しました</h2>
 
     <div>
