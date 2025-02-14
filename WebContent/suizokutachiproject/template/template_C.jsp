@@ -14,9 +14,7 @@
             margin: 0; /* デフォルトのマージンをリセット */
         }
 
-        header {
-            /* ヘッダーのスタイルを追加する場合はここに */
-        }
+
         footer {
             margin-top: auto; /* フッターを画面の下に固定 */
             background-color: #78e3fb; /* 背景色を設定（任意） */
