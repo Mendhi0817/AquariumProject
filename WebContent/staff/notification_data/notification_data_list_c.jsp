@@ -419,7 +419,11 @@ body {
 
 <body>
     <div class="container">
-        <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
+    <header>
+        <a href="../manager/FishCardList.action" class="title-logo-link">
+                <img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150">
+            </a>
+            </header>
     	<!-- 戻るボタン -->
         <div class="button-container">
             <form action="../manager/Notification_data_customer.action" method="post">
@@ -449,8 +453,8 @@ body {
         <div class="footer-buttons">
             <!-- ホーム、マップボタンを中央に配置 -->
             <div class="row-center">
-                <form action="../manager/FishCardList.action" method="post">
-                    <input type="submit" value="ホーム">
+                <form action="../manager/CouponCustomer.action" method="post">
+                    <input type="submit" value="クーポン">
                 </form>
                 <form action="../manager/MapView.action" method="post">
                     <input type="submit" value="マップ">
