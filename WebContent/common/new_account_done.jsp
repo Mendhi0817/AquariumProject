@@ -28,19 +28,41 @@
             margin-top: 20px; /* 上部の余白を追加 */
             color: #ff5733; /* 文字色を変更（任意） */
         }
+
+         .home-button {
+        font-size: 20px;
+        padding: 15px 50px;
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        line-height: 50px;
+        background-color: #78e3fb; /* ボタンの背景色 */
+        border: none; /* ボーダーを消す */
+        border-radius: 5px; /* 角を丸くする */
+        color: white; /* 文字の色 */
+        font-weight: bold; /* 文字を太く */
+        cursor: pointer; /* マウスカーソルをポインターに変更 */
+        transition: background-color 0.3s ease; /* ホバー時に色が変わるアニメーション */
+    }
+
+    .home-button:hover {
+        background-color: #4ec5d0; /* ホバー時の背景色 */
+    }
+
+    .home-button:focus {
+        outline: none; /* フォーカス時のアウトラインを消す */
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar"><img src="../picture/fish_right_new.png" alt="サイドバー画像" align="right"></aside>
         <header><img src="../picture/suizokutachiproject_titlelogo.png" width="400" height="150"></header>
         <p class="logout-message">新規作成されました!</p>
 
-         <form action = "../common/login.jsp" method = "post"><input type = "submit" value = "ホーム"></form>
-
-
-
+<form action="../common/login.jsp" method="post">
+    <input type="submit" value="ホーム" class="home-button">
+</form>
 
         <!-- ここにクラスを追加 -->
     </div>
