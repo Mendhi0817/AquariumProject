@@ -67,7 +67,7 @@
             border-radius: 8px; /* 角を丸く */
             font-size: 2em; /* フォントサイズを大きく */
             background-color: #f9f9f9; /* 背景色を淡い色に変更 */
-            width: 500%; /* アイテムの幅を100%にしてラップさせる */
+            width: 400%; /* アイテムの幅を100%にしてラップさせる */
         }
 
         .button-list form input[type="submit"] {

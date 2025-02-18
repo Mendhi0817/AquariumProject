@@ -297,7 +297,7 @@
             border-radius: 8px;
             font-size: 1.8em; /* フォントサイズを少し小さくしてバランスを取る */
             background-color: #f9f9f9;
-            width: 300%; /* 横幅を100%にすることで、親要素に合わせて調整 */
+            width: 110%; /* 横幅を100%にすることで、親要素に合わせて調整 */
             max-width: 800px; /* 最大幅を800pxに調整 */
             height: auto;
             -webkit-appearance: none;  /* 高さを自動で調整（アイテム内容に応じて） */
