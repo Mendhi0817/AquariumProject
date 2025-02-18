@@ -12,10 +12,11 @@
             flex-direction: column;
             min-height: 100vh; /* ビューポートの高さを最小限に設定 */
             margin: 0; /* デフォルトのマージンをリセット */
+            -webkit-appearance: none;
         }
 
         header {
-            /* ヘッダーのスタイルを追加する場合はここに */
+            /* ヘッダーのスタイルを追加する場合はここに */-webkit-appearance: none;
         }
 
         footer {
@@ -23,10 +24,12 @@
             background-color: #78e3fb; /* 背景色を設定（任意） */
             text-align: center; /* 中央揃え（任意） */
             padding: 10px; /* 内側の余白（任意） */
+            -webkit-appearance: none;
         }
 
         .sidebar {
-            text-align: center; /* サイドバー内のコンテンツを中央揃え */
+            text-align: center;
+            -webkit-appearance: none;  /* サイドバー内のコンテンツを中央揃え */
         }
 
         .content input, .content textarea {
@@ -36,10 +39,12 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
+            -webkit-appearance: none;
         }
 
         .content textarea {
-            height: 300px; /* テキストエリアの高さ */
+            height: 300px;
+            -webkit-appearance: none;  /* テキストエリアの高さ */
         }
 
         /* ボタンを中央に寄せ、共通のスタイルを設定 */
@@ -47,7 +52,8 @@
             display: flex;
             justify-content: center; /* ボタンを中央揃え */
             gap: 20px; /* ボタン間の隙間を設定 */
-            margin-top: 20px; /* 上部に余白 */
+            margin-top: 20px;
+            -webkit-appearance: none;  /* 上部に余白 */
         }
 
         .button-container button, .button-group input[type="submit"] {
@@ -58,16 +64,19 @@
             color: white; /* 文字色 */
             border: none; /* ボーダーを消す */
             cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            width: 250px; /* 横幅を統一（例として250pxを設定） */
+            width: 250px;
+            -webkit-appearance: none;  /* 横幅を統一（例として250pxを設定） */
         }
 
         .button-container button:hover, .button-group input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
+            -webkit-appearance: none;  /* ホバー時の背景色 */
         }
 
         footer form {
             display: inline-block;
-            margin: 0 10px; /* フォーム間の余白 */
+            margin: 0 10px;
+            -webkit-appearance: none;  /* フォーム間の余白 */
         }
 
         footer input[type="submit"] {
@@ -78,11 +87,13 @@
             background-color: #ff6347; /* ボタンの背景色 */
             color: white; /* 文字色 */
             cursor: pointer;
-            width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
+            width: 250px;
+            -webkit-appearance: none; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
         }
 
         footer input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
+            -webkit-appearance: none;  /* ホバー時の背景色 */
         }
 
         /* BGMの文字を大きくして中央に配置 */
@@ -91,7 +102,8 @@
             font-weight: bold; /* 太字 */
             text-align: center; /* 中央揃え */
             margin-top: 30px; /* 上部に余白 */
-            color: black; /* 文字色を黒に変更 */
+            color: black;
+            -webkit-appearance: none;  /* 文字色を黒に変更 */
         }
 
         /* ログアウトボタンをパスワード変更ボタンと同じデザインに変更 */
@@ -99,7 +111,8 @@
             display: flex;
             justify-content: center; /* 中央揃え */
             gap: 20px; /* ボタン間の隙間 */
-            margin-top: 20px; /* 上部に余白 */
+            margin-top: 20px;
+            -webkit-appearance: none;  /* 上部に余白 */
         }
 
         /* ログアウトボタンのスタイルをパスワード変更ボタンと同じに */
@@ -111,24 +124,28 @@
             color: white; /* 文字色 */
             border: none; /* ボーダーを消す */
             cursor: pointer; /* マウスオーバー時にポインターを表示 */
-            width: 250px; /* 横幅を統一 */
+            width: 250px;
+            -webkit-appearance: none; /* 横幅を統一 */
         }
 
         .logout-button-container form input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
+            -webkit-appearance: none;  /* ホバー時の背景色 */
         }
 
         /* フッターのボタン配置調整 */
         footer .footer-buttons {
             display: flex;
             flex-direction: column;
-            gap: 20px; /* ボタン間の垂直スペースを設定 */
+            gap: 20px;
+            -webkit-appearance: none;  /* ボタン間の垂直スペースを設定 */
         }
 
         footer .footer-buttons .row {
             display: flex;
             justify-content: center;
-            gap: 20px; /* ボタン間の水平スペースを設定 */
+            gap: 20px;
+            -webkit-appearance: none;  /* ボタン間の水平スペースを設定 */
         }
 
         /* 新しく追加した中央寄せのスタイル */
@@ -137,10 +154,12 @@
             justify-content: center;
             gap: 20px; /* ボタン間の水平スペースを設定 */
             width: 100%;
+            -webkit-appearance: none;
         }
 
         header {
-            background-color: white; /* 背景色を黒に設定 */
+            background-color: white;
+            -webkit-appearance: none;  /* 背景色を黒に設定 */
         }
 
         body {
@@ -151,19 +170,22 @@
             background-image: url('../picture/sea.png'); /* 背景画像を設定 */
             background-size: cover; /* 背景画像をビューポート全体にフィット */
             background-position: center; /* 背景画像を中央に配置 */
-            background-attachment: fixed; /* スクロールしても背景が動かないように設定 */
+            background-attachment: fixed;
+            -webkit-appearance: none; /* スクロールしても背景が動かないように設定 */
         }
 
         footer input[type="submit"], footer .footer-buttons input[type="submit"] {
             padding: 20px 80px; /* ボタンの縦横の余白を増加 */
             font-size: 1.5em; /* フォントサイズを大きく */
-            width: 300px; /* 横幅も少し広げる */
+            width: 300px;
+            -webkit-appearance: none; /* 横幅も少し広げる */
         }
 
         footer input[type="submit"], footer .footer-buttons input[type="submit"] {
             padding: 40px 80px; /* ボタンの縦横の余白を増加 */
             font-size: 2em; /* フォントサイズを大きく */
-            width: 300px; /* 横幅も少し広げる */
+            width: 300px;
+            -webkit-appearance: none;  /* 横幅も少し広げる */
         }
 
         footer .footer-buttons .row-center {
@@ -171,12 +193,14 @@
             justify-content: center;
             gap: 20px; /* ボタン間の水平スペースを設定 */
             width: 100%;
+            -webkit-appearance: none;
         }
 
         footer .footer-buttons .row {
             display: flex;
             justify-content: center;
-            gap: 20px; /* ボタン間の水平スペースを設定 */
+            gap: 20px;
+            -webkit-appearance: none;  /* ボタン間の水平スペースを設定 */
         }
 
         /* 戻るボタン */
@@ -189,16 +213,19 @@
             color: white; /* 文字色 */
             cursor: pointer;
             width: 250px; /* 横幅を統一（ホームと設定ボタンも同じ幅） */
-            margin: 5px 0; /* ボタン間に適切な余白を追加 */
+            margin: 5px 0;
+            -webkit-appearance: none; /* ボタン間に適切な余白を追加 */
         }
 
         input[type="submit"]:hover {
-            background-color: #ff4500; /* ホバー時の背景色 */
+            background-color: #ff4500;
+            -webkit-appearance: none; /* ホバー時の背景色 */
         }
 
         footer form {
             display: inline-block;
-            margin: 0 10px; /* フォーム間の余白 */
+            margin: 0 10px;
+            -webkit-appearance: none;  /* フォーム間の余白 */
         }
 
         .notification-list {
@@ -207,8 +234,10 @@
             justify-content: space-between; /* タイトルとボタンを左右に配置 */
             align-items: center; /* 垂直方向に中央揃え */
             margin-top: 20px;
-            flex-wrap: wrap; /* 横並びがはみ出さないようにラップ */
+            flex-wrap: wrap;
+            -webkit-appearance: none;  /* 横並びがはみ出さないようにラップ */
         }
+
 
         .notification-item {
             display: flex;
@@ -221,7 +250,8 @@
             font-size: 2em; /* フォントサイズを大きく */
             background-color: #f9f9f9; /* 背景色を淡い色に変更 */
             width: 900%; /* アイテムの幅を100%にしてラップさせる */
-            max-width: 550px; /* 最大幅を900pxに変更 */
+            max-width: 550px;
+            -webkit-appearance: none;  /* 最大幅を900pxに変更 */
         }
 
         /* '編集'ボタンのスタイル */
@@ -233,24 +263,28 @@
             color: white;
             border: none;
             cursor: pointer;
+            -webkit-appearance: none;
         }
 
         .notification-item button:hover {
             background-color: #ff4500;
+            -webkit-appearance: none;
         }
 
         /* '編集'ボタンをお知らせタイトルの横に配置 */
         .notification-item span {
             flex-grow: 1; /* タイトルがボタンを圧迫しないように横幅を調整 */
             text-align: left; /* タイトルを左寄せ */
-            padding-right: 20px; /* タイトルとボタンの間にスペースを追加 */
+            padding-right: 20px;
+            -webkit-appearance: none;  /* タイトルとボタンの間にスペースを追加 */
         }
 
         /* '削除1'ボタンを小さくするスタイル */
         .delete-btn-1 input[type="submit"] {
             padding: 17px 10px; /* ボタンのパディングを小さく */
             font-size: 2em; /* フォントサイズを小さく */
-            margin-top: 20px; /* ボタンを少し下に移動 */
+            margin-top: 20px;
+            -webkit-appearance: none;  /* ボタンを少し下に移動 */
         }
 
         .notification-item {
@@ -265,16 +299,19 @@
             background-color: #f9f9f9;
             width: 300%; /* 横幅を100%にすることで、親要素に合わせて調整 */
             max-width: 800px; /* 最大幅を800pxに調整 */
-            height: auto; /* 高さを自動で調整（アイテム内容に応じて） */
+            height: auto;
+            -webkit-appearance: none;  /* 高さを自動で調整（アイテム内容に応じて） */
         }
 
         h2{
-            font-size: 2em; /* フォントサイズを小さく */
+            font-size: 2em;
+            -webkit-appearance: none;  /* フォントサイズを小さく */
         }
 
         /* タイトルロゴをクリック可能にする */
         .title-logo-link {
             display: block;
+            -webkit-appearance: none;
         }
     </style>
 </head>
